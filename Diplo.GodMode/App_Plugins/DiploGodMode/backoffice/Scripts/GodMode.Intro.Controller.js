@@ -21,7 +21,7 @@
                     { name: "Type Browser", url: "typesIntro", desc: "See how controllers, composers and models are made up and browse interfaces" },
                     { name: "Services", url: "serviceBrowser", desc: "Browse injected services registered with the IOC container." },
                     { name: "Diagnostics", url: "diagnosticBrowser", desc: "View Umbraco settings and configuration, Server settings and much more..." },
-                    { name: "Utlities", url: "utilityBrowser", desc: "Clear caches, restart application pool and warm-up your little templates" }
+                    { name: "Utilities", url: "utilityBrowser", desc: "Clear caches, restart application pool and warm-up your little templates" }
                 ];
 
                 // prune features based on config
