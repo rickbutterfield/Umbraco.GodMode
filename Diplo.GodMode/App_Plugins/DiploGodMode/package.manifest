@@ -2,6 +2,7 @@
   "name": "Diplo GodMode",
   "version": "10.3.2",
   "allowPackageTelemetry": true,
+  "versionAssemblyName": "Diplo.GodMode",
   "javascript": [
     "~/App_Plugins/DiploGodMode/backoffice/Scripts/GodMode.Config.js",
     "~/App_Plugins/DiploGodMode/backoffice/Scripts/GodMode.Resources.js",
