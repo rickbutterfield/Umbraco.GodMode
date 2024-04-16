@@ -411,7 +411,6 @@ namespace Diplo.GodMode.Services
                 section.Diagnostics.Add(new Diagnostic("File Version", mvcAssembly.GetCustomAttribute<AssemblyFileVersionAttribute>().Version));
                 section.Diagnostics.Add(new Diagnostic("Full Name", mvcAssembly.FullName));
                 section.Diagnostics.Add(new Diagnostic("Location", mvcAssembly.Location));
-                section.Diagnostics.Add(new Diagnostic("Compatibility", mvcAssembly.GetName().VersionCompatibility));
                 sections.Add(section);
             }
 
