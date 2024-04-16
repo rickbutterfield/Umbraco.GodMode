@@ -51,7 +51,7 @@ namespace Diplo.GodMode.Services
         private readonly IServer webServer;
         private readonly IOptions<GodModeConfig> godModeConfig;
         private HttpContext httpContext;
-        private static readonly string[] ignoreProperties = new string[] { "Controllers" };
+        private static readonly string[] ignoreProperties = ["Controllers"];
 
         public DiagnosticService(IRuntimeState runtimeState, IUmbracoVersion umbracoVersion, IUmbracoDatabaseService databaseService, 
             IServiceProvider factory, IOptions<NuCacheSettings> nuCacheSettings, IOptions<IndexCreatorSettings> indexSettings, 
@@ -195,14 +195,15 @@ namespace Diplo.GodMode.Services
             section.Diagnostics.Add(new Diagnostic("Processor Count", Environment.ProcessorCount));
             section.Diagnostics.Add(new Diagnostic("Network Domain", Environment.UserDomainName));
             section.Diagnostics.Add(new Diagnostic("ASP.NET Version", Environment.Version));
-
             section.Diagnostics.Add(new Diagnostic("Current Directory", Environment.CurrentDirectory));
             section.Diagnostics.Add(new Diagnostic("64 Bit Process?", Environment.Is64BitProcess));
+            section.Diagnostics.Add(new Diagnostic("Process Path", Environment.ProcessPath));
             section.Diagnostics.Add(new Diagnostic("Framework Bits", IntPtr.Size * 8));
             section.Diagnostics.Add(new Diagnostic("Process Physical Memory", string.Format("{0:n} MB", Environment.WorkingSet / 1048576)));
             section.Diagnostics.Add(new Diagnostic("System Up Time", TimeSpan.FromTicks(Environment.TickCount)));
             section.Diagnostics.Add(new Diagnostic("CLI", Environment.CommandLine));
             section.Diagnostics.Add(new Diagnostic("System Directory", Environment.SystemDirectory));
+            section.Diagnostics.Add(new Diagnostic("Logical Drives", string.Join(" ", Environment.GetLogicalDrives())));
 
             try
             {
