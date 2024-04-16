@@ -1,12 +1,13 @@
 ﻿(function () {
     'use strict';
     angular.module("umbraco").controller("GodMode.Intro.Controller",
-        function ($routeParams, navigationService, godModeResources) {
+        function ($routeParams, navigationService, godModeResources, godModeConfig) {
 
             const vm = this;
             vm.pages = [];
+            vm.config = godModeConfig.config;
 
-            godModeResources.getConfig().then(function (config) {
+            godModeResources.getConfig().then(function (settings) {
 
                 const pages = [
                     { name: "DocType Browser", url: "docTypeBrowser", desc: "Browse, filter and search document types and see where they are used" },
@@ -28,7 +29,7 @@
 
                 for (let i = 0; i < pages.length; i++) {
                     var page = pages[i];
-                    if (config.FeaturesToHide.includes(page.name) || config.FeaturesToHide.includes(page.url)) {
+                    if (settings.FeaturesToHide.includes(page.name) || settings.FeaturesToHide.includes(page.url)) {
                         continue;
                     }
                     vm.pages.push(page);
