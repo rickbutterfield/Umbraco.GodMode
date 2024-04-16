@@ -1,7 +1,7 @@
 # Umbraco GodMode
 **Diplo God Mode makes Umbraco developers invincible!**
 
-This custom tree in the **Settings** section of **Umbraco 10** allows you to browse, query and search your document types and compositions; your templates and partials; your datatypes and property editors; your media library; your custom controllers and models. It also provides diagnostics about your Umbraco set-up and the server it is running on.
+This custom tree in the **Settings** section of **Umbraco 13** (other versions available) allows you to browse, query and search your document types and compositions; your templates and partials; your datatypes and property editors; your media library; your custom controllers and models. It also provides diagnostics about your Umbraco set-up and the server it is running on.
 
 For instance, you can:
 
@@ -38,7 +38,7 @@ See more in https://github.com/DanDiplo/Umbraco.GodMode/tree/v9/Screenshots
 
 ## Download & Installation
 
-***Important!**: This is for Umbraco 10 and above. Use `v9` branch for Umbraco 9. Use `v8` branch for the Umbraco 8 version or the `v7` branch for the Umbraco 7 version.
+***Important!**: This is for Umbraco 13 and above. Use `v10` for Umbraco 10/11. Use `v9` branch for Umbraco 9. Use `v8` branch for the Umbraco 8 version or the `v7` branch for the Umbraco 7 version. See the pattern?
 
 **NuGet:** https://www.nuget.org/packages/Diplo.GodMode/
 
