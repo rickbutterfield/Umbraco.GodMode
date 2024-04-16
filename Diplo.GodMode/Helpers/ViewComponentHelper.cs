@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Diplo.GodMode.Models;
 
@@ -8,14 +8,14 @@ namespace Diplo.GodMode.Controllers
     /// <summary>
     /// Helper for dealing with view components in a template
     /// </summary>
-    internal static class ViewComponentHelper
+    internal static partial class ViewComponentHelper
     {
         /// <summary>
         /// Reguar expression to find partials in the template text. Adds a group for cached partials.
         /// </summary>
-        private static readonly Regex ViewComponentRegex = new Regex(@"Component.InvokeAsync\((.\S+)(.*)\)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        private static readonly Regex ViewComponentRegex = ExtractViewComponents();
 
-        private static readonly Regex ViewComponentTagRegex = new Regex(@"<vc:(.\S*)(.*?)>", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        private static readonly Regex ViewComponentTagRegex = ExtractViewComponentTags();
 
         /// <summary>
         /// Gets the partials from the given template content
@@ -30,7 +30,7 @@ namespace Diplo.GodMode.Controllers
 
             MatchCollection matches = ViewComponentRegex.Matches(content);
 
-            foreach (Match match in matches)
+            foreach (Match match in matches.Cast<Match>())
             {
                 if (match.Success)
                 {
@@ -49,7 +49,7 @@ namespace Diplo.GodMode.Controllers
 
             matches = ViewComponentTagRegex.Matches(content);
 
-            foreach (Match match in matches)
+            foreach (Match match in matches.Cast<Match>())
             {
                 if (match.Success)
                 {
@@ -68,5 +68,11 @@ namespace Diplo.GodMode.Controllers
 
             return components;
         }
+
+        [GeneratedRegex(@"Component.InvokeAsync\((.\S+)(.*)\)", RegexOptions.IgnoreCase)]
+        private static partial Regex ExtractViewComponents();
+
+        [GeneratedRegex(@"<vc:(.\S*)(.*?)>", RegexOptions.IgnoreCase)]
+        private static partial Regex ExtractViewComponentTags();
     }
 }

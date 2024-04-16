@@ -51,6 +51,7 @@ namespace Diplo.GodMode.Services
         private readonly IServer webServer;
         private readonly IOptions<GodModeConfig> godModeConfig;
         private HttpContext httpContext;
+        private static readonly string[] ignoreProperties = new string[] { "Controllers" };
 
         public DiagnosticService(IRuntimeState runtimeState, IUmbracoVersion umbracoVersion, IUmbracoDatabaseService databaseService, 
             IServiceProvider factory, IOptions<NuCacheSettings> nuCacheSettings, IOptions<IndexCreatorSettings> indexSettings, 
@@ -173,9 +174,11 @@ namespace Diplo.GodMode.Services
 
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<Smidge.Options.CacheControlOptions>("Smidge Cache Control", factory));
 
+            sections.Add(DiagnosticSection.AddDiagnosticSectionFrom("Smidge Config", smidgeConfig, false));
+
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<BasicAuthSettings>("Basic Auth Settings", factory));
 
-            sections.Add(DiagnosticSection.AddDiagnosticSectionPropertiesFrom("Disabled Features", features.Disabled, new string[] { "Controllers" }));
+            sections.Add(DiagnosticSection.AddDiagnosticSectionPropertiesFrom("Disabled Features", features.Disabled, ignoreProperties));
 
             group.Add(sections);
             groups.Add(group);

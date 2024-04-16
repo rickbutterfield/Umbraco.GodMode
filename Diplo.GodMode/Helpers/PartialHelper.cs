@@ -1,6 +1,7 @@
 ﻿using Diplo.GodMode.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Umbraco.Extensions;
@@ -10,16 +11,16 @@ namespace Diplo.GodMode.Controllers
     /// <summary>
     /// Helper for dealing with partial views
     /// </summary>
-    internal static class PartialHelper
+    internal static partial class PartialHelper
     {
         /// <summary>
         /// Reguar expressions to find partials in the template text. Adds a group for cached partials.
         /// </summary>
-        private static readonly Regex HtmlPartialRegex = new(@"Html.(Cached)?Partial(Async)?\(\""(.+?)\"".*\)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        private static readonly Regex HtmlPartialRegex = PartialExtractor();
 
-        private static readonly Regex PartialTagRegex = new(@"<partial name=\""(.*?)\"".*", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        private static readonly Regex PartialTagRegex = PartialTag();
 
-        private static readonly string[] replaceables = new string[] { "~/Views/Partials/", "/Views/Partials/", "/Partials/", "Partials/" };
+        private static readonly string[] replaceables = ["~/Views/Partials/", "/Views/Partials/", "/Partials/", "Partials/"];
 
         /// <summary>
         /// Gets the partials from the given template content
@@ -43,7 +44,7 @@ namespace Diplo.GodMode.Controllers
         {
             MatchCollection matches = rex.Matches(content);
 
-            foreach (Match match in matches)
+            foreach (Match match in matches.Cast<Match>())
             {
                 if (match.Success)
                 {
@@ -77,5 +78,11 @@ namespace Diplo.GodMode.Controllers
 
             return sb.ToString();
         }
+
+        [GeneratedRegex(@"Html.(Cached)?Partial(Async)?\(\""(.+?)\"".*\)", RegexOptions.IgnoreCase)]
+        private static partial Regex PartialExtractor();
+
+        [GeneratedRegex(@"<partial name=\""(.*?)\"".*", RegexOptions.IgnoreCase)]
+        private static partial Regex PartialTag();
     }
 }
