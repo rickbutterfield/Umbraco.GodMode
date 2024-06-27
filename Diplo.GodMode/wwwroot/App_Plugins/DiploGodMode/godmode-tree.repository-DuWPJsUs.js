@@ -1,17 +1,17 @@
 import { UmbTreeServerDataSourceBase as s, UmbTreeRepositoryBase as o } from "@umbraco-cms/backoffice/tree";
 import { GOD_MODE_TREE_STORE_CONTEXT as l } from "./godmode-tree.store-CYDCLcEv.js";
-const n = "godmode", t = "godmode-root", i = "godmode-folder";
+const r = "godmode", t = "godmode-root", i = "godmode-folder";
 class c extends s {
   constructor(a) {
     super(a, {
-      getRootItems: r,
+      getRootItems: n,
       getChildrenOf: d,
       getAncestorsOf: h,
       mapper: p
     });
   }
 }
-const r = async (e) => ({
+const n = async (e) => ({
   total: 13,
   items: [
     {
@@ -118,7 +118,7 @@ const r = async (e) => ({
       isFolder: !1
     }
   ]
-}), d = async (e) => e.parent.unique === null ? await r() : {
+}), d = async (e) => e.parent.unique === null ? await n() : {
   total: 0,
   items: [
     {
@@ -203,11 +203,11 @@ const r = async (e) => ({
   unique: e.path,
   parent: {
     unique: e.parent ? e.parent.path : null,
-    entityType: e.parent ? n : t
+    entityType: e.parent ? r : t
   },
   name: e.name,
   icon: e.icon,
-  entityType: e.isFolder ? i : n,
+  entityType: e.isFolder ? i : r,
   isFolder: e.isFolder,
   hasChildren: e.hasChildren
 });
@@ -230,4 +230,4 @@ export {
   m as GodModeTreeRepository,
   m as api
 };
-//# sourceMappingURL=godmode-tree.repository-Ce-XKb2_.js.map
+//# sourceMappingURL=godmode-tree.repository-DuWPJsUs.js.map

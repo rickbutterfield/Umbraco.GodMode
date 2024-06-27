@@ -2737,10 +2737,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeClearUmbracoCache(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/ClearUmbracoCache']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/ClearUmbracoCache']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeClearUmbracoCache(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/ClearUmbracoCache']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/ClearUmbracoCache']['post']['res'][200]> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/umbraco/management/api/v1/GodMode/ClearUmbracoCache',
+            url: '/umbraco/management/api/v1/god-mode/ClearUmbracoCache',
             query: {
                 cache: data.cache
             },
@@ -2757,10 +2757,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeCopyDataType(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/copyDataType']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/copyDataType']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeCopyDataType(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/CopyDataType']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/CopyDataType']['post']['res'][200]> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/umbraco/management/api/v1/GodMode/copyDataType',
+            url: '/umbraco/management/api/v1/god-mode/CopyDataType',
             query: {
                 id: data.id
             },
@@ -2777,10 +2777,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeDeleteTag(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/DeleteTag']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/DeleteTag']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeDeleteTag(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/DeleteTag']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/DeleteTag']['post']['res'][200]> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/umbraco/management/api/v1/GodMode/DeleteTag',
+            url: '/umbraco/management/api/v1/god-mode/DeleteTag',
             query: {
                 id: data.id
             },
@@ -2795,10 +2795,10 @@ export class GodModeService {
      * @returns number OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeFixTemplateMasters(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/FixTemplateMasters']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeFixTemplateMasters(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/FixTemplateMasters']['post']['res'][200]> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/umbraco/management/api/v1/GodMode/FixTemplateMasters',
+            url: '/umbraco/management/api/v1/god-mode/FixTemplateMasters',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2810,10 +2810,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetApiControllers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetApiControllers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetApiControllers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetApiControllers']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetApiControllers',
+            url: '/umbraco/management/api/v1/god-mode/GetApiControllers',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2825,10 +2825,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetAssemblies(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetAssemblies']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetAssemblies(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetAssemblies']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetAssemblies',
+            url: '/umbraco/management/api/v1/god-mode/GetAssemblies',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2840,10 +2840,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetAssembliesWithInterfaces(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetAssembliesWithInterfaces']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetAssembliesWithInterfaces(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetAssembliesWithInterfaces']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetAssembliesWithInterfaces',
+            url: '/umbraco/management/api/v1/god-mode/GetAssembliesWithInterfaces',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2855,10 +2855,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetComposers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetComposers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetComposers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetComposers']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetComposers',
+            url: '/umbraco/management/api/v1/god-mode/GetComposers',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2870,10 +2870,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetCompositions(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetCompositions']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetCompositions(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetCompositions']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetCompositions',
+            url: '/umbraco/management/api/v1/god-mode/GetCompositions',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2885,10 +2885,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetConfig(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetConfig']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetConfig(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetConfig']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetConfig',
+            url: '/umbraco/management/api/v1/god-mode/GetConfig',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2900,10 +2900,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentFinders(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetContentFinders']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentFinders(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentFinders']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetContentFinders',
+            url: '/umbraco/management/api/v1/god-mode/GetContentFinders',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2927,10 +2927,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentPaged(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/GetContentPaged']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetContentPaged']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentPaged(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentPaged']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentPaged']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetContentPaged',
+            url: '/umbraco/management/api/v1/god-mode/GetContentPaged',
             query: {
                 page: data.page,
                 pageSize: data.pageSize,
@@ -2955,10 +2955,10 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentTypeAliases(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetContentTypeAliases']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentTypeAliases(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentTypeAliases']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetContentTypeAliases',
+            url: '/umbraco/management/api/v1/god-mode/GetContentTypeAliases',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2970,10 +2970,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentTypeMap(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetContentTypeMap']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentTypeMap(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentTypeMap']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetContentTypeMap',
+            url: '/umbraco/management/api/v1/god-mode/GetContentTypeMap',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -2988,10 +2988,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentUsageData(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/GetContentUsageData']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetContentUsageData']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentUsageData(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentUsageData']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentUsageData']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetContentUsageData',
+            url: '/umbraco/management/api/v1/god-mode/GetContentUsageData',
             query: {
                 id: data.id,
                 orderBy: data.orderBy
@@ -3007,10 +3007,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetDataTypes(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetDataTypes']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetDataTypes(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetDataTypes']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetDataTypes',
+            url: '/umbraco/management/api/v1/god-mode/GetDataTypes',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3022,10 +3022,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetDataTypesStatus(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetDataTypesStatus']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetDataTypesStatus(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetDataTypesStatus']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetDataTypesStatus',
+            url: '/umbraco/management/api/v1/god-mode/GetDataTypesStatus',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3037,10 +3037,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetEnvironmentDiagnostics(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetEnvironmentDiagnostics']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetEnvironmentDiagnostics(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetEnvironmentDiagnostics']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetEnvironmentDiagnostics',
+            url: '/umbraco/management/api/v1/god-mode/GetEnvironmentDiagnostics',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3054,10 +3054,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetInterfacesFrom(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/GetInterfacesFrom']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetInterfacesFrom']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetInterfacesFrom(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetInterfacesFrom']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetInterfacesFrom']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetInterfacesFrom',
+            url: '/umbraco/management/api/v1/god-mode/GetInterfacesFrom',
             query: {
                 assembly: data.assembly
             },
@@ -3072,10 +3072,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetLanguages(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetLanguages']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetLanguages(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetLanguages']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetLanguages',
+            url: '/umbraco/management/api/v1/god-mode/GetLanguages',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3095,10 +3095,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetMedia(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/GetMedia']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetMedia']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetMedia(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetMedia']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetMedia']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetMedia',
+            url: '/umbraco/management/api/v1/god-mode/GetMedia',
             query: {
                 page: data.page,
                 pageSize: data.pageSize,
@@ -3119,10 +3119,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetMediaTypes(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetMediaTypes']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetMediaTypes(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetMediaTypes']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetMediaTypes',
+            url: '/umbraco/management/api/v1/god-mode/GetMediaTypes',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3134,10 +3134,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetMemberGroups(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetMemberGroups']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetMemberGroups(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetMemberGroups']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetMemberGroups',
+            url: '/umbraco/management/api/v1/god-mode/GetMemberGroups',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3155,10 +3155,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetMembersPaged(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/GetMembersPaged']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetMembersPaged']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetMembersPaged(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetMembersPaged']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetMembersPaged']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetMembersPaged',
+            url: '/umbraco/management/api/v1/god-mode/GetMembersPaged',
             query: {
                 page: data.page,
                 pageSize: data.pageSize,
@@ -3177,10 +3177,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetNonMsAssemblies(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetNonMsAssemblies']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetNonMsAssemblies(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetNonMsAssemblies']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetNonMsAssemblies',
+            url: '/umbraco/management/api/v1/god-mode/GetNonMsAssemblies',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3194,10 +3194,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetNuCacheItem(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/GetNuCacheItem']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetNuCacheItem']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetNuCacheItem(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetNuCacheItem']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetNuCacheItem']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetNuCacheItem',
+            url: '/umbraco/management/api/v1/god-mode/GetNuCacheItem',
             query: {
                 id: data.id
             },
@@ -3212,10 +3212,10 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetNuCacheType(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetNuCacheType']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetNuCacheType(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetNuCacheType']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetNuCacheType',
+            url: '/umbraco/management/api/v1/god-mode/GetNuCacheType',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3227,10 +3227,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetOrphanedTags(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetOrphanedTags']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetOrphanedTags(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetOrphanedTags']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetOrphanedTags',
+            url: '/umbraco/management/api/v1/god-mode/GetOrphanedTags',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3242,10 +3242,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetPropertyEditors(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetPropertyEditors']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetPropertyEditors(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetPropertyEditors']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetPropertyEditors',
+            url: '/umbraco/management/api/v1/god-mode/GetPropertyEditors',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3257,10 +3257,10 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetPropertyGroups(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetPropertyGroups']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetPropertyGroups(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetPropertyGroups']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetPropertyGroups',
+            url: '/umbraco/management/api/v1/god-mode/GetPropertyGroups',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3272,10 +3272,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetPropertyValueConverters(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetPropertyValueConverters']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetPropertyValueConverters(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetPropertyValueConverters']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetPropertyValueConverters',
+            url: '/umbraco/management/api/v1/god-mode/GetPropertyValueConverters',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3287,10 +3287,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetPublishedContentModels(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetPublishedContentModels']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetPublishedContentModels(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetPublishedContentModels']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetPublishedContentModels',
+            url: '/umbraco/management/api/v1/god-mode/GetPublishedContentModels',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3302,10 +3302,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetRegisteredServices(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetRegisteredServices']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetRegisteredServices(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetRegisteredServices']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetRegisteredServices',
+            url: '/umbraco/management/api/v1/god-mode/GetRegisteredServices',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3317,10 +3317,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetRenderMvcControllers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetRenderMvcControllers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetRenderMvcControllers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetRenderMvcControllers']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetRenderMvcControllers',
+            url: '/umbraco/management/api/v1/god-mode/GetRenderMvcControllers',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3332,10 +3332,10 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetStandardContentTypeAliases(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetStandardContentTypeAliases']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetStandardContentTypeAliases(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetStandardContentTypeAliases']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetStandardContentTypeAliases',
+            url: '/umbraco/management/api/v1/god-mode/GetStandardContentTypeAliases',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3347,10 +3347,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetSurfaceControllers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetSurfaceControllers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetSurfaceControllers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetSurfaceControllers']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetSurfaceControllers',
+            url: '/umbraco/management/api/v1/god-mode/GetSurfaceControllers',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3362,10 +3362,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTagHelpers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetTagHelpers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTagHelpers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTagHelpers']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetTagHelpers',
+            url: '/umbraco/management/api/v1/god-mode/GetTagHelpers',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3377,10 +3377,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTagMapping(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetTagMapping']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTagMapping(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTagMapping']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetTagMapping',
+            url: '/umbraco/management/api/v1/god-mode/GetTagMapping',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3392,10 +3392,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTemplates(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetTemplates']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTemplates(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTemplates']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetTemplates',
+            url: '/umbraco/management/api/v1/god-mode/GetTemplates',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3407,10 +3407,10 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTemplateUrlsToPing(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetTemplateUrlsToPing']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTemplateUrlsToPing(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTemplateUrlsToPing']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetTemplateUrlsToPing',
+            url: '/umbraco/management/api/v1/god-mode/GetTemplateUrlsToPing',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3424,10 +3424,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTypesAssignableFrom(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/GetTypesAssignableFrom']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetTypesAssignableFrom']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTypesAssignableFrom(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetTypesAssignableFrom']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTypesAssignableFrom']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetTypesAssignableFrom',
+            url: '/umbraco/management/api/v1/god-mode/GetTypesAssignableFrom',
             query: {
                 baseType: data.baseType
             },
@@ -3444,10 +3444,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTypesFrom(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/GetTypesFrom']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetTypesFrom']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTypesFrom(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetTypesFrom']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTypesFrom']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetTypesFrom',
+            url: '/umbraco/management/api/v1/god-mode/GetTypesFrom',
             query: {
                 assembly: data.assembly
             },
@@ -3462,10 +3462,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetUmbracoAssemblies(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetUmbracoAssemblies']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetUmbracoAssemblies(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetUmbracoAssemblies']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetUmbracoAssemblies',
+            url: '/umbraco/management/api/v1/god-mode/GetUmbracoAssemblies',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3477,10 +3477,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetUrlProviders(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetUrlProviders']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetUrlProviders(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetUrlProviders']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetUrlProviders',
+            url: '/umbraco/management/api/v1/god-mode/GetUrlProviders',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3494,10 +3494,10 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetUrlsToPing(data: $OpenApiTs['/umbraco/management/api/v1/GodMode/GetUrlsToPing']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetUrlsToPing']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetUrlsToPing(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetUrlsToPing']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetUrlsToPing']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetUrlsToPing',
+            url: '/umbraco/management/api/v1/god-mode/GetUrlsToPing',
             query: {
                 culture: data.culture
             },
@@ -3512,10 +3512,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetViewComponents(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/GetViewComponents']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetViewComponents(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetViewComponents']['get']['res'][200]> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/umbraco/management/api/v1/GodMode/GetViewComponents',
+            url: '/umbraco/management/api/v1/god-mode/GetViewComponents',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3527,10 +3527,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModePurgeMediaCache(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/PurgeMediaCache']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModePurgeMediaCache(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/PurgeMediaCache']['post']['res'][200]> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/umbraco/management/api/v1/GodMode/PurgeMediaCache',
+            url: '/umbraco/management/api/v1/god-mode/PurgeMediaCache',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'
@@ -3542,10 +3542,10 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeRestartAppPool(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/GodMode/RestartAppPool']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeRestartAppPool(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/RestartAppPool']['post']['res'][200]> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/umbraco/management/api/v1/GodMode/RestartAppPool',
+            url: '/umbraco/management/api/v1/god-mode/RestartAppPool',
             errors: {
                 401: 'The resource is protected and requires an authentication token',
                 403: 'The authenticated user do not have access to this resource'

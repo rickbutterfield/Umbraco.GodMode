@@ -74,7 +74,7 @@ const h = {
   type: "workspace",
   alias: "Umb.Workspace.GodModeRoot",
   name: "GodMode Root Workspace",
-  element: () => import("./godmode-root-workspace.element-DTBZLsI1.js"),
+  element: () => import("./godmode-root-workspace.element-Bbu0_14s.js"),
   meta: {
     entityType: "godmode-root"
   }
@@ -83,7 +83,7 @@ const h = {
   kind: "routable",
   alias: "Umb.Workspace.GodMode",
   name: "God Mode Workspace",
-  api: () => import("./godmode-workspace.context-CSJXROCZ.js"),
+  api: () => import("./godmode-workspace.context-B9jqPOAG.js"),
   meta: {
     entityType: "godmode"
   }
@@ -129,7 +129,7 @@ const h = {
   type: "repository",
   alias: G,
   name: "God Mode Tree Repository",
-  api: () => import("./godmode-tree.repository-Ce-XKb2_.js")
+  api: () => import("./godmode-tree.repository-DuWPJsUs.js")
 }, D = {
   type: "treeStore",
   alias: b,
@@ -174,4 +174,4 @@ export {
   r as c,
   P as o
 };
-//# sourceMappingURL=index-CV1Q42C5.js.map
+//# sourceMappingURL=index-c6_iC_zC.js.map

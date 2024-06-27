@@ -18,7 +18,7 @@ export class GodModeTreeDataSource extends UmbTreeServerDataSourceBase<GodModeTr
 
 const getRootItems = async (_args: UmbTreeRootItemsRequestArgs) => {
 	// eslint-disable-next-line local-rules/no-direct-api-import
-	const data: UmbPagedModel<GodModeTreeItemPresentationModel> = {
+	let pages: UmbPagedModel<GodModeTreeItemPresentationModel> = {
 		total: 13,
 		items: [
 			{
@@ -127,7 +127,7 @@ const getRootItems = async (_args: UmbTreeRootItemsRequestArgs) => {
 		]
 	};
 
-	return data;
+	return pages;
 };
 
 const getChildrenOf = async (args: UmbTreeChildrenOfRequestArgs) => {

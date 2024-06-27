@@ -1,11 +1,16 @@
 ﻿import { html, customElement, css, state, repeat } from '@umbraco-cms/backoffice/external/lit';
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { GodModePage } from '../../types';
+import { GodModeConfig, GodModeService } from '../../api';
+import { tryExecuteAndNotify } from '@umbraco-cms/backoffice/resources';
 
 @customElement('umb-godmode-root-workspace')
 export class UmbGodModeRootWorkspaceElement extends UmbLitElement {
     @state()
-    private _pages: GodModePage[] = [
+    private config: GodModeConfig | undefined = undefined;
+
+    @state()
+    private pages: GodModePage[] = [
         {
             name: "DocType Browser",
             url: "docTypeBrowser",
@@ -71,7 +76,24 @@ export class UmbGodModeRootWorkspaceElement extends UmbLitElement {
             url: "utilityBrowser",
             description: "Clear caches, restart application pool and warm-up your little templates"
         }
-    ]
+    ];
+
+    constructor() {
+        super();
+        this.#getConfig();
+    }
+
+    async #getConfig() {
+        const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetConfig());
+        this.config = data;
+        
+        if (this.config) {
+            this.pages = this.pages.filter((page) => {
+                const filtered = this.config?.featuresToHide?.includes(page.name) || this.config?.featuresToHide?.includes(page.url);
+                return !filtered;
+            })
+        }
+    }
 
 	override render() {
 		return html`
@@ -93,7 +115,7 @@ export class UmbGodModeRootWorkspaceElement extends UmbLitElement {
                             <uui-table-head-cell>Description</uui-table-head-cell>
                         </uui-table-head>
                         ${repeat(
-                            this._pages,
+                            this.pages,
                             (page) => page.name,
                             (page) => 
                                 html`

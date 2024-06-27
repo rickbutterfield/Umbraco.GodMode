@@ -1,13 +1,22 @@
-import { html as u, repeat as c, css as d, state as p, customElement as m } from "@umbraco-cms/backoffice/external/lit";
-import { UmbLitElement as h } from "@umbraco-cms/backoffice/lit-element";
-var w = Object.defineProperty, b = Object.getOwnPropertyDescriptor, l = (e, t, s, o) => {
-  for (var r = o > 1 ? void 0 : o ? b(t, s) : t, i = e.length - 1, n; i >= 0; i--)
-    (n = e[i]) && (r = (o ? n(t, s, r) : n(r)) || r);
-  return o && r && w(t, s, r), r;
-};
-let a = class extends h {
+import { html as c, repeat as h, css as m, state as d, customElement as w } from "@umbraco-cms/backoffice/external/lit";
+import { UmbLitElement as b } from "@umbraco-cms/backoffice/lit-element";
+import { G as g } from "./services.gen-DnYPQRvA.js";
+import { tryExecuteAndNotify as y } from "@umbraco-cms/backoffice/resources";
+var f = Object.defineProperty, B = Object.getOwnPropertyDescriptor, l = (e, t, r, a) => {
+  for (var o = a > 1 ? void 0 : a ? B(t, r) : t, i = e.length - 1, s; i >= 0; i--)
+    (s = e[i]) && (o = (a ? s(t, r, o) : s(o)) || o);
+  return a && o && f(t, r, o), o;
+}, v = (e, t, r) => {
+  if (!t.has(e))
+    throw TypeError("Cannot " + r);
+}, _ = (e, t, r) => {
+  if (t.has(e))
+    throw TypeError("Cannot add the same private member more than once");
+  t instanceof WeakSet ? t.add(e) : t.set(e, r);
+}, T = (e, t, r) => (v(e, t, "access private method"), r), u, p;
+let n = class extends b {
   constructor() {
-    super(...arguments), this._pages = [
+    super(), _(this, u), this.config = void 0, this.pages = [
       {
         name: "DocType Browser",
         url: "docTypeBrowser",
@@ -73,10 +82,10 @@ let a = class extends h {
         url: "utilityBrowser",
         description: "Clear caches, restart application pool and warm-up your little templates"
       }
-    ];
+    ], T(this, u, p).call(this);
   }
   render() {
-    return u`
+    return c`
 			<umb-body-layout>
 				<uui-box>
 					<h1>
@@ -94,10 +103,10 @@ let a = class extends h {
                             <uui-table-head-cell>Action</uui-table-head-cell>
                             <uui-table-head-cell>Description</uui-table-head-cell>
                         </uui-table-head>
-                        ${c(
-      this._pages,
+                        ${h(
+      this.pages,
       (e) => e.name,
-      (e) => u`
+      (e) => c`
                                     <uui-table-row>
                                         <uui-table-cell>
                                             <strong><a href="/umbraco/section/settings/workspace/godmode/edit/${e.url}">${e.name}</a></strong>
@@ -119,8 +128,16 @@ let a = class extends h {
 			</umb-body-layout>`;
   }
 };
-a.styles = [
-  d`
+u = /* @__PURE__ */ new WeakSet();
+p = async function() {
+  const { data: e } = await y(this, g.getUmbracoManagementApiV1GodModeGetConfig());
+  this.config = e, this.config && (this.pages = this.pages.filter((t) => {
+    var a, o, i, s;
+    return !(((o = (a = this.config) == null ? void 0 : a.featuresToHide) == null ? void 0 : o.includes(t.name)) || ((s = (i = this.config) == null ? void 0 : i.featuresToHide) == null ? void 0 : s.includes(t.url)));
+  }));
+};
+n.styles = [
+  m`
 			uui-box {
 				margin-bottom: 20px;
 
@@ -131,13 +148,16 @@ a.styles = [
 		`
 ];
 l([
-  p()
-], a.prototype, "_pages", 2);
-a = l([
-  m("umb-godmode-root-workspace")
-], a);
+  d()
+], n.prototype, "config", 2);
+l([
+  d()
+], n.prototype, "pages", 2);
+n = l([
+  w("umb-godmode-root-workspace")
+], n);
 export {
-  a as UmbGodModeRootWorkspaceElement,
-  a as element
+  n as UmbGodModeRootWorkspaceElement,
+  n as element
 };
-//# sourceMappingURL=godmode-root-workspace.element-DTBZLsI1.js.map
+//# sourceMappingURL=godmode-root-workspace.element-Bbu0_14s.js.map

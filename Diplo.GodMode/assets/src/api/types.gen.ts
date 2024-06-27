@@ -59,9 +59,9 @@ export type ChangePasswordUserRequestModel = {
 
 export type ComponentMap = {
     templateId: number;
-    templateAlias?: string | null;
-    name?: string | null;
-    parameters?: string | null;
+    templateAlias: string;
+    name: string;
+    parameters: string;
     tagHelper: boolean;
 };
 
@@ -110,40 +110,40 @@ export type ConsentLevelPresentationModel = {
 export type ContentItem = {
     id: number;
     udi: string;
-    alias?: string | null;
-    name?: string | null;
-    icon?: string | null;
+    alias: string;
+    name: string;
+    icon: string;
     parentId: number;
     level: number;
     trashed: boolean;
-    path?: string | null;
+    path: string;
     createDate: string;
     updateDate: string;
     creatorId: number;
-    creatorName?: string | null;
+    creatorName: string;
     updaterId: number;
-    updaterName?: string | null;
-    culture?: string | null;
+    updaterName: string;
+    culture: string;
 };
 
 export type ContentTags = {
     id: number;
     udi: string;
-    alias?: string | null;
-    name?: string | null;
-    icon?: string | null;
-    type?: string | null;
-    tags?: Array<(Tag)> | null;
+    alias: string;
+    name: string;
+    icon: string;
+    type: string;
+    tags: Array<(Tag)>;
 };
 
 export type ContentTypeData = {
     id: number;
     udi: string;
-    name?: string | null;
-    alias?: string | null;
+    name: string;
+    alias: string;
     isOpen: boolean;
-    icon?: string | null;
-    description?: string | null;
+    icon: string;
+    description: string;
     isMaster: boolean;
     hasCompositions: boolean;
     selected: boolean;
@@ -152,20 +152,20 @@ export type ContentTypeData = {
 export type ContentTypeMap = {
     id: number;
     udi: string;
-    name?: string | null;
-    alias?: string | null;
+    name: string;
+    alias: string;
     isOpen: boolean;
-    icon?: string | null;
-    description?: string | null;
+    icon: string;
+    description: string;
     isMaster: boolean;
     hasCompositions: boolean;
     selected: boolean;
-    templates?: Array<(TemplateMap)> | null;
-    properties?: Array<(PropertyTypeMap)> | null;
-    compositionProperties?: Array<(PropertyTypeMap)> | null;
-    allProperties?: Array<(PropertyTypeMap)> | null;
-    compositions?: Array<(ContentTypeData)> | null;
-    propertyGroups?: Array<(string)> | null;
+    templates: Array<(TemplateMap)>;
+    properties: Array<(PropertyTypeMap)>;
+    compositionProperties: Array<(PropertyTypeMap)>;
+    allProperties: Array<(PropertyTypeMap)>;
+    compositions: Array<(ContentTypeData)>;
+    propertyGroups: Array<(string)>;
     hasTemplates: boolean;
     isListView: boolean;
     allowedAtRoot: boolean;
@@ -580,10 +580,10 @@ export type DataTypeItemResponseModel = {
 export type DataTypeMap = {
     id: number;
     udi: string;
-    name?: string | null;
-    alias?: string | null;
+    name: string;
+    alias: string;
     isOpen: boolean;
-    dbType?: string | null;
+    dbType: string;
     isUsed: boolean;
     updateDate: string;
 };
@@ -671,25 +671,25 @@ export type DeleteUsersRequestModel = {
 };
 
 export type Diagnostic = {
-    key?: string | null;
-    value?: string | null;
+    key: string;
+    value: string;
 };
 
 export type DiagnosticGroup = {
     id: number;
-    title?: string | null;
-    sections?: Array<(DiagnosticSection)> | null;
+    title: string;
+    sections: Array<(DiagnosticSection)>;
 };
 
 export type DiagnosticSection = {
-    heading?: string | null;
-    diagnostics?: Array<(Diagnostic)> | null;
+    heading: string;
+    diagnostics: Array<(Diagnostic)>;
 };
 
 export type DiagnosticsConfig = {
-    groupsToHide?: Array<(string)> | null;
-    sectionsToHide?: Array<(string)> | null;
-    keysToRedact?: Array<(string)> | null;
+    groupsToHide: Array<(string)>;
+    sectionsToHide: Array<(string)>;
+    keysToRedact: Array<(string)>;
 };
 
 export type DictionaryItemItemResponseModel = {
@@ -1068,8 +1068,8 @@ export type FolderResponseModel = {
 };
 
 export type GodModeConfig = {
-    featuresToHide?: Array<(string)> | null;
-    diagnostics?: DiagnosticsConfig | null;
+    featuresToHide: Array<(string)>;
+    diagnostics: DiagnosticsConfig;
 };
 
 export type HealthCheckActionRequestModel = {
@@ -1178,8 +1178,8 @@ export type InviteUserRequestModel = {
 export type ItemBase = {
     id: number;
     udi: string;
-    name?: string | null;
-    alias?: string | null;
+    name: string;
+    alias: string;
     isOpen: boolean;
 };
 
@@ -1194,8 +1194,8 @@ export type ItemSortingRequestModel = {
 
 export type Lang = {
     id: number;
-    name?: string | null;
-    culture?: string | null;
+    name: string;
+    culture: string;
 };
 
 export type LanguageItemResponseModel = {
@@ -1276,15 +1276,15 @@ export type MediaItemResponseModel = {
 export type MediaMap = {
     id: number;
     udi: string;
-    name?: string | null;
-    alias?: string | null;
+    name: string;
+    alias: string;
     isOpen: boolean;
-    ext?: string | null;
-    type?: string | null;
+    ext: string;
+    type: string;
     size: number;
     createDate: string;
     updateDate: string;
-    path?: string | null;
+    path: string;
 };
 
 export type MediaRecycleBinItemResponseModel = {
@@ -1453,7 +1453,7 @@ export type MemberGroupItemResponseModel = {
 
 export type MemberGroupModel = {
     id: number;
-    name?: string | null;
+    name: string;
 };
 
 export type MemberGroupResponseModel = {
@@ -1469,9 +1469,9 @@ export type MemberItemResponseModel = {
 
 export type MemberModel = {
     id: number;
-    username?: string | null;
-    name?: string | null;
-    email?: string | null;
+    username: string;
+    name: string;
+    email: string;
     createDate: string;
     udi: string;
 };
@@ -1637,8 +1637,8 @@ export type MoveMediaTypeRequestModel = {
 };
 
 export type NameValue = {
-    name?: string | null;
-    value?: string | null;
+    name: string;
+    value: string;
 };
 
 export type NamedEntityTreeItemResponseModel = {
@@ -1660,8 +1660,8 @@ export type NotificationHeaderModel = {
 
 export type NuCacheItem = {
     id: number;
-    data?: string | null;
-    title?: string | null;
+    data: string;
+    title: string;
     createDate: string;
 };
 
@@ -2017,9 +2017,9 @@ export type PagedWebhookResponseModel = {
 
 export type PartialMap = {
     templateId: number;
-    templateAlias?: string | null;
-    name?: string | null;
-    path?: string | null;
+    templateAlias: string;
+    name: string;
+    path: string;
 };
 
 export type PartialViewFolderResponseModel = {
@@ -2089,15 +2089,15 @@ export type PropertyTypeAppearanceModel = {
 export type PropertyTypeMap = {
     id: number;
     udi: string;
-    name?: string | null;
-    alias?: string | null;
+    name: string;
+    alias: string;
     isOpen: boolean;
-    editorAlias?: string | null;
-    description?: string | null;
+    editorAlias: string;
+    description: string;
     editorId: number;
-    variesBy?: string | null;
+    variesBy: string;
     supportsPublishing: boolean;
-    storageType?: string | null;
+    storageType: string;
 };
 
 export type PropertyTypeValidationModel = {
@@ -2151,14 +2151,14 @@ export type ReferenceByIdModel = {
 };
 
 export type RegisteredService = {
-    name?: string | null;
-    namespace?: string | null;
-    fullName?: string | null;
+    name: string;
+    namespace: string;
+    fullName: string;
     isPublic: boolean;
-    implementName?: string | null;
-    implementNamespace?: string | null;
-    implementFullName?: string | null;
-    lifetime?: string | null;
+    implementName: string;
+    implementNamespace: string;
+    implementFullName: string;
+    lifetime: string;
 };
 
 export type RelationReferenceModel = {
@@ -2298,9 +2298,9 @@ export type ServerInformationResponseModel = {
 };
 
 export type ServerResponse = {
-    message?: string | null;
+    message: string;
     responseType: ServerResponseType;
-    readonly response?: string | null;
+    readonly response: string;
 };
 
 export type ServerResponseType = 'Success' | 'Error' | 'Warning';
@@ -2352,18 +2352,18 @@ export type StylesheetResponseModel = {
 };
 
 export type Tag = {
-    text?: string | null;
-    group?: string | null;
+    text: string;
+    group: string;
     id: number;
     nodeCount: number;
-    culture?: string | null;
+    culture: string;
 };
 
 export type TagMapping = {
-    key?: string | null;
-    tag?: Tag | null;
-    content?: Array<(ContentTags)> | null;
-    culture?: string | null;
+    key: string;
+    tag: Tag;
+    content: Array<(ContentTags)>;
+    culture: string;
 };
 
 export type TagResponseModel = {
@@ -2396,30 +2396,30 @@ export type TemplateItemResponseModel = {
 export type TemplateMap = {
     id: number;
     udi: string;
-    name?: string | null;
-    alias?: string | null;
+    name: string;
+    alias: string;
     isOpen: boolean;
-    path?: string | null;
+    path: string;
     isDefault: boolean;
 };
 
 export type TemplateModel = {
     id: number;
     udi: string;
-    name?: string | null;
-    alias?: string | null;
+    name: string;
+    alias: string;
     isOpen: boolean;
-    virtualPath?: string | null;
+    virtualPath: string;
     createDate: string;
     isMaster: boolean;
-    parents?: Array<(TemplateModel)> | null;
-    path?: string | null;
-    masterAlias?: string | null;
-    filePath?: string | null;
+    parents: Array<(TemplateModel)>;
+    path: string;
+    masterAlias: string;
+    filePath: string;
     hasCorrectMaster: boolean;
-    layout?: string | null;
-    partials?: Array<(PartialMap)> | null;
-    viewComponents?: Array<(ComponentMap)> | null;
+    layout: string;
+    partials: Array<(PartialMap)>;
+    viewComponents: Array<(ComponentMap)>;
 };
 
 export type TemplateQueryExecuteFilterPresentationModel = {
@@ -2505,12 +2505,12 @@ export type TrackedReferenceMediaTypeModel = {
 };
 
 export type TypeMap = {
-    module?: string | null;
-    assembly?: string | null;
-    name?: string | null;
-    namespace?: string | null;
-    baseType?: string | null;
-    loadableName?: string | null;
+    module: string;
+    assembly: string;
+    name: string;
+    namespace: string;
+    baseType: string;
+    loadableName: string;
     isUmbraco: boolean;
 };
 
@@ -2807,11 +2807,11 @@ export type UpgradeSettingsResponseModel = {
 export type UsageModel = {
     id: number;
     nodeCount: number;
-    description?: string | null;
-    alias?: string | null;
-    icon?: string | null;
+    description: string;
+    alias: string;
+    icon: string;
     guidType: string;
-    readonly type?: string | null;
+    readonly type: string;
 };
 
 export type UserConfigurationResponseModel = {
@@ -5935,7 +5935,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/ClearUmbracoCache': {
+    '/umbraco/management/api/v1/god-mode/ClearUmbracoCache': {
         post: {
             req: {
                 cache?: string;
@@ -5956,7 +5956,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/copyDataType': {
+    '/umbraco/management/api/v1/god-mode/CopyDataType': {
         post: {
             req: {
                 id?: number;
@@ -5977,7 +5977,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/DeleteTag': {
+    '/umbraco/management/api/v1/god-mode/DeleteTag': {
         post: {
             req: {
                 id?: number;
@@ -5998,7 +5998,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/FixTemplateMasters': {
+    '/umbraco/management/api/v1/god-mode/FixTemplateMasters': {
         post: {
             res: {
                 /**
@@ -6016,7 +6016,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetApiControllers': {
+    '/umbraco/management/api/v1/god-mode/GetApiControllers': {
         get: {
             res: {
                 /**
@@ -6034,7 +6034,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetAssemblies': {
+    '/umbraco/management/api/v1/god-mode/GetAssemblies': {
         get: {
             res: {
                 /**
@@ -6052,7 +6052,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetAssembliesWithInterfaces': {
+    '/umbraco/management/api/v1/god-mode/GetAssembliesWithInterfaces': {
         get: {
             res: {
                 /**
@@ -6070,7 +6070,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetComposers': {
+    '/umbraco/management/api/v1/god-mode/GetComposers': {
         get: {
             res: {
                 /**
@@ -6088,7 +6088,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetCompositions': {
+    '/umbraco/management/api/v1/god-mode/GetCompositions': {
         get: {
             res: {
                 /**
@@ -6106,7 +6106,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetConfig': {
+    '/umbraco/management/api/v1/god-mode/GetConfig': {
         get: {
             res: {
                 /**
@@ -6124,7 +6124,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetContentFinders': {
+    '/umbraco/management/api/v1/god-mode/GetContentFinders': {
         get: {
             res: {
                 /**
@@ -6142,7 +6142,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetContentPaged': {
+    '/umbraco/management/api/v1/god-mode/GetContentPaged': {
         get: {
             req: {
                 alias?: string;
@@ -6173,7 +6173,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetContentTypeAliases': {
+    '/umbraco/management/api/v1/god-mode/GetContentTypeAliases': {
         get: {
             res: {
                 /**
@@ -6191,7 +6191,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetContentTypeMap': {
+    '/umbraco/management/api/v1/god-mode/GetContentTypeMap': {
         get: {
             res: {
                 /**
@@ -6209,7 +6209,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetContentUsageData': {
+    '/umbraco/management/api/v1/god-mode/GetContentUsageData': {
         get: {
             req: {
                 id?: number;
@@ -6231,7 +6231,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetDataTypes': {
+    '/umbraco/management/api/v1/god-mode/GetDataTypes': {
         get: {
             res: {
                 /**
@@ -6249,7 +6249,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetDataTypesStatus': {
+    '/umbraco/management/api/v1/god-mode/GetDataTypesStatus': {
         get: {
             res: {
                 /**
@@ -6267,7 +6267,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetEnvironmentDiagnostics': {
+    '/umbraco/management/api/v1/god-mode/GetEnvironmentDiagnostics': {
         get: {
             res: {
                 /**
@@ -6285,7 +6285,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetInterfacesFrom': {
+    '/umbraco/management/api/v1/god-mode/GetInterfacesFrom': {
         get: {
             req: {
                 assembly?: string;
@@ -6306,7 +6306,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetLanguages': {
+    '/umbraco/management/api/v1/god-mode/GetLanguages': {
         get: {
             res: {
                 /**
@@ -6324,7 +6324,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetMedia': {
+    '/umbraco/management/api/v1/god-mode/GetMedia': {
         get: {
             req: {
                 id?: number;
@@ -6351,7 +6351,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetMediaTypes': {
+    '/umbraco/management/api/v1/god-mode/GetMediaTypes': {
         get: {
             res: {
                 /**
@@ -6369,7 +6369,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetMemberGroups': {
+    '/umbraco/management/api/v1/god-mode/GetMemberGroups': {
         get: {
             res: {
                 /**
@@ -6387,7 +6387,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetMembersPaged': {
+    '/umbraco/management/api/v1/god-mode/GetMembersPaged': {
         get: {
             req: {
                 groupId?: number;
@@ -6412,7 +6412,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetNonMsAssemblies': {
+    '/umbraco/management/api/v1/god-mode/GetNonMsAssemblies': {
         get: {
             res: {
                 /**
@@ -6430,7 +6430,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetNuCacheItem': {
+    '/umbraco/management/api/v1/god-mode/GetNuCacheItem': {
         get: {
             req: {
                 id?: number;
@@ -6451,7 +6451,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetNuCacheType': {
+    '/umbraco/management/api/v1/god-mode/GetNuCacheType': {
         get: {
             res: {
                 /**
@@ -6469,7 +6469,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetOrphanedTags': {
+    '/umbraco/management/api/v1/god-mode/GetOrphanedTags': {
         get: {
             res: {
                 /**
@@ -6487,7 +6487,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetPropertyEditors': {
+    '/umbraco/management/api/v1/god-mode/GetPropertyEditors': {
         get: {
             res: {
                 /**
@@ -6505,7 +6505,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetPropertyGroups': {
+    '/umbraco/management/api/v1/god-mode/GetPropertyGroups': {
         get: {
             res: {
                 /**
@@ -6523,7 +6523,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetPropertyValueConverters': {
+    '/umbraco/management/api/v1/god-mode/GetPropertyValueConverters': {
         get: {
             res: {
                 /**
@@ -6541,7 +6541,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetPublishedContentModels': {
+    '/umbraco/management/api/v1/god-mode/GetPublishedContentModels': {
         get: {
             res: {
                 /**
@@ -6559,7 +6559,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetRegisteredServices': {
+    '/umbraco/management/api/v1/god-mode/GetRegisteredServices': {
         get: {
             res: {
                 /**
@@ -6577,7 +6577,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetRenderMvcControllers': {
+    '/umbraco/management/api/v1/god-mode/GetRenderMvcControllers': {
         get: {
             res: {
                 /**
@@ -6595,7 +6595,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetStandardContentTypeAliases': {
+    '/umbraco/management/api/v1/god-mode/GetStandardContentTypeAliases': {
         get: {
             res: {
                 /**
@@ -6613,7 +6613,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetSurfaceControllers': {
+    '/umbraco/management/api/v1/god-mode/GetSurfaceControllers': {
         get: {
             res: {
                 /**
@@ -6631,7 +6631,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetTagHelpers': {
+    '/umbraco/management/api/v1/god-mode/GetTagHelpers': {
         get: {
             res: {
                 /**
@@ -6649,7 +6649,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetTagMapping': {
+    '/umbraco/management/api/v1/god-mode/GetTagMapping': {
         get: {
             res: {
                 /**
@@ -6667,7 +6667,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetTemplates': {
+    '/umbraco/management/api/v1/god-mode/GetTemplates': {
         get: {
             res: {
                 /**
@@ -6685,7 +6685,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetTemplateUrlsToPing': {
+    '/umbraco/management/api/v1/god-mode/GetTemplateUrlsToPing': {
         get: {
             res: {
                 /**
@@ -6703,7 +6703,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetTypesAssignableFrom': {
+    '/umbraco/management/api/v1/god-mode/GetTypesAssignableFrom': {
         get: {
             req: {
                 baseType?: string;
@@ -6724,7 +6724,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetTypesFrom': {
+    '/umbraco/management/api/v1/god-mode/GetTypesFrom': {
         get: {
             req: {
                 assembly?: string;
@@ -6745,7 +6745,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetUmbracoAssemblies': {
+    '/umbraco/management/api/v1/god-mode/GetUmbracoAssemblies': {
         get: {
             res: {
                 /**
@@ -6763,7 +6763,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetUrlProviders': {
+    '/umbraco/management/api/v1/god-mode/GetUrlProviders': {
         get: {
             res: {
                 /**
@@ -6781,7 +6781,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetUrlsToPing': {
+    '/umbraco/management/api/v1/god-mode/GetUrlsToPing': {
         get: {
             req: {
                 culture?: string;
@@ -6802,7 +6802,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/GetViewComponents': {
+    '/umbraco/management/api/v1/god-mode/GetViewComponents': {
         get: {
             res: {
                 /**
@@ -6820,7 +6820,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/PurgeMediaCache': {
+    '/umbraco/management/api/v1/god-mode/PurgeMediaCache': {
         post: {
             res: {
                 /**
@@ -6838,7 +6838,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/umbraco/management/api/v1/GodMode/RestartAppPool': {
+    '/umbraco/management/api/v1/god-mode/RestartAppPool': {
         post: {
             res: {
                 /**

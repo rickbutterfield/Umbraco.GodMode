@@ -1,15 +1,10 @@
-import { tryExecuteAndNotify as G } from "@umbraco-cms/backoffice/resources";
-import { html as U, css as $, state as T, customElement as j } from "@umbraco-cms/backoffice/external/lit";
-import { UmbLitElement as B } from "@umbraco-cms/backoffice/lit-element";
-import { O as o } from "./index-CV1Q42C5.js";
-import { UMB_NOTIFICATION_CONTEXT as F } from "@umbraco-cms/backoffice/notification";
-import { UmbLanguageCollectionRepository as H } from "@umbraco-cms/backoffice/language";
-class R extends Error {
-  constructor(e, r, a) {
-    super(a), this.name = "ApiError", this.url = r.url, this.status = r.status, this.statusText = r.statusText, this.body = r.body, this.request = e;
+import { O as r } from "./index-c6_iC_zC.js";
+class G extends Error {
+  constructor(e, a, s) {
+    super(s), this.name = "ApiError", this.url = a.url, this.status = a.status, this.statusText = a.statusText, this.body = a.body, this.request = e;
   }
 }
-class L extends Error {
+class A extends Error {
   constructor(e) {
     super(e), this.name = "CancelError";
   }
@@ -17,16 +12,16 @@ class L extends Error {
     return !0;
   }
 }
-class W {
+class f {
   constructor(e) {
-    this._isResolved = !1, this._isRejected = !1, this._isCancelled = !1, this.cancelHandlers = [], this.promise = new Promise((r, a) => {
-      this._resolve = r, this._reject = a;
-      const s = (u) => {
-        this._isResolved || this._isRejected || this._isCancelled || (this._isResolved = !0, this._resolve && this._resolve(u));
-      }, i = (u) => {
-        this._isResolved || this._isRejected || this._isCancelled || (this._isRejected = !0, this._reject && this._reject(u));
-      }, c = (u) => {
-        this._isResolved || this._isRejected || this._isCancelled || this.cancelHandlers.push(u);
+    this._isResolved = !1, this._isRejected = !1, this._isCancelled = !1, this.cancelHandlers = [], this.promise = new Promise((a, s) => {
+      this._resolve = a, this._reject = s;
+      const n = (d) => {
+        this._isResolved || this._isRejected || this._isCancelled || (this._isResolved = !0, this._resolve && this._resolve(d));
+      }, i = (d) => {
+        this._isResolved || this._isRejected || this._isCancelled || (this._isRejected = !0, this._reject && this._reject(d));
+      }, c = (d) => {
+        this._isResolved || this._isRejected || this._isCancelled || this.cancelHandlers.push(d);
       };
       return Object.defineProperty(c, "isResolved", {
         get: () => this._isResolved
@@ -34,14 +29,14 @@ class W {
         get: () => this._isRejected
       }), Object.defineProperty(c, "isCancelled", {
         get: () => this._isCancelled
-      }), e(s, i, c);
+      }), e(n, i, c);
     });
   }
   get [Symbol.toStringTag]() {
     return "Cancellable Promise";
   }
-  then(e, r) {
-    return this.promise.then(e, r);
+  then(e, a) {
+    return this.promise.then(e, a);
   }
   catch(e) {
     return this.promise.catch(e);
@@ -59,91 +54,91 @@ class W {
           console.warn("Cancellation threw an error", e);
           return;
         }
-      this.cancelHandlers.length = 0, this._reject && this._reject(new L("Request aborted"));
+      this.cancelHandlers.length = 0, this._reject && this._reject(new A("Request aborted"));
     }
   }
   get isCancelled() {
     return this._isCancelled;
   }
 }
-const M = (t) => typeof t == "string", f = (t) => M(t) && t !== "", k = (t) => t instanceof Blob, S = (t) => t instanceof FormData, z = (t) => {
+const m = (t) => typeof t == "string", g = (t) => m(t) && t !== "", l = (t) => t instanceof Blob, b = (t) => t instanceof FormData, q = (t) => {
   try {
     return btoa(t);
   } catch {
     return Buffer.from(t).toString("base64");
   }
-}, J = (t) => {
-  const e = [], r = (s, i) => {
-    e.push(`${encodeURIComponent(s)}=${encodeURIComponent(String(i))}`);
-  }, a = (s, i) => {
-    i != null && (Array.isArray(i) ? i.forEach((c) => a(s, c)) : typeof i == "object" ? Object.entries(i).forEach(([c, u]) => a(`${s}[${c}]`, u)) : r(s, i));
+}, E = (t) => {
+  const e = [], a = (n, i) => {
+    e.push(`${encodeURIComponent(n)}=${encodeURIComponent(String(i))}`);
+  }, s = (n, i) => {
+    i != null && (Array.isArray(i) ? i.forEach((c) => s(n, c)) : typeof i == "object" ? Object.entries(i).forEach(([c, d]) => s(`${n}[${c}]`, d)) : a(n, i));
   };
-  return Object.entries(t).forEach(([s, i]) => a(s, i)), e.length ? `?${e.join("&")}` : "";
-}, K = (t, e) => {
-  const r = t.ENCODE_PATH || encodeURI, a = e.url.replace("{api-version}", t.VERSION).replace(/{(.*?)}/g, (i, c) => {
-    var u;
-    return (u = e.path) != null && u.hasOwnProperty(c) ? r(String(e.path[c])) : i;
-  }), s = t.BASE + a;
-  return e.query ? s + J(e.query) : s;
-}, Q = (t) => {
+  return Object.entries(t).forEach(([n, i]) => s(n, i)), e.length ? `?${e.join("&")}` : "";
+}, C = (t, e) => {
+  const a = t.ENCODE_PATH || encodeURI, s = e.url.replace("{api-version}", t.VERSION).replace(/{(.*?)}/g, (i, c) => {
+    var d;
+    return (d = e.path) != null && d.hasOwnProperty(c) ? a(String(e.path[c])) : i;
+  }), n = t.BASE + s;
+  return e.query ? n + E(e.query) : n;
+}, U = (t) => {
   if (t.formData) {
-    const e = new FormData(), r = (a, s) => {
-      M(s) || k(s) ? e.append(a, s) : e.append(a, JSON.stringify(s));
+    const e = new FormData(), a = (s, n) => {
+      m(n) || l(n) ? e.append(s, n) : e.append(s, JSON.stringify(n));
     };
-    return Object.entries(t.formData).filter(([, a]) => a != null).forEach(([a, s]) => {
-      Array.isArray(s) ? s.forEach((i) => r(a, i)) : r(a, s);
+    return Object.entries(t.formData).filter(([, s]) => s != null).forEach(([s, n]) => {
+      Array.isArray(n) ? n.forEach((i) => a(s, i)) : a(s, n);
     }), e;
   }
-}, v = async (t, e) => typeof e == "function" ? e(t) : e, X = async (t, e) => {
-  const [r, a, s, i] = await Promise.all([
-    v(e, t.TOKEN),
-    v(e, t.USERNAME),
-    v(e, t.PASSWORD),
-    v(e, t.HEADERS)
+}, p = async (t, e) => typeof e == "function" ? e(t) : e, V = async (t, e) => {
+  const [a, s, n, i] = await Promise.all([
+    p(e, t.TOKEN),
+    p(e, t.USERNAME),
+    p(e, t.PASSWORD),
+    p(e, t.HEADERS)
   ]), c = Object.entries({
     Accept: "application/json",
     ...i,
     ...e.headers
-  }).filter(([, u]) => u != null).reduce((u, [p, h]) => ({
-    ...u,
-    [p]: String(h)
+  }).filter(([, d]) => d != null).reduce((d, [h, u]) => ({
+    ...d,
+    [h]: String(u)
   }), {});
-  if (f(r) && (c.Authorization = `Bearer ${r}`), f(a) && f(s)) {
-    const u = z(`${a}:${s}`);
-    c.Authorization = `Basic ${u}`;
+  if (g(a) && (c.Authorization = `Bearer ${a}`), g(s) && g(n)) {
+    const d = q(`${s}:${n}`);
+    c.Authorization = `Basic ${d}`;
   }
-  return e.body !== void 0 && (e.mediaType ? c["Content-Type"] = e.mediaType : k(e.body) ? c["Content-Type"] = e.body.type || "application/octet-stream" : M(e.body) ? c["Content-Type"] = "text/plain" : S(e.body) || (c["Content-Type"] = "application/json")), new Headers(c);
-}, Y = (t) => {
-  var e, r;
+  return e.body !== void 0 && (e.mediaType ? c["Content-Type"] = e.mediaType : l(e.body) ? c["Content-Type"] = e.body.type || "application/octet-stream" : m(e.body) ? c["Content-Type"] = "text/plain" : b(e.body) || (c["Content-Type"] = "application/json")), new Headers(c);
+}, k = (t) => {
+  var e, a;
   if (t.body !== void 0)
-    return (e = t.mediaType) != null && e.includes("application/json") || (r = t.mediaType) != null && r.includes("+json") ? JSON.stringify(t.body) : M(t.body) || k(t.body) || S(t.body) ? t.body : JSON.stringify(t.body);
-}, Z = async (t, e, r, a, s, i, c) => {
-  const u = new AbortController();
-  let p = {
+    return (e = t.mediaType) != null && e.includes("application/json") || (a = t.mediaType) != null && a.includes("+json") ? JSON.stringify(t.body) : m(t.body) || l(t.body) || b(t.body) ? t.body : JSON.stringify(t.body);
+}, R = async (t, e, a, s, n, i, c) => {
+  const d = new AbortController();
+  let h = {
     headers: i,
-    body: a ?? s,
+    body: s ?? n,
     method: e.method,
-    signal: u.signal
+    signal: d.signal
   };
-  t.WITH_CREDENTIALS && (p.credentials = t.CREDENTIALS);
-  for (const h of t.interceptors.request._fns)
-    p = await h(p);
-  return c(() => u.abort()), await fetch(r, p);
-}, ee = (t, e) => {
+  t.WITH_CREDENTIALS && (h.credentials = t.CREDENTIALS);
+  for (const u of t.interceptors.request._fns)
+    h = await u(h);
+  return c(() => d.abort()), await fetch(a, h);
+}, S = (t, e) => {
   if (e) {
-    const r = t.headers.get(e);
-    if (M(r))
-      return r;
+    const a = t.headers.get(e);
+    if (m(a))
+      return a;
   }
-}, te = async (t) => {
+}, P = async (t) => {
   if (t.status !== 204)
     try {
       const e = t.headers.get("Content-Type");
       if (e) {
-        const r = ["application/octet-stream", "application/pdf", "application/zip", "audio/", "image/", "video/"];
+        const a = ["application/octet-stream", "application/pdf", "application/zip", "audio/", "image/", "video/"];
         if (e.includes("application/json") || e.includes("+json"))
           return await t.json();
-        if (r.some((a) => e.includes(a)))
+        if (a.some((s) => e.includes(s)))
           return await t.blob();
         if (e.includes("multipart/form-data"))
           return await t.formData();
@@ -153,8 +148,8 @@ const M = (t) => typeof t == "string", f = (t) => M(t) && t !== "", k = (t) => t
     } catch (e) {
       console.error(e);
     }
-}, re = (t, e) => {
-  const a = {
+}, _ = (t, e) => {
+  const s = {
     400: "Bad Request",
     401: "Unauthorized",
     402: "Payment Required",
@@ -197,43 +192,43 @@ const M = (t) => typeof t == "string", f = (t) => M(t) && t !== "", k = (t) => t
     511: "Network Authentication Required",
     ...t.errors
   }[e.status];
-  if (a)
-    throw new R(t, e, a);
+  if (s)
+    throw new G(t, e, s);
   if (!e.ok) {
-    const s = e.status ?? "unknown", i = e.statusText ?? "unknown", c = (() => {
+    const n = e.status ?? "unknown", i = e.statusText ?? "unknown", c = (() => {
       try {
         return JSON.stringify(e.body, null, 2);
       } catch {
         return;
       }
     })();
-    throw new R(
+    throw new G(
       t,
       e,
-      `Generic Error: status: ${s}; status text: ${i}; body: ${c}`
+      `Generic Error: status: ${n}; status text: ${i}; body: ${c}`
     );
   }
-}, n = (t, e) => new W(async (r, a, s) => {
+}, o = (t, e) => new f(async (a, s, n) => {
   try {
-    const i = K(t, e), c = Q(e), u = Y(e), p = await X(t, e);
-    if (!s.isCancelled) {
-      let h = await Z(t, e, i, u, c, p, s);
-      for (const N of t.interceptors.response._fns)
-        h = await N(h);
-      const D = await te(h), x = ee(h, e.responseHeader), P = {
+    const i = C(t, e), c = U(e), d = k(e), h = await V(t, e);
+    if (!n.isCancelled) {
+      let u = await R(t, e, i, d, c, h, n);
+      for (const v of t.interceptors.response._fns)
+        u = await v(u);
+      const y = await P(u), M = S(u, e.responseHeader), T = {
         url: i,
-        ok: h.ok,
-        status: h.status,
-        statusText: h.statusText,
-        body: x ?? D
+        ok: u.ok,
+        status: u.status,
+        statusText: u.statusText,
+        body: M ?? y
       };
-      re(e, P), r(P.body);
+      _(e, T), a(T.body);
     }
   } catch (i) {
-    a(i);
+    s(i);
   }
 });
-class b {
+class j {
   /**
    * @param data The data for the request.
    * @param data.cache
@@ -241,9 +236,9 @@ class b {
    * @throws ApiError
    */
   static postUmbracoManagementApiV1GodModeClearUmbracoCache(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "POST",
-      url: "/umbraco/management/api/v1/GodMode/ClearUmbracoCache",
+      url: "/umbraco/management/api/v1/god-mode/ClearUmbracoCache",
       query: {
         cache: e.cache
       },
@@ -260,9 +255,9 @@ class b {
    * @throws ApiError
    */
   static postUmbracoManagementApiV1GodModeCopyDataType(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "POST",
-      url: "/umbraco/management/api/v1/GodMode/copyDataType",
+      url: "/umbraco/management/api/v1/god-mode/CopyDataType",
       query: {
         id: e.id
       },
@@ -279,9 +274,9 @@ class b {
    * @throws ApiError
    */
   static postUmbracoManagementApiV1GodModeDeleteTag(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "POST",
-      url: "/umbraco/management/api/v1/GodMode/DeleteTag",
+      url: "/umbraco/management/api/v1/god-mode/DeleteTag",
       query: {
         id: e.id
       },
@@ -296,9 +291,9 @@ class b {
    * @throws ApiError
    */
   static postUmbracoManagementApiV1GodModeFixTemplateMasters() {
-    return n(o, {
+    return o(r, {
       method: "POST",
-      url: "/umbraco/management/api/v1/GodMode/FixTemplateMasters",
+      url: "/umbraco/management/api/v1/god-mode/FixTemplateMasters",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -310,9 +305,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetApiControllers() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetApiControllers",
+      url: "/umbraco/management/api/v1/god-mode/GetApiControllers",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -324,9 +319,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetAssemblies() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetAssemblies",
+      url: "/umbraco/management/api/v1/god-mode/GetAssemblies",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -338,9 +333,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetAssembliesWithInterfaces() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetAssembliesWithInterfaces",
+      url: "/umbraco/management/api/v1/god-mode/GetAssembliesWithInterfaces",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -352,9 +347,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetComposers() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetComposers",
+      url: "/umbraco/management/api/v1/god-mode/GetComposers",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -366,9 +361,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetCompositions() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetCompositions",
+      url: "/umbraco/management/api/v1/god-mode/GetCompositions",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -380,9 +375,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetConfig() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetConfig",
+      url: "/umbraco/management/api/v1/god-mode/GetConfig",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -394,9 +389,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetContentFinders() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetContentFinders",
+      url: "/umbraco/management/api/v1/god-mode/GetContentFinders",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -420,9 +415,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetContentPaged(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetContentPaged",
+      url: "/umbraco/management/api/v1/god-mode/GetContentPaged",
       query: {
         page: e.page,
         pageSize: e.pageSize,
@@ -447,9 +442,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetContentTypeAliases() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetContentTypeAliases",
+      url: "/umbraco/management/api/v1/god-mode/GetContentTypeAliases",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -461,9 +456,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetContentTypeMap() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetContentTypeMap",
+      url: "/umbraco/management/api/v1/god-mode/GetContentTypeMap",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -478,9 +473,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetContentUsageData(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetContentUsageData",
+      url: "/umbraco/management/api/v1/god-mode/GetContentUsageData",
       query: {
         id: e.id,
         orderBy: e.orderBy
@@ -496,9 +491,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetDataTypes() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetDataTypes",
+      url: "/umbraco/management/api/v1/god-mode/GetDataTypes",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -510,9 +505,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetDataTypesStatus() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetDataTypesStatus",
+      url: "/umbraco/management/api/v1/god-mode/GetDataTypesStatus",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -524,9 +519,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetEnvironmentDiagnostics() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetEnvironmentDiagnostics",
+      url: "/umbraco/management/api/v1/god-mode/GetEnvironmentDiagnostics",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -540,9 +535,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetInterfacesFrom(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetInterfacesFrom",
+      url: "/umbraco/management/api/v1/god-mode/GetInterfacesFrom",
       query: {
         assembly: e.assembly
       },
@@ -557,9 +552,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetLanguages() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetLanguages",
+      url: "/umbraco/management/api/v1/god-mode/GetLanguages",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -579,9 +574,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetMedia(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetMedia",
+      url: "/umbraco/management/api/v1/god-mode/GetMedia",
       query: {
         page: e.page,
         pageSize: e.pageSize,
@@ -602,9 +597,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetMediaTypes() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetMediaTypes",
+      url: "/umbraco/management/api/v1/god-mode/GetMediaTypes",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -616,9 +611,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetMemberGroups() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetMemberGroups",
+      url: "/umbraco/management/api/v1/god-mode/GetMemberGroups",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -636,9 +631,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetMembersPaged(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetMembersPaged",
+      url: "/umbraco/management/api/v1/god-mode/GetMembersPaged",
       query: {
         page: e.page,
         pageSize: e.pageSize,
@@ -657,9 +652,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetNonMsAssemblies() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetNonMsAssemblies",
+      url: "/umbraco/management/api/v1/god-mode/GetNonMsAssemblies",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -673,9 +668,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetNuCacheItem(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetNuCacheItem",
+      url: "/umbraco/management/api/v1/god-mode/GetNuCacheItem",
       query: {
         id: e.id
       },
@@ -690,9 +685,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetNuCacheType() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetNuCacheType",
+      url: "/umbraco/management/api/v1/god-mode/GetNuCacheType",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -704,9 +699,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetOrphanedTags() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetOrphanedTags",
+      url: "/umbraco/management/api/v1/god-mode/GetOrphanedTags",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -718,9 +713,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetPropertyEditors() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetPropertyEditors",
+      url: "/umbraco/management/api/v1/god-mode/GetPropertyEditors",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -732,9 +727,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetPropertyGroups() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetPropertyGroups",
+      url: "/umbraco/management/api/v1/god-mode/GetPropertyGroups",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -746,9 +741,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetPropertyValueConverters() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetPropertyValueConverters",
+      url: "/umbraco/management/api/v1/god-mode/GetPropertyValueConverters",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -760,9 +755,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetPublishedContentModels() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetPublishedContentModels",
+      url: "/umbraco/management/api/v1/god-mode/GetPublishedContentModels",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -774,9 +769,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetRegisteredServices() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetRegisteredServices",
+      url: "/umbraco/management/api/v1/god-mode/GetRegisteredServices",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -788,9 +783,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetRenderMvcControllers() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetRenderMvcControllers",
+      url: "/umbraco/management/api/v1/god-mode/GetRenderMvcControllers",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -802,9 +797,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetStandardContentTypeAliases() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetStandardContentTypeAliases",
+      url: "/umbraco/management/api/v1/god-mode/GetStandardContentTypeAliases",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -816,9 +811,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetSurfaceControllers() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetSurfaceControllers",
+      url: "/umbraco/management/api/v1/god-mode/GetSurfaceControllers",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -830,9 +825,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetTagHelpers() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetTagHelpers",
+      url: "/umbraco/management/api/v1/god-mode/GetTagHelpers",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -844,9 +839,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetTagMapping() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetTagMapping",
+      url: "/umbraco/management/api/v1/god-mode/GetTagMapping",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -858,9 +853,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetTemplates() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetTemplates",
+      url: "/umbraco/management/api/v1/god-mode/GetTemplates",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -872,9 +867,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetTemplateUrlsToPing() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetTemplateUrlsToPing",
+      url: "/umbraco/management/api/v1/god-mode/GetTemplateUrlsToPing",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -888,9 +883,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetTypesAssignableFrom(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetTypesAssignableFrom",
+      url: "/umbraco/management/api/v1/god-mode/GetTypesAssignableFrom",
       query: {
         baseType: e.baseType
       },
@@ -907,9 +902,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetTypesFrom(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetTypesFrom",
+      url: "/umbraco/management/api/v1/god-mode/GetTypesFrom",
       query: {
         assembly: e.assembly
       },
@@ -924,9 +919,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetUmbracoAssemblies() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetUmbracoAssemblies",
+      url: "/umbraco/management/api/v1/god-mode/GetUmbracoAssemblies",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -938,9 +933,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetUrlProviders() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetUrlProviders",
+      url: "/umbraco/management/api/v1/god-mode/GetUrlProviders",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -954,9 +949,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetUrlsToPing(e = {}) {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetUrlsToPing",
+      url: "/umbraco/management/api/v1/god-mode/GetUrlsToPing",
       query: {
         culture: e.culture
       },
@@ -971,9 +966,9 @@ class b {
    * @throws ApiError
    */
   static getUmbracoManagementApiV1GodModeGetViewComponents() {
-    return n(o, {
+    return o(r, {
       method: "GET",
-      url: "/umbraco/management/api/v1/GodMode/GetViewComponents",
+      url: "/umbraco/management/api/v1/god-mode/GetViewComponents",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -985,9 +980,9 @@ class b {
    * @throws ApiError
    */
   static postUmbracoManagementApiV1GodModePurgeMediaCache() {
-    return n(o, {
+    return o(r, {
       method: "POST",
-      url: "/umbraco/management/api/v1/GodMode/PurgeMediaCache",
+      url: "/umbraco/management/api/v1/god-mode/PurgeMediaCache",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -999,9 +994,9 @@ class b {
    * @throws ApiError
    */
   static postUmbracoManagementApiV1GodModeRestartAppPool() {
-    return n(o, {
+    return o(r, {
       method: "POST",
-      url: "/umbraco/management/api/v1/GodMode/RestartAppPool",
+      url: "/umbraco/management/api/v1/god-mode/RestartAppPool",
       errors: {
         401: "The resource is protected and requires an authentication token",
         403: "The authenticated user do not have access to this resource"
@@ -1009,205 +1004,7 @@ class b {
     });
   }
 }
-var ae = Object.defineProperty, oe = Object.getOwnPropertyDescriptor, g = (t, e, r, a) => {
-  for (var s = a > 1 ? void 0 : a ? oe(e, r) : e, i = t.length - 1, c; i >= 0; i--)
-    (c = t[i]) && (s = (a ? c(e, r, s) : c(s)) || s);
-  return a && s && ae(e, r, s), s;
-}, q = (t, e, r) => {
-  if (!e.has(t))
-    throw TypeError("Cannot " + r);
-}, m = (t, e, r) => (q(t, e, "read from private field"), r ? r.call(t) : e.get(t)), y = (t, e, r) => {
-  if (e.has(t))
-    throw TypeError("Cannot add the same private member more than once");
-  e instanceof WeakSet ? e.add(t) : e.set(t, r);
-}, ne = (t, e, r, a) => (q(t, e, "write to private field"), a ? a.call(t, r) : e.set(t, r), r), C = (t, e, r) => (q(t, e, "access private method"), r), d, _, A, V, w, O, E, I;
-let l = class extends B {
-  constructor() {
-    super(), y(this, A), y(this, w), y(this, E), y(this, d, void 0), y(this, _, new H(this)), this._languages = [], this._cultures = [], this._selectedCulture = "", this.warmingUp = !1, this.warmUpCurrentUrl = "", this.warmUpCurrent = 1, this.warmUpCount = 0, this.consumeContext(F, (t) => {
-      ne(this, d, t);
-    }), C(this, A, V).call(this);
-  }
-  async clearUmbracoCache(t) {
-    var r, a, s;
-    const { data: e } = await G(this, b.postUmbracoManagementApiV1GodModeClearUmbracoCache({ cache: t }));
-    e && e.message && (e.responseType === "Error" ? (r = m(this, d)) == null || r.peek("danger", { data: { message: e.message } }) : e.responseType === "Success" ? (a = m(this, d)) == null || a.peek("positive", { data: { message: e.message } }) : e.responseType === "Warning" && ((s = m(this, d)) == null || s.peek("warning", { data: { message: e.message } })));
-  }
-  async purgeMediaCache() {
-    var t, e, r;
-    if (window.confirm("This will attempt to delete all the cached image crops on disk in the TEMP/MediaCache. IO operations can sometimes fail. Are you sure?")) {
-      const { data: a } = await G(this, b.postUmbracoManagementApiV1GodModePurgeMediaCache());
-      a && a.message && (a.responseType === "Error" ? (t = m(this, d)) == null || t.peek("danger", { data: { message: a.message } }) : a.responseType === "Success" ? (e = m(this, d)) == null || e.peek("positive", { data: { message: a.message } }) : a.responseType === "Warning" && ((r = m(this, d)) == null || r.peek("warning", { data: { message: a.message } })));
-    }
-  }
-  async restartAppPool() {
-    var t, e, r;
-    if (window.confirm("This will take the site offline (and won't restart it). Are you really, really, really sure?")) {
-      const { data: a } = await G(this, b.postUmbracoManagementApiV1GodModeRestartAppPool());
-      a && a.message && (a.responseType === "Error" ? (t = m(this, d)) == null || t.peek("danger", { data: { message: a.message } }) : a.responseType === "Success" ? (e = m(this, d)) == null || e.peek("positive", { data: { message: a.message } }) : a.responseType === "Warning" && ((r = m(this, d)) == null || r.peek("warning", { data: { message: a.message } })));
-    }
-  }
-  async warmUpTemplates() {
-    const { data: t } = await G(this, b.getUmbracoManagementApiV1GodModeGetTemplateUrlsToPing());
-    t && await this._pingUrls(t);
-  }
-  async pingUrls() {
-    const { data: t } = await G(this, b.getUmbracoManagementApiV1GodModeGetUrlsToPing({ culture: this._selectedCulture }));
-    t && await this._pingUrls(t);
-  }
-  async _pingUrls(t) {
-    var e;
-    this.warmingUp = !0, this.warmUpCount = t.length, this.warmUpCount === 0 && ((e = m(this, d)) == null || e.peek("warning", { data: { message: "THe URL list was empty..." } })), t.forEach(async (r) => {
-      this.warmingUp = !0, this.warmUpCurrentUrl = r, (await fetch(r)).ok ? this.warmUpCurrent++ : this.warmUpCurrent++, this.warmUpCurrent === this.warmUpCount && (this.warmingUp = !1);
-    });
-  }
-  render() {
-    return U`
-            <umb-body-layout>
-                <godmode-header name="Utility Browser" slot="header"></godmode-header>
-                <uui-box headline="Caches">
-                    <div class="grid">
-                        <div>
-                            <uui-button type="button" look="primary" color="warning" label="Clear Request Cache" @click=${() => this.clearUmbracoCache("Request")}>
-                                <uui-icon name="icon-delete"></uui-icon> Clear Request Cache
-                            </uui-button>
-                        </div>
-
-                        <div>
-                            <uui-button type="button" look="primary" color="warning" label="Clear Runtime Cache" @click=${() => this.clearUmbracoCache("Runtime")}>
-                                <uui-icon name="icon-delete"></uui-icon> Clear Runtime Cache
-                            </uui-button>
-                        </div>
-
-                        <div>
-                            <uui-button type="button" look="primary" color="warning" label="Clear Isolated Cache" @click=${() => this.clearUmbracoCache("Isolated")}>
-                                <uui-icon name="icon-delete"></uui-icon> Clear Isolated Cache
-                            </uui-button>
-                        </div>
-
-                        <div>
-                            <uui-button type="button" look="primary" color="warning" label="Clear Partial Cache" @click=${() => this.clearUmbracoCache("Partial")}>
-                                <uui-icon name="icon-delete"></uui-icon> Clear Partial Cache
-                            </uui-button>
-                        </div>
-
-                        <div>
-                            <uui-button type="button" look="primary" color="warning" label="Clear Other Cache" @click=${() => this.clearUmbracoCache("Other")}>
-                                <uui-icon name="icon-delete"></uui-icon> Clear Other Cache
-                            </uui-button>
-                        </div>
-
-                        <div>
-                            <uui-button type="button" look="primary" color="danger" label="Clear All Caches" @click=${() => this.clearUmbracoCache("all")}>
-                                <uui-icon name="icon-delete"></uui-icon> Clear All Caches
-                            </uui-button>
-                        </div>
-                    </div>
-                </uui-box>
-
-                <uui-box headline="TEMP Files">
-                    <div class="grid">
-                        <div>
-                            <uui-button type="button" look="primary" color="warning" label="Purge Media Cache" @click=${() => this.purgeMediaCache()}>
-                                <uui-icon name="icon-hard-drive"></uui-icon> Purge Media Cache
-                            </uui-button>
-                        </div>
-                    </div>
-                </uui-box>
-
-                <uui-box headline="Application">
-                    <div class="grid">
-                        <div>
-                            <uui-button type="button" look="primary" color="danger" label="Stop Application" @click=${() => this.restartAppPool()}>
-                                <uui-icon name="icon-scull"></uui-icon> Stop Application
-                            </uui-button>
-                        </div>
-                        <div>
-                            <uui-button type="button" look="primary" color="default" label="Warm-Up Templates" @click=${() => this.warmUpTemplates()}>
-                                <uui-icon name="icon-server"></uui-icon> Warm-Up Templates
-                            </uui-button>
-                        </div>
-                        <div>
-                            <uui-button type="button" look="primary" color="default" label="Ping URLs" @click=${() => this.pingUrls()}>
-                                <uui-icon name="icon-server"></uui-icon> Ping URLs
-                            </uui-button>
-                            <uui-select
-                                placeholder="No culture"
-                                .options=${this._cultures}
-                                @change=${C(this, w, O)}>
-                            </uui-select>
-                        </div>
-                    </div>
-                </uui-box>
-
-                ${C(this, E, I).call(this)}
-            </umb-body-layout>
-        `;
-  }
-};
-d = /* @__PURE__ */ new WeakMap();
-_ = /* @__PURE__ */ new WeakMap();
-A = /* @__PURE__ */ new WeakSet();
-V = async function() {
-  const { data: t } = await m(this, _).requestCollection({});
-  if (t) {
-    this._languages = t.items;
-    const e = this._languages.map((r) => ({ name: r.name, value: r.unique }));
-    e.unshift({ name: "No culture", value: "" }), this._cultures = e;
-  }
-};
-w = /* @__PURE__ */ new WeakSet();
-O = function(t) {
-  this._selectedCulture = t.target.value;
-};
-E = /* @__PURE__ */ new WeakSet();
-I = function() {
-  return this.warmingUp ? U`
-                <uui-box>
-                    <uui-loader-bar animationDuration="1.5" style="color: black"></uui-loader-bar>
-                    <p>Warming up ${this.warmUpCurrent} of ${this.warmUpCount} - pinging URL: <a href=${this.warmUpCurrentUrl} target="_blank">${this.warmUpCurrentUrl}</a></p>
-                </uui-box>
-            ` : U``;
-};
-l.styles = [
-  $`
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
-
-            uui-box {
-                margin-bottom: 20px;
-            }
-        `
-];
-g([
-  T()
-], l.prototype, "_languages", 2);
-g([
-  T()
-], l.prototype, "_cultures", 2);
-g([
-  T()
-], l.prototype, "_selectedCulture", 2);
-g([
-  T()
-], l.prototype, "warmingUp", 2);
-g([
-  T()
-], l.prototype, "warmUpCurrentUrl", 2);
-g([
-  T()
-], l.prototype, "warmUpCurrent", 2);
-g([
-  T()
-], l.prototype, "warmUpCount", 2);
-l = g([
-  j("godmode-utility-browser")
-], l);
-const me = l;
 export {
-  l as GodModeUtilityBrowserElement,
-  me as default
+  j as G
 };
-//# sourceMappingURL=godmode-utility-browser.element-CBike_My.js.map
+//# sourceMappingURL=services.gen-DnYPQRvA.js.map

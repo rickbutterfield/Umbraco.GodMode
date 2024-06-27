@@ -46,7 +46,7 @@ namespace Diplo.GodMode.Controllers
         private readonly RegisteredServiceCollection registeredServiceCollection;
         private readonly IOptions<GodModeConfig> godModeConfig;
 
-        internal GodModeApiController(IUmbracoDataService dataService, IUmbracoDatabaseService dataBaseService, IDiagnosticService diagnosticService, IUtilitiesService utilitiesService, IHostApplicationLifetime applicationLifetime, IOptions<NuCacheSettings> nuCacheSettings, RegisteredServiceCollection registeredServiceCollection, IOptions<GodModeConfig> godModeConfig)
+        public GodModeApiController(IUmbracoDataService dataService, IUmbracoDatabaseService dataBaseService, IDiagnosticService diagnosticService, IUtilitiesService utilitiesService, IHostApplicationLifetime applicationLifetime, IOptions<NuCacheSettings> nuCacheSettings, RegisteredServiceCollection registeredServiceCollection, IOptions<GodModeConfig> godModeConfig)
         {
             this.dataService = dataService;
             this.dataBaseService = dataBaseService;
