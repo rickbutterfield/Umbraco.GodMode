@@ -1,67 +1,43 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ContentTargetFolders>.</ContentTargetFolders>
-    <Product>Diplo.GodMode</Product>
-    <PackageId>Diplo.GodMode</PackageId>
-    <Title>Diplo.GodMode</Title>
-    <Description>Diplo God Mode makes Umbraco developers invincible!</Description>
-    <PackageTags>umbraco plugin package developer-tool umbraco-marketplace</PackageTags>
-    <Version>$(VersionPrefix)</Version>
-    <VersionPrefix>13.0.0</VersionPrefix>
-    <Company>$(Authors)</Company>
-    <Copyright>Dan 'Diplo' Booth</Copyright>
-    <Authors>DanDiplo</Authors>
-    <PackageProjectUrl>https://github.com/DanDiplo/Umbraco.GodMode/</PackageProjectUrl>
-    <PackageIcon>GodModeIcon.png</PackageIcon>
-    <PackageReadmeFile>NuGet.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/DanDiplo/Umbraco.GodMode/</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>Fixed a path issue in the intro browser and minor updates.</PackageReleaseNotes>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="13.2.0" />
-    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.2.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Plugins\DiploGodMode\**">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-    </Content>
-    <None Include="build\**">
-      <Pack>true</Pack>
-      <PackagePath>buildTransitive</PackagePath>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="App_Plugins\DiploGodMode\backoffice\actions\**" />
-    <Content Remove="App_Plugins\DiploGodMode\backoffice\actions\**" />
-    <EmbeddedResource Remove="App_Plugins\DiploGodMode\backoffice\actions\**" />
-    <None Remove="App_Plugins\DiploGodMode\backoffice\actions\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Menus\DataTypeTreeNotificationHandler.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="App_Plugins\DiploGodMode\backoffice\godModeTree\serviceBrowser.html" />
-    <None Remove="App_Plugins\DiploGodMode\backoffice\Scripts\GodMode.ServiceBrowser.Controller.js" />
-    <None Remove="umbraco-marketplace.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Screenshots\Icon\GodModeIcon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="NuGet.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Menus\" />
-  </ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+		<ContentTargetFolders>.</ContentTargetFolders>
+		<Product>Diplo.GodMode</Product>
+		<PackageId>Diplo.GodMode</PackageId>
+		<Title>Diplo.GodMode</Title>
+		<Description>Diplo God Mode makes Umbraco developers invincible!</Description>
+		<PackageTags>umbraco plugin package developer-tool umbraco-marketplace</PackageTags>
+		<Version>$(VersionPrefix)</Version>
+		<VersionPrefix>14.0.0</VersionPrefix>
+		<Company>$(Authors)</Company>
+		<Copyright>Dan 'Diplo' Booth</Copyright>
+		<Authors>DanDiplo</Authors>
+		<PackageProjectUrl>https://github.com/DanDiplo/Umbraco.GodMode/</PackageProjectUrl>
+		<PackageIcon>GodModeIcon.png</PackageIcon>
+		<PackageReadmeFile>NuGet.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/DanDiplo/Umbraco.GodMode/</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReleaseNotes>Fixed a path issue in the intro browser and minor updates.</PackageReleaseNotes>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Api.Common" Version="14.0.0" />
+		<PackageReference Include="Umbraco.Cms.Api.Management" Version="14.0.0" />
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="14.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\Screenshots\Icon\GodModeIcon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="NuGet.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 </Project>

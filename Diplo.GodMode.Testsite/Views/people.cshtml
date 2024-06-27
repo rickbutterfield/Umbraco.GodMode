@@ -15,11 +15,7 @@
     }
 }
 
-@await Html.PartialAsync("SectionHeader")
-
-        <partial name="/Views/Partials/Testies.cshtml" />
-
-        <vc:bananas-list max-items="12"></vc:bananas-list>
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
 
 <section class="section">
 

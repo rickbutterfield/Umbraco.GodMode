@@ -10,6 +10,8 @@ namespace Diplo.GodMode
         /// <summary>
         /// Gets the configuration section name in appSettings
         /// </summary>
+        public const string ApiAlias = "god-mode";
+        public const string Name = "God Mode";
         public const string ConfigSectionName = "GodMode";
 
         public string[] FeaturesToHide { get; set; } = Array.Empty<string>();

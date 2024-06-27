@@ -33,6 +33,7 @@ namespace Diplo.GodMode.Testsite
                 .AddBackOffice()
                 .AddWebsite()
                 .AddComposers()
+                .AddDeliveryApi()
                 .Build();
         }
 
@@ -56,7 +57,6 @@ namespace Diplo.GodMode.Testsite
                 })
                 .WithEndpoints(u =>
                 {
-                    u.UseInstallerEndpoints();
                     u.UseBackOfficeEndpoints();
                     u.UseWebsiteEndpoints();
                 });

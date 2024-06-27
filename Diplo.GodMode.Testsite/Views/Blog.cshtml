@@ -10,17 +10,8 @@
 <section class="section">
 
     <div class="container">
-
-        <h3>Root Content List</h3>
-
-        <vc:root-content-list max-items="2"></vc:root-content-list>
-
-        @await Umbraco.RenderMacroAsync("latestBlogposts",
-            new
-            {
-                numberOfPosts = Model.HowManyPostsShouldBeShown,
-                startNodeId = Model.Id
-            })
+        @await Component.InvokeAsync("LatestBlogPosts",
+            new { numberOfPosts = Model.HowManyPostsShouldBeShown, startNodeKey = Model.Key })
     </div>
 
 </section>

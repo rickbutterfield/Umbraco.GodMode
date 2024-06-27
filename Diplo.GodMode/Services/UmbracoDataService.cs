@@ -69,7 +69,7 @@ namespace Diplo.GodMode.Services
                     Udi = ct.GetUdi().Guid,
                     Description = ct.Description,
                     VariesBy = ct.Variations,
-                    IsListView = ct.IsContainer,
+                    IsListView = ct.ListView != null,
                     IsElement = ct.IsElement,
                     AllowedAtRoot = ct.AllowedAsRoot,
                     VariesByCulture = ct.VariesByCulture(),
@@ -421,7 +421,7 @@ namespace Diplo.GodMode.Services
             {
                 var copy = new DataType(dt.Editor, this.serializer, dt.ParentId)
                 {
-                    Configuration = dt.Configuration,
+                    ConfigurationData = dt.ConfigurationData,
                     CreateDate = DateTime.Now,
                     UpdateDate = DateTime.Now,
                     DatabaseType = dt.DatabaseType,

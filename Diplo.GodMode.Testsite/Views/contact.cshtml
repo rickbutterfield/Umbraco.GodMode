@@ -1,10 +1,10 @@
-﻿@using Umbraco.SampleSite;
+﻿@using Umbraco.SampleSite.Models
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Contact>
 @{
     Layout = "master.cshtml";
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+@await Html.PartialAsync("~/Views/Partials/SectionHeader.cshtml")
 <section class="section">
     <div class="container">
 

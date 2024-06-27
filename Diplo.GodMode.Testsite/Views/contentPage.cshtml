@@ -5,7 +5,7 @@
     Layout = "master.cshtml";
 }
 
-<partial name="/Views/Partials/SectionHeader.cshtml" />
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
 
 <section class="section">
 
@@ -13,23 +13,17 @@
 
         <div class="col-md-3">
             <nav class="nav-bar nav-bar--list">
-
-                <partial name="Navigation/SubNavigation"></partial>
-
-                @await Component.InvokeAsync("RootContentList", new { maxItems = 3 })
-
-                <vc:bananas-list></vc:bananas-list>
-
-
-
+                @Html.Partial("~/Views/Partials/Navigation/SubNavigation.cshtml")
             </nav>
         </div>
 
         <div class="col-md-9">
             <article>
-                @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
+                @await Html.GetBlockGridHtmlAsync(Model, "bodyText")
             </article>
         </div>
     </div>
 
 </section>
+
+<link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-blockgrid.css")" />

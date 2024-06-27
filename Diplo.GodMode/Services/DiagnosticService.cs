@@ -16,7 +16,6 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Smidge;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Configuration;
@@ -45,7 +44,6 @@ namespace Diplo.GodMode.Services
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly IUmbracoDatabaseService databaseService;
         private readonly Microsoft.AspNetCore.Hosting.IWebHostEnvironment webHostEnvironment;
-        private readonly ISmidgeConfig smidgeConfig;
         private readonly UmbracoFeatures features;
         private readonly IConfiguration configuration;
         private readonly IServer webServer;
@@ -56,7 +54,7 @@ namespace Diplo.GodMode.Services
         public DiagnosticService(IRuntimeState runtimeState, IUmbracoVersion umbracoVersion, IUmbracoDatabaseService databaseService, 
             IServiceProvider factory, IOptions<NuCacheSettings> nuCacheSettings, IOptions<IndexCreatorSettings> indexSettings, 
             IHttpContextAccessor httpContextAccessor, IUmbracoDatabaseFactory databaseFactory, IHostingEnvironment hostingEnvironment, 
-            Microsoft.AspNetCore.Hosting.IWebHostEnvironment webHostEnvironment, Smidge.ISmidgeConfig smidgeConfig, 
+            Microsoft.AspNetCore.Hosting.IWebHostEnvironment webHostEnvironment,
             UmbracoFeatures features, IConfiguration configuration, IServer webServer, IOptions<GodModeConfig> godModeConfig)
         {
             this.runtimeState = runtimeState;
@@ -69,7 +67,6 @@ namespace Diplo.GodMode.Services
             this.hostingEnvironment = hostingEnvironment;
             this.databaseService = databaseService;
             this.webHostEnvironment = webHostEnvironment;
-            this.smidgeConfig = smidgeConfig;
             this.features = features;
             this.configuration = configuration;
             this.webServer = webServer;
@@ -157,7 +154,7 @@ namespace Diplo.GodMode.Services
 
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<UnattendedSettings>("Unattended Settings", factory));
 
-            sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<RichTextEditorSettings>("RichText Editor Settings", factory));
+            //sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<RichTextEditorSettings>("RichText Editor Settings", factory));
 
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<ContentSettings>("Content Settings", factory));
 
@@ -170,11 +167,7 @@ namespace Diplo.GodMode.Services
 
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<ExceptionFilterSettings>("Exception Filter Settings", factory));
 
-            sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<KeepAliveSettings>("Keep Alive Settings", factory));
-
-            sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<Smidge.Options.CacheControlOptions>("Smidge Cache Control", factory));
-
-            sections.Add(DiagnosticSection.AddDiagnosticSectionFrom("Smidge Config", smidgeConfig, false));
+            //sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<KeepAliveSettings>("Keep Alive Settings", factory));
 
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<BasicAuthSettings>("Basic Auth Settings", factory));
 
@@ -377,13 +370,13 @@ namespace Diplo.GodMode.Services
             section.AddDiagnosticsFrom(typeof(Umbraco.Cms.Infrastructure.HostedServices.RecurringHostedServiceBase));
             sections.Add(section);
 
-            section = new DiagnosticSection("Sections");
-            section.AddDiagnosticsFrom(typeof(Umbraco.Cms.Core.Sections.ISection));
-            sections.Add(section);
+            //section = new DiagnosticSection("Sections");
+            //section.AddDiagnosticsFrom(typeof(Umbraco.Cms.Core.Sections.ISection));
+            //sections.Add(section);
 
-            section = new DiagnosticSection("Dashboards");
-            section.AddDiagnosticsFrom(typeof(Umbraco.Cms.Core.Dashboards.IDashboard));
-            sections.Add(section);
+            //section = new DiagnosticSection("Dashboards");
+            //section.AddDiagnosticsFrom(typeof(Umbraco.Cms.Core.Dashboards.IDashboard));
+            //sections.Add(section);
 
             section = new DiagnosticSection("Middleware");
             section.AddDiagnosticsFrom(typeof(IMiddleware));
