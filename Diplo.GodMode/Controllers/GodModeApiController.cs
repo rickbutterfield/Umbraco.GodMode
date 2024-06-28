@@ -189,6 +189,7 @@ namespace Diplo.GodMode.Controllers
         /// Gets all Surface Controllers
         /// </summary>
         [HttpGet("GetSurfaceControllers")]
+        [ProducesResponseType(typeof(IEnumerable<TypeMap>), 200)]
         public IEnumerable<TypeMap> GetSurfaceControllers()
         {
             var data = ReflectionHelper.GetTypeMapFrom(typeof(SurfaceController));

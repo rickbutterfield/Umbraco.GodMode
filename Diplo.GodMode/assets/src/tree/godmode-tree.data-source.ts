@@ -141,77 +141,77 @@ const getChildrenOf = async (args: UmbTreeChildrenOfRequestArgs) => {
 				{
 					hasChildren: false,
 					name: "Surface Controllers",
-					path: "surface",
+					path: "reflectionBrowser/surface",
 					isFolder: false,
 					icon: "icon-planet"
 				},
 				{
 					hasChildren: false,
 					name: "API Controllers",
-					path: "api",
+					path: "reflectionBrowser/api",
 					isFolder: false,
 					icon: "icon-rocket"
 				},
 				{
 					hasChildren: false,
 					name: "Render Controllers",
-					path: "render",
+					path: "reflectionBrowser/render",
 					isFolder: false,
 					icon: "icon-satellite-dish"
 				},
 				{
 					hasChildren: false,
 					name: "Content Models",
-					path: "models",
+					path: "reflectionBrowser/models",
 					isFolder: false,
 					icon: "icon-binarycode"
 				},
 				{
 					hasChildren: false,
 					name: "Composers",
-					path: "composers",
+					path: "reflectionBrowser/composers",
 					isFolder: false,
 					icon: "icon-music"
 				},
 				{
 					hasChildren: false,
 					name: "Value Converters",
-					path: "converters",
+					path: "reflectionBrowser/converters",
 					isFolder: false,
 					icon: "icon-wand"
 				},
 				{
 					hasChildren: false,
 					name: "View Components",
-					path: "components",
+					path: "reflectionBrowser/components",
 					isFolder: false,
 					icon: "icon-code"
 				},
 				{
 					hasChildren: false,
 					name: "Tag Helpers",
-					path: "taghelpers",
+					path: "reflectionBrowser/taghelpers",
 					isFolder: false,
 					icon: "icon-tags"
 				},
 				{
 					hasChildren: false,
 					name: "Content Finders",
-					path: "finders",
+					path: "reflectionBrowser/finders",
 					isFolder: false,
 					icon: "icon-directions-alt"
 				},
 				{
 					hasChildren: false,
 					name: "URL Providers",
-					path: "urlproviders",
+					path: "reflectionBrowser/urlproviders",
 					isFolder: false,
 					icon: "icon-link"
 				},
 				{
 					hasChildren: false,
 					name: "Interface Browser",
-					path: "browse",
+					path: "reflectionBrowser/browse",
 					isFolder: false,
 					icon: "icon-molecular-network"
 				}

@@ -1,17 +1,17 @@
 import { UmbTreeServerDataSourceBase as s, UmbTreeRepositoryBase as o } from "@umbraco-cms/backoffice/tree";
 import { GOD_MODE_TREE_STORE_CONTEXT as l } from "./godmode-tree.store-CYDCLcEv.js";
-const r = "godmode", t = "godmode-root", i = "godmode-folder";
+const n = "godmode", t = "godmode-root", i = "godmode-folder";
 class c extends s {
-  constructor(a) {
-    super(a, {
-      getRootItems: n,
+  constructor(r) {
+    super(r, {
+      getRootItems: a,
       getChildrenOf: d,
       getAncestorsOf: h,
       mapper: p
     });
   }
 }
-const n = async (e) => ({
+const a = async (e) => ({
   total: 13,
   items: [
     {
@@ -118,83 +118,83 @@ const n = async (e) => ({
       isFolder: !1
     }
   ]
-}), d = async (e) => e.parent.unique === null ? await n() : {
+}), d = async (e) => e.parent.unique === null ? await a() : {
   total: 0,
   items: [
     {
       hasChildren: !1,
       name: "Surface Controllers",
-      path: "surface",
+      path: "reflectionBrowser/surface",
       isFolder: !1,
       icon: "icon-planet"
     },
     {
       hasChildren: !1,
       name: "API Controllers",
-      path: "api",
+      path: "reflectionBrowser/api",
       isFolder: !1,
       icon: "icon-rocket"
     },
     {
       hasChildren: !1,
       name: "Render Controllers",
-      path: "render",
+      path: "reflectionBrowser/render",
       isFolder: !1,
       icon: "icon-satellite-dish"
     },
     {
       hasChildren: !1,
       name: "Content Models",
-      path: "models",
+      path: "reflectionBrowser/models",
       isFolder: !1,
       icon: "icon-binarycode"
     },
     {
       hasChildren: !1,
       name: "Composers",
-      path: "composers",
+      path: "reflectionBrowser/composers",
       isFolder: !1,
       icon: "icon-music"
     },
     {
       hasChildren: !1,
       name: "Value Converters",
-      path: "converters",
+      path: "reflectionBrowser/converters",
       isFolder: !1,
       icon: "icon-wand"
     },
     {
       hasChildren: !1,
       name: "View Components",
-      path: "components",
+      path: "reflectionBrowser/components",
       isFolder: !1,
       icon: "icon-code"
     },
     {
       hasChildren: !1,
       name: "Tag Helpers",
-      path: "taghelpers",
+      path: "reflectionBrowser/taghelpers",
       isFolder: !1,
       icon: "icon-tags"
     },
     {
       hasChildren: !1,
       name: "Content Finders",
-      path: "finders",
+      path: "reflectionBrowser/finders",
       isFolder: !1,
       icon: "icon-directions-alt"
     },
     {
       hasChildren: !1,
       name: "URL Providers",
-      path: "urlproviders",
+      path: "reflectionBrowser/urlproviders",
       isFolder: !1,
       icon: "icon-link"
     },
     {
       hasChildren: !1,
       name: "Interface Browser",
-      path: "browse",
+      path: "reflectionBrowser/browse",
       isFolder: !1,
       icon: "icon-molecular-network"
     }
@@ -203,17 +203,17 @@ const n = async (e) => ({
   unique: e.path,
   parent: {
     unique: e.parent ? e.parent.path : null,
-    entityType: e.parent ? r : t
+    entityType: e.parent ? n : t
   },
   name: e.name,
   icon: e.icon,
-  entityType: e.isFolder ? i : r,
+  entityType: e.isFolder ? i : n,
   isFolder: e.isFolder,
   hasChildren: e.hasChildren
 });
 class m extends o {
-  constructor(a) {
-    super(a, c, l);
+  constructor(r) {
+    super(r, c, l);
   }
   async requestTreeRoot() {
     return { data: {
@@ -230,4 +230,4 @@ export {
   m as GodModeTreeRepository,
   m as api
 };
-//# sourceMappingURL=godmode-tree.repository-DuWPJsUs.js.map
+//# sourceMappingURL=godmode-tree.repository-7q9HWY-I.js.map

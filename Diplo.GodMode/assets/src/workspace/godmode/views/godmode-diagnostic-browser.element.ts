@@ -1,4 +1,4 @@
-﻿import { css, customElement, html, ifDefined, repeat, state } from "@umbraco-cms/backoffice/external/lit";
+﻿import { css, customElement, html, repeat, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 import { Diagnostic, DiagnosticGroup, DiagnosticSection, GodModeService } from "../../../api";
 import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
@@ -56,6 +56,8 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
             this.currentGroup = newGroup;
             this.currentGroupId = newGroup.id.toString();
             this.filteredSections = newGroup.sections;
+            this.searchKey = "";
+            this.searchValue = "";
         }
     }
 
@@ -93,6 +95,10 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
             found = diag.value.toLowerCase().includes(this.searchValue.toLowerCase());
         }
 
+        if (this.searchKey !== '' && this.searchValue !== '') {
+            found = diag.key.toLowerCase().includes(this.searchKey.toLowerCase()) && diag.value.toLowerCase().includes(this.searchValue.toLowerCase());
+        }
+
         return found;
     }
 
@@ -107,6 +113,7 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
                             <uui-label for="search-key">Search Names:</uui-label>
                             <uui-input
                                 id="search-key"
+                                placeholder="Filter by name"
                                 .value=${this.searchKey}
                                 @input=${this.#setSearchKey}>
                             </uui-input>
@@ -115,6 +122,7 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
                             <uui-label for="search-value">Search Values:</uui-label>
                             <uui-input
                                 id="search-value"
+                                placeholder="Filter by value"
                                 .value=${this.searchValue}
                                 @input=${this.#setSearchValue}>
                             </uui-input>
@@ -130,6 +138,8 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
                         </div>
                     </div>
                 </uui-box>
+
+                <h4>${this.currentGroup?.title}</h4>
 
                 ${repeat(
                     this.filteredSections,
