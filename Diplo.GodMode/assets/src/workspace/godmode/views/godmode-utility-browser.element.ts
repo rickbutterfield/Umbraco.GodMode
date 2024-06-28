@@ -12,10 +12,10 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
     #collectionRepository = new UmbLanguageCollectionRepository(this);
 
     @state()
-    private _languages: Array<UmbLanguageDetailModel> = [];
+    private languages: Array<UmbLanguageDetailModel> = [];
 
     @state()
-    private _cultures: Array<Option> = [];
+    private cultures: Array<Option> = [];
 
     @state()
     private _selectedCulture: string = '';
@@ -46,15 +46,15 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
         const { data } = await this.#collectionRepository.requestCollection({});
         
         if (data) {
-            this._languages = data.items;
+            this.languages = data.items;
 
-            const cultures = this._languages.map(x => {
+            const cultures = this.languages.map(x => {
                 return { name: x.name, value: x.unique }
             });
 
             cultures.unshift({ name: 'No culture', value: '' });
 
-            this._cultures = cultures;
+            this.cultures = cultures;
         }
     }
 
@@ -247,7 +247,7 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
                             </uui-button>
                             <uui-select
                                 placeholder="No culture"
-                                .options=${this._cultures}
+                                .options=${this.cultures}
                                 @change=${this.#onSelect}>
                             </uui-select>
                         </div>

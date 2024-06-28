@@ -1,7 +1,7 @@
 import { tryExecuteAndNotify as c } from "@umbraco-cms/backoffice/resources";
 import { html as C, css as T, state as l, customElement as M } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement as P } from "@umbraco-cms/backoffice/lit-element";
-import { G as p } from "./services.gen-DnYPQRvA.js";
+import { G as p } from "./services.gen-CEv4CA0_.js";
 import { UMB_NOTIFICATION_CONTEXT as A } from "@umbraco-cms/backoffice/notification";
 import { UmbLanguageCollectionRepository as $ } from "@umbraco-cms/backoffice/language";
 var x = Object.defineProperty, E = Object.getOwnPropertyDescriptor, u = (e, t, a, i) => {
@@ -15,10 +15,10 @@ var x = Object.defineProperty, E = Object.getOwnPropertyDescriptor, u = (e, t, a
   if (t.has(e))
     throw TypeError("Cannot add the same private member more than once");
   t instanceof WeakSet ? t.add(e) : t.set(e, a);
-}, W = (e, t, a, i) => (f(e, t, "write to private field"), i ? i.call(e, a) : t.set(e, a), a), g = (e, t, a) => (f(e, t, "access private method"), a), r, U, b, v, w, _, y, k;
+}, W = (e, t, a, i) => (f(e, t, "write to private field"), i ? i.call(e, a) : t.set(e, a), a), g = (e, t, a) => (f(e, t, "access private method"), a), r, U, b, v, w, k, y, _;
 let s = class extends P {
   constructor() {
-    super(), m(this, b), m(this, w), m(this, y), m(this, r, void 0), m(this, U, new $(this)), this._languages = [], this._cultures = [], this._selectedCulture = "", this.warmingUp = !1, this.warmUpCurrentUrl = "", this.warmUpCurrent = 1, this.warmUpCount = 0, this.consumeContext(A, (e) => {
+    super(), m(this, b), m(this, w), m(this, y), m(this, r, void 0), m(this, U, new $(this)), this.languages = [], this.cultures = [], this._selectedCulture = "", this.warmingUp = !1, this.warmUpCurrentUrl = "", this.warmUpCurrent = 1, this.warmUpCount = 0, this.consumeContext(A, (e) => {
       W(this, r, e);
     }), g(this, b, v).call(this);
   }
@@ -127,14 +127,14 @@ let s = class extends P {
                             </uui-button>
                             <uui-select
                                 placeholder="No culture"
-                                .options=${this._cultures}
-                                @change=${g(this, w, _)}>
+                                .options=${this.cultures}
+                                @change=${g(this, w, k)}>
                             </uui-select>
                         </div>
                     </div>
                 </uui-box>
 
-                ${g(this, y, k).call(this)}
+                ${g(this, y, _).call(this)}
             </umb-body-layout>
         `;
   }
@@ -145,17 +145,17 @@ b = /* @__PURE__ */ new WeakSet();
 v = async function() {
   const { data: e } = await o(this, U).requestCollection({});
   if (e) {
-    this._languages = e.items;
-    const t = this._languages.map((a) => ({ name: a.name, value: a.unique }));
-    t.unshift({ name: "No culture", value: "" }), this._cultures = t;
+    this.languages = e.items;
+    const t = this.languages.map((a) => ({ name: a.name, value: a.unique }));
+    t.unshift({ name: "No culture", value: "" }), this.cultures = t;
   }
 };
 w = /* @__PURE__ */ new WeakSet();
-_ = function(e) {
+k = function(e) {
   this._selectedCulture = e.target.value;
 };
 y = /* @__PURE__ */ new WeakSet();
-k = function() {
+_ = function() {
   return this.warmingUp ? C`
                 <uui-box>
                     <uui-loader-bar animationDuration="1.5" style="color: black"></uui-loader-bar>
@@ -178,10 +178,10 @@ s.styles = [
 ];
 u([
   l()
-], s.prototype, "_languages", 2);
+], s.prototype, "languages", 2);
 u([
   l()
-], s.prototype, "_cultures", 2);
+], s.prototype, "cultures", 2);
 u([
   l()
 ], s.prototype, "_selectedCulture", 2);
@@ -205,4 +205,4 @@ export {
   s as GodModeUtilityBrowserElement,
   N as default
 };
-//# sourceMappingURL=godmode-utility-browser.element-DemUlwVT.js.map
+//# sourceMappingURL=godmode-utility-browser.element-DfIfuV15.js.map

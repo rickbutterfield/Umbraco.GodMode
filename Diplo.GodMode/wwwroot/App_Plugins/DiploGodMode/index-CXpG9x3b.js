@@ -74,7 +74,7 @@ const h = {
   type: "workspace",
   alias: "Umb.Workspace.GodModeRoot",
   name: "GodMode Root Workspace",
-  element: () => import("./godmode-root-workspace.element-Bbu0_14s.js"),
+  element: () => import("./godmode-root-workspace.element-CSMKM24j.js"),
   meta: {
     entityType: "godmode-root"
   }
@@ -83,7 +83,7 @@ const h = {
   kind: "routable",
   alias: "Umb.Workspace.GodMode",
   name: "God Mode Workspace",
-  api: () => import("./godmode-workspace.context-B9jqPOAG.js"),
+  api: () => import("./godmode-workspace.context-n6Cg_O7V.js"),
   meta: {
     entityType: "godmode"
   }
@@ -174,4 +174,4 @@ export {
   r as c,
   P as o
 };
-//# sourceMappingURL=index-c6_iC_zC.js.map
+//# sourceMappingURL=index-CXpG9x3b.js.map

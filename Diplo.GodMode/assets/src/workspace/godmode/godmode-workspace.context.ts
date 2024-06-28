@@ -15,6 +15,10 @@ export class GodModeWorkspaceContext extends UmbDefaultWorkspaceContext {
             {
                 path: 'edit/utilityBrowser',
                 component: () => import('./views/godmode-utility-browser.element')
+            },
+            {
+                path: 'edit/diagnosticBrowser',
+                component: () => import('./views/godmode-diagnostic-browser.element')
             }
         ])
     }
