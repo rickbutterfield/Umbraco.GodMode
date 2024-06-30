@@ -31,7 +31,7 @@ const s = {
     request: new k(),
     response: new k()
   }
-}, ee = "Umb.Repository.GodMode.Tree", te = "Umb.Store.GodMode.Tree", Pe = "Umb.Tree.GodMode";
+}, ee = "Umb.Repository.GodMode.Tree", te = "Umb.Store.GodMode.Tree", Ie = "Umb.Tree.GodMode";
 var re = Object.defineProperty, ae = Object.getOwnPropertyDescriptor, $ = (t, e, a, r) => {
   for (var o = r > 1 ? void 0 : r ? ae(e, a) : e, i = t.length - 1, c; i >= 0; i--)
     (c = t[i]) && (o = (r ? c(e, a, o) : c(o)) || o);
@@ -171,20 +171,20 @@ const v = (t) => typeof t == "string", U = (t) => v(t) && t !== "", R = (t) => t
     Accept: "application/json",
     ...i,
     ...e.headers
-  }).filter(([, d]) => d != null).reduce((d, [T, m]) => ({
+  }).filter(([, d]) => d != null).reduce((d, [T, h]) => ({
     ...d,
-    [T]: String(m)
+    [T]: String(h)
   }), {});
   if (U(a) && (c.Authorization = `Bearer ${a}`), U(r) && U(o)) {
     const d = ne(`${r}:${o}`);
     c.Authorization = `Basic ${d}`;
   }
   return e.body !== void 0 && (e.mediaType ? c["Content-Type"] = e.mediaType : R(e.body) ? c["Content-Type"] = e.body.type || "application/octet-stream" : v(e.body) ? c["Content-Type"] = "text/plain" : B(e.body) || (c["Content-Type"] = "application/json")), new Headers(c);
-}, he = (t) => {
+}, me = (t) => {
   var e, a;
   if (t.body !== void 0)
     return (e = t.mediaType) != null && e.includes("application/json") || (a = t.mediaType) != null && a.includes("+json") ? JSON.stringify(t.body) : v(t.body) || R(t.body) || B(t.body) ? t.body : JSON.stringify(t.body);
-}, me = async (t, e, a, r, o, i, c) => {
+}, he = async (t, e, a, r, o, i, c) => {
   const d = new AbortController();
   let T = {
     headers: i,
@@ -193,8 +193,8 @@ const v = (t) => typeof t == "string", U = (t) => v(t) && t !== "", R = (t) => t
     signal: d.signal
   };
   t.WITH_CREDENTIALS && (T.credentials = t.CREDENTIALS);
-  for (const m of t.interceptors.request._fns)
-    T = await m(T);
+  for (const h of t.interceptors.request._fns)
+    T = await h(T);
   return c(() => d.abort()), await fetch(a, T);
 }, le = (t, e) => {
   if (e) {
@@ -282,16 +282,16 @@ const v = (t) => typeof t == "string", U = (t) => v(t) && t !== "", R = (t) => t
   }
 }, n = (t, e) => new se(async (a, r, o) => {
   try {
-    const i = ce(t, e), c = de(e), d = he(e), T = await ue(t, e);
+    const i = ce(t, e), c = de(e), d = me(e), T = await ue(t, e);
     if (!o.isCancelled) {
-      let m = await me(t, e, i, d, c, T, o);
+      let h = await he(t, e, i, d, c, T, o);
       for (const K of t.interceptors.response._fns)
-        m = await K(m);
-      const J = await pe(m), Y = le(m, e.responseHeader), V = {
+        h = await K(h);
+      const J = await pe(h), Y = le(h, e.responseHeader), V = {
         url: i,
-        ok: m.ok,
-        status: m.status,
-        statusText: m.statusText,
+        ok: h.ok,
+        status: h.status,
+        statusText: h.statusText,
         body: Y ?? J
       };
       ge(e, V), a(V.body);
@@ -1076,7 +1076,7 @@ class p {
     });
   }
 }
-var be = Object.defineProperty, Te = Object.getOwnPropertyDescriptor, h = (t, e, a, r) => {
+var be = Object.defineProperty, Te = Object.getOwnPropertyDescriptor, m = (t, e, a, r) => {
   for (var o = r > 1 ? void 0 : r ? Te(e, a) : e, i = t.length - 1, c; i >= 0; i--)
     (c = t[i]) && (o = (r ? c(e, a, o) : c(o)) || o);
   return r && o && be(e, a, o), o;
@@ -1087,7 +1087,7 @@ var be = Object.defineProperty, Te = Object.getOwnPropertyDescriptor, h = (t, e,
   if (e.has(t))
     throw TypeError("Cannot add the same private member more than once");
   e instanceof WeakSet ? e.add(t) : e.set(t, a);
-}, b = (t, e, a) => (Ge(t, e, "access private method"), a), C, j, w, H, S, F, _, L, q, W, y, M;
+}, b = (t, e, a) => (Ge(t, e, "access private method"), a), C, j, w, F, S, H, _, W, q, L, y, M;
 let u = class extends D(I) {
   constructor() {
     super(), G(this, C), G(this, w), G(this, S), G(this, _), G(this, q), G(this, y), this.data = void 0, this.filteredData = void 0, this.searchName = "", this.namespaces = [], this.selectedNamespace = "", this.inherits = [], this.selectedInherits = "", this.umbraco = [{ name: "Any", value: "", selected: !0 }, { name: "Yes", value: "yes" }, { name: "No", value: "no" }], this.selectedUmbraco = "";
@@ -1106,7 +1106,7 @@ let u = class extends D(I) {
                             <uui-input
                                 placeholder="Search names"
                                 .value=${this.searchName}
-                                @input=${b(this, w, H)}>
+                                @input=${b(this, w, F)}>
                             </uui-input>
                         </div>
                         <div>
@@ -1114,7 +1114,7 @@ let u = class extends D(I) {
                             <uui-select
                                 .options=${this.namespaces}
                                 .value=${this.selectedNamespace}
-                                @change=${b(this, S, F)}>
+                                @change=${b(this, S, H)}>
                             </uui-select>
                         </div>
                         <div>
@@ -1122,7 +1122,7 @@ let u = class extends D(I) {
                             <uui-select
                                 .options=${this.inherits}
                                 .value=${this.selectedInherits}
-                                @change=${b(this, _, L)}>
+                                @change=${b(this, _, W)}>
                             </uui-select>
                         </div>
                         <div>
@@ -1130,7 +1130,7 @@ let u = class extends D(I) {
                             <uui-select
                                 .options=${this.umbraco}
                                 .value=${this.selectedUmbraco}
-                                @change=${b(this, q, W)}>
+                                @change=${b(this, q, L)}>
                             </uui-select>
                         </div>
                     </div>
@@ -1192,22 +1192,22 @@ j = async function() {
   }
 };
 w = /* @__PURE__ */ new WeakSet();
-H = function(t) {
+F = function(t) {
   const e = t.target.value;
   this.searchName = e, b(this, y, M).call(this);
 };
 S = /* @__PURE__ */ new WeakSet();
-F = function(t) {
+H = function(t) {
   const e = t.target.value;
   this.selectedNamespace = e, b(this, y, M).call(this);
 };
 _ = /* @__PURE__ */ new WeakSet();
-L = function(t) {
+W = function(t) {
   const e = t.target.value;
   this.selectedInherits = e, b(this, y, M).call(this);
 };
 q = /* @__PURE__ */ new WeakSet();
-W = function(t) {
+L = function(t) {
   const e = t.target.value;
   this.selectedUmbraco = e, b(this, y, M).call(this);
 };
@@ -1244,47 +1244,47 @@ u.styles = [
             }
         `
 ];
-h([
+m([
   O({ type: String })
 ], u.prototype, "type", 2);
-h([
+m([
   g()
 ], u.prototype, "name", 2);
-h([
+m([
   g()
 ], u.prototype, "data", 2);
-h([
+m([
   g()
 ], u.prototype, "filteredData", 2);
-h([
+m([
   g()
 ], u.prototype, "searchName", 2);
-h([
+m([
   g()
 ], u.prototype, "namespaces", 2);
-h([
+m([
   g()
 ], u.prototype, "selectedNamespace", 2);
-h([
+m([
   g()
 ], u.prototype, "inherits", 2);
-h([
+m([
   g()
 ], u.prototype, "selectedInherits", 2);
-h([
+m([
   g()
 ], u.prototype, "umbraco", 2);
-h([
+m([
   g()
 ], u.prototype, "selectedUmbraco", 2);
-u = h([
+u = m([
   x("godmode-reflection-browser")
 ], u);
-const De = u, ye = {
+const Ne = u, ye = {
   type: "workspace",
   alias: "Umb.Workspace.GodModeRoot",
   name: "GodMode Root Workspace",
-  element: () => import("./godmode-root-workspace.element-Dm40v4qG.js"),
+  element: () => import("./godmode-root-workspace.element-DWjV13Cu.js"),
   meta: {
     entityType: "godmode-root"
   }
@@ -1293,7 +1293,7 @@ const De = u, ye = {
   kind: "routable",
   alias: "Umb.Workspace.GodMode",
   name: "God Mode Workspace",
-  api: () => import("./godmode-workspace.context-DEMqNHHE.js"),
+  api: () => import("./godmode-workspace.context-CZBH6MSE.js"),
   meta: {
     entityType: "godmode"
   }
@@ -1317,10 +1317,19 @@ const De = u, ye = {
 }, Me = [
   z,
   ve
-], Ae = [
+], Ae = {
+  type: "workspace",
+  alias: "Umb.Workspace.GodModeFolder",
+  name: "GodMode Folder Workspace",
+  element: () => import("./godmode-folder-workspace.element-DGthflsz.js"),
+  meta: {
+    entityType: "godmode-folder"
+  }
+}, Ee = [Ae], Ue = [
   ...fe,
-  ...Me
-], Ee = [
+  ...Me,
+  ...Ee
+], Ce = [
   {
     type: "menuItem",
     kind: "tree",
@@ -1335,17 +1344,17 @@ const De = u, ye = {
       menus: ["Umb.Menu.AdvancedSettings"]
     }
   }
-], Ue = {
+], we = {
   type: "repository",
   alias: ee,
   name: "God Mode Tree Repository",
-  api: () => import("./godmode-tree.repository-7q9HWY-I.js")
-}, Ce = {
+  api: () => import("./godmode-tree.repository-COqMNRyt.js")
+}, Se = {
   type: "treeStore",
   alias: te,
   name: "God Mode Tree Store",
   api: () => import("./godmode-tree.store-CYDCLcEv.js")
-}, we = {
+}, _e = {
   type: "tree",
   kind: "default",
   alias: "Umb.Tree.GodMode",
@@ -1353,22 +1362,22 @@ const De = u, ye = {
   meta: {
     repositoryAlias: "Umb.Repository.GodMode.Tree"
   }
-}, Se = {
+}, qe = {
   type: "treeItem",
   kind: "default",
   alias: "Umb.TreeItem.GodMode",
   name: "God Mode Tree Item",
   forEntityTypes: ["godmode-root", "godmode", "godmode-folder"]
-}, _e = [
-  Ue,
-  Ce,
+}, Re = [
   we,
-  Se
-], Ie = (t, e) => {
+  Se,
+  _e,
+  qe
+], Oe = (t, e) => {
   e.registerMany([
-    ...Ae,
-    ...Ee,
-    ..._e
+    ...Ue,
+    ...Ce,
+    ...Re
   ]), t.consumeContext(Q, async (a) => {
     if (!a)
       return;
@@ -1378,12 +1387,12 @@ const De = u, ye = {
 };
 export {
   p as G,
-  De as a,
-  Pe as b,
+  Ne as a,
+  Ie as b,
   ee as c,
   te as d,
   E as e,
   u as f,
-  Ie as o
+  Oe as o
 };
-//# sourceMappingURL=index-DGc6ps4P.js.map
+//# sourceMappingURL=index-x45slcvs.js.map

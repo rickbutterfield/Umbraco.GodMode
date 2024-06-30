@@ -52,8 +52,6 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
                 return { name: x.name, value: x.unique }
             });
 
-            cultures.unshift({ name: 'No culture', value: '' });
-
             this.cultures = cultures;
         }
     }

@@ -1,4 +1,4 @@
-﻿import { css, customElement, html, repeat, state } from "@umbraco-cms/backoffice/external/lit";
+﻿import { css, customElement, html, repeat, state, when } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 import { Diagnostic, DiagnosticGroup, DiagnosticSection, GodModeService } from "../../../api";
 import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
@@ -7,13 +7,13 @@ import { UUIInputEvent, UUISelectEvent } from "@umbraco-cms/backoffice/external/
 @customElement('godmode-diagnostic-browser')
 export class GodModeDiagnosticBrowserElement extends UmbLitElement {
     @state()
-    diagnostics: DiagnosticGroup[] = [];
+    diagnostics: Array<DiagnosticGroup> = [];
 
     @state()
     currentGroup?: DiagnosticGroup = undefined;
 
     @state()
-    filteredSections?: DiagnosticSection[];
+    filteredSections: Array<DiagnosticSection> = [];
 
     @state()
     currentGroupId: string = '';
@@ -28,10 +28,10 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
 
     constructor() {
         super();
-        this.loadDiagnostics();
+        this.#loadDiagnostics();
     }
 
-    async loadDiagnostics() {
+    async #loadDiagnostics() {
         const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetEnvironmentDiagnostics());
 
         if (data) {
@@ -74,14 +74,16 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
     }
 
     #filterValues() {
+      if (this.currentGroup) {
         if (this.searchKey !== '' || this.searchValue !== '') {
-            this.filteredSections = structuredClone(this.currentGroup?.sections);
+            this.filteredSections = structuredClone(this.currentGroup.sections);
             this.filteredSections?.forEach(section => {
                 section.diagnostics = section.diagnostics.filter(x => this.#filter(x));
             });
-        }
-        else {
+          }
+          else {
             this.filteredSections = this.currentGroup?.sections;
+          }
         }
     }
 
@@ -139,34 +141,40 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
                     </div>
                 </uui-box>
 
-                <h4>${this.currentGroup?.title}</h4>
+                ${when(
+                  this.currentGroup !== undefined,
+                  () => html`
+                    <h4>${this.currentGroup?.title}</h4>
+      
+                    ${repeat(
+                        this.filteredSections,
+                        (group) => group.heading,
+                        (group) => group.diagnostics.length !== 0 ?
+                            html`
+                                <uui-box headline=${group.heading}>
+                                    <uui-table>
+                                          <uui-table-head>
+                                              <uui-table-head-cell style="width: 30%">Key</uui-table-head-cell>
+                                              <uui-table-head-cell style="width: 70%">Value</uui-table-head-cell>
+                                          </uui-table-head>
 
-                ${repeat(
-                    this.filteredSections,
-                    (group) => group.heading,
-                    (group) => group.diagnostics.length !== 0 ?
-                        html`
-                            <uui-box headline=${group.heading}>
-                                <uui-table>
-                                    <uui-table-head>
-                                        <uui-table-head-cell style="width: 30%">Key</uui-table-head-cell>
-                                        <uui-table-head-cell style="width: 70%">Value</uui-table-head-cell>
-                                    </uui-table-head>
-
-                                    ${repeat(
-                                        group.diagnostics,
-                                        (diagnostic) => diagnostic.key,
-                                        (diagnostic) => html`
-                                            <uui-table-row>
-                                                <uui-table-cell>${diagnostic.key}</uui-table-cell>
-                                                <uui-table-cell>${diagnostic.value}</uui-table-cell>
-                                            </uui-table-row>
-                                        `
-                                    )}
-                                </uui-table>
-                            </uui-box>
-                        ` : html``
+                                          ${repeat(
+                                              group.diagnostics,
+                                              (diagnostic) => diagnostic.key,
+                                              (diagnostic) => html`
+                                                  <uui-table-row>
+                                                      <uui-table-cell>${diagnostic.key}</uui-table-cell>
+                                                      <uui-table-cell>${diagnostic.value}</uui-table-cell>
+                                                  </uui-table-row>
+                                              `
+                                          )}
+                                      </uui-table>
+                                  </uui-box>
+                              ` : html``
+                      )}`,
+                    () => html`<uui-loader></uui-loader>`
                 )}
+                    
             </umb-body-layout>
         `
     }

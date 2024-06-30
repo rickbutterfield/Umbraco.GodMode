@@ -211,7 +211,7 @@ const getChildrenOf = async (args: UmbTreeChildrenOfRequestArgs) => {
 				{
 					hasChildren: false,
 					name: "Interface Browser",
-					path: "reflectionBrowser/browse",
+					path: "typeBrowser",
 					isFolder: false,
 					icon: "icon-molecular-network"
 				}

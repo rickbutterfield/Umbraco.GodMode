@@ -1,17 +1,17 @@
 import { UmbTreeServerDataSourceBase as s, UmbTreeRepositoryBase as o } from "@umbraco-cms/backoffice/tree";
 import { GOD_MODE_TREE_STORE_CONTEXT as l } from "./godmode-tree.store-CYDCLcEv.js";
-const n = "godmode", t = "godmode-root", i = "godmode-folder";
+const a = "godmode", t = "godmode-root", i = "godmode-folder";
 class c extends s {
   constructor(r) {
     super(r, {
-      getRootItems: a,
+      getRootItems: n,
       getChildrenOf: d,
       getAncestorsOf: h,
       mapper: p
     });
   }
 }
-const a = async (e) => ({
+const n = async (e) => ({
   total: 13,
   items: [
     {
@@ -118,7 +118,7 @@ const a = async (e) => ({
       isFolder: !1
     }
   ]
-}), d = async (e) => e.parent.unique === null ? await a() : {
+}), d = async (e) => e.parent.unique === null ? await n() : {
   total: 0,
   items: [
     {
@@ -194,7 +194,7 @@ const a = async (e) => ({
     {
       hasChildren: !1,
       name: "Interface Browser",
-      path: "reflectionBrowser/browse",
+      path: "typeBrowser",
       isFolder: !1,
       icon: "icon-molecular-network"
     }
@@ -203,11 +203,11 @@ const a = async (e) => ({
   unique: e.path,
   parent: {
     unique: e.parent ? e.parent.path : null,
-    entityType: e.parent ? n : t
+    entityType: e.parent ? a : t
   },
   name: e.name,
   icon: e.icon,
-  entityType: e.isFolder ? i : n,
+  entityType: e.isFolder ? i : a,
   isFolder: e.isFolder,
   hasChildren: e.hasChildren
 });
@@ -230,4 +230,4 @@ export {
   m as GodModeTreeRepository,
   m as api
 };
-//# sourceMappingURL=godmode-tree.repository-7q9HWY-I.js.map
+//# sourceMappingURL=godmode-tree.repository-COqMNRyt.js.map

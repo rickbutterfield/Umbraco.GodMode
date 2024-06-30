@@ -1,21 +1,21 @@
 import { tryExecuteAndNotify as c } from "@umbraco-cms/backoffice/resources";
 import { html as C, css as T, state as l, customElement as M } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement as P } from "@umbraco-cms/backoffice/lit-element";
-import { G as p } from "./index-DGc6ps4P.js";
+import { G as p } from "./index-x45slcvs.js";
 import { UMB_NOTIFICATION_CONTEXT as A } from "@umbraco-cms/backoffice/notification";
 import { UmbLanguageCollectionRepository as $ } from "@umbraco-cms/backoffice/language";
-var x = Object.defineProperty, E = Object.getOwnPropertyDescriptor, u = (e, t, a, i) => {
-  for (var n = i > 1 ? void 0 : i ? E(t, a) : t, d = e.length - 1, h; d >= 0; d--)
-    (h = e[d]) && (n = (i ? h(t, a, n) : h(n)) || n);
-  return i && n && x(t, a, n), n;
-}, f = (e, t, a) => {
+var x = Object.defineProperty, E = Object.getOwnPropertyDescriptor, u = (e, t, i, a) => {
+  for (var n = a > 1 ? void 0 : a ? E(t, i) : t, d = e.length - 1, h; d >= 0; d--)
+    (h = e[d]) && (n = (a ? h(t, i, n) : h(n)) || n);
+  return a && n && x(t, i, n), n;
+}, f = (e, t, i) => {
   if (!t.has(e))
-    throw TypeError("Cannot " + a);
-}, o = (e, t, a) => (f(e, t, "read from private field"), a ? a.call(e) : t.get(e)), m = (e, t, a) => {
+    throw TypeError("Cannot " + i);
+}, o = (e, t, i) => (f(e, t, "read from private field"), i ? i.call(e) : t.get(e)), m = (e, t, i) => {
   if (t.has(e))
     throw TypeError("Cannot add the same private member more than once");
-  t instanceof WeakSet ? t.add(e) : t.set(e, a);
-}, W = (e, t, a, i) => (f(e, t, "write to private field"), i ? i.call(e, a) : t.set(e, a), a), g = (e, t, a) => (f(e, t, "access private method"), a), r, U, b, v, w, k, y, _;
+  t instanceof WeakSet ? t.add(e) : t.set(e, i);
+}, W = (e, t, i, a) => (f(e, t, "write to private field"), a ? a.call(e, i) : t.set(e, i), i), g = (e, t, i) => (f(e, t, "access private method"), i), r, U, b, v, w, k, y, _;
 let s = class extends P {
   constructor() {
     super(), m(this, b), m(this, w), m(this, y), m(this, r, void 0), m(this, U, new $(this)), this.languages = [], this.cultures = [], this._selectedCulture = "", this.warmingUp = !1, this.warmUpCurrentUrl = "", this.warmUpCurrent = 1, this.warmUpCount = 0, this.consumeContext(A, (e) => {
@@ -23,22 +23,22 @@ let s = class extends P {
     }), g(this, b, v).call(this);
   }
   async clearUmbracoCache(e) {
-    var a, i, n;
+    var i, a, n;
     const { data: t } = await c(this, p.postUmbracoManagementApiV1GodModeClearUmbracoCache({ cache: e }));
-    t && t.message && (t.responseType === "Error" ? (a = o(this, r)) == null || a.peek("danger", { data: { message: t.message } }) : t.responseType === "Success" ? (i = o(this, r)) == null || i.peek("positive", { data: { message: t.message } }) : t.responseType === "Warning" && ((n = o(this, r)) == null || n.peek("warning", { data: { message: t.message } })));
+    t && t.message && (t.responseType === "Error" ? (i = o(this, r)) == null || i.peek("danger", { data: { message: t.message } }) : t.responseType === "Success" ? (a = o(this, r)) == null || a.peek("positive", { data: { message: t.message } }) : t.responseType === "Warning" && ((n = o(this, r)) == null || n.peek("warning", { data: { message: t.message } })));
   }
   async purgeMediaCache() {
-    var e, t, a;
+    var e, t, i;
     if (window.confirm("This will attempt to delete all the cached image crops on disk in the TEMP/MediaCache. IO operations can sometimes fail. Are you sure?")) {
-      const { data: i } = await c(this, p.postUmbracoManagementApiV1GodModePurgeMediaCache());
-      i && i.message && (i.responseType === "Error" ? (e = o(this, r)) == null || e.peek("danger", { data: { message: i.message } }) : i.responseType === "Success" ? (t = o(this, r)) == null || t.peek("positive", { data: { message: i.message } }) : i.responseType === "Warning" && ((a = o(this, r)) == null || a.peek("warning", { data: { message: i.message } })));
+      const { data: a } = await c(this, p.postUmbracoManagementApiV1GodModePurgeMediaCache());
+      a && a.message && (a.responseType === "Error" ? (e = o(this, r)) == null || e.peek("danger", { data: { message: a.message } }) : a.responseType === "Success" ? (t = o(this, r)) == null || t.peek("positive", { data: { message: a.message } }) : a.responseType === "Warning" && ((i = o(this, r)) == null || i.peek("warning", { data: { message: a.message } })));
     }
   }
   async restartAppPool() {
-    var e, t, a;
+    var e, t, i;
     if (window.confirm("This will take the site offline (and won't restart it). Are you really, really, really sure?")) {
-      const { data: i } = await c(this, p.postUmbracoManagementApiV1GodModeRestartAppPool());
-      i && i.message && (i.responseType === "Error" ? (e = o(this, r)) == null || e.peek("danger", { data: { message: i.message } }) : i.responseType === "Success" ? (t = o(this, r)) == null || t.peek("positive", { data: { message: i.message } }) : i.responseType === "Warning" && ((a = o(this, r)) == null || a.peek("warning", { data: { message: i.message } })));
+      const { data: a } = await c(this, p.postUmbracoManagementApiV1GodModeRestartAppPool());
+      a && a.message && (a.responseType === "Error" ? (e = o(this, r)) == null || e.peek("danger", { data: { message: a.message } }) : a.responseType === "Success" ? (t = o(this, r)) == null || t.peek("positive", { data: { message: a.message } }) : a.responseType === "Warning" && ((i = o(this, r)) == null || i.peek("warning", { data: { message: a.message } })));
     }
   }
   async warmUpTemplates() {
@@ -51,8 +51,8 @@ let s = class extends P {
   }
   async _pingUrls(e) {
     var t;
-    this.warmingUp = !0, this.warmUpCount = e.length, this.warmUpCount === 0 && ((t = o(this, r)) == null || t.peek("warning", { data: { message: "THe URL list was empty..." } })), e.forEach(async (a) => {
-      this.warmingUp = !0, this.warmUpCurrentUrl = a, (await fetch(a)).ok ? this.warmUpCurrent++ : this.warmUpCurrent++, this.warmUpCurrent === this.warmUpCount && (this.warmingUp = !1);
+    this.warmingUp = !0, this.warmUpCount = e.length, this.warmUpCount === 0 && ((t = o(this, r)) == null || t.peek("warning", { data: { message: "THe URL list was empty..." } })), e.forEach(async (i) => {
+      this.warmingUp = !0, this.warmUpCurrentUrl = i, (await fetch(i)).ok ? this.warmUpCurrent++ : this.warmUpCurrent++, this.warmUpCurrent === this.warmUpCount && (this.warmingUp = !1);
     });
   }
   render() {
@@ -146,8 +146,8 @@ v = async function() {
   const { data: e } = await o(this, U).requestCollection({});
   if (e) {
     this.languages = e.items;
-    const t = this.languages.map((a) => ({ name: a.name, value: a.unique }));
-    t.unshift({ name: "No culture", value: "" }), this.cultures = t;
+    const t = this.languages.map((i) => ({ name: i.name, value: i.unique }));
+    this.cultures = t;
   }
 };
 w = /* @__PURE__ */ new WeakSet();
@@ -200,9 +200,9 @@ u([
 s = u([
   M("godmode-utility-browser")
 ], s);
-const N = s;
+const q = s;
 export {
   s as GodModeUtilityBrowserElement,
-  N as default
+  q as default
 };
-//# sourceMappingURL=godmode-utility-browser.element-C_2WBlez.js.map
+//# sourceMappingURL=godmode-utility-browser.element-B9TYkIDO.js.map
