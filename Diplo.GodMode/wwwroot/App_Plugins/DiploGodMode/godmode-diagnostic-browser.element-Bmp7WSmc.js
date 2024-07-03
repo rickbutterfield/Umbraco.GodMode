@@ -1,25 +1,25 @@
-import { html as n, when as $, repeat as w, css as x, state as c, customElement as K } from "@umbraco-cms/backoffice/external/lit";
+import { html as l, when as $, repeat as w, css as x, state as c, customElement as K } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement as k } from "@umbraco-cms/backoffice/lit-element";
-import { G as E } from "./index-x45slcvs.js";
+import { G as E } from "./index-DIYzpCy4.js";
 import { tryExecuteAndNotify as L } from "@umbraco-cms/backoffice/resources";
 var D = Object.defineProperty, W = Object.getOwnPropertyDescriptor, u = (t, e, i, s) => {
-  for (var a = s > 1 ? void 0 : s ? W(e, i) : e, d = t.length - 1, f; d >= 0; d--)
-    (f = t[d]) && (a = (s ? f(e, i, a) : f(a)) || a);
-  return s && a && D(e, i, a), a;
+  for (var r = s > 1 ? void 0 : s ? W(e, i) : e, d = t.length - 1, f; d >= 0; d--)
+    (f = t[d]) && (r = (s ? f(e, i, r) : f(r)) || r);
+  return s && r && D(e, i, r), r;
 }, M = (t, e, i) => {
   if (!e.has(t))
     throw TypeError("Cannot " + i);
-}, l = (t, e, i) => {
+}, n = (t, e, i) => {
   if (e.has(t))
     throw TypeError("Cannot add the same private member more than once");
   e instanceof WeakSet ? e.add(t) : e.set(t, i);
-}, o = (t, e, i) => (M(t, e, "access private method"), i), p, S, v, G, g, _, y, V, h, m, b, C;
-let r = class extends k {
+}, o = (t, e, i) => (M(t, e, "access private method"), i), p, S, v, G, g, _, y, V, h, b, m, C;
+let a = class extends k {
   constructor() {
-    super(), l(this, p), l(this, v), l(this, g), l(this, y), l(this, h), l(this, b), this.diagnostics = [], this.currentGroup = void 0, this.filteredSections = [], this.currentGroupId = "", this.searchKey = "", this.searchValue = "", this.configurationGroups = [], o(this, p, S).call(this);
+    super(), n(this, p), n(this, v), n(this, g), n(this, y), n(this, h), n(this, m), this.diagnostics = [], this.currentGroup = void 0, this.filteredSections = [], this.currentGroupId = "", this.searchKey = "", this.searchValue = "", this.configurationGroups = [], o(this, p, S).call(this);
   }
   render() {
-    return n`
+    return l`
             <umb-body-layout>
                 <godmode-header name="Diagnostics" slot="header"></godmode-header>
 
@@ -59,14 +59,14 @@ let r = class extends k {
       this.currentGroup !== void 0,
       () => {
         var t;
-        return n`
+        return l`
                     <h4>${(t = this.currentGroup) == null ? void 0 : t.title}</h4>
       
                     ${w(
           this.filteredSections,
           (e) => e.heading,
-          (e) => e.diagnostics.length !== 0 ? n`
-                                <uui-box headline=${e.heading}>
+          (e) => e.diagnostics.length !== 0 ? l`
+                                <uui-box headline=${e.heading} style="--uui-box-default-padding: 0;">
                                     <uui-table>
                                           <uui-table-head>
                                               <uui-table-head-cell style="width: 30%">Key</uui-table-head-cell>
@@ -76,7 +76,7 @@ let r = class extends k {
                                           ${w(
             e.diagnostics,
             (i) => i.key,
-            (i) => n`
+            (i) => l`
                                                   <uui-table-row>
                                                       <uui-table-cell>${i.key}</uui-table-cell>
                                                       <uui-table-cell>${i.value}</uui-table-cell>
@@ -85,10 +85,10 @@ let r = class extends k {
           )}
                                       </uui-table>
                                   </uui-box>
-                              ` : n``
+                              ` : l``
         )}`;
       },
-      () => n`<uui-loader></uui-loader>`
+      () => l`<uui-loader></uui-loader>`
     )}
                     
             </umb-body-layout>
@@ -113,26 +113,26 @@ G = function(t) {
 g = /* @__PURE__ */ new WeakSet();
 _ = function(t) {
   const e = t.target.value;
-  this.searchKey = e, o(this, h, m).call(this);
+  this.searchKey = e, o(this, h, b).call(this);
 };
 y = /* @__PURE__ */ new WeakSet();
 V = function(t) {
   const e = t.target.value;
-  this.searchValue = e, o(this, h, m).call(this);
+  this.searchValue = e, o(this, h, b).call(this);
 };
 h = /* @__PURE__ */ new WeakSet();
-m = function() {
+b = function() {
   var t, e;
   this.currentGroup && (this.searchKey !== "" || this.searchValue !== "" ? (this.filteredSections = structuredClone(this.currentGroup.sections), (t = this.filteredSections) == null || t.forEach((i) => {
-    i.diagnostics = i.diagnostics.filter((s) => o(this, b, C).call(this, s));
+    i.diagnostics = i.diagnostics.filter((s) => o(this, m, C).call(this, s));
   })) : this.filteredSections = (e = this.currentGroup) == null ? void 0 : e.sections);
 };
-b = /* @__PURE__ */ new WeakSet();
+m = /* @__PURE__ */ new WeakSet();
 C = function(t) {
   let e = !1;
   return this.searchKey !== "" && (e = t.key.toLowerCase().includes(this.searchKey.toLowerCase())), this.searchValue !== "" && (e = t.value.toLowerCase().includes(this.searchValue.toLowerCase())), this.searchKey !== "" && this.searchValue !== "" && (e = t.key.toLowerCase().includes(this.searchKey.toLowerCase()) && t.value.toLowerCase().includes(this.searchValue.toLowerCase())), e;
 };
-r.styles = [
+a.styles = [
   x`
             .grid {
                 display: grid;
@@ -153,28 +153,28 @@ r.styles = [
 ];
 u([
   c()
-], r.prototype, "diagnostics", 2);
+], a.prototype, "diagnostics", 2);
 u([
   c()
-], r.prototype, "currentGroup", 2);
+], a.prototype, "currentGroup", 2);
 u([
   c()
-], r.prototype, "filteredSections", 2);
+], a.prototype, "filteredSections", 2);
 u([
   c()
-], r.prototype, "currentGroupId", 2);
+], a.prototype, "currentGroupId", 2);
 u([
   c()
-], r.prototype, "searchKey", 2);
+], a.prototype, "searchKey", 2);
 u([
   c()
-], r.prototype, "searchValue", 2);
-r = u([
+], a.prototype, "searchValue", 2);
+a = u([
   K("godmode-diagnostic-browser")
-], r);
-const B = r;
+], a);
+const B = a;
 export {
-  r as GodModeDiagnosticBrowserElement,
+  a as GodModeDiagnosticBrowserElement,
   B as default
 };
-//# sourceMappingURL=godmode-diagnostic-browser.element-BlEzaRVy.js.map
+//# sourceMappingURL=godmode-diagnostic-browser.element-Bmp7WSmc.js.map

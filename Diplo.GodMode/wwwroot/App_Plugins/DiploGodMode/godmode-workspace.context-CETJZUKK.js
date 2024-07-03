@@ -1,5 +1,5 @@
 import { UmbDefaultWorkspaceContext as p, UmbWorkspaceRouteManager as i } from "@umbraco-cms/backoffice/workspace";
-import { a as n } from "./index-x45slcvs.js";
+import { a as n } from "./index-DIYzpCy4.js";
 class c extends p {
   constructor(t) {
     super(t), this.routes = new i(this), this.routes.setRoutes([
@@ -45,11 +45,11 @@ class c extends p {
       },
       {
         path: "edit/diagnosticBrowser",
-        component: () => import("./godmode-diagnostic-browser.element-BlEzaRVy.js")
+        component: () => import("./godmode-diagnostic-browser.element-Bmp7WSmc.js")
       },
       {
         path: "edit/utilityBrowser",
-        component: () => import("./godmode-utility-browser.element-B9TYkIDO.js")
+        component: () => import("./godmode-utility-browser.element-Bqw6dBfD.js")
       },
       {
         path: "edit/reflectionBrowser/:unique",
@@ -61,7 +61,7 @@ class c extends p {
       },
       {
         path: "edit/typeBrowser",
-        component: () => import("./godmode-interface-browser.element-BzmUx_WT.js")
+        component: () => import("./godmode-interface-browser.element-CifEo0rm.js")
       }
     ]);
   }
@@ -70,4 +70,4 @@ export {
   c as GodModeWorkspaceContext,
   c as api
 };
-//# sourceMappingURL=godmode-workspace.context-CZBH6MSE.js.map
+//# sourceMappingURL=godmode-workspace.context-CETJZUKK.js.map

@@ -1,8 +1,9 @@
 import { customElement, html, css, state, repeat } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
-import { GodModeService, NameValue, TypeMap } from "../../../api";
+import { DirectionModel, DirectionModelEnum, GodModeService, NameValue, TypeMap } from "../../../api";
 import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
 import { UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
+import { sortTypeMapData } from "../../../helpers/sort";
 
 @customElement('godmode-interface-browser')
 export class GodModeInterfaceBrowserElement extends UmbLitElement {
@@ -33,9 +34,29 @@ export class GodModeInterfaceBrowserElement extends UmbLitElement {
   @state()
   types: Array<TypeMap> = [];
 
+  @state()
+  sortingDesc: boolean = false;
+
+  @state()
+  orderDirection: DirectionModel = DirectionModelEnum.ASCENDING;
+
+  @state()
+  orderBy: string = 'name';
+
   constructor() {
     super();
     this.#loadAssemblies();
+  }
+
+  private _sortingHandler(column: keyof TypeMap) {
+    this.sortingDesc = this.orderBy === column ? !this.sortingDesc : false;
+    this.orderBy = column;
+
+    this.orderDirection = this.sortingDesc ? DirectionModelEnum.DESCENDING : DirectionModelEnum.ASCENDING;
+
+    if (this.types) {
+      this.types = sortTypeMapData<TypeMap>(this.types, column, this.orderDirection);
+    }
   }
 
   async #loadAssemblies() {
@@ -135,13 +156,57 @@ export class GodModeInterfaceBrowserElement extends UmbLitElement {
 
             ${this.types.length !== 0 ?
               html`
-                <uui-box>
+                <uui-box style="--uui-box-default-padding: 0;">
                   <uui-table>
                       <uui-table-head>
-                          <uui-table-head-cell>Implemented By</uui-table-head-cell>
-                          <uui-table-head-cell>Namespace</uui-table-head-cell>
-                          <uui-table-head-cell>Module</uui-table-head-cell>
-                          <uui-table-head-cell>Base Type</uui-table-head-cell>
+                          <uui-table-head-cell style="--uui-table-cell-padding: 0">
+                            <button
+                            label="Implemented By"
+                            style="font-weight: 700; padding: var(--uui-size-4) var(--uui-size-5);"
+                            @click=${() => this._sortingHandler('name')}>
+                                Implemented By
+                                <uui-symbol-sort
+                                  ?active=${this.orderBy === 'name'}
+                                  ?descending=${this.sortingDesc}>
+                                </uui-symbol-sort>
+                              </button>
+                            </uui-table-head-cell>
+                          <uui-table-head-cell style="--uui-table-cell-padding: 0">
+                            <button
+                                label="Namespace"
+                                style="font-weight: 700; padding: var(--uui-size-4) var(--uui-size-5);"
+                                @click=${() => this._sortingHandler('namespace')}>
+                                Namespace
+                                <uui-symbol-sort
+                                  ?active=${this.orderBy === 'namespace'}
+                                  ?descending=${this.sortingDesc}>
+                                </uui-symbol-sort>
+                              </button>
+                          </uui-table-head-cell>
+                          <uui-table-head-cell style="--uui-table-cell-padding: 0">
+                            <button
+                                label="Module"
+                                style="font-weight: 700; padding: var(--uui-size-4) var(--uui-size-5);"
+                                @click=${() => this._sortingHandler('module')}>
+                                Module
+                                <uui-symbol-sort
+                                  ?active=${this.orderBy === 'module'}
+                                  ?descending=${this.sortingDesc}>
+                                </uui-symbol-sort>
+                              </button>
+                          </uui-table-head-cell>
+                          <uui-table-head-cell style="--uui-table-cell-padding: 0">
+                            <button
+                                label="Base Type"
+                                style="font-weight: 700; padding: var(--uui-size-4) var(--uui-size-5);"
+                                @click=${() => this._sortingHandler('baseType')}>
+                                Base Type
+                                <uui-symbol-sort
+                                  ?active=${this.orderBy === 'baseType'}
+                                  ?descending=${this.sortingDesc}>
+                                </uui-symbol-sort>
+                              </button>
+                          </uui-table-head-cell>
                       </uui-table-head>
 
                       ${repeat(
@@ -184,6 +249,21 @@ export class GodModeInterfaceBrowserElement extends UmbLitElement {
 
         uui-box {
             margin-bottom: 20px;
+        }
+
+        uui-table-head-cell button {
+            padding: var(--uui-size-4) var(--uui-size-5);
+            background-color: transparent;
+            color: inherit;
+            border: none;
+            cursor: pointer;
+            font-family: var(--uui-font-family);
+            font-weight: inherit;
+            font-size: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
         }
     `
   ]

@@ -151,7 +151,7 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
                         (group) => group.heading,
                         (group) => group.diagnostics.length !== 0 ?
                             html`
-                                <uui-box headline=${group.heading}>
+                                <uui-box headline=${group.heading} style="--uui-box-default-padding: 0;">
                                     <uui-table>
                                           <uui-table-head>
                                               <uui-table-head-cell style="width: 30%">Key</uui-table-head-cell>
