@@ -3,7 +3,7 @@
 import type { CancelablePromise } from './core/CancelablePromise';
 import { OpenAPI } from './core/OpenAPI';
 import { request as __request } from './core/request';
-import type { $OpenApiTs } from './types.gen';
+import type { GetContentmentConfigurationEditorModelsData, GetContentmentConfigurationEditorModelsResponse, PostContentmentDataListEditorData, PostContentmentDataListEditorResponse, GetCultureData, GetCultureResponse, PostDataTypeData, PostDataTypeResponse, GetDataTypeByIdData, GetDataTypeByIdResponse, DeleteDataTypeByIdData, DeleteDataTypeByIdResponse, PutDataTypeByIdData, PutDataTypeByIdResponse, PostDataTypeByIdCopyData, PostDataTypeByIdCopyResponse, GetDataTypeByIdIsUsedData, GetDataTypeByIdIsUsedResponse, PutDataTypeByIdMoveData, PutDataTypeByIdMoveResponse, GetDataTypeByIdReferencesData, GetDataTypeByIdReferencesResponse, GetDataTypeConfigurationResponse, PostDataTypeFolderData, PostDataTypeFolderResponse, GetDataTypeFolderByIdData, GetDataTypeFolderByIdResponse, DeleteDataTypeFolderByIdData, DeleteDataTypeFolderByIdResponse, PutDataTypeFolderByIdData, PutDataTypeFolderByIdResponse, GetFilterDataTypeData, GetFilterDataTypeResponse, GetItemDataTypeData, GetItemDataTypeResponse, GetItemDataTypeSearchData, GetItemDataTypeSearchResponse, GetTreeDataTypeAncestorsData, GetTreeDataTypeAncestorsResponse, GetTreeDataTypeChildrenData, GetTreeDataTypeChildrenResponse, GetTreeDataTypeRootData, GetTreeDataTypeRootResponse, GetDictionaryData, GetDictionaryResponse, PostDictionaryData, PostDictionaryResponse, GetDictionaryByIdData, GetDictionaryByIdResponse, DeleteDictionaryByIdData, DeleteDictionaryByIdResponse, PutDictionaryByIdData, PutDictionaryByIdResponse, GetDictionaryByIdExportData, GetDictionaryByIdExportResponse, PutDictionaryByIdMoveData, PutDictionaryByIdMoveResponse, PostDictionaryImportData, PostDictionaryImportResponse, GetItemDictionaryData, GetItemDictionaryResponse, GetTreeDictionaryAncestorsData, GetTreeDictionaryAncestorsResponse, GetTreeDictionaryChildrenData, GetTreeDictionaryChildrenResponse, GetTreeDictionaryRootData, GetTreeDictionaryRootResponse, PostDocumentBlueprintData, PostDocumentBlueprintResponse, GetDocumentBlueprintByIdData, GetDocumentBlueprintByIdResponse, DeleteDocumentBlueprintByIdData, DeleteDocumentBlueprintByIdResponse, PutDocumentBlueprintByIdData, PutDocumentBlueprintByIdResponse, PutDocumentBlueprintByIdMoveData, PutDocumentBlueprintByIdMoveResponse, PostDocumentBlueprintFolderData, PostDocumentBlueprintFolderResponse, GetDocumentBlueprintFolderByIdData, GetDocumentBlueprintFolderByIdResponse, DeleteDocumentBlueprintFolderByIdData, DeleteDocumentBlueprintFolderByIdResponse, PutDocumentBlueprintFolderByIdData, PutDocumentBlueprintFolderByIdResponse, PostDocumentBlueprintFromDocumentData, PostDocumentBlueprintFromDocumentResponse, GetItemDocumentBlueprintData, GetItemDocumentBlueprintResponse, GetTreeDocumentBlueprintAncestorsData, GetTreeDocumentBlueprintAncestorsResponse, GetTreeDocumentBlueprintChildrenData, GetTreeDocumentBlueprintChildrenResponse, GetTreeDocumentBlueprintRootData, GetTreeDocumentBlueprintRootResponse, PostDocumentTypeData, PostDocumentTypeResponse, GetDocumentTypeByIdData, GetDocumentTypeByIdResponse, DeleteDocumentTypeByIdData, DeleteDocumentTypeByIdResponse, PutDocumentTypeByIdData, PutDocumentTypeByIdResponse, GetDocumentTypeByIdAllowedChildrenData, GetDocumentTypeByIdAllowedChildrenResponse, GetDocumentTypeByIdBlueprintData, GetDocumentTypeByIdBlueprintResponse, GetDocumentTypeByIdCompositionReferencesData, GetDocumentTypeByIdCompositionReferencesResponse, PostDocumentTypeByIdCopyData, PostDocumentTypeByIdCopyResponse, GetDocumentTypeByIdExportData, GetDocumentTypeByIdExportResponse, PutDocumentTypeByIdImportData, PutDocumentTypeByIdImportResponse, PutDocumentTypeByIdMoveData, PutDocumentTypeByIdMoveResponse, GetDocumentTypeAllowedAtRootData, GetDocumentTypeAllowedAtRootResponse, PostDocumentTypeAvailableCompositionsData, PostDocumentTypeAvailableCompositionsResponse, GetDocumentTypeConfigurationResponse, PostDocumentTypeFolderData, PostDocumentTypeFolderResponse, GetDocumentTypeFolderByIdData, GetDocumentTypeFolderByIdResponse, DeleteDocumentTypeFolderByIdData, DeleteDocumentTypeFolderByIdResponse, PutDocumentTypeFolderByIdData, PutDocumentTypeFolderByIdResponse, PostDocumentTypeImportData, PostDocumentTypeImportResponse, GetItemDocumentTypeData, GetItemDocumentTypeResponse, GetItemDocumentTypeSearchData, GetItemDocumentTypeSearchResponse, GetTreeDocumentTypeAncestorsData, GetTreeDocumentTypeAncestorsResponse, GetTreeDocumentTypeChildrenData, GetTreeDocumentTypeChildrenResponse, GetTreeDocumentTypeRootData, GetTreeDocumentTypeRootResponse, GetDocumentVersionData, GetDocumentVersionResponse, GetDocumentVersionByIdData, GetDocumentVersionByIdResponse, PutDocumentVersionByIdPreventCleanupData, PutDocumentVersionByIdPreventCleanupResponse, PostDocumentVersionByIdRollbackData, PostDocumentVersionByIdRollbackResponse, GetCollectionDocumentByIdData, GetCollectionDocumentByIdResponse, PostDocumentData, PostDocumentResponse, GetDocumentByIdData, GetDocumentByIdResponse, DeleteDocumentByIdData, DeleteDocumentByIdResponse, PutDocumentByIdData, PutDocumentByIdResponse, GetDocumentByIdAuditLogData, GetDocumentByIdAuditLogResponse, PostDocumentByIdCopyData, PostDocumentByIdCopyResponse, GetDocumentByIdDomainsData, GetDocumentByIdDomainsResponse, PutDocumentByIdDomainsData, PutDocumentByIdDomainsResponse, PutDocumentByIdMoveData, PutDocumentByIdMoveResponse, PutDocumentByIdMoveToRecycleBinData, PutDocumentByIdMoveToRecycleBinResponse, GetDocumentByIdNotificationsData, GetDocumentByIdNotificationsResponse, PutDocumentByIdNotificationsData, PutDocumentByIdNotificationsResponse, PostDocumentByIdPublicAccessData, PostDocumentByIdPublicAccessResponse, DeleteDocumentByIdPublicAccessData, DeleteDocumentByIdPublicAccessResponse, GetDocumentByIdPublicAccessData, GetDocumentByIdPublicAccessResponse, PutDocumentByIdPublicAccessData, PutDocumentByIdPublicAccessResponse, PutDocumentByIdPublishData, PutDocumentByIdPublishResponse, PutDocumentByIdPublishWithDescendantsData, PutDocumentByIdPublishWithDescendantsResponse, GetDocumentByIdReferencedByData, GetDocumentByIdReferencedByResponse, GetDocumentByIdReferencedDescendantsData, GetDocumentByIdReferencedDescendantsResponse, PutDocumentByIdUnpublishData, PutDocumentByIdUnpublishResponse, PutDocumentByIdValidateData, PutDocumentByIdValidateResponse, GetDocumentAreReferencedData, GetDocumentAreReferencedResponse, GetDocumentConfigurationResponse, PutDocumentSortData, PutDocumentSortResponse, GetDocumentUrlsData, GetDocumentUrlsResponse, PostDocumentValidateData, PostDocumentValidateResponse, GetItemDocumentData, GetItemDocumentResponse, GetItemDocumentSearchData, GetItemDocumentSearchResponse, DeleteRecycleBinDocumentResponse, DeleteRecycleBinDocumentByIdData, DeleteRecycleBinDocumentByIdResponse, GetRecycleBinDocumentByIdOriginalParentData, GetRecycleBinDocumentByIdOriginalParentResponse, PutRecycleBinDocumentByIdRestoreData, PutRecycleBinDocumentByIdRestoreResponse, GetRecycleBinDocumentChildrenData, GetRecycleBinDocumentChildrenResponse, GetRecycleBinDocumentRootData, GetRecycleBinDocumentRootResponse, GetTreeDocumentAncestorsData, GetTreeDocumentAncestorsResponse, GetTreeDocumentChildrenData, GetTreeDocumentChildrenResponse, GetTreeDocumentRootData, GetTreeDocumentRootResponse, PostDynamicRootQueryData, PostDynamicRootQueryResponse, GetDynamicRootStepsResponse, PostUmbracoManagementApiV1GodModeClearUmbracoCacheData, PostUmbracoManagementApiV1GodModeClearUmbracoCacheResponse, PostUmbracoManagementApiV1GodModeCopyDataTypeData, PostUmbracoManagementApiV1GodModeCopyDataTypeResponse, PostUmbracoManagementApiV1GodModeDeleteTagData, PostUmbracoManagementApiV1GodModeDeleteTagResponse, PostUmbracoManagementApiV1GodModeFixTemplateMastersResponse, GetUmbracoManagementApiV1GodModeGetApiControllersResponse, GetUmbracoManagementApiV1GodModeGetAssembliesResponse, GetUmbracoManagementApiV1GodModeGetAssembliesWithInterfacesResponse, GetUmbracoManagementApiV1GodModeGetComposersResponse, GetUmbracoManagementApiV1GodModeGetCompositionsResponse, GetUmbracoManagementApiV1GodModeGetConfigResponse, GetUmbracoManagementApiV1GodModeGetContentFindersResponse, GetUmbracoManagementApiV1GodModeGetContentPagedData, GetUmbracoManagementApiV1GodModeGetContentPagedResponse, GetUmbracoManagementApiV1GodModeGetContentTypeAliasesResponse, GetUmbracoManagementApiV1GodModeGetContentTypeMapResponse, GetUmbracoManagementApiV1GodModeGetContentUsageDataData, GetUmbracoManagementApiV1GodModeGetContentUsageDataResponse, GetUmbracoManagementApiV1GodModeGetDataTypesResponse, GetUmbracoManagementApiV1GodModeGetDataTypesStatusResponse, GetUmbracoManagementApiV1GodModeGetEnvironmentDiagnosticsResponse, GetUmbracoManagementApiV1GodModeGetInterfacesFromData, GetUmbracoManagementApiV1GodModeGetInterfacesFromResponse, GetUmbracoManagementApiV1GodModeGetLanguagesResponse, GetUmbracoManagementApiV1GodModeGetMediaData, GetUmbracoManagementApiV1GodModeGetMediaResponse, GetUmbracoManagementApiV1GodModeGetMediaTypesResponse, GetUmbracoManagementApiV1GodModeGetMemberGroupsResponse, GetUmbracoManagementApiV1GodModeGetMembersPagedData, GetUmbracoManagementApiV1GodModeGetMembersPagedResponse, GetUmbracoManagementApiV1GodModeGetNonMsAssembliesResponse, GetUmbracoManagementApiV1GodModeGetNuCacheItemData, GetUmbracoManagementApiV1GodModeGetNuCacheItemResponse, GetUmbracoManagementApiV1GodModeGetNuCacheTypeResponse, GetUmbracoManagementApiV1GodModeGetOrphanedTagsResponse, GetUmbracoManagementApiV1GodModeGetPropertyEditorsResponse, GetUmbracoManagementApiV1GodModeGetPropertyGroupsResponse, GetUmbracoManagementApiV1GodModeGetPropertyValueConvertersResponse, GetUmbracoManagementApiV1GodModeGetPublishedContentModelsResponse, GetUmbracoManagementApiV1GodModeGetRegisteredServicesResponse, GetUmbracoManagementApiV1GodModeGetRenderMvcControllersResponse, GetUmbracoManagementApiV1GodModeGetStandardContentTypeAliasesResponse, GetUmbracoManagementApiV1GodModeGetSurfaceControllersResponse, GetUmbracoManagementApiV1GodModeGetTagHelpersResponse, GetUmbracoManagementApiV1GodModeGetTagMappingResponse, GetUmbracoManagementApiV1GodModeGetTemplatesResponse, GetUmbracoManagementApiV1GodModeGetTemplateUrlsToPingResponse, GetUmbracoManagementApiV1GodModeGetTypesAssignableFromData, GetUmbracoManagementApiV1GodModeGetTypesAssignableFromResponse, GetUmbracoManagementApiV1GodModeGetTypesFromData, GetUmbracoManagementApiV1GodModeGetTypesFromResponse, GetUmbracoManagementApiV1GodModeGetUmbracoAssembliesResponse, GetUmbracoManagementApiV1GodModeGetUrlProvidersResponse, GetUmbracoManagementApiV1GodModeGetUrlsToPingData, GetUmbracoManagementApiV1GodModeGetUrlsToPingResponse, GetUmbracoManagementApiV1GodModeGetViewComponentsResponse, PostUmbracoManagementApiV1GodModePurgeMediaCacheResponse, PostUmbracoManagementApiV1GodModeRestartAppPoolResponse, GetHealthCheckGroupData, GetHealthCheckGroupResponse, GetHealthCheckGroupByNameData, GetHealthCheckGroupByNameResponse, PostHealthCheckGroupByNameCheckData, PostHealthCheckGroupByNameCheckResponse, PostHealthCheckExecuteActionData, PostHealthCheckExecuteActionResponse, GetHelpData, GetHelpResponse, GetImagingResizeUrlsData, GetImagingResizeUrlsResponse, GetImportAnalyzeData, GetImportAnalyzeResponse, GetIndexerData, GetIndexerResponse, GetIndexerByIndexNameData, GetIndexerByIndexNameResponse, PostIndexerByIndexNameRebuildData, PostIndexerByIndexNameRebuildResponse, GetInstallSettingsResponse, PostInstallSetupData, PostInstallSetupResponse, PostInstallValidateDatabaseData, PostInstallValidateDatabaseResponse, GetItemLanguageData, GetItemLanguageResponse, GetItemLanguageDefaultResponse, GetLanguageData, GetLanguageResponse, PostLanguageData, PostLanguageResponse, GetLanguageByIsoCodeData, GetLanguageByIsoCodeResponse, DeleteLanguageByIsoCodeData, DeleteLanguageByIsoCodeResponse, PutLanguageByIsoCodeData, PutLanguageByIsoCodeResponse, GetLogViewerLevelData, GetLogViewerLevelResponse, GetLogViewerLevelCountData, GetLogViewerLevelCountResponse, GetLogViewerLogData, GetLogViewerLogResponse, GetLogViewerMessageTemplateData, GetLogViewerMessageTemplateResponse, GetLogViewerSavedSearchData, GetLogViewerSavedSearchResponse, PostLogViewerSavedSearchData, PostLogViewerSavedSearchResponse, GetLogViewerSavedSearchByNameData, GetLogViewerSavedSearchByNameResponse, DeleteLogViewerSavedSearchByNameData, DeleteLogViewerSavedSearchByNameResponse, GetLogViewerValidateLogsSizeData, GetLogViewerValidateLogsSizeResponse, GetManifestManifestResponse, GetManifestManifestPrivateResponse, GetManifestManifestPublicResponse, GetItemMediaTypeData, GetItemMediaTypeResponse, GetItemMediaTypeAllowedData, GetItemMediaTypeAllowedResponse, GetItemMediaTypeFoldersData, GetItemMediaTypeFoldersResponse, GetItemMediaTypeSearchData, GetItemMediaTypeSearchResponse, PostMediaTypeData, PostMediaTypeResponse, GetMediaTypeByIdData, GetMediaTypeByIdResponse, DeleteMediaTypeByIdData, DeleteMediaTypeByIdResponse, PutMediaTypeByIdData, PutMediaTypeByIdResponse, GetMediaTypeByIdAllowedChildrenData, GetMediaTypeByIdAllowedChildrenResponse, GetMediaTypeByIdCompositionReferencesData, GetMediaTypeByIdCompositionReferencesResponse, PostMediaTypeByIdCopyData, PostMediaTypeByIdCopyResponse, GetMediaTypeByIdExportData, GetMediaTypeByIdExportResponse, PutMediaTypeByIdImportData, PutMediaTypeByIdImportResponse, PutMediaTypeByIdMoveData, PutMediaTypeByIdMoveResponse, GetMediaTypeAllowedAtRootData, GetMediaTypeAllowedAtRootResponse, PostMediaTypeAvailableCompositionsData, PostMediaTypeAvailableCompositionsResponse, PostMediaTypeFolderData, PostMediaTypeFolderResponse, GetMediaTypeFolderByIdData, GetMediaTypeFolderByIdResponse, DeleteMediaTypeFolderByIdData, DeleteMediaTypeFolderByIdResponse, PutMediaTypeFolderByIdData, PutMediaTypeFolderByIdResponse, PostMediaTypeImportData, PostMediaTypeImportResponse, GetTreeMediaTypeAncestorsData, GetTreeMediaTypeAncestorsResponse, GetTreeMediaTypeChildrenData, GetTreeMediaTypeChildrenResponse, GetTreeMediaTypeRootData, GetTreeMediaTypeRootResponse, GetCollectionMediaData, GetCollectionMediaResponse, GetItemMediaData, GetItemMediaResponse, GetItemMediaSearchData, GetItemMediaSearchResponse, PostMediaData, PostMediaResponse, GetMediaByIdData, GetMediaByIdResponse, DeleteMediaByIdData, DeleteMediaByIdResponse, PutMediaByIdData, PutMediaByIdResponse, GetMediaByIdAuditLogData, GetMediaByIdAuditLogResponse, PutMediaByIdMoveData, PutMediaByIdMoveResponse, PutMediaByIdMoveToRecycleBinData, PutMediaByIdMoveToRecycleBinResponse, GetMediaByIdReferencedByData, GetMediaByIdReferencedByResponse, GetMediaByIdReferencedDescendantsData, GetMediaByIdReferencedDescendantsResponse, PutMediaByIdValidateData, PutMediaByIdValidateResponse, GetMediaAreReferencedData, GetMediaAreReferencedResponse, GetMediaConfigurationResponse, PutMediaSortData, PutMediaSortResponse, GetMediaUrlsData, GetMediaUrlsResponse, PostMediaValidateData, PostMediaValidateResponse, DeleteRecycleBinMediaResponse, DeleteRecycleBinMediaByIdData, DeleteRecycleBinMediaByIdResponse, GetRecycleBinMediaByIdOriginalParentData, GetRecycleBinMediaByIdOriginalParentResponse, PutRecycleBinMediaByIdRestoreData, PutRecycleBinMediaByIdRestoreResponse, GetRecycleBinMediaChildrenData, GetRecycleBinMediaChildrenResponse, GetRecycleBinMediaRootData, GetRecycleBinMediaRootResponse, GetTreeMediaAncestorsData, GetTreeMediaAncestorsResponse, GetTreeMediaChildrenData, GetTreeMediaChildrenResponse, GetTreeMediaRootData, GetTreeMediaRootResponse, GetItemMemberGroupData, GetItemMemberGroupResponse, GetMemberGroupData, GetMemberGroupResponse, PostMemberGroupData, PostMemberGroupResponse, GetMemberGroupByIdData, GetMemberGroupByIdResponse, DeleteMemberGroupByIdData, DeleteMemberGroupByIdResponse, PutMemberGroupByIdData, PutMemberGroupByIdResponse, GetTreeMemberGroupRootData, GetTreeMemberGroupRootResponse, GetItemMemberTypeData, GetItemMemberTypeResponse, GetItemMemberTypeSearchData, GetItemMemberTypeSearchResponse, PostMemberTypeData, PostMemberTypeResponse, GetMemberTypeByIdData, GetMemberTypeByIdResponse, DeleteMemberTypeByIdData, DeleteMemberTypeByIdResponse, PutMemberTypeByIdData, PutMemberTypeByIdResponse, GetMemberTypeByIdCompositionReferencesData, GetMemberTypeByIdCompositionReferencesResponse, PostMemberTypeByIdCopyData, PostMemberTypeByIdCopyResponse, PostMemberTypeAvailableCompositionsData, PostMemberTypeAvailableCompositionsResponse, GetTreeMemberTypeRootData, GetTreeMemberTypeRootResponse, GetFilterMemberData, GetFilterMemberResponse, GetItemMemberData, GetItemMemberResponse, GetItemMemberSearchData, GetItemMemberSearchResponse, PostMemberData, PostMemberResponse, GetMemberByIdData, GetMemberByIdResponse, DeleteMemberByIdData, DeleteMemberByIdResponse, PutMemberByIdData, PutMemberByIdResponse, PutMemberByIdValidateData, PutMemberByIdValidateResponse, GetMemberConfigurationResponse, PostMemberValidateData, PostMemberValidateResponse, PostModelsBuilderBuildResponse, GetModelsBuilderDashboardResponse, GetModelsBuilderStatusResponse, GetObjectTypesData, GetObjectTypesResponse, GetOembedQueryData, GetOembedQueryResponse, PostPackageByNameRunMigrationData, PostPackageByNameRunMigrationResponse, GetPackageConfigurationResponse, GetPackageCreatedData, GetPackageCreatedResponse, PostPackageCreatedData, PostPackageCreatedResponse, GetPackageCreatedByIdData, GetPackageCreatedByIdResponse, DeletePackageCreatedByIdData, DeletePackageCreatedByIdResponse, PutPackageCreatedByIdData, PutPackageCreatedByIdResponse, GetPackageCreatedByIdDownloadData, GetPackageCreatedByIdDownloadResponse, GetPackageMigrationStatusData, GetPackageMigrationStatusResponse, GetItemPartialViewData, GetItemPartialViewResponse, PostPartialViewData, PostPartialViewResponse, GetPartialViewByPathData, GetPartialViewByPathResponse, DeletePartialViewByPathData, DeletePartialViewByPathResponse, PutPartialViewByPathData, PutPartialViewByPathResponse, PutPartialViewByPathRenameData, PutPartialViewByPathRenameResponse, PostPartialViewFolderData, PostPartialViewFolderResponse, GetPartialViewFolderByPathData, GetPartialViewFolderByPathResponse, DeletePartialViewFolderByPathData, DeletePartialViewFolderByPathResponse, GetPartialViewSnippetData, GetPartialViewSnippetResponse, GetPartialViewSnippetByIdData, GetPartialViewSnippetByIdResponse, GetTreePartialViewAncestorsData, GetTreePartialViewAncestorsResponse, GetTreePartialViewChildrenData, GetTreePartialViewChildrenResponse, GetTreePartialViewRootData, GetTreePartialViewRootResponse, DeletePreviewResponse, PostPreviewResponse, GetProfilingStatusResponse, PutProfilingStatusData, PutProfilingStatusResponse, GetPropertyTypeIsUsedData, GetPropertyTypeIsUsedResponse, PostPublishedCacheCollectResponse, PostPublishedCacheRebuildResponse, PostPublishedCacheReloadResponse, GetPublishedCacheStatusResponse, GetRedirectManagementData, GetRedirectManagementResponse, GetRedirectManagementByIdData, GetRedirectManagementByIdResponse, DeleteRedirectManagementByIdData, DeleteRedirectManagementByIdResponse, GetRedirectManagementStatusResponse, PostRedirectManagementStatusData, PostRedirectManagementStatusResponse, GetItemRelationTypeData, GetItemRelationTypeResponse, GetRelationTypeData, GetRelationTypeResponse, GetRelationTypeByIdData, GetRelationTypeByIdResponse, GetItemScriptData, GetItemScriptResponse, PostScriptData, PostScriptResponse, GetScriptByPathData, GetScriptByPathResponse, DeleteScriptByPathData, DeleteScriptByPathResponse, PutScriptByPathData, PutScriptByPathResponse, PutScriptByPathRenameData, PutScriptByPathRenameResponse, PostScriptFolderData, PostScriptFolderResponse, GetScriptFolderByPathData, GetScriptFolderByPathResponse, DeleteScriptFolderByPathData, DeleteScriptFolderByPathResponse, GetTreeScriptAncestorsData, GetTreeScriptAncestorsResponse, GetTreeScriptChildrenData, GetTreeScriptChildrenResponse, GetTreeScriptRootData, GetTreeScriptRootResponse, GetSearcherData, GetSearcherResponse, GetSearcherBySearcherNameQueryData, GetSearcherBySearcherNameQueryResponse, GetSecurityConfigurationResponse, PostSecurityForgotPasswordData, PostSecurityForgotPasswordResponse, PostSecurityForgotPasswordResetData, PostSecurityForgotPasswordResetResponse, PostSecurityForgotPasswordVerifyData, PostSecurityForgotPasswordVerifyResponse, GetSegmentData, GetSegmentResponse, GetServerConfigurationResponse, GetServerInformationResponse, GetServerStatusResponse, GetServerTroubleshootingResponse, GetItemStaticFileData, GetItemStaticFileResponse, GetTreeStaticFileAncestorsData, GetTreeStaticFileAncestorsResponse, GetTreeStaticFileChildrenData, GetTreeStaticFileChildrenResponse, GetTreeStaticFileRootData, GetTreeStaticFileRootResponse, GetItemStylesheetData, GetItemStylesheetResponse, PostStylesheetData, PostStylesheetResponse, GetStylesheetByPathData, GetStylesheetByPathResponse, DeleteStylesheetByPathData, DeleteStylesheetByPathResponse, PutStylesheetByPathData, PutStylesheetByPathResponse, PutStylesheetByPathRenameData, PutStylesheetByPathRenameResponse, PostStylesheetFolderData, PostStylesheetFolderResponse, GetStylesheetFolderByPathData, GetStylesheetFolderByPathResponse, DeleteStylesheetFolderByPathData, DeleteStylesheetFolderByPathResponse, GetTreeStylesheetAncestorsData, GetTreeStylesheetAncestorsResponse, GetTreeStylesheetChildrenData, GetTreeStylesheetChildrenResponse, GetTreeStylesheetRootData, GetTreeStylesheetRootResponse, GetTagData, GetTagResponse, GetTelemetryData, GetTelemetryResponse, GetTelemetryLevelResponse, PostTelemetryLevelData, PostTelemetryLevelResponse, GetItemTemplateData, GetItemTemplateResponse, GetItemTemplateSearchData, GetItemTemplateSearchResponse, PostTemplateData, PostTemplateResponse, GetTemplateByIdData, GetTemplateByIdResponse, DeleteTemplateByIdData, DeleteTemplateByIdResponse, PutTemplateByIdData, PutTemplateByIdResponse, GetTemplateConfigurationResponse, PostTemplateQueryExecuteData, PostTemplateQueryExecuteResponse, GetTemplateQuerySettingsResponse, GetTreeTemplateAncestorsData, GetTreeTemplateAncestorsResponse, GetTreeTemplateChildrenData, GetTreeTemplateChildrenResponse, GetTreeTemplateRootData, GetTreeTemplateRootResponse, PostTemporaryFileData, PostTemporaryFileResponse, GetTemporaryFileByIdData, GetTemporaryFileByIdResponse, DeleteTemporaryFileByIdData, DeleteTemporaryFileByIdResponse, GetTemporaryFileConfigurationResponse, PostUpgradeAuthorizeResponse, GetUpgradeSettingsResponse, PostUserDataData, PostUserDataResponse, GetUserDataData, GetUserDataResponse, PutUserDataData, PutUserDataResponse, GetUserDataByIdData, GetUserDataByIdResponse, GetFilterUserGroupData, GetFilterUserGroupResponse, GetItemUserGroupData, GetItemUserGroupResponse, DeleteUserGroupData, DeleteUserGroupResponse, PostUserGroupData, PostUserGroupResponse, GetUserGroupData, GetUserGroupResponse, GetUserGroupByIdData, GetUserGroupByIdResponse, DeleteUserGroupByIdData, DeleteUserGroupByIdResponse, PutUserGroupByIdData, PutUserGroupByIdResponse, DeleteUserGroupByIdUsersData, DeleteUserGroupByIdUsersResponse, PostUserGroupByIdUsersData, PostUserGroupByIdUsersResponse, GetFilterUserData, GetFilterUserResponse, GetItemUserData, GetItemUserResponse, PostUserData, PostUserResponse, DeleteUserData, DeleteUserResponse, GetUserData, GetUserResponse, GetUserByIdData, GetUserByIdResponse, DeleteUserByIdData, DeleteUserByIdResponse, PutUserByIdData, PutUserByIdResponse, GetUserById2FaData, GetUserById2FaResponse, DeleteUserById2FaByProviderNameData, DeleteUserById2FaByProviderNameResponse, PostUserByIdChangePasswordData, PostUserByIdChangePasswordResponse, PostUserByIdResetPasswordData, PostUserByIdResetPasswordResponse, DeleteUserAvatarByIdData, DeleteUserAvatarByIdResponse, PostUserAvatarByIdData, PostUserAvatarByIdResponse, GetUserConfigurationResponse, GetUserCurrentResponse, GetUserCurrent2FaResponse, DeleteUserCurrent2FaByProviderNameData, DeleteUserCurrent2FaByProviderNameResponse, PostUserCurrent2FaByProviderNameData, PostUserCurrent2FaByProviderNameResponse, GetUserCurrent2FaByProviderNameData, GetUserCurrent2FaByProviderNameResponse, PostUserCurrentAvatarData, PostUserCurrentAvatarResponse, PostUserCurrentChangePasswordData, PostUserCurrentChangePasswordResponse, GetUserCurrentConfigurationResponse, GetUserCurrentLoginProvidersResponse, GetUserCurrentPermissionsData, GetUserCurrentPermissionsResponse, GetUserCurrentPermissionsDocumentData, GetUserCurrentPermissionsDocumentResponse, GetUserCurrentPermissionsMediaData, GetUserCurrentPermissionsMediaResponse, PostUserDisableData, PostUserDisableResponse, PostUserEnableData, PostUserEnableResponse, PostUserInviteData, PostUserInviteResponse, PostUserInviteCreatePasswordData, PostUserInviteCreatePasswordResponse, PostUserInviteResendData, PostUserInviteResendResponse, PostUserInviteVerifyData, PostUserInviteVerifyResponse, PostUserSetUserGroupsData, PostUserSetUserGroupsResponse, PostUserUnlockData, PostUserUnlockResponse, GetItemWebhookData, GetItemWebhookResponse, GetWebhookData, GetWebhookResponse, PostWebhookData, PostWebhookResponse, GetWebhookByIdData, GetWebhookByIdResponse, DeleteWebhookByIdData, DeleteWebhookByIdResponse, PutWebhookByIdData, PutWebhookByIdResponse, GetWebhookEventsData, GetWebhookEventsResponse } from './types.gen';
 
 export class ContentmentService {
     /**
@@ -12,7 +12,7 @@ export class ContentmentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getContentmentConfigurationEditorModels(data: $OpenApiTs['/umbraco/management/api/v1/contentment/configuration-editor/models']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/contentment/configuration-editor/models']['get']['res'][200]> {
+    public static getContentmentConfigurationEditorModels(data: GetContentmentConfigurationEditorModelsData = {}): CancelablePromise<GetContentmentConfigurationEditorModelsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/contentment/configuration-editor/models',
@@ -33,7 +33,7 @@ export class ContentmentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postContentmentDataListEditor(data: $OpenApiTs['/umbraco/management/api/v1/contentment/data-list/editor']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/contentment/data-list/editor']['post']['res'][200]> {
+    public static postContentmentDataListEditor(data: PostContentmentDataListEditorData = {}): CancelablePromise<PostContentmentDataListEditorResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/contentment/data-list/editor',
@@ -57,7 +57,7 @@ export class CultureService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getCulture(data: $OpenApiTs['/umbraco/management/api/v1/culture']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/culture']['get']['res'][200]> {
+    public static getCulture(data: GetCultureData = {}): CancelablePromise<GetCultureResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/culture',
@@ -80,7 +80,7 @@ export class DataTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDataType(data: $OpenApiTs['/umbraco/management/api/v1/data-type']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type']['post']['res'][201]> {
+    public static postDataType(data: PostDataTypeData = {}): CancelablePromise<PostDataTypeResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/data-type',
@@ -102,7 +102,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDataTypeById(data: $OpenApiTs['/umbraco/management/api/v1/data-type/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/{id}']['get']['res'][200]> {
+    public static getDataTypeById(data: GetDataTypeByIdData): CancelablePromise<GetDataTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/data-type/{id}',
@@ -123,7 +123,7 @@ export class DataTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteDataTypeById(data: $OpenApiTs['/umbraco/management/api/v1/data-type/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/{id}']['delete']['res'][200]> {
+    public static deleteDataTypeById(data: DeleteDataTypeByIdData): CancelablePromise<DeleteDataTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/data-type/{id}',
@@ -147,7 +147,7 @@ export class DataTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDataTypeById(data: $OpenApiTs['/umbraco/management/api/v1/data-type/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/{id}']['put']['res'][200]> {
+    public static putDataTypeById(data: PutDataTypeByIdData): CancelablePromise<PutDataTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/data-type/{id}',
@@ -173,7 +173,7 @@ export class DataTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDataTypeByIdCopy(data: $OpenApiTs['/umbraco/management/api/v1/data-type/{id}/copy']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/{id}/copy']['post']['res'][201]> {
+    public static postDataTypeByIdCopy(data: PostDataTypeByIdCopyData): CancelablePromise<PostDataTypeByIdCopyResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/data-type/{id}/copy',
@@ -197,7 +197,7 @@ export class DataTypeService {
      * @returns boolean OK
      * @throws ApiError
      */
-    public static getDataTypeByIdIsUsed(data: $OpenApiTs['/umbraco/management/api/v1/data-type/{id}/is-used']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/{id}/is-used']['get']['res'][200]> {
+    public static getDataTypeByIdIsUsed(data: GetDataTypeByIdIsUsedData): CancelablePromise<GetDataTypeByIdIsUsedResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/data-type/{id}/is-used',
@@ -219,7 +219,7 @@ export class DataTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDataTypeByIdMove(data: $OpenApiTs['/umbraco/management/api/v1/data-type/{id}/move']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/{id}/move']['put']['res'][200]> {
+    public static putDataTypeByIdMove(data: PutDataTypeByIdMoveData): CancelablePromise<PutDataTypeByIdMoveResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/data-type/{id}/move',
@@ -243,7 +243,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDataTypeByIdReferences(data: $OpenApiTs['/umbraco/management/api/v1/data-type/{id}/references']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/{id}/references']['get']['res'][200]> {
+    public static getDataTypeByIdReferences(data: GetDataTypeByIdReferencesData): CancelablePromise<GetDataTypeByIdReferencesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/data-type/{id}/references',
@@ -262,7 +262,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDataTypeConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/configuration']['get']['res'][200]> {
+    public static getDataTypeConfiguration(): CancelablePromise<GetDataTypeConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/data-type/configuration',
@@ -279,7 +279,7 @@ export class DataTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDataTypeFolder(data: $OpenApiTs['/umbraco/management/api/v1/data-type/folder']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/folder']['post']['res'][201]> {
+    public static postDataTypeFolder(data: PostDataTypeFolderData = {}): CancelablePromise<PostDataTypeFolderResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/data-type/folder',
@@ -301,7 +301,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDataTypeFolderById(data: $OpenApiTs['/umbraco/management/api/v1/data-type/folder/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/folder/{id}']['get']['res'][200]> {
+    public static getDataTypeFolderById(data: GetDataTypeFolderByIdData): CancelablePromise<GetDataTypeFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/data-type/folder/{id}',
@@ -322,7 +322,7 @@ export class DataTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteDataTypeFolderById(data: $OpenApiTs['/umbraco/management/api/v1/data-type/folder/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/folder/{id}']['delete']['res'][200]> {
+    public static deleteDataTypeFolderById(data: DeleteDataTypeFolderByIdData): CancelablePromise<DeleteDataTypeFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/data-type/folder/{id}',
@@ -346,7 +346,7 @@ export class DataTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDataTypeFolderById(data: $OpenApiTs['/umbraco/management/api/v1/data-type/folder/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/data-type/folder/{id}']['put']['res'][200]> {
+    public static putDataTypeFolderById(data: PutDataTypeFolderByIdData): CancelablePromise<PutDataTypeFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/data-type/folder/{id}',
@@ -375,7 +375,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getFilterDataType(data: $OpenApiTs['/umbraco/management/api/v1/filter/data-type']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/filter/data-type']['get']['res'][200]> {
+    public static getFilterDataType(data: GetFilterDataTypeData = {}): CancelablePromise<GetFilterDataTypeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/filter/data-type',
@@ -399,7 +399,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemDataType(data: $OpenApiTs['/umbraco/management/api/v1/item/data-type']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/data-type']['get']['res'][200]> {
+    public static getItemDataType(data: GetItemDataTypeData = {}): CancelablePromise<GetItemDataTypeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/data-type',
@@ -420,7 +420,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemDataTypeSearch(data: $OpenApiTs['/umbraco/management/api/v1/item/data-type/search']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/data-type/search']['get']['res'][200]> {
+    public static getItemDataTypeSearch(data: GetItemDataTypeSearchData = {}): CancelablePromise<GetItemDataTypeSearchResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/data-type/search',
@@ -441,7 +441,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDataTypeAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/data-type/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/data-type/ancestors']['get']['res'][200]> {
+    public static getTreeDataTypeAncestors(data: GetTreeDataTypeAncestorsData = {}): CancelablePromise<GetTreeDataTypeAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/data-type/ancestors',
@@ -464,7 +464,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDataTypeChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/data-type/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/data-type/children']['get']['res'][200]> {
+    public static getTreeDataTypeChildren(data: GetTreeDataTypeChildrenData = {}): CancelablePromise<GetTreeDataTypeChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/data-type/children',
@@ -489,7 +489,7 @@ export class DataTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDataTypeRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/data-type/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/data-type/root']['get']['res'][200]> {
+    public static getTreeDataTypeRoot(data: GetTreeDataTypeRootData = {}): CancelablePromise<GetTreeDataTypeRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/data-type/root',
@@ -516,7 +516,7 @@ export class DictionaryService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDictionary(data: $OpenApiTs['/umbraco/management/api/v1/dictionary']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dictionary']['get']['res'][200]> {
+    public static getDictionary(data: GetDictionaryData = {}): CancelablePromise<GetDictionaryResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/dictionary',
@@ -538,7 +538,7 @@ export class DictionaryService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDictionary(data: $OpenApiTs['/umbraco/management/api/v1/dictionary']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dictionary']['post']['res'][201]> {
+    public static postDictionary(data: PostDictionaryData = {}): CancelablePromise<PostDictionaryResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/dictionary',
@@ -561,7 +561,7 @@ export class DictionaryService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDictionaryById(data: $OpenApiTs['/umbraco/management/api/v1/dictionary/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dictionary/{id}']['get']['res'][200]> {
+    public static getDictionaryById(data: GetDictionaryByIdData): CancelablePromise<GetDictionaryByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/dictionary/{id}',
@@ -582,7 +582,7 @@ export class DictionaryService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteDictionaryById(data: $OpenApiTs['/umbraco/management/api/v1/dictionary/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dictionary/{id}']['delete']['res'][200]> {
+    public static deleteDictionaryById(data: DeleteDictionaryByIdData): CancelablePromise<DeleteDictionaryByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/dictionary/{id}',
@@ -606,7 +606,7 @@ export class DictionaryService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDictionaryById(data: $OpenApiTs['/umbraco/management/api/v1/dictionary/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dictionary/{id}']['put']['res'][200]> {
+    public static putDictionaryById(data: PutDictionaryByIdData): CancelablePromise<PutDictionaryByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/dictionary/{id}',
@@ -632,7 +632,7 @@ export class DictionaryService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDictionaryByIdExport(data: $OpenApiTs['/umbraco/management/api/v1/dictionary/{id}/export']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dictionary/{id}/export']['get']['res'][200]> {
+    public static getDictionaryByIdExport(data: GetDictionaryByIdExportData): CancelablePromise<GetDictionaryByIdExportResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/dictionary/{id}/export',
@@ -657,7 +657,7 @@ export class DictionaryService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDictionaryByIdMove(data: $OpenApiTs['/umbraco/management/api/v1/dictionary/{id}/move']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dictionary/{id}/move']['put']['res'][200]> {
+    public static putDictionaryByIdMove(data: PutDictionaryByIdMoveData): CancelablePromise<PutDictionaryByIdMoveResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/dictionary/{id}/move',
@@ -682,7 +682,7 @@ export class DictionaryService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDictionaryImport(data: $OpenApiTs['/umbraco/management/api/v1/dictionary/import']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dictionary/import']['post']['res'][201]> {
+    public static postDictionaryImport(data: PostDictionaryImportData = {}): CancelablePromise<PostDictionaryImportResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/dictionary/import',
@@ -704,7 +704,7 @@ export class DictionaryService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemDictionary(data: $OpenApiTs['/umbraco/management/api/v1/item/dictionary']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/dictionary']['get']['res'][200]> {
+    public static getItemDictionary(data: GetItemDictionaryData = {}): CancelablePromise<GetItemDictionaryResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/dictionary',
@@ -723,7 +723,7 @@ export class DictionaryService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDictionaryAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/dictionary/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/dictionary/ancestors']['get']['res'][200]> {
+    public static getTreeDictionaryAncestors(data: GetTreeDictionaryAncestorsData = {}): CancelablePromise<GetTreeDictionaryAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/dictionary/ancestors',
@@ -745,7 +745,7 @@ export class DictionaryService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDictionaryChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/dictionary/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/dictionary/children']['get']['res'][200]> {
+    public static getTreeDictionaryChildren(data: GetTreeDictionaryChildrenData = {}): CancelablePromise<GetTreeDictionaryChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/dictionary/children',
@@ -768,7 +768,7 @@ export class DictionaryService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDictionaryRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/dictionary/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/dictionary/root']['get']['res'][200]> {
+    public static getTreeDictionaryRoot(data: GetTreeDictionaryRootData = {}): CancelablePromise<GetTreeDictionaryRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/dictionary/root',
@@ -792,7 +792,7 @@ export class DocumentBlueprintService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocumentBlueprint(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint']['post']['res'][201]> {
+    public static postDocumentBlueprint(data: PostDocumentBlueprintData = {}): CancelablePromise<PostDocumentBlueprintResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document-blueprint',
@@ -814,7 +814,7 @@ export class DocumentBlueprintService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentBlueprintById(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint/{id}']['get']['res'][200]> {
+    public static getDocumentBlueprintById(data: GetDocumentBlueprintByIdData): CancelablePromise<GetDocumentBlueprintByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-blueprint/{id}',
@@ -835,7 +835,7 @@ export class DocumentBlueprintService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteDocumentBlueprintById(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint/{id}']['delete']['res'][200]> {
+    public static deleteDocumentBlueprintById(data: DeleteDocumentBlueprintByIdData): CancelablePromise<DeleteDocumentBlueprintByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/document-blueprint/{id}',
@@ -859,7 +859,7 @@ export class DocumentBlueprintService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentBlueprintById(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint/{id}']['put']['res'][200]> {
+    public static putDocumentBlueprintById(data: PutDocumentBlueprintByIdData): CancelablePromise<PutDocumentBlueprintByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document-blueprint/{id}',
@@ -885,7 +885,7 @@ export class DocumentBlueprintService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentBlueprintByIdMove(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint/{id}/move']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint/{id}/move']['put']['res'][200]> {
+    public static putDocumentBlueprintByIdMove(data: PutDocumentBlueprintByIdMoveData): CancelablePromise<PutDocumentBlueprintByIdMoveResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document-blueprint/{id}/move',
@@ -909,7 +909,7 @@ export class DocumentBlueprintService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocumentBlueprintFolder(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint/folder']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint/folder']['post']['res'][201]> {
+    public static postDocumentBlueprintFolder(data: PostDocumentBlueprintFolderData = {}): CancelablePromise<PostDocumentBlueprintFolderResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document-blueprint/folder',
@@ -931,7 +931,7 @@ export class DocumentBlueprintService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentBlueprintFolderById(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint/folder/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint/folder/{id}']['get']['res'][200]> {
+    public static getDocumentBlueprintFolderById(data: GetDocumentBlueprintFolderByIdData): CancelablePromise<GetDocumentBlueprintFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-blueprint/folder/{id}',
@@ -952,7 +952,7 @@ export class DocumentBlueprintService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteDocumentBlueprintFolderById(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint/folder/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint/folder/{id}']['delete']['res'][200]> {
+    public static deleteDocumentBlueprintFolderById(data: DeleteDocumentBlueprintFolderByIdData): CancelablePromise<DeleteDocumentBlueprintFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/document-blueprint/folder/{id}',
@@ -976,7 +976,7 @@ export class DocumentBlueprintService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentBlueprintFolderById(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint/folder/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint/folder/{id}']['put']['res'][200]> {
+    public static putDocumentBlueprintFolderById(data: PutDocumentBlueprintFolderByIdData): CancelablePromise<PutDocumentBlueprintFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document-blueprint/folder/{id}',
@@ -1001,7 +1001,7 @@ export class DocumentBlueprintService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocumentBlueprintFromDocument(data: $OpenApiTs['/umbraco/management/api/v1/document-blueprint/from-document']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-blueprint/from-document']['post']['res'][201]> {
+    public static postDocumentBlueprintFromDocument(data: PostDocumentBlueprintFromDocumentData = {}): CancelablePromise<PostDocumentBlueprintFromDocumentResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document-blueprint/from-document',
@@ -1022,7 +1022,7 @@ export class DocumentBlueprintService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemDocumentBlueprint(data: $OpenApiTs['/umbraco/management/api/v1/item/document-blueprint']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/document-blueprint']['get']['res'][200]> {
+    public static getItemDocumentBlueprint(data: GetItemDocumentBlueprintData = {}): CancelablePromise<GetItemDocumentBlueprintResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/document-blueprint',
@@ -1041,7 +1041,7 @@ export class DocumentBlueprintService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDocumentBlueprintAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/document-blueprint/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/document-blueprint/ancestors']['get']['res'][200]> {
+    public static getTreeDocumentBlueprintAncestors(data: GetTreeDocumentBlueprintAncestorsData = {}): CancelablePromise<GetTreeDocumentBlueprintAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/document-blueprint/ancestors',
@@ -1064,7 +1064,7 @@ export class DocumentBlueprintService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDocumentBlueprintChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/document-blueprint/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/document-blueprint/children']['get']['res'][200]> {
+    public static getTreeDocumentBlueprintChildren(data: GetTreeDocumentBlueprintChildrenData = {}): CancelablePromise<GetTreeDocumentBlueprintChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/document-blueprint/children',
@@ -1089,7 +1089,7 @@ export class DocumentBlueprintService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDocumentBlueprintRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/document-blueprint/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/document-blueprint/root']['get']['res'][200]> {
+    public static getTreeDocumentBlueprintRoot(data: GetTreeDocumentBlueprintRootData = {}): CancelablePromise<GetTreeDocumentBlueprintRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/document-blueprint/root',
@@ -1114,7 +1114,7 @@ export class DocumentTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocumentType(data: $OpenApiTs['/umbraco/management/api/v1/document-type']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type']['post']['res'][201]> {
+    public static postDocumentType(data: PostDocumentTypeData = {}): CancelablePromise<PostDocumentTypeResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document-type',
@@ -1136,7 +1136,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentTypeById(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}']['get']['res'][200]> {
+    public static getDocumentTypeById(data: GetDocumentTypeByIdData): CancelablePromise<GetDocumentTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-type/{id}',
@@ -1157,7 +1157,7 @@ export class DocumentTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteDocumentTypeById(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}']['delete']['res'][200]> {
+    public static deleteDocumentTypeById(data: DeleteDocumentTypeByIdData): CancelablePromise<DeleteDocumentTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/document-type/{id}',
@@ -1180,7 +1180,7 @@ export class DocumentTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentTypeById(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}']['put']['res'][200]> {
+    public static putDocumentTypeById(data: PutDocumentTypeByIdData): CancelablePromise<PutDocumentTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document-type/{id}',
@@ -1207,7 +1207,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentTypeByIdAllowedChildren(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}/allowed-children']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}/allowed-children']['get']['res'][200]> {
+    public static getDocumentTypeByIdAllowedChildren(data: GetDocumentTypeByIdAllowedChildrenData): CancelablePromise<GetDocumentTypeByIdAllowedChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-type/{id}/allowed-children',
@@ -1234,7 +1234,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentTypeByIdBlueprint(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}/blueprint']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}/blueprint']['get']['res'][200]> {
+    public static getDocumentTypeByIdBlueprint(data: GetDocumentTypeByIdBlueprintData): CancelablePromise<GetDocumentTypeByIdBlueprintResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-type/{id}/blueprint',
@@ -1259,7 +1259,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentTypeByIdCompositionReferences(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}/composition-references']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}/composition-references']['get']['res'][200]> {
+    public static getDocumentTypeByIdCompositionReferences(data: GetDocumentTypeByIdCompositionReferencesData): CancelablePromise<GetDocumentTypeByIdCompositionReferencesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-type/{id}/composition-references',
@@ -1282,7 +1282,7 @@ export class DocumentTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocumentTypeByIdCopy(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}/copy']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}/copy']['post']['res'][201]> {
+    public static postDocumentTypeByIdCopy(data: PostDocumentTypeByIdCopyData): CancelablePromise<PostDocumentTypeByIdCopyResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document-type/{id}/copy',
@@ -1307,7 +1307,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentTypeByIdExport(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}/export']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}/export']['get']['res'][200]> {
+    public static getDocumentTypeByIdExport(data: GetDocumentTypeByIdExportData): CancelablePromise<GetDocumentTypeByIdExportResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-type/{id}/export',
@@ -1329,7 +1329,7 @@ export class DocumentTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentTypeByIdImport(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}/import']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}/import']['put']['res'][200]> {
+    public static putDocumentTypeByIdImport(data: PutDocumentTypeByIdImportData): CancelablePromise<PutDocumentTypeByIdImportResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document-type/{id}/import',
@@ -1355,7 +1355,7 @@ export class DocumentTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentTypeByIdMove(data: $OpenApiTs['/umbraco/management/api/v1/document-type/{id}/move']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/{id}/move']['put']['res'][200]> {
+    public static putDocumentTypeByIdMove(data: PutDocumentTypeByIdMoveData): CancelablePromise<PutDocumentTypeByIdMoveResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document-type/{id}/move',
@@ -1381,7 +1381,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentTypeAllowedAtRoot(data: $OpenApiTs['/umbraco/management/api/v1/document-type/allowed-at-root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/allowed-at-root']['get']['res'][200]> {
+    public static getDocumentTypeAllowedAtRoot(data: GetDocumentTypeAllowedAtRootData = {}): CancelablePromise<GetDocumentTypeAllowedAtRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-type/allowed-at-root',
@@ -1402,7 +1402,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postDocumentTypeAvailableCompositions(data: $OpenApiTs['/umbraco/management/api/v1/document-type/available-compositions']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/available-compositions']['post']['res'][200]> {
+    public static postDocumentTypeAvailableCompositions(data: PostDocumentTypeAvailableCompositionsData = {}): CancelablePromise<PostDocumentTypeAvailableCompositionsResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document-type/available-compositions',
@@ -1419,7 +1419,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentTypeConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/configuration']['get']['res'][200]> {
+    public static getDocumentTypeConfiguration(): CancelablePromise<GetDocumentTypeConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-type/configuration',
@@ -1436,7 +1436,7 @@ export class DocumentTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocumentTypeFolder(data: $OpenApiTs['/umbraco/management/api/v1/document-type/folder']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/folder']['post']['res'][201]> {
+    public static postDocumentTypeFolder(data: PostDocumentTypeFolderData = {}): CancelablePromise<PostDocumentTypeFolderResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document-type/folder',
@@ -1458,7 +1458,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentTypeFolderById(data: $OpenApiTs['/umbraco/management/api/v1/document-type/folder/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/folder/{id}']['get']['res'][200]> {
+    public static getDocumentTypeFolderById(data: GetDocumentTypeFolderByIdData): CancelablePromise<GetDocumentTypeFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-type/folder/{id}',
@@ -1479,7 +1479,7 @@ export class DocumentTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteDocumentTypeFolderById(data: $OpenApiTs['/umbraco/management/api/v1/document-type/folder/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/folder/{id}']['delete']['res'][200]> {
+    public static deleteDocumentTypeFolderById(data: DeleteDocumentTypeFolderByIdData): CancelablePromise<DeleteDocumentTypeFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/document-type/folder/{id}',
@@ -1503,7 +1503,7 @@ export class DocumentTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentTypeFolderById(data: $OpenApiTs['/umbraco/management/api/v1/document-type/folder/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/folder/{id}']['put']['res'][200]> {
+    public static putDocumentTypeFolderById(data: PutDocumentTypeFolderByIdData): CancelablePromise<PutDocumentTypeFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document-type/folder/{id}',
@@ -1528,7 +1528,7 @@ export class DocumentTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocumentTypeImport(data: $OpenApiTs['/umbraco/management/api/v1/document-type/import']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-type/import']['post']['res'][201]> {
+    public static postDocumentTypeImport(data: PostDocumentTypeImportData = {}): CancelablePromise<PostDocumentTypeImportResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document-type/import',
@@ -1550,7 +1550,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemDocumentType(data: $OpenApiTs['/umbraco/management/api/v1/item/document-type']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/document-type']['get']['res'][200]> {
+    public static getItemDocumentType(data: GetItemDocumentTypeData = {}): CancelablePromise<GetItemDocumentTypeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/document-type',
@@ -1571,7 +1571,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemDocumentTypeSearch(data: $OpenApiTs['/umbraco/management/api/v1/item/document-type/search']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/document-type/search']['get']['res'][200]> {
+    public static getItemDocumentTypeSearch(data: GetItemDocumentTypeSearchData = {}): CancelablePromise<GetItemDocumentTypeSearchResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/document-type/search',
@@ -1592,7 +1592,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDocumentTypeAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/document-type/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/document-type/ancestors']['get']['res'][200]> {
+    public static getTreeDocumentTypeAncestors(data: GetTreeDocumentTypeAncestorsData = {}): CancelablePromise<GetTreeDocumentTypeAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/document-type/ancestors',
@@ -1615,7 +1615,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDocumentTypeChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/document-type/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/document-type/children']['get']['res'][200]> {
+    public static getTreeDocumentTypeChildren(data: GetTreeDocumentTypeChildrenData = {}): CancelablePromise<GetTreeDocumentTypeChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/document-type/children',
@@ -1640,7 +1640,7 @@ export class DocumentTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDocumentTypeRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/document-type/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/document-type/root']['get']['res'][200]> {
+    public static getTreeDocumentTypeRoot(data: GetTreeDocumentTypeRootData = {}): CancelablePromise<GetTreeDocumentTypeRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/document-type/root',
@@ -1668,7 +1668,7 @@ export class DocumentVersionService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentVersion(data: $OpenApiTs['/umbraco/management/api/v1/document-version']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-version']['get']['res'][200]> {
+    public static getDocumentVersion(data: GetDocumentVersionData): CancelablePromise<GetDocumentVersionResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-version',
@@ -1693,7 +1693,7 @@ export class DocumentVersionService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentVersionById(data: $OpenApiTs['/umbraco/management/api/v1/document-version/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-version/{id}']['get']['res'][200]> {
+    public static getDocumentVersionById(data: GetDocumentVersionByIdData): CancelablePromise<GetDocumentVersionByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document-version/{id}',
@@ -1716,7 +1716,7 @@ export class DocumentVersionService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentVersionByIdPreventCleanup(data: $OpenApiTs['/umbraco/management/api/v1/document-version/{id}/prevent-cleanup']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-version/{id}/prevent-cleanup']['put']['res'][200]> {
+    public static putDocumentVersionByIdPreventCleanup(data: PutDocumentVersionByIdPreventCleanupData): CancelablePromise<PutDocumentVersionByIdPreventCleanupResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document-version/{id}/prevent-cleanup',
@@ -1743,7 +1743,7 @@ export class DocumentVersionService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postDocumentVersionByIdRollback(data: $OpenApiTs['/umbraco/management/api/v1/document-version/{id}/rollback']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document-version/{id}/rollback']['post']['res'][200]> {
+    public static postDocumentVersionByIdRollback(data: PostDocumentVersionByIdRollbackData): CancelablePromise<PostDocumentVersionByIdRollbackResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document-version/{id}/rollback',
@@ -1779,7 +1779,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getCollectionDocumentById(data: $OpenApiTs['/umbraco/management/api/v1/collection/document/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/collection/document/{id}']['get']['res'][200]> {
+    public static getCollectionDocumentById(data: GetCollectionDocumentByIdData): CancelablePromise<GetCollectionDocumentByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/collection/document/{id}',
@@ -1810,7 +1810,7 @@ export class DocumentService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocument(data: $OpenApiTs['/umbraco/management/api/v1/document']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document']['post']['res'][201]> {
+    public static postDocument(data: PostDocumentData = {}): CancelablePromise<PostDocumentResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document',
@@ -1832,7 +1832,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentById(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}']['get']['res'][200]> {
+    public static getDocumentById(data: GetDocumentByIdData): CancelablePromise<GetDocumentByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/{id}',
@@ -1853,7 +1853,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteDocumentById(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}']['delete']['res'][200]> {
+    public static deleteDocumentById(data: DeleteDocumentByIdData): CancelablePromise<DeleteDocumentByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/document/{id}',
@@ -1877,7 +1877,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentById(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}']['put']['res'][200]> {
+    public static putDocumentById(data: PutDocumentByIdData): CancelablePromise<PutDocumentByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}',
@@ -1906,7 +1906,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentByIdAuditLog(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/audit-log']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/audit-log']['get']['res'][200]> {
+    public static getDocumentByIdAuditLog(data: GetDocumentByIdAuditLogData): CancelablePromise<GetDocumentByIdAuditLogResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/{id}/audit-log',
@@ -1933,7 +1933,7 @@ export class DocumentService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocumentByIdCopy(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/copy']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/copy']['post']['res'][201]> {
+    public static postDocumentByIdCopy(data: PostDocumentByIdCopyData): CancelablePromise<PostDocumentByIdCopyResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document/{id}/copy',
@@ -1957,7 +1957,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentByIdDomains(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/domains']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/domains']['get']['res'][200]> {
+    public static getDocumentByIdDomains(data: GetDocumentByIdDomainsData): CancelablePromise<GetDocumentByIdDomainsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/{id}/domains',
@@ -1979,7 +1979,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentByIdDomains(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/domains']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/domains']['put']['res'][200]> {
+    public static putDocumentByIdDomains(data: PutDocumentByIdDomainsData): CancelablePromise<PutDocumentByIdDomainsResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}/domains',
@@ -2006,7 +2006,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentByIdMove(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/move']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/move']['put']['res'][200]> {
+    public static putDocumentByIdMove(data: PutDocumentByIdMoveData): CancelablePromise<PutDocumentByIdMoveResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}/move',
@@ -2030,7 +2030,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentByIdMoveToRecycleBin(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/move-to-recycle-bin']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/move-to-recycle-bin']['put']['res'][200]> {
+    public static putDocumentByIdMoveToRecycleBin(data: PutDocumentByIdMoveToRecycleBinData): CancelablePromise<PutDocumentByIdMoveToRecycleBinResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}/move-to-recycle-bin',
@@ -2053,7 +2053,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentByIdNotifications(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/notifications']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/notifications']['get']['res'][200]> {
+    public static getDocumentByIdNotifications(data: GetDocumentByIdNotificationsData): CancelablePromise<GetDocumentByIdNotificationsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/{id}/notifications',
@@ -2075,7 +2075,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentByIdNotifications(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/notifications']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/notifications']['put']['res'][200]> {
+    public static putDocumentByIdNotifications(data: PutDocumentByIdNotificationsData): CancelablePromise<PutDocumentByIdNotificationsResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}/notifications',
@@ -2100,7 +2100,7 @@ export class DocumentService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postDocumentByIdPublicAccess(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/public-access']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/public-access']['post']['res'][201]> {
+    public static postDocumentByIdPublicAccess(data: PostDocumentByIdPublicAccessData): CancelablePromise<PostDocumentByIdPublicAccessResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document/{id}/public-access',
@@ -2124,7 +2124,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteDocumentByIdPublicAccess(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/public-access']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/public-access']['delete']['res'][200]> {
+    public static deleteDocumentByIdPublicAccess(data: DeleteDocumentByIdPublicAccessData): CancelablePromise<DeleteDocumentByIdPublicAccessResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/document/{id}/public-access',
@@ -2146,7 +2146,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentByIdPublicAccess(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/public-access']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/public-access']['get']['res'][200]> {
+    public static getDocumentByIdPublicAccess(data: GetDocumentByIdPublicAccessData): CancelablePromise<GetDocumentByIdPublicAccessResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/{id}/public-access',
@@ -2168,7 +2168,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentByIdPublicAccess(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/public-access']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/public-access']['put']['res'][200]> {
+    public static putDocumentByIdPublicAccess(data: PutDocumentByIdPublicAccessData): CancelablePromise<PutDocumentByIdPublicAccessResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}/public-access',
@@ -2193,7 +2193,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentByIdPublish(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/publish']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/publish']['put']['res'][200]> {
+    public static putDocumentByIdPublish(data: PutDocumentByIdPublishData): CancelablePromise<PutDocumentByIdPublishResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}/publish',
@@ -2219,7 +2219,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentByIdPublishWithDescendants(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/publish-with-descendants']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/publish-with-descendants']['put']['res'][200]> {
+    public static putDocumentByIdPublishWithDescendants(data: PutDocumentByIdPublishWithDescendantsData): CancelablePromise<PutDocumentByIdPublishWithDescendantsResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}/publish-with-descendants',
@@ -2246,7 +2246,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentByIdReferencedBy(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/referenced-by']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/referenced-by']['get']['res'][200]> {
+    public static getDocumentByIdReferencedBy(data: GetDocumentByIdReferencedByData): CancelablePromise<GetDocumentByIdReferencedByResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/{id}/referenced-by',
@@ -2272,7 +2272,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentByIdReferencedDescendants(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/referenced-descendants']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/referenced-descendants']['get']['res'][200]> {
+    public static getDocumentByIdReferencedDescendants(data: GetDocumentByIdReferencedDescendantsData): CancelablePromise<GetDocumentByIdReferencedDescendantsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/{id}/referenced-descendants',
@@ -2297,7 +2297,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentByIdUnpublish(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/unpublish']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/unpublish']['put']['res'][200]> {
+    public static putDocumentByIdUnpublish(data: PutDocumentByIdUnpublishData): CancelablePromise<PutDocumentByIdUnpublishResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}/unpublish',
@@ -2323,7 +2323,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentByIdValidate(data: $OpenApiTs['/umbraco/management/api/v1/document/{id}/validate']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/{id}/validate']['put']['res'][200]> {
+    public static putDocumentByIdValidate(data: PutDocumentByIdValidateData): CancelablePromise<PutDocumentByIdValidateResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/{id}/validate',
@@ -2350,7 +2350,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentAreReferenced(data: $OpenApiTs['/umbraco/management/api/v1/document/are-referenced']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/are-referenced']['get']['res'][200]> {
+    public static getDocumentAreReferenced(data: GetDocumentAreReferencedData = {}): CancelablePromise<GetDocumentAreReferencedResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/are-referenced',
@@ -2370,7 +2370,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/configuration']['get']['res'][200]> {
+    public static getDocumentConfiguration(): CancelablePromise<GetDocumentConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/configuration',
@@ -2387,7 +2387,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putDocumentSort(data: $OpenApiTs['/umbraco/management/api/v1/document/sort']['put']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/sort']['put']['res'][200]> {
+    public static putDocumentSort(data: PutDocumentSortData = {}): CancelablePromise<PutDocumentSortResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/document/sort',
@@ -2409,7 +2409,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getDocumentUrls(data: $OpenApiTs['/umbraco/management/api/v1/document/urls']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/urls']['get']['res'][200]> {
+    public static getDocumentUrls(data: GetDocumentUrlsData = {}): CancelablePromise<GetDocumentUrlsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/document/urls',
@@ -2429,7 +2429,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postDocumentValidate(data: $OpenApiTs['/umbraco/management/api/v1/document/validate']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/document/validate']['post']['res'][200]> {
+    public static postDocumentValidate(data: PostDocumentValidateData = {}): CancelablePromise<PostDocumentValidateResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/document/validate',
@@ -2451,7 +2451,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemDocument(data: $OpenApiTs['/umbraco/management/api/v1/item/document']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/document']['get']['res'][200]> {
+    public static getItemDocument(data: GetItemDocumentData = {}): CancelablePromise<GetItemDocumentResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/document',
@@ -2472,7 +2472,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemDocumentSearch(data: $OpenApiTs['/umbraco/management/api/v1/item/document/search']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/document/search']['get']['res'][200]> {
+    public static getItemDocumentSearch(data: GetItemDocumentSearchData = {}): CancelablePromise<GetItemDocumentSearchResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/document/search',
@@ -2491,7 +2491,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteRecycleBinDocument(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/document']['delete']['res'][200]> {
+    public static deleteRecycleBinDocument(): CancelablePromise<DeleteRecycleBinDocumentResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/recycle-bin/document',
@@ -2510,7 +2510,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteRecycleBinDocumentById(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/{id}']['delete']['res'][200]> {
+    public static deleteRecycleBinDocumentById(data: DeleteRecycleBinDocumentByIdData): CancelablePromise<DeleteRecycleBinDocumentByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/recycle-bin/document/{id}',
@@ -2533,7 +2533,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRecycleBinDocumentByIdOriginalParent(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/{id}/original-parent']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/{id}/original-parent']['get']['res'][200]> {
+    public static getRecycleBinDocumentByIdOriginalParent(data: GetRecycleBinDocumentByIdOriginalParentData): CancelablePromise<GetRecycleBinDocumentByIdOriginalParentResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/recycle-bin/document/{id}/original-parent',
@@ -2556,7 +2556,7 @@ export class DocumentService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putRecycleBinDocumentByIdRestore(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/{id}/restore']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/{id}/restore']['put']['res'][200]> {
+    public static putRecycleBinDocumentByIdRestore(data: PutRecycleBinDocumentByIdRestoreData): CancelablePromise<PutRecycleBinDocumentByIdRestoreResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/recycle-bin/document/{id}/restore',
@@ -2583,7 +2583,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRecycleBinDocumentChildren(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/children']['get']['res'][200]> {
+    public static getRecycleBinDocumentChildren(data: GetRecycleBinDocumentChildrenData = {}): CancelablePromise<GetRecycleBinDocumentChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/recycle-bin/document/children',
@@ -2606,7 +2606,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRecycleBinDocumentRoot(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/document/root']['get']['res'][200]> {
+    public static getRecycleBinDocumentRoot(data: GetRecycleBinDocumentRootData = {}): CancelablePromise<GetRecycleBinDocumentRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/recycle-bin/document/root',
@@ -2627,7 +2627,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDocumentAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/document/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/document/ancestors']['get']['res'][200]> {
+    public static getTreeDocumentAncestors(data: GetTreeDocumentAncestorsData = {}): CancelablePromise<GetTreeDocumentAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/document/ancestors',
@@ -2650,7 +2650,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDocumentChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/document/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/document/children']['get']['res'][200]> {
+    public static getTreeDocumentChildren(data: GetTreeDocumentChildrenData = {}): CancelablePromise<GetTreeDocumentChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/document/children',
@@ -2675,7 +2675,7 @@ export class DocumentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeDocumentRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/document/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/document/root']['get']['res'][200]> {
+    public static getTreeDocumentRoot(data: GetTreeDocumentRootData = {}): CancelablePromise<GetTreeDocumentRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/document/root',
@@ -2700,7 +2700,7 @@ export class DynamicRootService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postDynamicRootQuery(data: $OpenApiTs['/umbraco/management/api/v1/dynamic-root/query']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dynamic-root/query']['post']['res'][200]> {
+    public static postDynamicRootQuery(data: PostDynamicRootQueryData = {}): CancelablePromise<PostDynamicRootQueryResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/dynamic-root/query',
@@ -2717,7 +2717,7 @@ export class DynamicRootService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getDynamicRootSteps(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/dynamic-root/steps']['get']['res'][200]> {
+    public static getDynamicRootSteps(): CancelablePromise<GetDynamicRootStepsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/dynamic-root/steps',
@@ -2737,7 +2737,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeClearUmbracoCache(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/ClearUmbracoCache']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/ClearUmbracoCache']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeClearUmbracoCache(data: PostUmbracoManagementApiV1GodModeClearUmbracoCacheData = {}): CancelablePromise<PostUmbracoManagementApiV1GodModeClearUmbracoCacheResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/god-mode/ClearUmbracoCache',
@@ -2757,7 +2757,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeCopyDataType(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/CopyDataType']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/CopyDataType']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeCopyDataType(data: PostUmbracoManagementApiV1GodModeCopyDataTypeData = {}): CancelablePromise<PostUmbracoManagementApiV1GodModeCopyDataTypeResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/god-mode/CopyDataType',
@@ -2777,7 +2777,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeDeleteTag(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/DeleteTag']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/DeleteTag']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeDeleteTag(data: PostUmbracoManagementApiV1GodModeDeleteTagData = {}): CancelablePromise<PostUmbracoManagementApiV1GodModeDeleteTagResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/god-mode/DeleteTag',
@@ -2795,7 +2795,7 @@ export class GodModeService {
      * @returns number OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeFixTemplateMasters(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/FixTemplateMasters']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeFixTemplateMasters(): CancelablePromise<PostUmbracoManagementApiV1GodModeFixTemplateMastersResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/god-mode/FixTemplateMasters',
@@ -2810,7 +2810,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetApiControllers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetApiControllers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetApiControllers(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetApiControllersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetApiControllers',
@@ -2825,7 +2825,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetAssemblies(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetAssemblies']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetAssemblies(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetAssembliesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetAssemblies',
@@ -2840,7 +2840,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetAssembliesWithInterfaces(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetAssembliesWithInterfaces']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetAssembliesWithInterfaces(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetAssembliesWithInterfacesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetAssembliesWithInterfaces',
@@ -2855,7 +2855,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetComposers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetComposers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetComposers(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetComposersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetComposers',
@@ -2870,7 +2870,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetCompositions(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetCompositions']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetCompositions(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetCompositionsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetCompositions',
@@ -2885,7 +2885,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetConfig(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetConfig']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetConfig(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetConfigResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetConfig',
@@ -2900,7 +2900,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentFinders(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentFinders']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentFinders(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetContentFindersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetContentFinders',
@@ -2927,7 +2927,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentPaged(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentPaged']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentPaged']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentPaged(data: GetUmbracoManagementApiV1GodModeGetContentPagedData = {}): CancelablePromise<GetUmbracoManagementApiV1GodModeGetContentPagedResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetContentPaged',
@@ -2955,7 +2955,7 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentTypeAliases(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentTypeAliases']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentTypeAliases(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetContentTypeAliasesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetContentTypeAliases',
@@ -2970,7 +2970,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentTypeMap(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentTypeMap']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentTypeMap(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetContentTypeMapResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetContentTypeMap',
@@ -2988,7 +2988,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetContentUsageData(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentUsageData']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetContentUsageData']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetContentUsageData(data: GetUmbracoManagementApiV1GodModeGetContentUsageDataData = {}): CancelablePromise<GetUmbracoManagementApiV1GodModeGetContentUsageDataResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetContentUsageData',
@@ -3007,7 +3007,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetDataTypes(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetDataTypes']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetDataTypes(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetDataTypesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetDataTypes',
@@ -3022,7 +3022,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetDataTypesStatus(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetDataTypesStatus']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetDataTypesStatus(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetDataTypesStatusResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetDataTypesStatus',
@@ -3037,7 +3037,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetEnvironmentDiagnostics(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetEnvironmentDiagnostics']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetEnvironmentDiagnostics(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetEnvironmentDiagnosticsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetEnvironmentDiagnostics',
@@ -3054,7 +3054,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetInterfacesFrom(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetInterfacesFrom']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetInterfacesFrom']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetInterfacesFrom(data: GetUmbracoManagementApiV1GodModeGetInterfacesFromData = {}): CancelablePromise<GetUmbracoManagementApiV1GodModeGetInterfacesFromResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetInterfacesFrom',
@@ -3072,7 +3072,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetLanguages(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetLanguages']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetLanguages(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetLanguagesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetLanguages',
@@ -3095,7 +3095,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetMedia(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetMedia']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetMedia']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetMedia(data: GetUmbracoManagementApiV1GodModeGetMediaData = {}): CancelablePromise<GetUmbracoManagementApiV1GodModeGetMediaResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetMedia',
@@ -3119,7 +3119,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetMediaTypes(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetMediaTypes']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetMediaTypes(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetMediaTypesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetMediaTypes',
@@ -3134,7 +3134,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetMemberGroups(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetMemberGroups']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetMemberGroups(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetMemberGroupsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetMemberGroups',
@@ -3155,7 +3155,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetMembersPaged(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetMembersPaged']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetMembersPaged']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetMembersPaged(data: GetUmbracoManagementApiV1GodModeGetMembersPagedData = {}): CancelablePromise<GetUmbracoManagementApiV1GodModeGetMembersPagedResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetMembersPaged',
@@ -3177,7 +3177,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetNonMsAssemblies(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetNonMsAssemblies']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetNonMsAssemblies(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetNonMsAssembliesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetNonMsAssemblies',
@@ -3194,7 +3194,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetNuCacheItem(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetNuCacheItem']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetNuCacheItem']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetNuCacheItem(data: GetUmbracoManagementApiV1GodModeGetNuCacheItemData = {}): CancelablePromise<GetUmbracoManagementApiV1GodModeGetNuCacheItemResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetNuCacheItem',
@@ -3212,7 +3212,7 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetNuCacheType(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetNuCacheType']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetNuCacheType(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetNuCacheTypeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetNuCacheType',
@@ -3227,7 +3227,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetOrphanedTags(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetOrphanedTags']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetOrphanedTags(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetOrphanedTagsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetOrphanedTags',
@@ -3242,7 +3242,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetPropertyEditors(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetPropertyEditors']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetPropertyEditors(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetPropertyEditorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetPropertyEditors',
@@ -3257,7 +3257,7 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetPropertyGroups(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetPropertyGroups']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetPropertyGroups(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetPropertyGroupsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetPropertyGroups',
@@ -3272,7 +3272,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetPropertyValueConverters(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetPropertyValueConverters']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetPropertyValueConverters(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetPropertyValueConvertersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetPropertyValueConverters',
@@ -3287,7 +3287,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetPublishedContentModels(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetPublishedContentModels']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetPublishedContentModels(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetPublishedContentModelsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetPublishedContentModels',
@@ -3302,7 +3302,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetRegisteredServices(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetRegisteredServices']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetRegisteredServices(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetRegisteredServicesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetRegisteredServices',
@@ -3317,7 +3317,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetRenderMvcControllers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetRenderMvcControllers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetRenderMvcControllers(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetRenderMvcControllersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetRenderMvcControllers',
@@ -3332,7 +3332,7 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetStandardContentTypeAliases(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetStandardContentTypeAliases']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetStandardContentTypeAliases(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetStandardContentTypeAliasesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetStandardContentTypeAliases',
@@ -3347,7 +3347,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetSurfaceControllers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetSurfaceControllers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetSurfaceControllers(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetSurfaceControllersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetSurfaceControllers',
@@ -3362,7 +3362,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTagHelpers(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTagHelpers']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTagHelpers(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetTagHelpersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetTagHelpers',
@@ -3377,7 +3377,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTagMapping(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTagMapping']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTagMapping(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetTagMappingResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetTagMapping',
@@ -3392,7 +3392,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTemplates(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTemplates']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTemplates(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetTemplatesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetTemplates',
@@ -3407,7 +3407,7 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTemplateUrlsToPing(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTemplateUrlsToPing']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTemplateUrlsToPing(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetTemplateUrlsToPingResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetTemplateUrlsToPing',
@@ -3424,7 +3424,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTypesAssignableFrom(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetTypesAssignableFrom']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTypesAssignableFrom']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTypesAssignableFrom(data: GetUmbracoManagementApiV1GodModeGetTypesAssignableFromData = {}): CancelablePromise<GetUmbracoManagementApiV1GodModeGetTypesAssignableFromResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetTypesAssignableFrom',
@@ -3444,7 +3444,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetTypesFrom(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetTypesFrom']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetTypesFrom']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetTypesFrom(data: GetUmbracoManagementApiV1GodModeGetTypesFromData = {}): CancelablePromise<GetUmbracoManagementApiV1GodModeGetTypesFromResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetTypesFrom',
@@ -3462,7 +3462,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetUmbracoAssemblies(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetUmbracoAssemblies']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetUmbracoAssemblies(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetUmbracoAssembliesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetUmbracoAssemblies',
@@ -3477,7 +3477,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetUrlProviders(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetUrlProviders']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetUrlProviders(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetUrlProvidersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetUrlProviders',
@@ -3494,7 +3494,7 @@ export class GodModeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetUrlsToPing(data: $OpenApiTs['/umbraco/management/api/v1/god-mode/GetUrlsToPing']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetUrlsToPing']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetUrlsToPing(data: GetUmbracoManagementApiV1GodModeGetUrlsToPingData = {}): CancelablePromise<GetUmbracoManagementApiV1GodModeGetUrlsToPingResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetUrlsToPing',
@@ -3512,7 +3512,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUmbracoManagementApiV1GodModeGetViewComponents(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/GetViewComponents']['get']['res'][200]> {
+    public static getUmbracoManagementApiV1GodModeGetViewComponents(): CancelablePromise<GetUmbracoManagementApiV1GodModeGetViewComponentsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/god-mode/GetViewComponents',
@@ -3527,7 +3527,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModePurgeMediaCache(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/PurgeMediaCache']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModePurgeMediaCache(): CancelablePromise<PostUmbracoManagementApiV1GodModePurgeMediaCacheResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/god-mode/PurgeMediaCache',
@@ -3542,7 +3542,7 @@ export class GodModeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUmbracoManagementApiV1GodModeRestartAppPool(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/god-mode/RestartAppPool']['post']['res'][200]> {
+    public static postUmbracoManagementApiV1GodModeRestartAppPool(): CancelablePromise<PostUmbracoManagementApiV1GodModeRestartAppPoolResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/god-mode/RestartAppPool',
@@ -3563,7 +3563,7 @@ export class HealthCheckService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getHealthCheckGroup(data: $OpenApiTs['/umbraco/management/api/v1/health-check-group']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/health-check-group']['get']['res'][200]> {
+    public static getHealthCheckGroup(data: GetHealthCheckGroupData = {}): CancelablePromise<GetHealthCheckGroupResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/health-check-group',
@@ -3584,7 +3584,7 @@ export class HealthCheckService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getHealthCheckGroupByName(data: $OpenApiTs['/umbraco/management/api/v1/health-check-group/{name}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/health-check-group/{name}']['get']['res'][200]> {
+    public static getHealthCheckGroupByName(data: GetHealthCheckGroupByNameData): CancelablePromise<GetHealthCheckGroupByNameResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/health-check-group/{name}',
@@ -3605,7 +3605,7 @@ export class HealthCheckService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postHealthCheckGroupByNameCheck(data: $OpenApiTs['/umbraco/management/api/v1/health-check-group/{name}/check']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/health-check-group/{name}/check']['post']['res'][200]> {
+    public static postHealthCheckGroupByNameCheck(data: PostHealthCheckGroupByNameCheckData): CancelablePromise<PostHealthCheckGroupByNameCheckResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/health-check-group/{name}/check',
@@ -3626,7 +3626,7 @@ export class HealthCheckService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postHealthCheckExecuteAction(data: $OpenApiTs['/umbraco/management/api/v1/health-check/execute-action']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/health-check/execute-action']['post']['res'][200]> {
+    public static postHealthCheckExecuteAction(data: PostHealthCheckExecuteActionData = {}): CancelablePromise<PostHealthCheckExecuteActionResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/health-check/execute-action',
@@ -3653,7 +3653,7 @@ export class HelpService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getHelp(data: $OpenApiTs['/umbraco/management/api/v1/help']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/help']['get']['res'][200]> {
+    public static getHelp(data: GetHelpData = {}): CancelablePromise<GetHelpResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/help',
@@ -3683,7 +3683,7 @@ export class ImagingService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getImagingResizeUrls(data: $OpenApiTs['/umbraco/management/api/v1/imaging/resize/urls']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/imaging/resize/urls']['get']['res'][200]> {
+    public static getImagingResizeUrls(data: GetImagingResizeUrlsData = {}): CancelablePromise<GetImagingResizeUrlsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/imaging/resize/urls',
@@ -3709,7 +3709,7 @@ export class ImportService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getImportAnalyze(data: $OpenApiTs['/umbraco/management/api/v1/import/analyze']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/import/analyze']['get']['res'][200]> {
+    public static getImportAnalyze(data: GetImportAnalyzeData = {}): CancelablePromise<GetImportAnalyzeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/import/analyze',
@@ -3734,7 +3734,7 @@ export class IndexerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getIndexer(data: $OpenApiTs['/umbraco/management/api/v1/indexer']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/indexer']['get']['res'][200]> {
+    public static getIndexer(data: GetIndexerData = {}): CancelablePromise<GetIndexerResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/indexer',
@@ -3754,7 +3754,7 @@ export class IndexerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getIndexerByIndexName(data: $OpenApiTs['/umbraco/management/api/v1/indexer/{indexName}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/indexer/{indexName}']['get']['res'][200]> {
+    public static getIndexerByIndexName(data: GetIndexerByIndexNameData): CancelablePromise<GetIndexerByIndexNameResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/indexer/{indexName}',
@@ -3774,7 +3774,7 @@ export class IndexerService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postIndexerByIndexNameRebuild(data: $OpenApiTs['/umbraco/management/api/v1/indexer/{indexName}/rebuild']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/indexer/{indexName}/rebuild']['post']['res'][200]> {
+    public static postIndexerByIndexNameRebuild(data: PostIndexerByIndexNameRebuildData): CancelablePromise<PostIndexerByIndexNameRebuildResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/indexer/{indexName}/rebuild',
@@ -3798,7 +3798,7 @@ export class InstallService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getInstallSettings(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/install/settings']['get']['res'][200]> {
+    public static getInstallSettings(): CancelablePromise<GetInstallSettingsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/install/settings',
@@ -3814,7 +3814,7 @@ export class InstallService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postInstallSetup(data: $OpenApiTs['/umbraco/management/api/v1/install/setup']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/install/setup']['post']['res'][200]> {
+    public static postInstallSetup(data: PostInstallSetupData = {}): CancelablePromise<PostInstallSetupResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/install/setup',
@@ -3833,7 +3833,7 @@ export class InstallService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postInstallValidateDatabase(data: $OpenApiTs['/umbraco/management/api/v1/install/validate-database']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/install/validate-database']['post']['res'][200]> {
+    public static postInstallValidateDatabase(data: PostInstallValidateDatabaseData = {}): CancelablePromise<PostInstallValidateDatabaseResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/install/validate-database',
@@ -3855,7 +3855,7 @@ export class LanguageService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemLanguage(data: $OpenApiTs['/umbraco/management/api/v1/item/language']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/language']['get']['res'][200]> {
+    public static getItemLanguage(data: GetItemLanguageData = {}): CancelablePromise<GetItemLanguageResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/language',
@@ -3872,7 +3872,7 @@ export class LanguageService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemLanguageDefault(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/language/default']['get']['res'][200]> {
+    public static getItemLanguageDefault(): CancelablePromise<GetItemLanguageDefaultResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/language/default',
@@ -3889,7 +3889,7 @@ export class LanguageService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getLanguage(data: $OpenApiTs['/umbraco/management/api/v1/language']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/language']['get']['res'][200]> {
+    public static getLanguage(data: GetLanguageData = {}): CancelablePromise<GetLanguageResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/language',
@@ -3909,7 +3909,7 @@ export class LanguageService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postLanguage(data: $OpenApiTs['/umbraco/management/api/v1/language']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/language']['post']['res'][201]> {
+    public static postLanguage(data: PostLanguageData = {}): CancelablePromise<PostLanguageResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/language',
@@ -3931,7 +3931,7 @@ export class LanguageService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getLanguageByIsoCode(data: $OpenApiTs['/umbraco/management/api/v1/language/{isoCode}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/language/{isoCode}']['get']['res'][200]> {
+    public static getLanguageByIsoCode(data: GetLanguageByIsoCodeData): CancelablePromise<GetLanguageByIsoCodeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/language/{isoCode}',
@@ -3951,7 +3951,7 @@ export class LanguageService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteLanguageByIsoCode(data: $OpenApiTs['/umbraco/management/api/v1/language/{isoCode}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/language/{isoCode}']['delete']['res'][200]> {
+    public static deleteLanguageByIsoCode(data: DeleteLanguageByIsoCodeData): CancelablePromise<DeleteLanguageByIsoCodeResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/language/{isoCode}',
@@ -3975,7 +3975,7 @@ export class LanguageService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putLanguageByIsoCode(data: $OpenApiTs['/umbraco/management/api/v1/language/{isoCode}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/language/{isoCode}']['put']['res'][200]> {
+    public static putLanguageByIsoCode(data: PutLanguageByIsoCodeData): CancelablePromise<PutLanguageByIsoCodeResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/language/{isoCode}',
@@ -4004,7 +4004,7 @@ export class LogViewerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getLogViewerLevel(data: $OpenApiTs['/umbraco/management/api/v1/log-viewer/level']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/log-viewer/level']['get']['res'][200]> {
+    public static getLogViewerLevel(data: GetLogViewerLevelData = {}): CancelablePromise<GetLogViewerLevelResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/log-viewer/level',
@@ -4026,7 +4026,7 @@ export class LogViewerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getLogViewerLevelCount(data: $OpenApiTs['/umbraco/management/api/v1/log-viewer/level-count']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/log-viewer/level-count']['get']['res'][200]> {
+    public static getLogViewerLevelCount(data: GetLogViewerLevelCountData = {}): CancelablePromise<GetLogViewerLevelCountResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/log-viewer/level-count',
@@ -4054,7 +4054,7 @@ export class LogViewerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getLogViewerLog(data: $OpenApiTs['/umbraco/management/api/v1/log-viewer/log']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/log-viewer/log']['get']['res'][200]> {
+    public static getLogViewerLog(data: GetLogViewerLogData = {}): CancelablePromise<GetLogViewerLogResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/log-viewer/log',
@@ -4083,7 +4083,7 @@ export class LogViewerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getLogViewerMessageTemplate(data: $OpenApiTs['/umbraco/management/api/v1/log-viewer/message-template']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/log-viewer/message-template']['get']['res'][200]> {
+    public static getLogViewerMessageTemplate(data: GetLogViewerMessageTemplateData = {}): CancelablePromise<GetLogViewerMessageTemplateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/log-viewer/message-template',
@@ -4108,7 +4108,7 @@ export class LogViewerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getLogViewerSavedSearch(data: $OpenApiTs['/umbraco/management/api/v1/log-viewer/saved-search']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/log-viewer/saved-search']['get']['res'][200]> {
+    public static getLogViewerSavedSearch(data: GetLogViewerSavedSearchData = {}): CancelablePromise<GetLogViewerSavedSearchResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/log-viewer/saved-search',
@@ -4129,7 +4129,7 @@ export class LogViewerService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postLogViewerSavedSearch(data: $OpenApiTs['/umbraco/management/api/v1/log-viewer/saved-search']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/log-viewer/saved-search']['post']['res'][201]> {
+    public static postLogViewerSavedSearch(data: PostLogViewerSavedSearchData = {}): CancelablePromise<PostLogViewerSavedSearchResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/log-viewer/saved-search',
@@ -4150,7 +4150,7 @@ export class LogViewerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getLogViewerSavedSearchByName(data: $OpenApiTs['/umbraco/management/api/v1/log-viewer/saved-search/{name}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/log-viewer/saved-search/{name}']['get']['res'][200]> {
+    public static getLogViewerSavedSearchByName(data: GetLogViewerSavedSearchByNameData): CancelablePromise<GetLogViewerSavedSearchByNameResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/log-viewer/saved-search/{name}',
@@ -4171,7 +4171,7 @@ export class LogViewerService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteLogViewerSavedSearchByName(data: $OpenApiTs['/umbraco/management/api/v1/log-viewer/saved-search/{name}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/log-viewer/saved-search/{name}']['delete']['res'][200]> {
+    public static deleteLogViewerSavedSearchByName(data: DeleteLogViewerSavedSearchByNameData): CancelablePromise<DeleteLogViewerSavedSearchByNameResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/log-viewer/saved-search/{name}',
@@ -4194,7 +4194,7 @@ export class LogViewerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getLogViewerValidateLogsSize(data: $OpenApiTs['/umbraco/management/api/v1/log-viewer/validate-logs-size']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/log-viewer/validate-logs-size']['get']['res'][200]> {
+    public static getLogViewerValidateLogsSize(data: GetLogViewerValidateLogsSizeData = {}): CancelablePromise<GetLogViewerValidateLogsSizeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/log-viewer/validate-logs-size',
@@ -4217,7 +4217,7 @@ export class ManifestService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getManifestManifest(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/manifest/manifest']['get']['res'][200]> {
+    public static getManifestManifest(): CancelablePromise<GetManifestManifestResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/manifest/manifest',
@@ -4232,7 +4232,7 @@ export class ManifestService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getManifestManifestPrivate(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/manifest/manifest/private']['get']['res'][200]> {
+    public static getManifestManifestPrivate(): CancelablePromise<GetManifestManifestPrivateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/manifest/manifest/private',
@@ -4247,7 +4247,7 @@ export class ManifestService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getManifestManifestPublic(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/manifest/manifest/public']['get']['res'][200]> {
+    public static getManifestManifestPublic(): CancelablePromise<GetManifestManifestPublicResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/manifest/manifest/public'
@@ -4263,7 +4263,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMediaType(data: $OpenApiTs['/umbraco/management/api/v1/item/media-type']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/media-type']['get']['res'][200]> {
+    public static getItemMediaType(data: GetItemMediaTypeData = {}): CancelablePromise<GetItemMediaTypeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/media-type',
@@ -4284,7 +4284,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMediaTypeAllowed(data: $OpenApiTs['/umbraco/management/api/v1/item/media-type/allowed']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/media-type/allowed']['get']['res'][200]> {
+    public static getItemMediaTypeAllowed(data: GetItemMediaTypeAllowedData = {}): CancelablePromise<GetItemMediaTypeAllowedResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/media-type/allowed',
@@ -4306,7 +4306,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMediaTypeFolders(data: $OpenApiTs['/umbraco/management/api/v1/item/media-type/folders']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/media-type/folders']['get']['res'][200]> {
+    public static getItemMediaTypeFolders(data: GetItemMediaTypeFoldersData = {}): CancelablePromise<GetItemMediaTypeFoldersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/media-type/folders',
@@ -4328,7 +4328,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMediaTypeSearch(data: $OpenApiTs['/umbraco/management/api/v1/item/media-type/search']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/media-type/search']['get']['res'][200]> {
+    public static getItemMediaTypeSearch(data: GetItemMediaTypeSearchData = {}): CancelablePromise<GetItemMediaTypeSearchResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/media-type/search',
@@ -4349,7 +4349,7 @@ export class MediaTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postMediaType(data: $OpenApiTs['/umbraco/management/api/v1/media-type']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type']['post']['res'][201]> {
+    public static postMediaType(data: PostMediaTypeData = {}): CancelablePromise<PostMediaTypeResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/media-type',
@@ -4371,7 +4371,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaTypeById(data: $OpenApiTs['/umbraco/management/api/v1/media-type/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/{id}']['get']['res'][200]> {
+    public static getMediaTypeById(data: GetMediaTypeByIdData): CancelablePromise<GetMediaTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media-type/{id}',
@@ -4392,7 +4392,7 @@ export class MediaTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteMediaTypeById(data: $OpenApiTs['/umbraco/management/api/v1/media-type/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/{id}']['delete']['res'][200]> {
+    public static deleteMediaTypeById(data: DeleteMediaTypeByIdData): CancelablePromise<DeleteMediaTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/media-type/{id}',
@@ -4415,7 +4415,7 @@ export class MediaTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMediaTypeById(data: $OpenApiTs['/umbraco/management/api/v1/media-type/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/{id}']['put']['res'][200]> {
+    public static putMediaTypeById(data: PutMediaTypeByIdData): CancelablePromise<PutMediaTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/media-type/{id}',
@@ -4442,7 +4442,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaTypeByIdAllowedChildren(data: $OpenApiTs['/umbraco/management/api/v1/media-type/{id}/allowed-children']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/{id}/allowed-children']['get']['res'][200]> {
+    public static getMediaTypeByIdAllowedChildren(data: GetMediaTypeByIdAllowedChildrenData): CancelablePromise<GetMediaTypeByIdAllowedChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media-type/{id}/allowed-children',
@@ -4467,7 +4467,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaTypeByIdCompositionReferences(data: $OpenApiTs['/umbraco/management/api/v1/media-type/{id}/composition-references']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/{id}/composition-references']['get']['res'][200]> {
+    public static getMediaTypeByIdCompositionReferences(data: GetMediaTypeByIdCompositionReferencesData): CancelablePromise<GetMediaTypeByIdCompositionReferencesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media-type/{id}/composition-references',
@@ -4490,7 +4490,7 @@ export class MediaTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postMediaTypeByIdCopy(data: $OpenApiTs['/umbraco/management/api/v1/media-type/{id}/copy']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/{id}/copy']['post']['res'][201]> {
+    public static postMediaTypeByIdCopy(data: PostMediaTypeByIdCopyData): CancelablePromise<PostMediaTypeByIdCopyResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/media-type/{id}/copy',
@@ -4515,7 +4515,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaTypeByIdExport(data: $OpenApiTs['/umbraco/management/api/v1/media-type/{id}/export']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/{id}/export']['get']['res'][200]> {
+    public static getMediaTypeByIdExport(data: GetMediaTypeByIdExportData): CancelablePromise<GetMediaTypeByIdExportResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media-type/{id}/export',
@@ -4537,7 +4537,7 @@ export class MediaTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMediaTypeByIdImport(data: $OpenApiTs['/umbraco/management/api/v1/media-type/{id}/import']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/{id}/import']['put']['res'][200]> {
+    public static putMediaTypeByIdImport(data: PutMediaTypeByIdImportData): CancelablePromise<PutMediaTypeByIdImportResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/media-type/{id}/import',
@@ -4563,7 +4563,7 @@ export class MediaTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMediaTypeByIdMove(data: $OpenApiTs['/umbraco/management/api/v1/media-type/{id}/move']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/{id}/move']['put']['res'][200]> {
+    public static putMediaTypeByIdMove(data: PutMediaTypeByIdMoveData): CancelablePromise<PutMediaTypeByIdMoveResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/media-type/{id}/move',
@@ -4589,7 +4589,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaTypeAllowedAtRoot(data: $OpenApiTs['/umbraco/management/api/v1/media-type/allowed-at-root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/allowed-at-root']['get']['res'][200]> {
+    public static getMediaTypeAllowedAtRoot(data: GetMediaTypeAllowedAtRootData = {}): CancelablePromise<GetMediaTypeAllowedAtRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media-type/allowed-at-root',
@@ -4610,7 +4610,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postMediaTypeAvailableCompositions(data: $OpenApiTs['/umbraco/management/api/v1/media-type/available-compositions']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/available-compositions']['post']['res'][200]> {
+    public static postMediaTypeAvailableCompositions(data: PostMediaTypeAvailableCompositionsData = {}): CancelablePromise<PostMediaTypeAvailableCompositionsResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/media-type/available-compositions',
@@ -4629,7 +4629,7 @@ export class MediaTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postMediaTypeFolder(data: $OpenApiTs['/umbraco/management/api/v1/media-type/folder']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/folder']['post']['res'][201]> {
+    public static postMediaTypeFolder(data: PostMediaTypeFolderData = {}): CancelablePromise<PostMediaTypeFolderResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/media-type/folder',
@@ -4651,7 +4651,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaTypeFolderById(data: $OpenApiTs['/umbraco/management/api/v1/media-type/folder/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/folder/{id}']['get']['res'][200]> {
+    public static getMediaTypeFolderById(data: GetMediaTypeFolderByIdData): CancelablePromise<GetMediaTypeFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media-type/folder/{id}',
@@ -4672,7 +4672,7 @@ export class MediaTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteMediaTypeFolderById(data: $OpenApiTs['/umbraco/management/api/v1/media-type/folder/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/folder/{id}']['delete']['res'][200]> {
+    public static deleteMediaTypeFolderById(data: DeleteMediaTypeFolderByIdData): CancelablePromise<DeleteMediaTypeFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/media-type/folder/{id}',
@@ -4696,7 +4696,7 @@ export class MediaTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMediaTypeFolderById(data: $OpenApiTs['/umbraco/management/api/v1/media-type/folder/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/folder/{id}']['put']['res'][200]> {
+    public static putMediaTypeFolderById(data: PutMediaTypeFolderByIdData): CancelablePromise<PutMediaTypeFolderByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/media-type/folder/{id}',
@@ -4721,7 +4721,7 @@ export class MediaTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postMediaTypeImport(data: $OpenApiTs['/umbraco/management/api/v1/media-type/import']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media-type/import']['post']['res'][201]> {
+    public static postMediaTypeImport(data: PostMediaTypeImportData = {}): CancelablePromise<PostMediaTypeImportResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/media-type/import',
@@ -4743,7 +4743,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeMediaTypeAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/media-type/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/media-type/ancestors']['get']['res'][200]> {
+    public static getTreeMediaTypeAncestors(data: GetTreeMediaTypeAncestorsData = {}): CancelablePromise<GetTreeMediaTypeAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/media-type/ancestors',
@@ -4766,7 +4766,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeMediaTypeChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/media-type/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/media-type/children']['get']['res'][200]> {
+    public static getTreeMediaTypeChildren(data: GetTreeMediaTypeChildrenData = {}): CancelablePromise<GetTreeMediaTypeChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/media-type/children',
@@ -4791,7 +4791,7 @@ export class MediaTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeMediaTypeRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/media-type/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/media-type/root']['get']['res'][200]> {
+    public static getTreeMediaTypeRoot(data: GetTreeMediaTypeRootData = {}): CancelablePromise<GetTreeMediaTypeRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/media-type/root',
@@ -4822,7 +4822,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getCollectionMedia(data: $OpenApiTs['/umbraco/management/api/v1/collection/media']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/collection/media']['get']['res'][200]> {
+    public static getCollectionMedia(data: GetCollectionMediaData = {}): CancelablePromise<GetCollectionMediaResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/collection/media',
@@ -4850,7 +4850,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMedia(data: $OpenApiTs['/umbraco/management/api/v1/item/media']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/media']['get']['res'][200]> {
+    public static getItemMedia(data: GetItemMediaData = {}): CancelablePromise<GetItemMediaResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/media',
@@ -4871,7 +4871,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMediaSearch(data: $OpenApiTs['/umbraco/management/api/v1/item/media/search']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/media/search']['get']['res'][200]> {
+    public static getItemMediaSearch(data: GetItemMediaSearchData = {}): CancelablePromise<GetItemMediaSearchResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/media/search',
@@ -4892,7 +4892,7 @@ export class MediaService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postMedia(data: $OpenApiTs['/umbraco/management/api/v1/media']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media']['post']['res'][201]> {
+    public static postMedia(data: PostMediaData = {}): CancelablePromise<PostMediaResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/media',
@@ -4914,7 +4914,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaById(data: $OpenApiTs['/umbraco/management/api/v1/media/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/{id}']['get']['res'][200]> {
+    public static getMediaById(data: GetMediaByIdData): CancelablePromise<GetMediaByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media/{id}',
@@ -4935,7 +4935,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteMediaById(data: $OpenApiTs['/umbraco/management/api/v1/media/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/{id}']['delete']['res'][200]> {
+    public static deleteMediaById(data: DeleteMediaByIdData): CancelablePromise<DeleteMediaByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/media/{id}',
@@ -4959,7 +4959,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMediaById(data: $OpenApiTs['/umbraco/management/api/v1/media/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/{id}']['put']['res'][200]> {
+    public static putMediaById(data: PutMediaByIdData): CancelablePromise<PutMediaByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/media/{id}',
@@ -4988,7 +4988,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaByIdAuditLog(data: $OpenApiTs['/umbraco/management/api/v1/media/{id}/audit-log']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/{id}/audit-log']['get']['res'][200]> {
+    public static getMediaByIdAuditLog(data: GetMediaByIdAuditLogData): CancelablePromise<GetMediaByIdAuditLogResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media/{id}/audit-log',
@@ -5015,7 +5015,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMediaByIdMove(data: $OpenApiTs['/umbraco/management/api/v1/media/{id}/move']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/{id}/move']['put']['res'][200]> {
+    public static putMediaByIdMove(data: PutMediaByIdMoveData): CancelablePromise<PutMediaByIdMoveResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/media/{id}/move',
@@ -5039,7 +5039,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMediaByIdMoveToRecycleBin(data: $OpenApiTs['/umbraco/management/api/v1/media/{id}/move-to-recycle-bin']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/{id}/move-to-recycle-bin']['put']['res'][200]> {
+    public static putMediaByIdMoveToRecycleBin(data: PutMediaByIdMoveToRecycleBinData): CancelablePromise<PutMediaByIdMoveToRecycleBinResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/media/{id}/move-to-recycle-bin',
@@ -5064,7 +5064,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaByIdReferencedBy(data: $OpenApiTs['/umbraco/management/api/v1/media/{id}/referenced-by']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/{id}/referenced-by']['get']['res'][200]> {
+    public static getMediaByIdReferencedBy(data: GetMediaByIdReferencedByData): CancelablePromise<GetMediaByIdReferencedByResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media/{id}/referenced-by',
@@ -5090,7 +5090,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaByIdReferencedDescendants(data: $OpenApiTs['/umbraco/management/api/v1/media/{id}/referenced-descendants']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/{id}/referenced-descendants']['get']['res'][200]> {
+    public static getMediaByIdReferencedDescendants(data: GetMediaByIdReferencedDescendantsData): CancelablePromise<GetMediaByIdReferencedDescendantsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media/{id}/referenced-descendants',
@@ -5115,7 +5115,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMediaByIdValidate(data: $OpenApiTs['/umbraco/management/api/v1/media/{id}/validate']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/{id}/validate']['put']['res'][200]> {
+    public static putMediaByIdValidate(data: PutMediaByIdValidateData): CancelablePromise<PutMediaByIdValidateResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/media/{id}/validate',
@@ -5142,7 +5142,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaAreReferenced(data: $OpenApiTs['/umbraco/management/api/v1/media/are-referenced']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/are-referenced']['get']['res'][200]> {
+    public static getMediaAreReferenced(data: GetMediaAreReferencedData = {}): CancelablePromise<GetMediaAreReferencedResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media/are-referenced',
@@ -5162,7 +5162,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/configuration']['get']['res'][200]> {
+    public static getMediaConfiguration(): CancelablePromise<GetMediaConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media/configuration',
@@ -5179,7 +5179,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMediaSort(data: $OpenApiTs['/umbraco/management/api/v1/media/sort']['put']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/sort']['put']['res'][200]> {
+    public static putMediaSort(data: PutMediaSortData = {}): CancelablePromise<PutMediaSortResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/media/sort',
@@ -5201,7 +5201,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMediaUrls(data: $OpenApiTs['/umbraco/management/api/v1/media/urls']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/urls']['get']['res'][200]> {
+    public static getMediaUrls(data: GetMediaUrlsData = {}): CancelablePromise<GetMediaUrlsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/media/urls',
@@ -5221,7 +5221,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postMediaValidate(data: $OpenApiTs['/umbraco/management/api/v1/media/validate']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/media/validate']['post']['res'][200]> {
+    public static postMediaValidate(data: PostMediaValidateData = {}): CancelablePromise<PostMediaValidateResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/media/validate',
@@ -5241,7 +5241,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteRecycleBinMedia(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/media']['delete']['res'][200]> {
+    public static deleteRecycleBinMedia(): CancelablePromise<DeleteRecycleBinMediaResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/recycle-bin/media',
@@ -5260,7 +5260,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteRecycleBinMediaById(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/{id}']['delete']['res'][200]> {
+    public static deleteRecycleBinMediaById(data: DeleteRecycleBinMediaByIdData): CancelablePromise<DeleteRecycleBinMediaByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/recycle-bin/media/{id}',
@@ -5283,7 +5283,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRecycleBinMediaByIdOriginalParent(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/{id}/original-parent']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/{id}/original-parent']['get']['res'][200]> {
+    public static getRecycleBinMediaByIdOriginalParent(data: GetRecycleBinMediaByIdOriginalParentData): CancelablePromise<GetRecycleBinMediaByIdOriginalParentResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/recycle-bin/media/{id}/original-parent',
@@ -5306,7 +5306,7 @@ export class MediaService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putRecycleBinMediaByIdRestore(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/{id}/restore']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/{id}/restore']['put']['res'][200]> {
+    public static putRecycleBinMediaByIdRestore(data: PutRecycleBinMediaByIdRestoreData): CancelablePromise<PutRecycleBinMediaByIdRestoreResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/recycle-bin/media/{id}/restore',
@@ -5333,7 +5333,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRecycleBinMediaChildren(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/children']['get']['res'][200]> {
+    public static getRecycleBinMediaChildren(data: GetRecycleBinMediaChildrenData = {}): CancelablePromise<GetRecycleBinMediaChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/recycle-bin/media/children',
@@ -5356,7 +5356,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRecycleBinMediaRoot(data: $OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/recycle-bin/media/root']['get']['res'][200]> {
+    public static getRecycleBinMediaRoot(data: GetRecycleBinMediaRootData = {}): CancelablePromise<GetRecycleBinMediaRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/recycle-bin/media/root',
@@ -5377,7 +5377,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeMediaAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/media/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/media/ancestors']['get']['res'][200]> {
+    public static getTreeMediaAncestors(data: GetTreeMediaAncestorsData = {}): CancelablePromise<GetTreeMediaAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/media/ancestors',
@@ -5400,7 +5400,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeMediaChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/media/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/media/children']['get']['res'][200]> {
+    public static getTreeMediaChildren(data: GetTreeMediaChildrenData = {}): CancelablePromise<GetTreeMediaChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/media/children',
@@ -5425,7 +5425,7 @@ export class MediaService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeMediaRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/media/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/media/root']['get']['res'][200]> {
+    public static getTreeMediaRoot(data: GetTreeMediaRootData = {}): CancelablePromise<GetTreeMediaRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/media/root',
@@ -5450,7 +5450,7 @@ export class MemberGroupService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMemberGroup(data: $OpenApiTs['/umbraco/management/api/v1/item/member-group']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/member-group']['get']['res'][200]> {
+    public static getItemMemberGroup(data: GetItemMemberGroupData = {}): CancelablePromise<GetItemMemberGroupResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/member-group',
@@ -5470,7 +5470,7 @@ export class MemberGroupService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMemberGroup(data: $OpenApiTs['/umbraco/management/api/v1/member-group']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-group']['get']['res'][200]> {
+    public static getMemberGroup(data: GetMemberGroupData = {}): CancelablePromise<GetMemberGroupResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/member-group',
@@ -5491,7 +5491,7 @@ export class MemberGroupService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postMemberGroup(data: $OpenApiTs['/umbraco/management/api/v1/member-group']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-group']['post']['res'][201]> {
+    public static postMemberGroup(data: PostMemberGroupData = {}): CancelablePromise<PostMemberGroupResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/member-group',
@@ -5512,7 +5512,7 @@ export class MemberGroupService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMemberGroupById(data: $OpenApiTs['/umbraco/management/api/v1/member-group/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-group/{id}']['get']['res'][200]> {
+    public static getMemberGroupById(data: GetMemberGroupByIdData): CancelablePromise<GetMemberGroupByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/member-group/{id}',
@@ -5533,7 +5533,7 @@ export class MemberGroupService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteMemberGroupById(data: $OpenApiTs['/umbraco/management/api/v1/member-group/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-group/{id}']['delete']['res'][200]> {
+    public static deleteMemberGroupById(data: DeleteMemberGroupByIdData): CancelablePromise<DeleteMemberGroupByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/member-group/{id}',
@@ -5557,7 +5557,7 @@ export class MemberGroupService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMemberGroupById(data: $OpenApiTs['/umbraco/management/api/v1/member-group/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-group/{id}']['put']['res'][200]> {
+    public static putMemberGroupById(data: PutMemberGroupByIdData): CancelablePromise<PutMemberGroupByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/member-group/{id}',
@@ -5583,7 +5583,7 @@ export class MemberGroupService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeMemberGroupRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/member-group/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/member-group/root']['get']['res'][200]> {
+    public static getTreeMemberGroupRoot(data: GetTreeMemberGroupRootData = {}): CancelablePromise<GetTreeMemberGroupRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/member-group/root',
@@ -5607,7 +5607,7 @@ export class MemberTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMemberType(data: $OpenApiTs['/umbraco/management/api/v1/item/member-type']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/member-type']['get']['res'][200]> {
+    public static getItemMemberType(data: GetItemMemberTypeData = {}): CancelablePromise<GetItemMemberTypeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/member-type',
@@ -5628,7 +5628,7 @@ export class MemberTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMemberTypeSearch(data: $OpenApiTs['/umbraco/management/api/v1/item/member-type/search']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/member-type/search']['get']['res'][200]> {
+    public static getItemMemberTypeSearch(data: GetItemMemberTypeSearchData = {}): CancelablePromise<GetItemMemberTypeSearchResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/member-type/search',
@@ -5649,7 +5649,7 @@ export class MemberTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postMemberType(data: $OpenApiTs['/umbraco/management/api/v1/member-type']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-type']['post']['res'][201]> {
+    public static postMemberType(data: PostMemberTypeData = {}): CancelablePromise<PostMemberTypeResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/member-type',
@@ -5671,7 +5671,7 @@ export class MemberTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMemberTypeById(data: $OpenApiTs['/umbraco/management/api/v1/member-type/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-type/{id}']['get']['res'][200]> {
+    public static getMemberTypeById(data: GetMemberTypeByIdData): CancelablePromise<GetMemberTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/member-type/{id}',
@@ -5692,7 +5692,7 @@ export class MemberTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteMemberTypeById(data: $OpenApiTs['/umbraco/management/api/v1/member-type/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-type/{id}']['delete']['res'][200]> {
+    public static deleteMemberTypeById(data: DeleteMemberTypeByIdData): CancelablePromise<DeleteMemberTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/member-type/{id}',
@@ -5715,7 +5715,7 @@ export class MemberTypeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMemberTypeById(data: $OpenApiTs['/umbraco/management/api/v1/member-type/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-type/{id}']['put']['res'][200]> {
+    public static putMemberTypeById(data: PutMemberTypeByIdData): CancelablePromise<PutMemberTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/member-type/{id}',
@@ -5740,7 +5740,7 @@ export class MemberTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMemberTypeByIdCompositionReferences(data: $OpenApiTs['/umbraco/management/api/v1/member-type/{id}/composition-references']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-type/{id}/composition-references']['get']['res'][200]> {
+    public static getMemberTypeByIdCompositionReferences(data: GetMemberTypeByIdCompositionReferencesData): CancelablePromise<GetMemberTypeByIdCompositionReferencesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/member-type/{id}/composition-references',
@@ -5762,7 +5762,7 @@ export class MemberTypeService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postMemberTypeByIdCopy(data: $OpenApiTs['/umbraco/management/api/v1/member-type/{id}/copy']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-type/{id}/copy']['post']['res'][201]> {
+    public static postMemberTypeByIdCopy(data: PostMemberTypeByIdCopyData): CancelablePromise<PostMemberTypeByIdCopyResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/member-type/{id}/copy',
@@ -5785,7 +5785,7 @@ export class MemberTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postMemberTypeAvailableCompositions(data: $OpenApiTs['/umbraco/management/api/v1/member-type/available-compositions']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member-type/available-compositions']['post']['res'][200]> {
+    public static postMemberTypeAvailableCompositions(data: PostMemberTypeAvailableCompositionsData = {}): CancelablePromise<PostMemberTypeAvailableCompositionsResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/member-type/available-compositions',
@@ -5805,7 +5805,7 @@ export class MemberTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeMemberTypeRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/member-type/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/member-type/root']['get']['res'][200]> {
+    public static getTreeMemberTypeRoot(data: GetTreeMemberTypeRootData = {}): CancelablePromise<GetTreeMemberTypeRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/member-type/root',
@@ -5837,7 +5837,7 @@ export class MemberService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getFilterMember(data: $OpenApiTs['/umbraco/management/api/v1/filter/member']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/filter/member']['get']['res'][200]> {
+    public static getFilterMember(data: GetFilterMemberData = {}): CancelablePromise<GetFilterMemberResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/filter/member',
@@ -5866,7 +5866,7 @@ export class MemberService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMember(data: $OpenApiTs['/umbraco/management/api/v1/item/member']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/member']['get']['res'][200]> {
+    public static getItemMember(data: GetItemMemberData = {}): CancelablePromise<GetItemMemberResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/member',
@@ -5887,7 +5887,7 @@ export class MemberService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemMemberSearch(data: $OpenApiTs['/umbraco/management/api/v1/item/member/search']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/member/search']['get']['res'][200]> {
+    public static getItemMemberSearch(data: GetItemMemberSearchData = {}): CancelablePromise<GetItemMemberSearchResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/member/search',
@@ -5908,7 +5908,7 @@ export class MemberService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postMember(data: $OpenApiTs['/umbraco/management/api/v1/member']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member']['post']['res'][201]> {
+    public static postMember(data: PostMemberData = {}): CancelablePromise<PostMemberResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/member',
@@ -5930,7 +5930,7 @@ export class MemberService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMemberById(data: $OpenApiTs['/umbraco/management/api/v1/member/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member/{id}']['get']['res'][200]> {
+    public static getMemberById(data: GetMemberByIdData): CancelablePromise<GetMemberByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/member/{id}',
@@ -5951,7 +5951,7 @@ export class MemberService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteMemberById(data: $OpenApiTs['/umbraco/management/api/v1/member/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member/{id}']['delete']['res'][200]> {
+    public static deleteMemberById(data: DeleteMemberByIdData): CancelablePromise<DeleteMemberByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/member/{id}',
@@ -5975,7 +5975,7 @@ export class MemberService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMemberById(data: $OpenApiTs['/umbraco/management/api/v1/member/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member/{id}']['put']['res'][200]> {
+    public static putMemberById(data: PutMemberByIdData): CancelablePromise<PutMemberByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/member/{id}',
@@ -6001,7 +6001,7 @@ export class MemberService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putMemberByIdValidate(data: $OpenApiTs['/umbraco/management/api/v1/member/{id}/validate']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member/{id}/validate']['put']['res'][200]> {
+    public static putMemberByIdValidate(data: PutMemberByIdValidateData): CancelablePromise<PutMemberByIdValidateResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/member/{id}/validate',
@@ -6024,7 +6024,7 @@ export class MemberService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getMemberConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member/configuration']['get']['res'][200]> {
+    public static getMemberConfiguration(): CancelablePromise<GetMemberConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/member/configuration',
@@ -6041,7 +6041,7 @@ export class MemberService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postMemberValidate(data: $OpenApiTs['/umbraco/management/api/v1/member/validate']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/member/validate']['post']['res'][200]> {
+    public static postMemberValidate(data: PostMemberValidateData = {}): CancelablePromise<PostMemberValidateResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/member/validate',
@@ -6064,7 +6064,7 @@ export class ModelsBuilderService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postModelsBuilderBuild(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/models-builder/build']['post']['res'][200]> {
+    public static postModelsBuilderBuild(): CancelablePromise<PostModelsBuilderBuildResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/models-builder/build',
@@ -6081,7 +6081,7 @@ export class ModelsBuilderService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getModelsBuilderDashboard(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/models-builder/dashboard']['get']['res'][200]> {
+    public static getModelsBuilderDashboard(): CancelablePromise<GetModelsBuilderDashboardResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/models-builder/dashboard',
@@ -6096,7 +6096,7 @@ export class ModelsBuilderService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getModelsBuilderStatus(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/models-builder/status']['get']['res'][200]> {
+    public static getModelsBuilderStatus(): CancelablePromise<GetModelsBuilderStatusResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/models-builder/status',
@@ -6117,7 +6117,7 @@ export class ObjectTypesService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getObjectTypes(data: $OpenApiTs['/umbraco/management/api/v1/object-types']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/object-types']['get']['res'][200]> {
+    public static getObjectTypes(data: GetObjectTypesData = {}): CancelablePromise<GetObjectTypesResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/object-types',
@@ -6142,7 +6142,7 @@ export class OEmbedService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getOembedQuery(data: $OpenApiTs['/umbraco/management/api/v1/oembed/query']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/oembed/query']['get']['res'][200]> {
+    public static getOembedQuery(data: GetOembedQueryData = {}): CancelablePromise<GetOembedQueryResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/oembed/query',
@@ -6167,7 +6167,7 @@ export class PackageService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postPackageByNameRunMigration(data: $OpenApiTs['/umbraco/management/api/v1/package/{name}/run-migration']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/package/{name}/run-migration']['post']['res'][200]> {
+    public static postPackageByNameRunMigration(data: PostPackageByNameRunMigrationData): CancelablePromise<PostPackageByNameRunMigrationResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/package/{name}/run-migration',
@@ -6188,7 +6188,7 @@ export class PackageService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getPackageConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/package/configuration']['get']['res'][200]> {
+    public static getPackageConfiguration(): CancelablePromise<GetPackageConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/package/configuration',
@@ -6206,7 +6206,7 @@ export class PackageService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getPackageCreated(data: $OpenApiTs['/umbraco/management/api/v1/package/created']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/package/created']['get']['res'][200]> {
+    public static getPackageCreated(data: GetPackageCreatedData = {}): CancelablePromise<GetPackageCreatedResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/package/created',
@@ -6227,7 +6227,7 @@ export class PackageService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postPackageCreated(data: $OpenApiTs['/umbraco/management/api/v1/package/created']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/package/created']['post']['res'][201]> {
+    public static postPackageCreated(data: PostPackageCreatedData = {}): CancelablePromise<PostPackageCreatedResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/package/created',
@@ -6249,7 +6249,7 @@ export class PackageService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getPackageCreatedById(data: $OpenApiTs['/umbraco/management/api/v1/package/created/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/package/created/{id}']['get']['res'][200]> {
+    public static getPackageCreatedById(data: GetPackageCreatedByIdData): CancelablePromise<GetPackageCreatedByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/package/created/{id}',
@@ -6270,7 +6270,7 @@ export class PackageService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deletePackageCreatedById(data: $OpenApiTs['/umbraco/management/api/v1/package/created/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/package/created/{id}']['delete']['res'][200]> {
+    public static deletePackageCreatedById(data: DeletePackageCreatedByIdData): CancelablePromise<DeletePackageCreatedByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/package/created/{id}',
@@ -6293,7 +6293,7 @@ export class PackageService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putPackageCreatedById(data: $OpenApiTs['/umbraco/management/api/v1/package/created/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/package/created/{id}']['put']['res'][200]> {
+    public static putPackageCreatedById(data: PutPackageCreatedByIdData): CancelablePromise<PutPackageCreatedByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/package/created/{id}',
@@ -6317,7 +6317,7 @@ export class PackageService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getPackageCreatedByIdDownload(data: $OpenApiTs['/umbraco/management/api/v1/package/created/{id}/download']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/package/created/{id}/download']['get']['res'][200]> {
+    public static getPackageCreatedByIdDownload(data: GetPackageCreatedByIdDownloadData): CancelablePromise<GetPackageCreatedByIdDownloadResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/package/created/{id}/download',
@@ -6339,7 +6339,7 @@ export class PackageService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getPackageMigrationStatus(data: $OpenApiTs['/umbraco/management/api/v1/package/migration-status']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/package/migration-status']['get']['res'][200]> {
+    public static getPackageMigrationStatus(data: GetPackageMigrationStatusData = {}): CancelablePromise<GetPackageMigrationStatusResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/package/migration-status',
@@ -6363,7 +6363,7 @@ export class PartialViewService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemPartialView(data: $OpenApiTs['/umbraco/management/api/v1/item/partial-view']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/partial-view']['get']['res'][200]> {
+    public static getItemPartialView(data: GetItemPartialViewData = {}): CancelablePromise<GetItemPartialViewResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/partial-view',
@@ -6382,7 +6382,7 @@ export class PartialViewService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postPartialView(data: $OpenApiTs['/umbraco/management/api/v1/partial-view']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view']['post']['res'][201]> {
+    public static postPartialView(data: PostPartialViewData = {}): CancelablePromise<PostPartialViewResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/partial-view',
@@ -6404,7 +6404,7 @@ export class PartialViewService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getPartialViewByPath(data: $OpenApiTs['/umbraco/management/api/v1/partial-view/{path}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view/{path}']['get']['res'][200]> {
+    public static getPartialViewByPath(data: GetPartialViewByPathData): CancelablePromise<GetPartialViewByPathResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/partial-view/{path}',
@@ -6425,7 +6425,7 @@ export class PartialViewService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deletePartialViewByPath(data: $OpenApiTs['/umbraco/management/api/v1/partial-view/{path}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view/{path}']['delete']['res'][200]> {
+    public static deletePartialViewByPath(data: DeletePartialViewByPathData): CancelablePromise<DeletePartialViewByPathResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/partial-view/{path}',
@@ -6449,7 +6449,7 @@ export class PartialViewService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putPartialViewByPath(data: $OpenApiTs['/umbraco/management/api/v1/partial-view/{path}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view/{path}']['put']['res'][200]> {
+    public static putPartialViewByPath(data: PutPartialViewByPathData): CancelablePromise<PutPartialViewByPathResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/partial-view/{path}',
@@ -6475,7 +6475,7 @@ export class PartialViewService {
      * @returns string Created
      * @throws ApiError
      */
-    public static putPartialViewByPathRename(data: $OpenApiTs['/umbraco/management/api/v1/partial-view/{path}/rename']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view/{path}/rename']['put']['res'][201]> {
+    public static putPartialViewByPathRename(data: PutPartialViewByPathRenameData): CancelablePromise<PutPartialViewByPathRenameResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/partial-view/{path}/rename',
@@ -6500,7 +6500,7 @@ export class PartialViewService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postPartialViewFolder(data: $OpenApiTs['/umbraco/management/api/v1/partial-view/folder']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view/folder']['post']['res'][201]> {
+    public static postPartialViewFolder(data: PostPartialViewFolderData = {}): CancelablePromise<PostPartialViewFolderResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/partial-view/folder',
@@ -6522,7 +6522,7 @@ export class PartialViewService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getPartialViewFolderByPath(data: $OpenApiTs['/umbraco/management/api/v1/partial-view/folder/{path}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view/folder/{path}']['get']['res'][200]> {
+    public static getPartialViewFolderByPath(data: GetPartialViewFolderByPathData): CancelablePromise<GetPartialViewFolderByPathResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/partial-view/folder/{path}',
@@ -6543,7 +6543,7 @@ export class PartialViewService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deletePartialViewFolderByPath(data: $OpenApiTs['/umbraco/management/api/v1/partial-view/folder/{path}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view/folder/{path}']['delete']['res'][200]> {
+    public static deletePartialViewFolderByPath(data: DeletePartialViewFolderByPathData): CancelablePromise<DeletePartialViewFolderByPathResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/partial-view/folder/{path}',
@@ -6567,7 +6567,7 @@ export class PartialViewService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getPartialViewSnippet(data: $OpenApiTs['/umbraco/management/api/v1/partial-view/snippet']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view/snippet']['get']['res'][200]> {
+    public static getPartialViewSnippet(data: GetPartialViewSnippetData = {}): CancelablePromise<GetPartialViewSnippetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/partial-view/snippet',
@@ -6588,7 +6588,7 @@ export class PartialViewService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getPartialViewSnippetById(data: $OpenApiTs['/umbraco/management/api/v1/partial-view/snippet/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/partial-view/snippet/{id}']['get']['res'][200]> {
+    public static getPartialViewSnippetById(data: GetPartialViewSnippetByIdData): CancelablePromise<GetPartialViewSnippetByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/partial-view/snippet/{id}',
@@ -6609,7 +6609,7 @@ export class PartialViewService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreePartialViewAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/partial-view/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/partial-view/ancestors']['get']['res'][200]> {
+    public static getTreePartialViewAncestors(data: GetTreePartialViewAncestorsData = {}): CancelablePromise<GetTreePartialViewAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/partial-view/ancestors',
@@ -6631,7 +6631,7 @@ export class PartialViewService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreePartialViewChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/partial-view/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/partial-view/children']['get']['res'][200]> {
+    public static getTreePartialViewChildren(data: GetTreePartialViewChildrenData = {}): CancelablePromise<GetTreePartialViewChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/partial-view/children',
@@ -6654,7 +6654,7 @@ export class PartialViewService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreePartialViewRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/partial-view/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/partial-view/root']['get']['res'][200]> {
+    public static getTreePartialViewRoot(data: GetTreePartialViewRootData = {}): CancelablePromise<GetTreePartialViewRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/partial-view/root',
@@ -6676,7 +6676,7 @@ export class PreviewService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deletePreview(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/preview']['delete']['res'][200]> {
+    public static deletePreview(): CancelablePromise<DeletePreviewResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/preview',
@@ -6688,7 +6688,7 @@ export class PreviewService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postPreview(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/preview']['post']['res'][200]> {
+    public static postPreview(): CancelablePromise<PostPreviewResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/preview',
@@ -6706,7 +6706,7 @@ export class ProfilingService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getProfilingStatus(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/profiling/status']['get']['res'][200]> {
+    public static getProfilingStatus(): CancelablePromise<GetProfilingStatusResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/profiling/status',
@@ -6723,7 +6723,7 @@ export class ProfilingService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putProfilingStatus(data: $OpenApiTs['/umbraco/management/api/v1/profiling/status']['put']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/profiling/status']['put']['res'][200]> {
+    public static putProfilingStatus(data: PutProfilingStatusData = {}): CancelablePromise<PutProfilingStatusResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/profiling/status',
@@ -6747,7 +6747,7 @@ export class PropertyTypeService {
      * @returns boolean OK
      * @throws ApiError
      */
-    public static getPropertyTypeIsUsed(data: $OpenApiTs['/umbraco/management/api/v1/property-type/is-used']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/property-type/is-used']['get']['res'][200]> {
+    public static getPropertyTypeIsUsed(data: GetPropertyTypeIsUsedData = {}): CancelablePromise<GetPropertyTypeIsUsedResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/property-type/is-used',
@@ -6770,7 +6770,7 @@ export class PublishedCacheService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postPublishedCacheCollect(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/published-cache/collect']['post']['res'][200]> {
+    public static postPublishedCacheCollect(): CancelablePromise<PostPublishedCacheCollectResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/published-cache/collect',
@@ -6785,7 +6785,7 @@ export class PublishedCacheService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postPublishedCacheRebuild(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/published-cache/rebuild']['post']['res'][200]> {
+    public static postPublishedCacheRebuild(): CancelablePromise<PostPublishedCacheRebuildResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/published-cache/rebuild',
@@ -6800,7 +6800,7 @@ export class PublishedCacheService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postPublishedCacheReload(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/published-cache/reload']['post']['res'][200]> {
+    public static postPublishedCacheReload(): CancelablePromise<PostPublishedCacheReloadResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/published-cache/reload',
@@ -6815,7 +6815,7 @@ export class PublishedCacheService {
      * @returns string OK
      * @throws ApiError
      */
-    public static getPublishedCacheStatus(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/published-cache/status']['get']['res'][200]> {
+    public static getPublishedCacheStatus(): CancelablePromise<GetPublishedCacheStatusResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/published-cache/status',
@@ -6836,7 +6836,7 @@ export class RedirectManagementService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRedirectManagement(data: $OpenApiTs['/umbraco/management/api/v1/redirect-management']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/redirect-management']['get']['res'][200]> {
+    public static getRedirectManagement(data: GetRedirectManagementData = {}): CancelablePromise<GetRedirectManagementResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/redirect-management',
@@ -6861,7 +6861,7 @@ export class RedirectManagementService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRedirectManagementById(data: $OpenApiTs['/umbraco/management/api/v1/redirect-management/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/redirect-management/{id}']['get']['res'][200]> {
+    public static getRedirectManagementById(data: GetRedirectManagementByIdData): CancelablePromise<GetRedirectManagementByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/redirect-management/{id}',
@@ -6885,7 +6885,7 @@ export class RedirectManagementService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteRedirectManagementById(data: $OpenApiTs['/umbraco/management/api/v1/redirect-management/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/redirect-management/{id}']['delete']['res'][200]> {
+    public static deleteRedirectManagementById(data: DeleteRedirectManagementByIdData): CancelablePromise<DeleteRedirectManagementByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/redirect-management/{id}',
@@ -6904,7 +6904,7 @@ export class RedirectManagementService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRedirectManagementStatus(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/redirect-management/status']['get']['res'][200]> {
+    public static getRedirectManagementStatus(): CancelablePromise<GetRedirectManagementStatusResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/redirect-management/status',
@@ -6921,7 +6921,7 @@ export class RedirectManagementService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postRedirectManagementStatus(data: $OpenApiTs['/umbraco/management/api/v1/redirect-management/status']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/redirect-management/status']['post']['res'][200]> {
+    public static postRedirectManagementStatus(data: PostRedirectManagementStatusData = {}): CancelablePromise<PostRedirectManagementStatusResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/redirect-management/status',
@@ -6945,7 +6945,7 @@ export class RelationTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemRelationType(data: $OpenApiTs['/umbraco/management/api/v1/item/relation-type']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/relation-type']['get']['res'][200]> {
+    public static getItemRelationType(data: GetItemRelationTypeData = {}): CancelablePromise<GetItemRelationTypeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/relation-type',
@@ -6965,7 +6965,7 @@ export class RelationTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRelationType(data: $OpenApiTs['/umbraco/management/api/v1/relation-type']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/relation-type']['get']['res'][200]> {
+    public static getRelationType(data: GetRelationTypeData = {}): CancelablePromise<GetRelationTypeResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/relation-type',
@@ -6986,7 +6986,7 @@ export class RelationTypeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRelationTypeById(data: $OpenApiTs['/umbraco/management/api/v1/relation-type/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/relation-type/{id}']['get']['res'][200]> {
+    public static getRelationTypeById(data: GetRelationTypeByIdData): CancelablePromise<GetRelationTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/relation-type/{id}',
@@ -7012,7 +7012,7 @@ export class RelationService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getRelationTypeById(data: $OpenApiTs['/umbraco/management/api/v1/relation/type/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/relation/type/{id}']['get']['res'][200]> {
+    public static getRelationTypeById(data: GetRelationTypeByIdData): CancelablePromise<GetRelationTypeByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/relation/type/{id}',
@@ -7040,7 +7040,7 @@ export class ScriptService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemScript(data: $OpenApiTs['/umbraco/management/api/v1/item/script']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/script']['get']['res'][200]> {
+    public static getItemScript(data: GetItemScriptData = {}): CancelablePromise<GetItemScriptResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/script',
@@ -7059,7 +7059,7 @@ export class ScriptService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postScript(data: $OpenApiTs['/umbraco/management/api/v1/script']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/script']['post']['res'][201]> {
+    public static postScript(data: PostScriptData = {}): CancelablePromise<PostScriptResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/script',
@@ -7081,7 +7081,7 @@ export class ScriptService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getScriptByPath(data: $OpenApiTs['/umbraco/management/api/v1/script/{path}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/script/{path}']['get']['res'][200]> {
+    public static getScriptByPath(data: GetScriptByPathData): CancelablePromise<GetScriptByPathResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/script/{path}',
@@ -7102,7 +7102,7 @@ export class ScriptService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteScriptByPath(data: $OpenApiTs['/umbraco/management/api/v1/script/{path}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/script/{path}']['delete']['res'][200]> {
+    public static deleteScriptByPath(data: DeleteScriptByPathData): CancelablePromise<DeleteScriptByPathResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/script/{path}',
@@ -7126,7 +7126,7 @@ export class ScriptService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putScriptByPath(data: $OpenApiTs['/umbraco/management/api/v1/script/{path}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/script/{path}']['put']['res'][200]> {
+    public static putScriptByPath(data: PutScriptByPathData): CancelablePromise<PutScriptByPathResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/script/{path}',
@@ -7152,7 +7152,7 @@ export class ScriptService {
      * @returns string Created
      * @throws ApiError
      */
-    public static putScriptByPathRename(data: $OpenApiTs['/umbraco/management/api/v1/script/{path}/rename']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/script/{path}/rename']['put']['res'][201]> {
+    public static putScriptByPathRename(data: PutScriptByPathRenameData): CancelablePromise<PutScriptByPathRenameResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/script/{path}/rename',
@@ -7177,7 +7177,7 @@ export class ScriptService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postScriptFolder(data: $OpenApiTs['/umbraco/management/api/v1/script/folder']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/script/folder']['post']['res'][201]> {
+    public static postScriptFolder(data: PostScriptFolderData = {}): CancelablePromise<PostScriptFolderResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/script/folder',
@@ -7199,7 +7199,7 @@ export class ScriptService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getScriptFolderByPath(data: $OpenApiTs['/umbraco/management/api/v1/script/folder/{path}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/script/folder/{path}']['get']['res'][200]> {
+    public static getScriptFolderByPath(data: GetScriptFolderByPathData): CancelablePromise<GetScriptFolderByPathResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/script/folder/{path}',
@@ -7220,7 +7220,7 @@ export class ScriptService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteScriptFolderByPath(data: $OpenApiTs['/umbraco/management/api/v1/script/folder/{path}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/script/folder/{path}']['delete']['res'][200]> {
+    public static deleteScriptFolderByPath(data: DeleteScriptFolderByPathData): CancelablePromise<DeleteScriptFolderByPathResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/script/folder/{path}',
@@ -7243,7 +7243,7 @@ export class ScriptService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeScriptAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/script/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/script/ancestors']['get']['res'][200]> {
+    public static getTreeScriptAncestors(data: GetTreeScriptAncestorsData = {}): CancelablePromise<GetTreeScriptAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/script/ancestors',
@@ -7265,7 +7265,7 @@ export class ScriptService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeScriptChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/script/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/script/children']['get']['res'][200]> {
+    public static getTreeScriptChildren(data: GetTreeScriptChildrenData = {}): CancelablePromise<GetTreeScriptChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/script/children',
@@ -7288,7 +7288,7 @@ export class ScriptService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeScriptRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/script/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/script/root']['get']['res'][200]> {
+    public static getTreeScriptRoot(data: GetTreeScriptRootData = {}): CancelablePromise<GetTreeScriptRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/script/root',
@@ -7313,7 +7313,7 @@ export class SearcherService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getSearcher(data: $OpenApiTs['/umbraco/management/api/v1/searcher']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/searcher']['get']['res'][200]> {
+    public static getSearcher(data: GetSearcherData = {}): CancelablePromise<GetSearcherResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/searcher',
@@ -7336,7 +7336,7 @@ export class SearcherService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getSearcherBySearcherNameQuery(data: $OpenApiTs['/umbraco/management/api/v1/searcher/{searcherName}/query']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/searcher/{searcherName}/query']['get']['res'][200]> {
+    public static getSearcherBySearcherNameQuery(data: GetSearcherBySearcherNameQueryData): CancelablePromise<GetSearcherBySearcherNameQueryResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/searcher/{searcherName}/query',
@@ -7362,7 +7362,7 @@ export class SecurityService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getSecurityConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/security/configuration']['get']['res'][200]> {
+    public static getSecurityConfiguration(): CancelablePromise<GetSecurityConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/security/configuration',
@@ -7379,7 +7379,7 @@ export class SecurityService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postSecurityForgotPassword(data: $OpenApiTs['/umbraco/management/api/v1/security/forgot-password']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/security/forgot-password']['post']['res'][200]> {
+    public static postSecurityForgotPassword(data: PostSecurityForgotPasswordData = {}): CancelablePromise<PostSecurityForgotPasswordResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/security/forgot-password',
@@ -7400,7 +7400,7 @@ export class SecurityService {
      * @returns string No Content
      * @throws ApiError
      */
-    public static postSecurityForgotPasswordReset(data: $OpenApiTs['/umbraco/management/api/v1/security/forgot-password/reset']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/security/forgot-password/reset']['post']['res'][204]> {
+    public static postSecurityForgotPasswordReset(data: PostSecurityForgotPasswordResetData = {}): CancelablePromise<PostSecurityForgotPasswordResetResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/security/forgot-password/reset',
@@ -7422,7 +7422,7 @@ export class SecurityService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postSecurityForgotPasswordVerify(data: $OpenApiTs['/umbraco/management/api/v1/security/forgot-password/verify']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/security/forgot-password/verify']['post']['res'][200]> {
+    public static postSecurityForgotPasswordVerify(data: PostSecurityForgotPasswordVerifyData = {}): CancelablePromise<PostSecurityForgotPasswordVerifyResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/security/forgot-password/verify',
@@ -7445,7 +7445,7 @@ export class SegmentService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getSegment(data: $OpenApiTs['/umbraco/management/api/v1/segment']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/segment']['get']['res'][200]> {
+    public static getSegment(data: GetSegmentData = {}): CancelablePromise<GetSegmentResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/segment',
@@ -7468,7 +7468,7 @@ export class ServerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getServerConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/server/configuration']['get']['res'][200]> {
+    public static getServerConfiguration(): CancelablePromise<GetServerConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/server/configuration',
@@ -7482,7 +7482,7 @@ export class ServerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getServerInformation(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/server/information']['get']['res'][200]> {
+    public static getServerInformation(): CancelablePromise<GetServerInformationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/server/information',
@@ -7496,7 +7496,7 @@ export class ServerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getServerStatus(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/server/status']['get']['res'][200]> {
+    public static getServerStatus(): CancelablePromise<GetServerStatusResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/server/status',
@@ -7510,7 +7510,7 @@ export class ServerService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getServerTroubleshooting(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/server/troubleshooting']['get']['res'][200]> {
+    public static getServerTroubleshooting(): CancelablePromise<GetServerTroubleshootingResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/server/troubleshooting',
@@ -7529,7 +7529,7 @@ export class StaticFileService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemStaticFile(data: $OpenApiTs['/umbraco/management/api/v1/item/static-file']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/static-file']['get']['res'][200]> {
+    public static getItemStaticFile(data: GetItemStaticFileData = {}): CancelablePromise<GetItemStaticFileResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/static-file',
@@ -7548,7 +7548,7 @@ export class StaticFileService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeStaticFileAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/static-file/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/static-file/ancestors']['get']['res'][200]> {
+    public static getTreeStaticFileAncestors(data: GetTreeStaticFileAncestorsData = {}): CancelablePromise<GetTreeStaticFileAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/static-file/ancestors',
@@ -7569,7 +7569,7 @@ export class StaticFileService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeStaticFileChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/static-file/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/static-file/children']['get']['res'][200]> {
+    public static getTreeStaticFileChildren(data: GetTreeStaticFileChildrenData = {}): CancelablePromise<GetTreeStaticFileChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/static-file/children',
@@ -7591,7 +7591,7 @@ export class StaticFileService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeStaticFileRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/static-file/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/static-file/root']['get']['res'][200]> {
+    public static getTreeStaticFileRoot(data: GetTreeStaticFileRootData = {}): CancelablePromise<GetTreeStaticFileRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/static-file/root',
@@ -7614,7 +7614,7 @@ export class StylesheetService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemStylesheet(data: $OpenApiTs['/umbraco/management/api/v1/item/stylesheet']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/stylesheet']['get']['res'][200]> {
+    public static getItemStylesheet(data: GetItemStylesheetData = {}): CancelablePromise<GetItemStylesheetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/stylesheet',
@@ -7633,7 +7633,7 @@ export class StylesheetService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postStylesheet(data: $OpenApiTs['/umbraco/management/api/v1/stylesheet']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/stylesheet']['post']['res'][201]> {
+    public static postStylesheet(data: PostStylesheetData = {}): CancelablePromise<PostStylesheetResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/stylesheet',
@@ -7655,7 +7655,7 @@ export class StylesheetService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getStylesheetByPath(data: $OpenApiTs['/umbraco/management/api/v1/stylesheet/{path}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/stylesheet/{path}']['get']['res'][200]> {
+    public static getStylesheetByPath(data: GetStylesheetByPathData): CancelablePromise<GetStylesheetByPathResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/stylesheet/{path}',
@@ -7676,7 +7676,7 @@ export class StylesheetService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteStylesheetByPath(data: $OpenApiTs['/umbraco/management/api/v1/stylesheet/{path}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/stylesheet/{path}']['delete']['res'][200]> {
+    public static deleteStylesheetByPath(data: DeleteStylesheetByPathData): CancelablePromise<DeleteStylesheetByPathResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/stylesheet/{path}',
@@ -7700,7 +7700,7 @@ export class StylesheetService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putStylesheetByPath(data: $OpenApiTs['/umbraco/management/api/v1/stylesheet/{path}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/stylesheet/{path}']['put']['res'][200]> {
+    public static putStylesheetByPath(data: PutStylesheetByPathData): CancelablePromise<PutStylesheetByPathResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/stylesheet/{path}',
@@ -7726,7 +7726,7 @@ export class StylesheetService {
      * @returns string Created
      * @throws ApiError
      */
-    public static putStylesheetByPathRename(data: $OpenApiTs['/umbraco/management/api/v1/stylesheet/{path}/rename']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/stylesheet/{path}/rename']['put']['res'][201]> {
+    public static putStylesheetByPathRename(data: PutStylesheetByPathRenameData): CancelablePromise<PutStylesheetByPathRenameResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/stylesheet/{path}/rename',
@@ -7751,7 +7751,7 @@ export class StylesheetService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postStylesheetFolder(data: $OpenApiTs['/umbraco/management/api/v1/stylesheet/folder']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/stylesheet/folder']['post']['res'][201]> {
+    public static postStylesheetFolder(data: PostStylesheetFolderData = {}): CancelablePromise<PostStylesheetFolderResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/stylesheet/folder',
@@ -7773,7 +7773,7 @@ export class StylesheetService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getStylesheetFolderByPath(data: $OpenApiTs['/umbraco/management/api/v1/stylesheet/folder/{path}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/stylesheet/folder/{path}']['get']['res'][200]> {
+    public static getStylesheetFolderByPath(data: GetStylesheetFolderByPathData): CancelablePromise<GetStylesheetFolderByPathResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/stylesheet/folder/{path}',
@@ -7794,7 +7794,7 @@ export class StylesheetService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteStylesheetFolderByPath(data: $OpenApiTs['/umbraco/management/api/v1/stylesheet/folder/{path}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/stylesheet/folder/{path}']['delete']['res'][200]> {
+    public static deleteStylesheetFolderByPath(data: DeleteStylesheetFolderByPathData): CancelablePromise<DeleteStylesheetFolderByPathResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/stylesheet/folder/{path}',
@@ -7817,7 +7817,7 @@ export class StylesheetService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeStylesheetAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/stylesheet/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/stylesheet/ancestors']['get']['res'][200]> {
+    public static getTreeStylesheetAncestors(data: GetTreeStylesheetAncestorsData = {}): CancelablePromise<GetTreeStylesheetAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/stylesheet/ancestors',
@@ -7839,7 +7839,7 @@ export class StylesheetService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeStylesheetChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/stylesheet/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/stylesheet/children']['get']['res'][200]> {
+    public static getTreeStylesheetChildren(data: GetTreeStylesheetChildrenData = {}): CancelablePromise<GetTreeStylesheetChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/stylesheet/children',
@@ -7862,7 +7862,7 @@ export class StylesheetService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeStylesheetRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/stylesheet/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/stylesheet/root']['get']['res'][200]> {
+    public static getTreeStylesheetRoot(data: GetTreeStylesheetRootData = {}): CancelablePromise<GetTreeStylesheetRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/stylesheet/root',
@@ -7890,7 +7890,7 @@ export class TagService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTag(data: $OpenApiTs['/umbraco/management/api/v1/tag']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tag']['get']['res'][200]> {
+    public static getTag(data: GetTagData = {}): CancelablePromise<GetTagResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tag',
@@ -7917,7 +7917,7 @@ export class TelemetryService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTelemetry(data: $OpenApiTs['/umbraco/management/api/v1/telemetry']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/telemetry']['get']['res'][200]> {
+    public static getTelemetry(data: GetTelemetryData = {}): CancelablePromise<GetTelemetryResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/telemetry',
@@ -7936,7 +7936,7 @@ export class TelemetryService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTelemetryLevel(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/telemetry/level']['get']['res'][200]> {
+    public static getTelemetryLevel(): CancelablePromise<GetTelemetryLevelResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/telemetry/level',
@@ -7953,7 +7953,7 @@ export class TelemetryService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postTelemetryLevel(data: $OpenApiTs['/umbraco/management/api/v1/telemetry/level']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/telemetry/level']['post']['res'][200]> {
+    public static postTelemetryLevel(data: PostTelemetryLevelData = {}): CancelablePromise<PostTelemetryLevelResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/telemetry/level',
@@ -7977,7 +7977,7 @@ export class TemplateService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemTemplate(data: $OpenApiTs['/umbraco/management/api/v1/item/template']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/template']['get']['res'][200]> {
+    public static getItemTemplate(data: GetItemTemplateData = {}): CancelablePromise<GetItemTemplateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/template',
@@ -7998,7 +7998,7 @@ export class TemplateService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemTemplateSearch(data: $OpenApiTs['/umbraco/management/api/v1/item/template/search']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/template/search']['get']['res'][200]> {
+    public static getItemTemplateSearch(data: GetItemTemplateSearchData = {}): CancelablePromise<GetItemTemplateSearchResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/template/search',
@@ -8019,7 +8019,7 @@ export class TemplateService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postTemplate(data: $OpenApiTs['/umbraco/management/api/v1/template']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/template']['post']['res'][201]> {
+    public static postTemplate(data: PostTemplateData = {}): CancelablePromise<PostTemplateResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/template',
@@ -8041,7 +8041,7 @@ export class TemplateService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTemplateById(data: $OpenApiTs['/umbraco/management/api/v1/template/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/template/{id}']['get']['res'][200]> {
+    public static getTemplateById(data: GetTemplateByIdData): CancelablePromise<GetTemplateByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/template/{id}',
@@ -8062,7 +8062,7 @@ export class TemplateService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteTemplateById(data: $OpenApiTs['/umbraco/management/api/v1/template/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/template/{id}']['delete']['res'][200]> {
+    public static deleteTemplateById(data: DeleteTemplateByIdData): CancelablePromise<DeleteTemplateByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/template/{id}',
@@ -8086,7 +8086,7 @@ export class TemplateService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putTemplateById(data: $OpenApiTs['/umbraco/management/api/v1/template/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/template/{id}']['put']['res'][200]> {
+    public static putTemplateById(data: PutTemplateByIdData): CancelablePromise<PutTemplateByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/template/{id}',
@@ -8109,7 +8109,7 @@ export class TemplateService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTemplateConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/template/configuration']['get']['res'][200]> {
+    public static getTemplateConfiguration(): CancelablePromise<GetTemplateConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/template/configuration',
@@ -8126,7 +8126,7 @@ export class TemplateService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postTemplateQueryExecute(data: $OpenApiTs['/umbraco/management/api/v1/template/query/execute']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/template/query/execute']['post']['res'][200]> {
+    public static postTemplateQueryExecute(data: PostTemplateQueryExecuteData = {}): CancelablePromise<PostTemplateQueryExecuteResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/template/query/execute',
@@ -8143,7 +8143,7 @@ export class TemplateService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTemplateQuerySettings(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/template/query/settings']['get']['res'][200]> {
+    public static getTemplateQuerySettings(): CancelablePromise<GetTemplateQuerySettingsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/template/query/settings',
@@ -8160,7 +8160,7 @@ export class TemplateService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeTemplateAncestors(data: $OpenApiTs['/umbraco/management/api/v1/tree/template/ancestors']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/template/ancestors']['get']['res'][200]> {
+    public static getTreeTemplateAncestors(data: GetTreeTemplateAncestorsData = {}): CancelablePromise<GetTreeTemplateAncestorsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/template/ancestors',
@@ -8182,7 +8182,7 @@ export class TemplateService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeTemplateChildren(data: $OpenApiTs['/umbraco/management/api/v1/tree/template/children']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/template/children']['get']['res'][200]> {
+    public static getTreeTemplateChildren(data: GetTreeTemplateChildrenData = {}): CancelablePromise<GetTreeTemplateChildrenResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/template/children',
@@ -8205,7 +8205,7 @@ export class TemplateService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTreeTemplateRoot(data: $OpenApiTs['/umbraco/management/api/v1/tree/template/root']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/tree/template/root']['get']['res'][200]> {
+    public static getTreeTemplateRoot(data: GetTreeTemplateRootData = {}): CancelablePromise<GetTreeTemplateRootResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/tree/template/root',
@@ -8229,7 +8229,7 @@ export class TemporaryFileService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postTemporaryFile(data: $OpenApiTs['/umbraco/management/api/v1/temporary-file']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/temporary-file']['post']['res'][201]> {
+    public static postTemporaryFile(data: PostTemporaryFileData = {}): CancelablePromise<PostTemporaryFileResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/temporary-file',
@@ -8249,7 +8249,7 @@ export class TemporaryFileService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTemporaryFileById(data: $OpenApiTs['/umbraco/management/api/v1/temporary-file/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/temporary-file/{id}']['get']['res'][200]> {
+    public static getTemporaryFileById(data: GetTemporaryFileByIdData): CancelablePromise<GetTemporaryFileByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/temporary-file/{id}',
@@ -8270,7 +8270,7 @@ export class TemporaryFileService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteTemporaryFileById(data: $OpenApiTs['/umbraco/management/api/v1/temporary-file/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/temporary-file/{id}']['delete']['res'][200]> {
+    public static deleteTemporaryFileById(data: DeleteTemporaryFileByIdData): CancelablePromise<DeleteTemporaryFileByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/temporary-file/{id}',
@@ -8290,7 +8290,7 @@ export class TemporaryFileService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getTemporaryFileConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/temporary-file/configuration']['get']['res'][200]> {
+    public static getTemporaryFileConfiguration(): CancelablePromise<GetTemporaryFileConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/temporary-file/configuration',
@@ -8307,7 +8307,7 @@ export class UpgradeService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUpgradeAuthorize(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/upgrade/authorize']['post']['res'][200]> {
+    public static postUpgradeAuthorize(): CancelablePromise<PostUpgradeAuthorizeResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/upgrade/authorize',
@@ -8325,7 +8325,7 @@ export class UpgradeService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUpgradeSettings(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/upgrade/settings']['get']['res'][200]> {
+    public static getUpgradeSettings(): CancelablePromise<GetUpgradeSettingsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/upgrade/settings',
@@ -8346,7 +8346,7 @@ export class UserDataService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postUserData(data: $OpenApiTs['/umbraco/management/api/v1/user-data']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-data']['post']['res'][201]> {
+    public static postUserData(data: PostUserDataData = {}): CancelablePromise<PostUserDataResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user-data',
@@ -8370,7 +8370,7 @@ export class UserDataService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserData(data: $OpenApiTs['/umbraco/management/api/v1/user-data']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-data']['get']['res'][200]> {
+    public static getUserData(data: GetUserDataData = {}): CancelablePromise<GetUserDataResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user-data',
@@ -8392,7 +8392,7 @@ export class UserDataService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putUserData(data: $OpenApiTs['/umbraco/management/api/v1/user-data']['put']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-data']['put']['res'][200]> {
+    public static putUserData(data: PutUserDataData = {}): CancelablePromise<PutUserDataResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/user-data',
@@ -8413,7 +8413,7 @@ export class UserDataService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserDataById(data: $OpenApiTs['/umbraco/management/api/v1/user-data/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-data/{id}']['get']['res'][200]> {
+    public static getUserDataById(data: GetUserDataByIdData): CancelablePromise<GetUserDataByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user-data/{id}',
@@ -8438,7 +8438,7 @@ export class UserGroupService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getFilterUserGroup(data: $OpenApiTs['/umbraco/management/api/v1/filter/user-group']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/filter/user-group']['get']['res'][200]> {
+    public static getFilterUserGroup(data: GetFilterUserGroupData = {}): CancelablePromise<GetFilterUserGroupResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/filter/user-group',
@@ -8462,7 +8462,7 @@ export class UserGroupService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemUserGroup(data: $OpenApiTs['/umbraco/management/api/v1/item/user-group']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/user-group']['get']['res'][200]> {
+    public static getItemUserGroup(data: GetItemUserGroupData = {}): CancelablePromise<GetItemUserGroupResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/user-group',
@@ -8481,7 +8481,7 @@ export class UserGroupService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteUserGroup(data: $OpenApiTs['/umbraco/management/api/v1/user-group']['delete']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-group']['delete']['res'][200]> {
+    public static deleteUserGroup(data: DeleteUserGroupData = {}): CancelablePromise<DeleteUserGroupResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/user-group',
@@ -8502,7 +8502,7 @@ export class UserGroupService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postUserGroup(data: $OpenApiTs['/umbraco/management/api/v1/user-group']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-group']['post']['res'][201]> {
+    public static postUserGroup(data: PostUserGroupData = {}): CancelablePromise<PostUserGroupResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user-group',
@@ -8524,7 +8524,7 @@ export class UserGroupService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserGroup(data: $OpenApiTs['/umbraco/management/api/v1/user-group']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-group']['get']['res'][200]> {
+    public static getUserGroup(data: GetUserGroupData = {}): CancelablePromise<GetUserGroupResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user-group',
@@ -8545,7 +8545,7 @@ export class UserGroupService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserGroupById(data: $OpenApiTs['/umbraco/management/api/v1/user-group/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-group/{id}']['get']['res'][200]> {
+    public static getUserGroupById(data: GetUserGroupByIdData): CancelablePromise<GetUserGroupByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user-group/{id}',
@@ -8566,7 +8566,7 @@ export class UserGroupService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteUserGroupById(data: $OpenApiTs['/umbraco/management/api/v1/user-group/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-group/{id}']['delete']['res'][200]> {
+    public static deleteUserGroupById(data: DeleteUserGroupByIdData): CancelablePromise<DeleteUserGroupByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/user-group/{id}',
@@ -8589,7 +8589,7 @@ export class UserGroupService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putUserGroupById(data: $OpenApiTs['/umbraco/management/api/v1/user-group/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-group/{id}']['put']['res'][200]> {
+    public static putUserGroupById(data: PutUserGroupByIdData): CancelablePromise<PutUserGroupByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/user-group/{id}',
@@ -8614,7 +8614,7 @@ export class UserGroupService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteUserGroupByIdUsers(data: $OpenApiTs['/umbraco/management/api/v1/user-group/{id}/users']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-group/{id}/users']['delete']['res'][200]> {
+    public static deleteUserGroupByIdUsers(data: DeleteUserGroupByIdUsersData): CancelablePromise<DeleteUserGroupByIdUsersResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/user-group/{id}/users',
@@ -8639,7 +8639,7 @@ export class UserGroupService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserGroupByIdUsers(data: $OpenApiTs['/umbraco/management/api/v1/user-group/{id}/users']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user-group/{id}/users']['post']['res'][200]> {
+    public static postUserGroupByIdUsers(data: PostUserGroupByIdUsersData): CancelablePromise<PostUserGroupByIdUsersResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user-group/{id}/users',
@@ -8672,7 +8672,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getFilterUser(data: $OpenApiTs['/umbraco/management/api/v1/filter/user']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/filter/user']['get']['res'][200]> {
+    public static getFilterUser(data: GetFilterUserData = {}): CancelablePromise<GetFilterUserResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/filter/user',
@@ -8700,7 +8700,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemUser(data: $OpenApiTs['/umbraco/management/api/v1/item/user']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/user']['get']['res'][200]> {
+    public static getItemUser(data: GetItemUserData = {}): CancelablePromise<GetItemUserResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/user',
@@ -8719,7 +8719,7 @@ export class UserService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postUser(data: $OpenApiTs['/umbraco/management/api/v1/user']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user']['post']['res'][201]> {
+    public static postUser(data: PostUserData = {}): CancelablePromise<PostUserResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user',
@@ -8741,7 +8741,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteUser(data: $OpenApiTs['/umbraco/management/api/v1/user']['delete']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user']['delete']['res'][200]> {
+    public static deleteUser(data: DeleteUserData = {}): CancelablePromise<DeleteUserResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/user',
@@ -8763,7 +8763,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUser(data: $OpenApiTs['/umbraco/management/api/v1/user']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user']['get']['res'][200]> {
+    public static getUser(data: GetUserData = {}): CancelablePromise<GetUserResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user',
@@ -8785,7 +8785,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserById(data: $OpenApiTs['/umbraco/management/api/v1/user/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/{id}']['get']['res'][200]> {
+    public static getUserById(data: GetUserByIdData): CancelablePromise<GetUserByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/{id}',
@@ -8806,7 +8806,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteUserById(data: $OpenApiTs['/umbraco/management/api/v1/user/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/{id}']['delete']['res'][200]> {
+    public static deleteUserById(data: DeleteUserByIdData): CancelablePromise<DeleteUserByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/user/{id}',
@@ -8830,7 +8830,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putUserById(data: $OpenApiTs['/umbraco/management/api/v1/user/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/{id}']['put']['res'][200]> {
+    public static putUserById(data: PutUserByIdData): CancelablePromise<PutUserByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/user/{id}',
@@ -8855,7 +8855,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserById2Fa(data: $OpenApiTs['/umbraco/management/api/v1/user/{id}/2fa']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/{id}/2fa']['get']['res'][200]> {
+    public static getUserById2Fa(data: GetUserById2FaData): CancelablePromise<GetUserById2FaResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/{id}/2fa',
@@ -8877,7 +8877,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteUserById2FaByProviderName(data: $OpenApiTs['/umbraco/management/api/v1/user/{id}/2fa/{providerName}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/{id}/2fa/{providerName}']['delete']['res'][200]> {
+    public static deleteUserById2FaByProviderName(data: DeleteUserById2FaByProviderNameData): CancelablePromise<DeleteUserById2FaByProviderNameResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/user/{id}/2fa/{providerName}',
@@ -8902,7 +8902,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserByIdChangePassword(data: $OpenApiTs['/umbraco/management/api/v1/user/{id}/change-password']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/{id}/change-password']['post']['res'][200]> {
+    public static postUserByIdChangePassword(data: PostUserByIdChangePasswordData): CancelablePromise<PostUserByIdChangePasswordResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/{id}/change-password',
@@ -8927,7 +8927,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUserByIdResetPassword(data: $OpenApiTs['/umbraco/management/api/v1/user/{id}/reset-password']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/{id}/reset-password']['post']['res'][200]> {
+    public static postUserByIdResetPassword(data: PostUserByIdResetPasswordData): CancelablePromise<PostUserByIdResetPasswordResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/{id}/reset-password',
@@ -8949,7 +8949,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteUserAvatarById(data: $OpenApiTs['/umbraco/management/api/v1/user/avatar/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/avatar/{id}']['delete']['res'][200]> {
+    public static deleteUserAvatarById(data: DeleteUserAvatarByIdData): CancelablePromise<DeleteUserAvatarByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/user/avatar/{id}',
@@ -8973,7 +8973,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserAvatarById(data: $OpenApiTs['/umbraco/management/api/v1/user/avatar/{id}']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/avatar/{id}']['post']['res'][200]> {
+    public static postUserAvatarById(data: PostUserAvatarByIdData): CancelablePromise<PostUserAvatarByIdResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/avatar/{id}',
@@ -8996,7 +8996,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/configuration']['get']['res'][200]> {
+    public static getUserConfiguration(): CancelablePromise<GetUserConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/configuration',
@@ -9011,7 +9011,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserCurrent(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current']['get']['res'][200]> {
+    public static getUserCurrent(): CancelablePromise<GetUserCurrentResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/current',
@@ -9025,7 +9025,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserCurrent2Fa(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/2fa']['get']['res'][200]> {
+    public static getUserCurrent2Fa(): CancelablePromise<GetUserCurrent2FaResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/current/2fa',
@@ -9042,7 +9042,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteUserCurrent2FaByProviderName(data: $OpenApiTs['/umbraco/management/api/v1/user/current/2fa/{providerName}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/2fa/{providerName}']['delete']['res'][200]> {
+    public static deleteUserCurrent2FaByProviderName(data: DeleteUserCurrent2FaByProviderNameData): CancelablePromise<DeleteUserCurrent2FaByProviderNameResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/user/current/2fa/{providerName}',
@@ -9068,7 +9068,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUserCurrent2FaByProviderName(data: $OpenApiTs['/umbraco/management/api/v1/user/current/2fa/{providerName}']['post']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/2fa/{providerName}']['post']['res'][200]> {
+    public static postUserCurrent2FaByProviderName(data: PostUserCurrent2FaByProviderNameData): CancelablePromise<PostUserCurrent2FaByProviderNameResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/current/2fa/{providerName}',
@@ -9091,7 +9091,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserCurrent2FaByProviderName(data: $OpenApiTs['/umbraco/management/api/v1/user/current/2fa/{providerName}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/2fa/{providerName}']['get']['res'][200]> {
+    public static getUserCurrent2FaByProviderName(data: GetUserCurrent2FaByProviderNameData): CancelablePromise<GetUserCurrent2FaByProviderNameResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/current/2fa/{providerName}',
@@ -9112,7 +9112,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserCurrentAvatar(data: $OpenApiTs['/umbraco/management/api/v1/user/current/avatar']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/avatar']['post']['res'][200]> {
+    public static postUserCurrentAvatar(data: PostUserCurrentAvatarData = {}): CancelablePromise<PostUserCurrentAvatarResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/current/avatar',
@@ -9132,7 +9132,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserCurrentChangePassword(data: $OpenApiTs['/umbraco/management/api/v1/user/current/change-password']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/change-password']['post']['res'][200]> {
+    public static postUserCurrentChangePassword(data: PostUserCurrentChangePasswordData = {}): CancelablePromise<PostUserCurrentChangePasswordResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/current/change-password',
@@ -9150,7 +9150,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserCurrentConfiguration(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/configuration']['get']['res'][200]> {
+    public static getUserCurrentConfiguration(): CancelablePromise<GetUserCurrentConfigurationResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/current/configuration',
@@ -9165,7 +9165,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserCurrentLoginProviders(): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/login-providers']['get']['res'][200]> {
+    public static getUserCurrentLoginProviders(): CancelablePromise<GetUserCurrentLoginProvidersResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/current/login-providers',
@@ -9181,7 +9181,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserCurrentPermissions(data: $OpenApiTs['/umbraco/management/api/v1/user/current/permissions']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/permissions']['get']['res'][200]> {
+    public static getUserCurrentPermissions(data: GetUserCurrentPermissionsData = {}): CancelablePromise<GetUserCurrentPermissionsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/current/permissions',
@@ -9201,7 +9201,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserCurrentPermissionsDocument(data: $OpenApiTs['/umbraco/management/api/v1/user/current/permissions/document']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/permissions/document']['get']['res'][200]> {
+    public static getUserCurrentPermissionsDocument(data: GetUserCurrentPermissionsDocumentData = {}): CancelablePromise<GetUserCurrentPermissionsDocumentResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/current/permissions/document',
@@ -9221,7 +9221,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getUserCurrentPermissionsMedia(data: $OpenApiTs['/umbraco/management/api/v1/user/current/permissions/media']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/current/permissions/media']['get']['res'][200]> {
+    public static getUserCurrentPermissionsMedia(data: GetUserCurrentPermissionsMediaData = {}): CancelablePromise<GetUserCurrentPermissionsMediaResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/user/current/permissions/media',
@@ -9241,7 +9241,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserDisable(data: $OpenApiTs['/umbraco/management/api/v1/user/disable']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/disable']['post']['res'][200]> {
+    public static postUserDisable(data: PostUserDisableData = {}): CancelablePromise<PostUserDisableResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/disable',
@@ -9263,7 +9263,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserEnable(data: $OpenApiTs['/umbraco/management/api/v1/user/enable']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/enable']['post']['res'][200]> {
+    public static postUserEnable(data: PostUserEnableData = {}): CancelablePromise<PostUserEnableResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/enable',
@@ -9285,7 +9285,7 @@ export class UserService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postUserInvite(data: $OpenApiTs['/umbraco/management/api/v1/user/invite']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/invite']['post']['res'][201]> {
+    public static postUserInvite(data: PostUserInviteData = {}): CancelablePromise<PostUserInviteResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/invite',
@@ -9307,7 +9307,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserInviteCreatePassword(data: $OpenApiTs['/umbraco/management/api/v1/user/invite/create-password']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/invite/create-password']['post']['res'][200]> {
+    public static postUserInviteCreatePassword(data: PostUserInviteCreatePasswordData = {}): CancelablePromise<PostUserInviteCreatePasswordResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/invite/create-password',
@@ -9328,7 +9328,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserInviteResend(data: $OpenApiTs['/umbraco/management/api/v1/user/invite/resend']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/invite/resend']['post']['res'][200]> {
+    public static postUserInviteResend(data: PostUserInviteResendData = {}): CancelablePromise<PostUserInviteResendResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/invite/resend',
@@ -9350,7 +9350,7 @@ export class UserService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static postUserInviteVerify(data: $OpenApiTs['/umbraco/management/api/v1/user/invite/verify']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/invite/verify']['post']['res'][200]> {
+    public static postUserInviteVerify(data: PostUserInviteVerifyData = {}): CancelablePromise<PostUserInviteVerifyResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/invite/verify',
@@ -9370,7 +9370,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserSetUserGroups(data: $OpenApiTs['/umbraco/management/api/v1/user/set-user-groups']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/set-user-groups']['post']['res'][200]> {
+    public static postUserSetUserGroups(data: PostUserSetUserGroupsData = {}): CancelablePromise<PostUserSetUserGroupsResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/set-user-groups',
@@ -9390,7 +9390,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postUserUnlock(data: $OpenApiTs['/umbraco/management/api/v1/user/unlock']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/user/unlock']['post']['res'][200]> {
+    public static postUserUnlock(data: PostUserUnlockData = {}): CancelablePromise<PostUserUnlockResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/user/unlock',
@@ -9414,7 +9414,7 @@ export class WebhookService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getItemWebhook(data: $OpenApiTs['/umbraco/management/api/v1/item/webhook']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/item/webhook']['get']['res'][200]> {
+    public static getItemWebhook(data: GetItemWebhookData = {}): CancelablePromise<GetItemWebhookResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/item/webhook',
@@ -9434,7 +9434,7 @@ export class WebhookService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getWebhook(data: $OpenApiTs['/umbraco/management/api/v1/webhook']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/webhook']['get']['res'][200]> {
+    public static getWebhook(data: GetWebhookData = {}): CancelablePromise<GetWebhookResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/webhook',
@@ -9454,7 +9454,7 @@ export class WebhookService {
      * @returns string Created
      * @throws ApiError
      */
-    public static postWebhook(data: $OpenApiTs['/umbraco/management/api/v1/webhook']['post']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/webhook']['post']['res'][201]> {
+    public static postWebhook(data: PostWebhookData = {}): CancelablePromise<PostWebhookResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/umbraco/management/api/v1/webhook',
@@ -9476,7 +9476,7 @@ export class WebhookService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getWebhookById(data: $OpenApiTs['/umbraco/management/api/v1/webhook/{id}']['get']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/webhook/{id}']['get']['res'][200]> {
+    public static getWebhookById(data: GetWebhookByIdData): CancelablePromise<GetWebhookByIdResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/webhook/{id}',
@@ -9496,7 +9496,7 @@ export class WebhookService {
      * @returns string OK
      * @throws ApiError
      */
-    public static deleteWebhookById(data: $OpenApiTs['/umbraco/management/api/v1/webhook/{id}']['delete']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/webhook/{id}']['delete']['res'][200]> {
+    public static deleteWebhookById(data: DeleteWebhookByIdData): CancelablePromise<DeleteWebhookByIdResponse> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/umbraco/management/api/v1/webhook/{id}',
@@ -9520,7 +9520,7 @@ export class WebhookService {
      * @returns string OK
      * @throws ApiError
      */
-    public static putWebhookById(data: $OpenApiTs['/umbraco/management/api/v1/webhook/{id}']['put']['req']): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/webhook/{id}']['put']['res'][200]> {
+    public static putWebhookById(data: PutWebhookByIdData): CancelablePromise<PutWebhookByIdResponse> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/umbraco/management/api/v1/webhook/{id}',
@@ -9546,7 +9546,7 @@ export class WebhookService {
      * @returns unknown OK
      * @throws ApiError
      */
-    public static getWebhookEvents(data: $OpenApiTs['/umbraco/management/api/v1/webhook/events']['get']['req'] = {}): CancelablePromise<$OpenApiTs['/umbraco/management/api/v1/webhook/events']['get']['res'][200]> {
+    public static getWebhookEvents(data: GetWebhookEventsData = {}): CancelablePromise<GetWebhookEventsResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/umbraco/management/api/v1/webhook/events',

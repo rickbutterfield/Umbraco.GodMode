@@ -1,19 +1,21 @@
-﻿import { customElement, html } from "@umbraco-cms/backoffice/external/lit";
-import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
+﻿import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
+import { LitElement, css, customElement, html } from "@umbraco-cms/backoffice/external/lit";
 
 @customElement('godmode-tag-browser')
-export class GodModeTagBrowserElement extends UmbLitElement {
-    constructor() {
-        super();
-    }
+export class GodModeTagBrowserElement extends UmbElementMixin(LitElement) {
 
-    render() {
+    override render() {
         return html`
             <umb-body-layout>
                 <godmode-header name="Tag Browser" slot="header"></godmode-header>
             </umb-body-layout>
-        `
+        `;
     }
+
+    static styles = [
+        css`
+        `
+    ]
 }
 
 export default GodModeTagBrowserElement;

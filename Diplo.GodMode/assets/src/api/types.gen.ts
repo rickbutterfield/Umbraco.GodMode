@@ -22,7 +22,32 @@ export type AuditLogResponseModel = {
     parameters?: string | null;
 };
 
-export type AuditTypeModel = 'New' | 'Save' | 'SaveVariant' | 'Open' | 'Delete' | 'Publish' | 'PublishVariant' | 'SendToPublish' | 'SendToPublishVariant' | 'Unpublish' | 'UnpublishVariant' | 'Move' | 'Copy' | 'AssignDomain' | 'PublicAccess' | 'Sort' | 'Notify' | 'System' | 'RollBack' | 'PackagerInstall' | 'PackagerUninstall' | 'Custom' | 'ContentVersionPreventCleanup' | 'ContentVersionEnableCleanup';
+export enum AuditTypeModel {
+    NEW = 'New',
+    SAVE = 'Save',
+    SAVE_VARIANT = 'SaveVariant',
+    OPEN = 'Open',
+    DELETE = 'Delete',
+    PUBLISH = 'Publish',
+    PUBLISH_VARIANT = 'PublishVariant',
+    SEND_TO_PUBLISH = 'SendToPublish',
+    SEND_TO_PUBLISH_VARIANT = 'SendToPublishVariant',
+    UNPUBLISH = 'Unpublish',
+    UNPUBLISH_VARIANT = 'UnpublishVariant',
+    MOVE = 'Move',
+    COPY = 'Copy',
+    ASSIGN_DOMAIN = 'AssignDomain',
+    PUBLIC_ACCESS = 'PublicAccess',
+    SORT = 'Sort',
+    NOTIFY = 'Notify',
+    SYSTEM = 'System',
+    ROLL_BACK = 'RollBack',
+    PACKAGER_INSTALL = 'PackagerInstall',
+    PACKAGER_UNINSTALL = 'PackagerUninstall',
+    CUSTOM = 'Custom',
+    CONTENT_VERSION_PREVENT_CLEANUP = 'ContentVersionPreventCleanup',
+    CONTENT_VERSION_ENABLE_CLEANUP = 'ContentVersionEnableCleanup'
+}
 
 export type AvailableDocumentTypeCompositionResponseModel = {
     id: string;
@@ -65,7 +90,10 @@ export type ComponentMap = {
     tagHelper: boolean;
 };
 
-export type CompositionTypeModel = 'Composition' | 'Inheritance';
+export enum CompositionTypeModel {
+    COMPOSITION = 'Composition',
+    INHERITANCE = 'Inheritance'
+}
 
 export type ConfigurationEditorItemRequestModel = {
     key?: string | null;
@@ -176,7 +204,12 @@ export type ContentTypeMap = {
     createDate: string;
 };
 
-export type ContentVariationModel = 'Nothing' | 'Culture' | 'Segment' | 'CultureAndSegment';
+export enum ContentVariationModel {
+    NOTHING = 'Nothing',
+    CULTURE = 'Culture',
+    SEGMENT = 'Segment',
+    CULTURE_AND_SEGMENT = 'CultureAndSegment'
+}
 
 export type ContentmentConfigurationFieldModel = {
     key?: string | null;
@@ -561,7 +594,11 @@ export type DataListEditorResponseModel = {
     config?: Array<(DataTypePropertyPresentationModel)> | null;
 };
 
-export type DataTypeChangeModeModel = 'True' | 'False' | 'FalseWithHelpText';
+export enum DataTypeChangeModeModel {
+    TRUE = 'True',
+    FALSE = 'False',
+    FALSE_WITH_HELP_TEXT = 'FalseWithHelpText'
+}
 
 export type DataTypeContentTypeReferenceModel = {
     id: string;
@@ -715,7 +752,10 @@ export type DictionaryOverviewResponseModel = {
     translatedIsoCodes: Array<(string)>;
 };
 
-export type DirectionModel = 'Ascending' | 'Descending';
+export enum DirectionModel {
+    ASCENDING = 'Ascending',
+    DESCENDING = 'Descending'
+}
 
 export type DisableUserRequestModel = {
     userIds: Array<(ReferenceByIdModel)>;
@@ -966,7 +1006,12 @@ export type DocumentVariantResponseModel = {
     publishDate?: string | null;
 };
 
-export type DocumentVariantStateModel = 'NotCreated' | 'Draft' | 'Published' | 'PublishedPendingChanges';
+export enum DocumentVariantStateModel {
+    NOT_CREATED = 'NotCreated',
+    DRAFT = 'Draft',
+    PUBLISHED = 'Published',
+    PUBLISHED_PENDING_CHANGES = 'PublishedPendingChanges'
+}
 
 export type DocumentVersionItemResponseModel = {
     id: string;
@@ -1043,7 +1088,13 @@ export type EntityImportAnalysisResponseModel = {
     key?: string | null;
 };
 
-export type EventMessageTypeModel = 'Default' | 'Info' | 'Error' | 'Success' | 'Warning';
+export enum EventMessageTypeModel {
+    DEFAULT = 'Default',
+    INFO = 'Info',
+    ERROR = 'Error',
+    SUCCESS = 'Success',
+    WARNING = 'Warning'
+}
 
 export type FieldPresentationModel = {
     name: string;
@@ -1114,7 +1165,11 @@ export type HealthCheckWithResultPresentationModel = {
     results?: Array<(HealthCheckResultResponseModel)> | null;
 };
 
-export type HealthStatusModel = 'Healthy' | 'Unhealthy' | 'Rebuilding';
+export enum HealthStatusModel {
+    HEALTHY = 'Healthy',
+    UNHEALTHY = 'Unhealthy',
+    REBUILDING = 'Rebuilding'
+}
 
 export type HealthStatusResponseModel = {
     status: HealthStatusModel;
@@ -1128,7 +1183,14 @@ export type HelpPageResponseModel = {
     type?: string | null;
 };
 
-export type ImageCropModeModel = 'Crop' | 'Max' | 'Stretch' | 'Pad' | 'BoxPad' | 'Min';
+export enum ImageCropModeModel {
+    CROP = 'Crop',
+    MAX = 'Max',
+    STRETCH = 'Stretch',
+    PAD = 'Pad',
+    BOX_PAD = 'BoxPad',
+    MIN = 'Min'
+}
 
 export type ImportDictionaryRequestModel = {
     temporaryFile: ReferenceByIdModel;
@@ -1219,7 +1281,14 @@ export type LogLevelCountsReponseModel = {
     fatal: number;
 };
 
-export type LogLevelModel = 'Verbose' | 'Debug' | 'Information' | 'Warning' | 'Error' | 'Fatal';
+export enum LogLevelModel {
+    VERBOSE = 'Verbose',
+    DEBUG = 'Debug',
+    INFORMATION = 'Information',
+    WARNING = 'Warning',
+    ERROR = 'Error',
+    FATAL = 'Fatal'
+}
 
 export type LogMessagePropertyPresentationModel = {
     name: string;
@@ -1606,7 +1675,12 @@ export type ModelsBuilderResponseModel = {
     trackingOutOfDateModels: boolean;
 };
 
-export type ModelsModeModel = 'Nothing' | 'InMemoryAuto' | 'SourceCodeManual' | 'SourceCodeAuto';
+export enum ModelsModeModel {
+    NOTHING = 'Nothing',
+    IN_MEMORY_AUTO = 'InMemoryAuto',
+    SOURCE_CODE_MANUAL = 'SourceCodeManual',
+    SOURCE_CODE_AUTO = 'SourceCodeAuto'
+}
 
 export type MoveDataTypeRequestModel = {
     target?: ReferenceByIdModel | null;
@@ -1674,15 +1748,32 @@ export type ObjectTypeResponseModel = {
     id: string;
 };
 
-export type OperatorModel = 'Equals' | 'NotEquals' | 'Contains' | 'NotContains' | 'LessThan' | 'LessThanEqualTo' | 'GreaterThan' | 'GreaterThanEqualTo';
+export enum OperatorModel {
+    EQUALS = 'Equals',
+    NOT_EQUALS = 'NotEquals',
+    CONTAINS = 'Contains',
+    NOT_CONTAINS = 'NotContains',
+    LESS_THAN = 'LessThan',
+    LESS_THAN_EQUAL_TO = 'LessThanEqualTo',
+    GREATER_THAN = 'GreaterThan',
+    GREATER_THAN_EQUAL_TO = 'GreaterThanEqualTo'
+}
 
 export type OutOfDateStatusResponseModel = {
     status: OutOfDateTypeModel;
 };
 
-export type OutOfDateTypeModel = 'OutOfDate' | 'Current' | 'Unknown';
+export enum OutOfDateTypeModel {
+    OUT_OF_DATE = 'OutOfDate',
+    CURRENT = 'Current',
+    UNKNOWN = 'Unknown'
+}
 
-export type OverlaySize = 'Small' | 'Medium' | 'Large';
+export enum OverlaySize {
+    SMALL = 'Small',
+    MEDIUM = 'Medium',
+    LARGE = 'Large'
+}
 
 export type PackageConfigurationResponseModel = {
     marketplaceUrl: string;
@@ -2067,7 +2158,7 @@ export type ProblemDetails = {
     status?: number | null;
     detail?: string | null;
     instance?: string | null;
-    [key: string]: (unknown) | undefined;
+    [key: string]: (unknown | string | number) | undefined;
 };
 
 export type ProblemDetailsBuilderModel = {
@@ -2130,7 +2221,10 @@ export type PublishDocumentWithDescendantsRequestModel = {
     cultures: Array<(string)>;
 };
 
-export type RedirectStatusModel = 'Enabled' | 'Disabled';
+export enum RedirectStatusModel {
+    ENABLED = 'Enabled',
+    DISABLED = 'Disabled'
+}
 
 export type RedirectUrlResponseModel = {
     id: string;
@@ -2222,9 +2316,20 @@ export type ResetPasswordUserResponseModel = {
     resetPassword?: string | null;
 };
 
-export type RuntimeLevelModel = 'Unknown' | 'Boot' | 'Install' | 'Upgrade' | 'Run' | 'BootFailed';
+export enum RuntimeLevelModel {
+    UNKNOWN = 'Unknown',
+    BOOT = 'Boot',
+    INSTALL = 'Install',
+    UPGRADE = 'Upgrade',
+    RUN = 'Run',
+    BOOT_FAILED = 'BootFailed'
+}
 
-export type RuntimeModeModel = 'BackofficeDevelopment' | 'Development' | 'Production';
+export enum RuntimeModeModel {
+    BACKOFFICE_DEVELOPMENT = 'BackofficeDevelopment',
+    DEVELOPMENT = 'Development',
+    PRODUCTION = 'Production'
+}
 
 export type SavedLogSearchRequestModel = {
     name: string;
@@ -2303,7 +2408,11 @@ export type ServerResponse = {
     readonly response: string;
 };
 
-export type ServerResponseType = 'Success' | 'Error' | 'Warning';
+export enum ServerResponseType {
+    SUCCESS = 'Success',
+    ERROR = 'Error',
+    WARNING = 'Warning'
+}
 
 export type ServerStatusResponseModel = {
     serverStatus: RuntimeLevelModel;
@@ -2329,7 +2438,12 @@ export type StaticFileItemResponseModel = {
     isFolder: boolean;
 };
 
-export type StatusResultTypeModel = 'Success' | 'Warning' | 'Error' | 'Info';
+export enum StatusResultTypeModel {
+    SUCCESS = 'Success',
+    WARNING = 'Warning',
+    ERROR = 'Error',
+    INFO = 'Info'
+}
 
 export type StylesheetFolderResponseModel = {
     path: string;
@@ -2373,7 +2487,11 @@ export type TagResponseModel = {
     nodeCount: number;
 };
 
-export type TelemetryLevelModel = 'Minimal' | 'Basic' | 'Detailed';
+export enum TelemetryLevelModel {
+    MINIMAL = 'Minimal',
+    BASIC = 'Basic',
+    DETAILED = 'Detailed'
+}
 
 export type TelemetryRequestModel = {
     telemetryLevel: TelemetryLevelModel;
@@ -2451,7 +2569,11 @@ export type TemplateQueryPropertyPresentationModel = {
     type: TemplateQueryPropertyTypeModel;
 };
 
-export type TemplateQueryPropertyTypeModel = 'String' | 'DateTime' | 'Integer';
+export enum TemplateQueryPropertyTypeModel {
+    STRING = 'String',
+    DATE_TIME = 'DateTime',
+    INTEGER = 'Integer'
+}
 
 export type TemplateQueryResultItemPresentationModel = {
     icon: string;
@@ -2825,7 +2947,12 @@ export type UserDataModel = {
     value: string;
 };
 
-export type UserDataOperationStatusModel = 'Success' | 'NotFound' | 'UserNotFound' | 'AlreadyExists';
+export enum UserDataOperationStatusModel {
+    SUCCESS = 'Success',
+    NOT_FOUND = 'NotFound',
+    USER_NOT_FOUND = 'UserNotFound',
+    ALREADY_EXISTS = 'AlreadyExists'
+}
 
 export type UserDataResponseModel = {
     group: string;
@@ -2879,7 +3006,18 @@ export type UserItemResponseModel = {
     avatarUrls: Array<(string)>;
 };
 
-export type UserOrderModel = 'UserName' | 'Language' | 'Name' | 'Email' | 'Id' | 'CreateDate' | 'UpdateDate' | 'IsApproved' | 'IsLockedOut' | 'LastLoginDate';
+export enum UserOrderModel {
+    USER_NAME = 'UserName',
+    LANGUAGE = 'Language',
+    NAME = 'Name',
+    EMAIL = 'Email',
+    ID = 'Id',
+    CREATE_DATE = 'CreateDate',
+    UPDATE_DATE = 'UpdateDate',
+    IS_APPROVED = 'IsApproved',
+    IS_LOCKED_OUT = 'IsLockedOut',
+    LAST_LOGIN_DATE = 'LastLoginDate'
+}
 
 export type UserPermissionModel = {
     nodeKey: string;
@@ -2918,7 +3056,14 @@ export type UserSettingsPresentationModel = {
     consentLevels: Array<(ConsentLevelPresentationModel)>;
 };
 
-export type UserStateModel = 'Active' | 'Disabled' | 'LockedOut' | 'Invited' | 'Inactive' | 'All';
+export enum UserStateModel {
+    ACTIVE = 'Active',
+    DISABLED = 'Disabled',
+    LOCKED_OUT = 'LockedOut',
+    INVITED = 'Invited',
+    INACTIVE = 'Inactive',
+    ALL = 'All'
+}
 
 export type UserTwoFactorProviderModel = {
     providerName: string;
@@ -2979,12 +3124,2604 @@ export type WebhookResponseModel = {
     events: Array<(WebhookEventResponseModel)>;
 };
 
+export type GetContentmentConfigurationEditorModelsData = {
+    type?: string;
+};
+
+export type GetContentmentConfigurationEditorModelsResponse = ConfigurationEditorModelsResponseModel;
+
+export type PostContentmentDataListEditorData = {
+    requestBody?: DataListConfigurationRequestModel;
+};
+
+export type PostContentmentDataListEditorResponse = DataListEditorResponseModel;
+
+export type GetCultureData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetCultureResponse = PagedCultureReponseModel;
+
+export type PostDataTypeData = {
+    requestBody?: CreateDataTypeRequestModel;
+};
+
+export type PostDataTypeResponse = string;
+
+export type GetDataTypeByIdData = {
+    id: string;
+};
+
+export type GetDataTypeByIdResponse = DataTypeResponseModel;
+
+export type DeleteDataTypeByIdData = {
+    id: string;
+};
+
+export type DeleteDataTypeByIdResponse = string;
+
+export type PutDataTypeByIdData = {
+    id: string;
+    requestBody?: UpdateDataTypeRequestModel;
+};
+
+export type PutDataTypeByIdResponse = string;
+
+export type PostDataTypeByIdCopyData = {
+    id: string;
+    requestBody?: CopyDataTypeRequestModel;
+};
+
+export type PostDataTypeByIdCopyResponse = string;
+
+export type GetDataTypeByIdIsUsedData = {
+    id: string;
+};
+
+export type GetDataTypeByIdIsUsedResponse = boolean;
+
+export type PutDataTypeByIdMoveData = {
+    id: string;
+    requestBody?: MoveDataTypeRequestModel;
+};
+
+export type PutDataTypeByIdMoveResponse = string;
+
+export type GetDataTypeByIdReferencesData = {
+    id: string;
+};
+
+export type GetDataTypeByIdReferencesResponse = Array<(DataTypeReferenceResponseModel)>;
+
+export type GetDataTypeConfigurationResponse = DatatypeConfigurationResponseModel;
+
+export type PostDataTypeFolderData = {
+    requestBody?: CreateFolderRequestModel;
+};
+
+export type PostDataTypeFolderResponse = string;
+
+export type GetDataTypeFolderByIdData = {
+    id: string;
+};
+
+export type GetDataTypeFolderByIdResponse = FolderResponseModel;
+
+export type DeleteDataTypeFolderByIdData = {
+    id: string;
+};
+
+export type DeleteDataTypeFolderByIdResponse = string;
+
+export type PutDataTypeFolderByIdData = {
+    id: string;
+    requestBody?: UpdateFolderResponseModel;
+};
+
+export type PutDataTypeFolderByIdResponse = string;
+
+export type GetFilterDataTypeData = {
+    editorAlias?: string;
+    editorUiAlias?: string;
+    name?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetFilterDataTypeResponse = PagedDataTypeItemResponseModel;
+
+export type GetItemDataTypeData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemDataTypeResponse = Array<(DataTypeItemResponseModel)>;
+
+export type GetItemDataTypeSearchData = {
+    query?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemDataTypeSearchResponse = PagedModelDataTypeItemResponseModel;
+
+export type GetTreeDataTypeAncestorsData = {
+    descendantId?: string;
+};
+
+export type GetTreeDataTypeAncestorsResponse = Array<(DataTypeTreeItemResponseModel)>;
+
+export type GetTreeDataTypeChildrenData = {
+    foldersOnly?: boolean;
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDataTypeChildrenResponse = PagedDataTypeTreeItemResponseModel;
+
+export type GetTreeDataTypeRootData = {
+    foldersOnly?: boolean;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDataTypeRootResponse = PagedDataTypeTreeItemResponseModel;
+
+export type GetDictionaryData = {
+    filter?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetDictionaryResponse = PagedDictionaryOverviewResponseModel;
+
+export type PostDictionaryData = {
+    requestBody?: CreateDictionaryItemRequestModel;
+};
+
+export type PostDictionaryResponse = string;
+
+export type GetDictionaryByIdData = {
+    id: string;
+};
+
+export type GetDictionaryByIdResponse = DictionaryItemResponseModel;
+
+export type DeleteDictionaryByIdData = {
+    id: string;
+};
+
+export type DeleteDictionaryByIdResponse = string;
+
+export type PutDictionaryByIdData = {
+    id: string;
+    requestBody?: UpdateDictionaryItemRequestModel;
+};
+
+export type PutDictionaryByIdResponse = string;
+
+export type GetDictionaryByIdExportData = {
+    id: string;
+    includeChildren?: boolean;
+};
+
+export type GetDictionaryByIdExportResponse = (Blob | File);
+
+export type PutDictionaryByIdMoveData = {
+    id: string;
+    requestBody?: MoveDictionaryRequestModel;
+};
+
+export type PutDictionaryByIdMoveResponse = string;
+
+export type PostDictionaryImportData = {
+    requestBody?: ImportDictionaryRequestModel;
+};
+
+export type PostDictionaryImportResponse = string;
+
+export type GetItemDictionaryData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemDictionaryResponse = Array<(DictionaryItemItemResponseModel)>;
+
+export type GetTreeDictionaryAncestorsData = {
+    descendantId?: string;
+};
+
+export type GetTreeDictionaryAncestorsResponse = Array<(NamedEntityTreeItemResponseModel)>;
+
+export type GetTreeDictionaryChildrenData = {
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDictionaryChildrenResponse = PagedNamedEntityTreeItemResponseModel;
+
+export type GetTreeDictionaryRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDictionaryRootResponse = PagedNamedEntityTreeItemResponseModel;
+
+export type PostDocumentBlueprintData = {
+    requestBody?: CreateDocumentBlueprintRequestModel;
+};
+
+export type PostDocumentBlueprintResponse = string;
+
+export type GetDocumentBlueprintByIdData = {
+    id: string;
+};
+
+export type GetDocumentBlueprintByIdResponse = DocumentBlueprintResponseModel;
+
+export type DeleteDocumentBlueprintByIdData = {
+    id: string;
+};
+
+export type DeleteDocumentBlueprintByIdResponse = string;
+
+export type PutDocumentBlueprintByIdData = {
+    id: string;
+    requestBody?: UpdateDocumentBlueprintRequestModel;
+};
+
+export type PutDocumentBlueprintByIdResponse = string;
+
+export type PutDocumentBlueprintByIdMoveData = {
+    id: string;
+    requestBody?: MoveDocumentBlueprintRequestModel;
+};
+
+export type PutDocumentBlueprintByIdMoveResponse = string;
+
+export type PostDocumentBlueprintFolderData = {
+    requestBody?: CreateFolderRequestModel;
+};
+
+export type PostDocumentBlueprintFolderResponse = string;
+
+export type GetDocumentBlueprintFolderByIdData = {
+    id: string;
+};
+
+export type GetDocumentBlueprintFolderByIdResponse = FolderResponseModel;
+
+export type DeleteDocumentBlueprintFolderByIdData = {
+    id: string;
+};
+
+export type DeleteDocumentBlueprintFolderByIdResponse = string;
+
+export type PutDocumentBlueprintFolderByIdData = {
+    id: string;
+    requestBody?: UpdateFolderResponseModel;
+};
+
+export type PutDocumentBlueprintFolderByIdResponse = string;
+
+export type PostDocumentBlueprintFromDocumentData = {
+    requestBody?: CreateDocumentBlueprintFromDocumentRequestModel;
+};
+
+export type PostDocumentBlueprintFromDocumentResponse = string;
+
+export type GetItemDocumentBlueprintData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemDocumentBlueprintResponse = Array<(DocumentBlueprintItemResponseModel)>;
+
+export type GetTreeDocumentBlueprintAncestorsData = {
+    descendantId?: string;
+};
+
+export type GetTreeDocumentBlueprintAncestorsResponse = Array<(DocumentBlueprintTreeItemResponseModel)>;
+
+export type GetTreeDocumentBlueprintChildrenData = {
+    foldersOnly?: boolean;
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDocumentBlueprintChildrenResponse = PagedDocumentBlueprintTreeItemResponseModel;
+
+export type GetTreeDocumentBlueprintRootData = {
+    foldersOnly?: boolean;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDocumentBlueprintRootResponse = PagedDocumentBlueprintTreeItemResponseModel;
+
+export type PostDocumentTypeData = {
+    requestBody?: CreateDocumentTypeRequestModel;
+};
+
+export type PostDocumentTypeResponse = string;
+
+export type GetDocumentTypeByIdData = {
+    id: string;
+};
+
+export type GetDocumentTypeByIdResponse = DocumentTypeResponseModel;
+
+export type DeleteDocumentTypeByIdData = {
+    id: string;
+};
+
+export type DeleteDocumentTypeByIdResponse = string;
+
+export type PutDocumentTypeByIdData = {
+    id: string;
+    requestBody?: UpdateDocumentTypeRequestModel;
+};
+
+export type PutDocumentTypeByIdResponse = string;
+
+export type GetDocumentTypeByIdAllowedChildrenData = {
+    id: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetDocumentTypeByIdAllowedChildrenResponse = PagedAllowedDocumentTypeModel;
+
+export type GetDocumentTypeByIdBlueprintData = {
+    id: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetDocumentTypeByIdBlueprintResponse = PagedDocumentTypeBlueprintItemResponseModel;
+
+export type GetDocumentTypeByIdCompositionReferencesData = {
+    id: string;
+};
+
+export type GetDocumentTypeByIdCompositionReferencesResponse = Array<(DocumentTypeCompositionResponseModel)>;
+
+export type PostDocumentTypeByIdCopyData = {
+    id: string;
+    requestBody?: CopyDocumentTypeRequestModel;
+};
+
+export type PostDocumentTypeByIdCopyResponse = string;
+
+export type GetDocumentTypeByIdExportData = {
+    id: string;
+};
+
+export type GetDocumentTypeByIdExportResponse = (Blob | File);
+
+export type PutDocumentTypeByIdImportData = {
+    id: string;
+    requestBody?: ImportDocumentTypeRequestModel;
+};
+
+export type PutDocumentTypeByIdImportResponse = string;
+
+export type PutDocumentTypeByIdMoveData = {
+    id: string;
+    requestBody?: MoveDocumentTypeRequestModel;
+};
+
+export type PutDocumentTypeByIdMoveResponse = string;
+
+export type GetDocumentTypeAllowedAtRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetDocumentTypeAllowedAtRootResponse = PagedAllowedDocumentTypeModel;
+
+export type PostDocumentTypeAvailableCompositionsData = {
+    requestBody?: DocumentTypeCompositionRequestModel;
+};
+
+export type PostDocumentTypeAvailableCompositionsResponse = Array<(AvailableDocumentTypeCompositionResponseModel)>;
+
+export type GetDocumentTypeConfigurationResponse = DocumentTypeConfigurationResponseModel;
+
+export type PostDocumentTypeFolderData = {
+    requestBody?: CreateFolderRequestModel;
+};
+
+export type PostDocumentTypeFolderResponse = string;
+
+export type GetDocumentTypeFolderByIdData = {
+    id: string;
+};
+
+export type GetDocumentTypeFolderByIdResponse = FolderResponseModel;
+
+export type DeleteDocumentTypeFolderByIdData = {
+    id: string;
+};
+
+export type DeleteDocumentTypeFolderByIdResponse = string;
+
+export type PutDocumentTypeFolderByIdData = {
+    id: string;
+    requestBody?: UpdateFolderResponseModel;
+};
+
+export type PutDocumentTypeFolderByIdResponse = string;
+
+export type PostDocumentTypeImportData = {
+    requestBody?: ImportDocumentTypeRequestModel;
+};
+
+export type PostDocumentTypeImportResponse = string;
+
+export type GetItemDocumentTypeData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemDocumentTypeResponse = Array<(DocumentTypeItemResponseModel)>;
+
+export type GetItemDocumentTypeSearchData = {
+    query?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemDocumentTypeSearchResponse = PagedModelDocumentTypeItemResponseModel;
+
+export type GetTreeDocumentTypeAncestorsData = {
+    descendantId?: string;
+};
+
+export type GetTreeDocumentTypeAncestorsResponse = Array<(DocumentTypeTreeItemResponseModel)>;
+
+export type GetTreeDocumentTypeChildrenData = {
+    foldersOnly?: boolean;
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDocumentTypeChildrenResponse = PagedDocumentTypeTreeItemResponseModel;
+
+export type GetTreeDocumentTypeRootData = {
+    foldersOnly?: boolean;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDocumentTypeRootResponse = PagedDocumentTypeTreeItemResponseModel;
+
+export type GetDocumentVersionData = {
+    culture?: string;
+    documentId: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetDocumentVersionResponse = PagedDocumentVersionItemResponseModel;
+
+export type GetDocumentVersionByIdData = {
+    id: string;
+};
+
+export type GetDocumentVersionByIdResponse = DocumentVersionResponseModel;
+
+export type PutDocumentVersionByIdPreventCleanupData = {
+    id: string;
+    preventCleanup?: boolean;
+};
+
+export type PutDocumentVersionByIdPreventCleanupResponse = string;
+
+export type PostDocumentVersionByIdRollbackData = {
+    culture?: string;
+    id: string;
+};
+
+export type PostDocumentVersionByIdRollbackResponse = string;
+
+export type GetCollectionDocumentByIdData = {
+    dataTypeId?: string;
+    filter?: string;
+    id: string;
+    orderBy?: string;
+    orderCulture?: string;
+    orderDirection?: DirectionModel;
+    skip?: number;
+    take?: number;
+};
+
+export type GetCollectionDocumentByIdResponse = PagedDocumentCollectionResponseModel;
+
+export type PostDocumentData = {
+    requestBody?: CreateDocumentRequestModel;
+};
+
+export type PostDocumentResponse = string;
+
+export type GetDocumentByIdData = {
+    id: string;
+};
+
+export type GetDocumentByIdResponse = DocumentResponseModel;
+
+export type DeleteDocumentByIdData = {
+    id: string;
+};
+
+export type DeleteDocumentByIdResponse = string;
+
+export type PutDocumentByIdData = {
+    id: string;
+    requestBody?: UpdateDocumentRequestModel;
+};
+
+export type PutDocumentByIdResponse = string;
+
+export type GetDocumentByIdAuditLogData = {
+    id: string;
+    orderDirection?: DirectionModel;
+    sinceDate?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetDocumentByIdAuditLogResponse = PagedAuditLogResponseModel;
+
+export type PostDocumentByIdCopyData = {
+    id: string;
+    requestBody?: CopyDocumentRequestModel;
+};
+
+export type PostDocumentByIdCopyResponse = string;
+
+export type GetDocumentByIdDomainsData = {
+    id: string;
+};
+
+export type GetDocumentByIdDomainsResponse = DomainsResponseModel;
+
+export type PutDocumentByIdDomainsData = {
+    id: string;
+    requestBody?: UpdateDomainsRequestModel;
+};
+
+export type PutDocumentByIdDomainsResponse = string;
+
+export type PutDocumentByIdMoveData = {
+    id: string;
+    requestBody?: MoveDocumentRequestModel;
+};
+
+export type PutDocumentByIdMoveResponse = string;
+
+export type PutDocumentByIdMoveToRecycleBinData = {
+    id: string;
+};
+
+export type PutDocumentByIdMoveToRecycleBinResponse = string;
+
+export type GetDocumentByIdNotificationsData = {
+    id: string;
+};
+
+export type GetDocumentByIdNotificationsResponse = Array<(DocumentNotificationResponseModel)>;
+
+export type PutDocumentByIdNotificationsData = {
+    id: string;
+    requestBody?: UpdateDocumentNotificationsRequestModel;
+};
+
+export type PutDocumentByIdNotificationsResponse = string;
+
+export type PostDocumentByIdPublicAccessData = {
+    id: string;
+    requestBody?: PublicAccessRequestModel;
+};
+
+export type PostDocumentByIdPublicAccessResponse = string;
+
+export type DeleteDocumentByIdPublicAccessData = {
+    id: string;
+};
+
+export type DeleteDocumentByIdPublicAccessResponse = string;
+
+export type GetDocumentByIdPublicAccessData = {
+    id: string;
+};
+
+export type GetDocumentByIdPublicAccessResponse = PublicAccessResponseModel;
+
+export type PutDocumentByIdPublicAccessData = {
+    id: string;
+    requestBody?: PublicAccessRequestModel;
+};
+
+export type PutDocumentByIdPublicAccessResponse = string;
+
+export type PutDocumentByIdPublishData = {
+    id: string;
+    requestBody?: PublishDocumentRequestModel;
+};
+
+export type PutDocumentByIdPublishResponse = string;
+
+export type PutDocumentByIdPublishWithDescendantsData = {
+    id: string;
+    requestBody?: PublishDocumentWithDescendantsRequestModel;
+};
+
+export type PutDocumentByIdPublishWithDescendantsResponse = string;
+
+export type GetDocumentByIdReferencedByData = {
+    id: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetDocumentByIdReferencedByResponse = PagedIReferenceResponseModel;
+
+export type GetDocumentByIdReferencedDescendantsData = {
+    id: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetDocumentByIdReferencedDescendantsResponse = PagedReferenceByIdModel;
+
+export type PutDocumentByIdUnpublishData = {
+    id: string;
+    requestBody?: UnpublishDocumentRequestModel;
+};
+
+export type PutDocumentByIdUnpublishResponse = string;
+
+export type PutDocumentByIdValidateData = {
+    id: string;
+    requestBody?: UpdateDocumentRequestModel;
+};
+
+export type PutDocumentByIdValidateResponse = string;
+
+export type GetDocumentAreReferencedData = {
+    id?: Array<(string)>;
+    skip?: number;
+    take?: number;
+};
+
+export type GetDocumentAreReferencedResponse = PagedReferenceByIdModel;
+
+export type GetDocumentConfigurationResponse = DocumentConfigurationResponseModel;
+
+export type PutDocumentSortData = {
+    requestBody?: SortingRequestModel;
+};
+
+export type PutDocumentSortResponse = string;
+
+export type GetDocumentUrlsData = {
+    id?: Array<(string)>;
+};
+
+export type GetDocumentUrlsResponse = Array<(DocumentUrlInfoResponseModel)>;
+
+export type PostDocumentValidateData = {
+    requestBody?: CreateDocumentRequestModel;
+};
+
+export type PostDocumentValidateResponse = string;
+
+export type GetItemDocumentData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemDocumentResponse = Array<(DocumentItemResponseModel)>;
+
+export type GetItemDocumentSearchData = {
+    query?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemDocumentSearchResponse = PagedModelDocumentItemResponseModel;
+
+export type DeleteRecycleBinDocumentResponse = string;
+
+export type DeleteRecycleBinDocumentByIdData = {
+    id: string;
+};
+
+export type DeleteRecycleBinDocumentByIdResponse = string;
+
+export type GetRecycleBinDocumentByIdOriginalParentData = {
+    id: string;
+};
+
+export type GetRecycleBinDocumentByIdOriginalParentResponse = ReferenceByIdModel;
+
+export type PutRecycleBinDocumentByIdRestoreData = {
+    id: string;
+    requestBody?: MoveMediaRequestModel;
+};
+
+export type PutRecycleBinDocumentByIdRestoreResponse = string;
+
+export type GetRecycleBinDocumentChildrenData = {
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetRecycleBinDocumentChildrenResponse = PagedDocumentRecycleBinItemResponseModel;
+
+export type GetRecycleBinDocumentRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetRecycleBinDocumentRootResponse = PagedDocumentRecycleBinItemResponseModel;
+
+export type GetTreeDocumentAncestorsData = {
+    descendantId?: string;
+};
+
+export type GetTreeDocumentAncestorsResponse = Array<(DocumentTreeItemResponseModel)>;
+
+export type GetTreeDocumentChildrenData = {
+    dataTypeId?: string;
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDocumentChildrenResponse = PagedDocumentTreeItemResponseModel;
+
+export type GetTreeDocumentRootData = {
+    dataTypeId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeDocumentRootResponse = PagedDocumentTreeItemResponseModel;
+
+export type PostDynamicRootQueryData = {
+    requestBody?: DynamicRootRequestModel;
+};
+
+export type PostDynamicRootQueryResponse = DynamicRootResponseModel;
+
+export type GetDynamicRootStepsResponse = Array<(string)>;
+
+export type PostUmbracoManagementApiV1GodModeClearUmbracoCacheData = {
+    cache?: string;
+};
+
+export type PostUmbracoManagementApiV1GodModeClearUmbracoCacheResponse = ServerResponse;
+
+export type PostUmbracoManagementApiV1GodModeCopyDataTypeData = {
+    id?: number;
+};
+
+export type PostUmbracoManagementApiV1GodModeCopyDataTypeResponse = ServerResponse;
+
+export type PostUmbracoManagementApiV1GodModeDeleteTagData = {
+    id?: number;
+};
+
+export type PostUmbracoManagementApiV1GodModeDeleteTagResponse = ServerResponse;
+
+export type PostUmbracoManagementApiV1GodModeFixTemplateMastersResponse = number;
+
+export type GetUmbracoManagementApiV1GodModeGetApiControllersResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetAssembliesResponse = Array<(NameValue)>;
+
+export type GetUmbracoManagementApiV1GodModeGetAssembliesWithInterfacesResponse = Array<(NameValue)>;
+
+export type GetUmbracoManagementApiV1GodModeGetComposersResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetCompositionsResponse = Array<(ContentTypeData)>;
+
+export type GetUmbracoManagementApiV1GodModeGetConfigResponse = GodModeConfig;
+
+export type GetUmbracoManagementApiV1GodModeGetContentFindersResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetContentPagedData = {
+    alias?: string;
+    creatorId?: number;
+    id?: string;
+    languageId?: number;
+    level?: number;
+    name?: string;
+    orderBy?: string;
+    page?: number;
+    pageSize?: number;
+    trashed?: boolean;
+    updaterId?: number;
+};
+
+export type GetUmbracoManagementApiV1GodModeGetContentPagedResponse = Page_1;
+
+export type GetUmbracoManagementApiV1GodModeGetContentTypeAliasesResponse = Array<(string)>;
+
+export type GetUmbracoManagementApiV1GodModeGetContentTypeMapResponse = Array<(ContentTypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetContentUsageDataData = {
+    id?: number;
+    orderBy?: string;
+};
+
+export type GetUmbracoManagementApiV1GodModeGetContentUsageDataResponse = Array<(UsageModel)>;
+
+export type GetUmbracoManagementApiV1GodModeGetDataTypesResponse = Array<(DataTypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetDataTypesStatusResponse = Array<(DataTypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetEnvironmentDiagnosticsResponse = Array<(DiagnosticGroup)>;
+
+export type GetUmbracoManagementApiV1GodModeGetInterfacesFromData = {
+    assembly?: string;
+};
+
+export type GetUmbracoManagementApiV1GodModeGetInterfacesFromResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetLanguagesResponse = Array<(Lang)>;
+
+export type GetUmbracoManagementApiV1GodModeGetMediaData = {
+    id?: number;
+    mediaTypeId?: number;
+    name?: string;
+    orderBy?: string;
+    orderByDir?: string;
+    page?: number;
+    pageSize?: number;
+};
+
+export type GetUmbracoManagementApiV1GodModeGetMediaResponse = MediaMap;
+
+export type GetUmbracoManagementApiV1GodModeGetMediaTypesResponse = Array<(ItemBase)>;
+
+export type GetUmbracoManagementApiV1GodModeGetMemberGroupsResponse = Array<(MemberGroupModel)>;
+
+export type GetUmbracoManagementApiV1GodModeGetMembersPagedData = {
+    groupId?: number;
+    orderBy?: string;
+    page?: number;
+    pageSize?: number;
+    search?: string;
+};
+
+export type GetUmbracoManagementApiV1GodModeGetMembersPagedResponse = MemberModel;
+
+export type GetUmbracoManagementApiV1GodModeGetNonMsAssembliesResponse = Array<(NameValue)>;
+
+export type GetUmbracoManagementApiV1GodModeGetNuCacheItemData = {
+    id?: number;
+};
+
+export type GetUmbracoManagementApiV1GodModeGetNuCacheItemResponse = NuCacheItem;
+
+export type GetUmbracoManagementApiV1GodModeGetNuCacheTypeResponse = string;
+
+export type GetUmbracoManagementApiV1GodModeGetOrphanedTagsResponse = Array<(Tag)>;
+
+export type GetUmbracoManagementApiV1GodModeGetPropertyEditorsResponse = Array<(DataTypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetPropertyGroupsResponse = Array<(string)>;
+
+export type GetUmbracoManagementApiV1GodModeGetPropertyValueConvertersResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetPublishedContentModelsResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetRegisteredServicesResponse = Array<(RegisteredService)>;
+
+export type GetUmbracoManagementApiV1GodModeGetRenderMvcControllersResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetStandardContentTypeAliasesResponse = Array<(string)>;
+
+export type GetUmbracoManagementApiV1GodModeGetSurfaceControllersResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetTagHelpersResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetTagMappingResponse = Array<(TagMapping)>;
+
+export type GetUmbracoManagementApiV1GodModeGetTemplatesResponse = Array<(TemplateModel)>;
+
+export type GetUmbracoManagementApiV1GodModeGetTemplateUrlsToPingResponse = Array<(string)>;
+
+export type GetUmbracoManagementApiV1GodModeGetTypesAssignableFromData = {
+    baseType?: string;
+};
+
+export type GetUmbracoManagementApiV1GodModeGetTypesAssignableFromResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetTypesFromData = {
+    assembly?: string;
+};
+
+export type GetUmbracoManagementApiV1GodModeGetTypesFromResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetUmbracoAssembliesResponse = Array<(NameValue)>;
+
+export type GetUmbracoManagementApiV1GodModeGetUrlProvidersResponse = Array<(TypeMap)>;
+
+export type GetUmbracoManagementApiV1GodModeGetUrlsToPingData = {
+    culture?: string;
+};
+
+export type GetUmbracoManagementApiV1GodModeGetUrlsToPingResponse = Array<(string)>;
+
+export type GetUmbracoManagementApiV1GodModeGetViewComponentsResponse = Array<(TypeMap)>;
+
+export type PostUmbracoManagementApiV1GodModePurgeMediaCacheResponse = ServerResponse;
+
+export type PostUmbracoManagementApiV1GodModeRestartAppPoolResponse = ServerResponse;
+
+export type GetHealthCheckGroupData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetHealthCheckGroupResponse = PagedHealthCheckGroupResponseModel;
+
+export type GetHealthCheckGroupByNameData = {
+    name: string;
+};
+
+export type GetHealthCheckGroupByNameResponse = HealthCheckGroupPresentationModel;
+
+export type PostHealthCheckGroupByNameCheckData = {
+    name: string;
+};
+
+export type PostHealthCheckGroupByNameCheckResponse = HealthCheckGroupWithResultResponseModel;
+
+export type PostHealthCheckExecuteActionData = {
+    requestBody?: HealthCheckActionRequestModel;
+};
+
+export type PostHealthCheckExecuteActionResponse = HealthCheckResultResponseModel;
+
+export type GetHelpData = {
+    baseUrl?: string;
+    section?: string;
+    skip?: number;
+    take?: number;
+    tree?: string;
+};
+
+export type GetHelpResponse = PagedHelpPageResponseModel;
+
+export type GetImagingResizeUrlsData = {
+    height?: number;
+    id?: Array<(string)>;
+    mode?: ImageCropModeModel;
+    width?: number;
+};
+
+export type GetImagingResizeUrlsResponse = Array<(MediaUrlInfoResponseModel)>;
+
+export type GetImportAnalyzeData = {
+    temporaryFileId?: string;
+};
+
+export type GetImportAnalyzeResponse = EntityImportAnalysisResponseModel;
+
+export type GetIndexerData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetIndexerResponse = PagedIndexResponseModel;
+
+export type GetIndexerByIndexNameData = {
+    indexName: string;
+};
+
+export type GetIndexerByIndexNameResponse = IndexResponseModel;
+
+export type PostIndexerByIndexNameRebuildData = {
+    indexName: string;
+};
+
+export type PostIndexerByIndexNameRebuildResponse = string;
+
+export type GetInstallSettingsResponse = InstallSettingsResponseModel;
+
+export type PostInstallSetupData = {
+    requestBody?: InstallRequestModel;
+};
+
+export type PostInstallSetupResponse = string;
+
+export type PostInstallValidateDatabaseData = {
+    requestBody?: DatabaseInstallRequestModel;
+};
+
+export type PostInstallValidateDatabaseResponse = string;
+
+export type GetItemLanguageData = {
+    isoCode?: Array<(string)>;
+};
+
+export type GetItemLanguageResponse = Array<(LanguageItemResponseModel)>;
+
+export type GetItemLanguageDefaultResponse = LanguageItemResponseModel;
+
+export type GetLanguageData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetLanguageResponse = PagedLanguageResponseModel;
+
+export type PostLanguageData = {
+    requestBody?: CreateLanguageRequestModel;
+};
+
+export type PostLanguageResponse = string;
+
+export type GetLanguageByIsoCodeData = {
+    isoCode: string;
+};
+
+export type GetLanguageByIsoCodeResponse = LanguageResponseModel;
+
+export type DeleteLanguageByIsoCodeData = {
+    isoCode: string;
+};
+
+export type DeleteLanguageByIsoCodeResponse = string;
+
+export type PutLanguageByIsoCodeData = {
+    isoCode: string;
+    requestBody?: UpdateLanguageRequestModel;
+};
+
+export type PutLanguageByIsoCodeResponse = string;
+
+export type GetLogViewerLevelData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetLogViewerLevelResponse = PagedLoggerResponseModel;
+
+export type GetLogViewerLevelCountData = {
+    endDate?: string;
+    startDate?: string;
+};
+
+export type GetLogViewerLevelCountResponse = LogLevelCountsReponseModel;
+
+export type GetLogViewerLogData = {
+    endDate?: string;
+    filterExpression?: string;
+    logLevel?: Array<LogLevelModel>;
+    orderDirection?: DirectionModel;
+    skip?: number;
+    startDate?: string;
+    take?: number;
+};
+
+export type GetLogViewerLogResponse = PagedLogMessageResponseModel;
+
+export type GetLogViewerMessageTemplateData = {
+    endDate?: string;
+    skip?: number;
+    startDate?: string;
+    take?: number;
+};
+
+export type GetLogViewerMessageTemplateResponse = PagedLogTemplateResponseModel;
+
+export type GetLogViewerSavedSearchData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetLogViewerSavedSearchResponse = PagedSavedLogSearchResponseModel;
+
+export type PostLogViewerSavedSearchData = {
+    requestBody?: SavedLogSearchRequestModel;
+};
+
+export type PostLogViewerSavedSearchResponse = string;
+
+export type GetLogViewerSavedSearchByNameData = {
+    name: string;
+};
+
+export type GetLogViewerSavedSearchByNameResponse = SavedLogSearchResponseModel;
+
+export type DeleteLogViewerSavedSearchByNameData = {
+    name: string;
+};
+
+export type DeleteLogViewerSavedSearchByNameResponse = string;
+
+export type GetLogViewerValidateLogsSizeData = {
+    endDate?: string;
+    startDate?: string;
+};
+
+export type GetLogViewerValidateLogsSizeResponse = unknown;
+
+export type GetManifestManifestResponse = Array<(ManifestResponseModel)>;
+
+export type GetManifestManifestPrivateResponse = Array<(ManifestResponseModel)>;
+
+export type GetManifestManifestPublicResponse = Array<(ManifestResponseModel)>;
+
+export type GetItemMediaTypeData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemMediaTypeResponse = Array<(MediaTypeItemResponseModel)>;
+
+export type GetItemMediaTypeAllowedData = {
+    fileExtension?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemMediaTypeAllowedResponse = PagedModelMediaTypeItemResponseModel;
+
+export type GetItemMediaTypeFoldersData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemMediaTypeFoldersResponse = PagedModelMediaTypeItemResponseModel;
+
+export type GetItemMediaTypeSearchData = {
+    query?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemMediaTypeSearchResponse = PagedModelMediaTypeItemResponseModel;
+
+export type PostMediaTypeData = {
+    requestBody?: CreateMediaTypeRequestModel;
+};
+
+export type PostMediaTypeResponse = string;
+
+export type GetMediaTypeByIdData = {
+    id: string;
+};
+
+export type GetMediaTypeByIdResponse = MediaTypeResponseModel;
+
+export type DeleteMediaTypeByIdData = {
+    id: string;
+};
+
+export type DeleteMediaTypeByIdResponse = string;
+
+export type PutMediaTypeByIdData = {
+    id: string;
+    requestBody?: UpdateMediaTypeRequestModel;
+};
+
+export type PutMediaTypeByIdResponse = string;
+
+export type GetMediaTypeByIdAllowedChildrenData = {
+    id: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetMediaTypeByIdAllowedChildrenResponse = PagedAllowedMediaTypeModel;
+
+export type GetMediaTypeByIdCompositionReferencesData = {
+    id: string;
+};
+
+export type GetMediaTypeByIdCompositionReferencesResponse = Array<(MediaTypeCompositionResponseModel)>;
+
+export type PostMediaTypeByIdCopyData = {
+    id: string;
+    requestBody?: CopyMediaTypeRequestModel;
+};
+
+export type PostMediaTypeByIdCopyResponse = string;
+
+export type GetMediaTypeByIdExportData = {
+    id: string;
+};
+
+export type GetMediaTypeByIdExportResponse = (Blob | File);
+
+export type PutMediaTypeByIdImportData = {
+    id: string;
+    requestBody?: ImportMediaTypeRequestModel;
+};
+
+export type PutMediaTypeByIdImportResponse = string;
+
+export type PutMediaTypeByIdMoveData = {
+    id: string;
+    requestBody?: MoveMediaTypeRequestModel;
+};
+
+export type PutMediaTypeByIdMoveResponse = string;
+
+export type GetMediaTypeAllowedAtRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetMediaTypeAllowedAtRootResponse = PagedAllowedMediaTypeModel;
+
+export type PostMediaTypeAvailableCompositionsData = {
+    requestBody?: MediaTypeCompositionRequestModel;
+};
+
+export type PostMediaTypeAvailableCompositionsResponse = Array<(AvailableMediaTypeCompositionResponseModel)>;
+
+export type PostMediaTypeFolderData = {
+    requestBody?: CreateFolderRequestModel;
+};
+
+export type PostMediaTypeFolderResponse = string;
+
+export type GetMediaTypeFolderByIdData = {
+    id: string;
+};
+
+export type GetMediaTypeFolderByIdResponse = FolderResponseModel;
+
+export type DeleteMediaTypeFolderByIdData = {
+    id: string;
+};
+
+export type DeleteMediaTypeFolderByIdResponse = string;
+
+export type PutMediaTypeFolderByIdData = {
+    id: string;
+    requestBody?: UpdateFolderResponseModel;
+};
+
+export type PutMediaTypeFolderByIdResponse = string;
+
+export type PostMediaTypeImportData = {
+    requestBody?: ImportMediaTypeRequestModel;
+};
+
+export type PostMediaTypeImportResponse = string;
+
+export type GetTreeMediaTypeAncestorsData = {
+    descendantId?: string;
+};
+
+export type GetTreeMediaTypeAncestorsResponse = Array<(MediaTypeTreeItemResponseModel)>;
+
+export type GetTreeMediaTypeChildrenData = {
+    foldersOnly?: boolean;
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeMediaTypeChildrenResponse = PagedMediaTypeTreeItemResponseModel;
+
+export type GetTreeMediaTypeRootData = {
+    foldersOnly?: boolean;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeMediaTypeRootResponse = PagedMediaTypeTreeItemResponseModel;
+
+export type GetCollectionMediaData = {
+    dataTypeId?: string;
+    filter?: string;
+    id?: string;
+    orderBy?: string;
+    orderDirection?: DirectionModel;
+    skip?: number;
+    take?: number;
+};
+
+export type GetCollectionMediaResponse = PagedMediaCollectionResponseModel;
+
+export type GetItemMediaData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemMediaResponse = Array<(MediaItemResponseModel)>;
+
+export type GetItemMediaSearchData = {
+    query?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemMediaSearchResponse = PagedModelMediaItemResponseModel;
+
+export type PostMediaData = {
+    requestBody?: CreateMediaRequestModel;
+};
+
+export type PostMediaResponse = string;
+
+export type GetMediaByIdData = {
+    id: string;
+};
+
+export type GetMediaByIdResponse = MediaResponseModel;
+
+export type DeleteMediaByIdData = {
+    id: string;
+};
+
+export type DeleteMediaByIdResponse = string;
+
+export type PutMediaByIdData = {
+    id: string;
+    requestBody?: UpdateMediaRequestModel;
+};
+
+export type PutMediaByIdResponse = string;
+
+export type GetMediaByIdAuditLogData = {
+    id: string;
+    orderDirection?: DirectionModel;
+    sinceDate?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetMediaByIdAuditLogResponse = PagedAuditLogResponseModel;
+
+export type PutMediaByIdMoveData = {
+    id: string;
+    requestBody?: MoveMediaRequestModel;
+};
+
+export type PutMediaByIdMoveResponse = string;
+
+export type PutMediaByIdMoveToRecycleBinData = {
+    id: string;
+};
+
+export type PutMediaByIdMoveToRecycleBinResponse = string;
+
+export type GetMediaByIdReferencedByData = {
+    id: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetMediaByIdReferencedByResponse = PagedIReferenceResponseModel;
+
+export type GetMediaByIdReferencedDescendantsData = {
+    id: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetMediaByIdReferencedDescendantsResponse = PagedReferenceByIdModel;
+
+export type PutMediaByIdValidateData = {
+    id: string;
+    requestBody?: UpdateMediaRequestModel;
+};
+
+export type PutMediaByIdValidateResponse = string;
+
+export type GetMediaAreReferencedData = {
+    id?: Array<(string)>;
+    skip?: number;
+    take?: number;
+};
+
+export type GetMediaAreReferencedResponse = PagedReferenceByIdModel;
+
+export type GetMediaConfigurationResponse = MediaConfigurationResponseModel;
+
+export type PutMediaSortData = {
+    requestBody?: SortingRequestModel;
+};
+
+export type PutMediaSortResponse = string;
+
+export type GetMediaUrlsData = {
+    id?: Array<(string)>;
+};
+
+export type GetMediaUrlsResponse = Array<(MediaUrlInfoResponseModel)>;
+
+export type PostMediaValidateData = {
+    requestBody?: CreateMediaRequestModel;
+};
+
+export type PostMediaValidateResponse = string;
+
+export type DeleteRecycleBinMediaResponse = string;
+
+export type DeleteRecycleBinMediaByIdData = {
+    id: string;
+};
+
+export type DeleteRecycleBinMediaByIdResponse = string;
+
+export type GetRecycleBinMediaByIdOriginalParentData = {
+    id: string;
+};
+
+export type GetRecycleBinMediaByIdOriginalParentResponse = ReferenceByIdModel;
+
+export type PutRecycleBinMediaByIdRestoreData = {
+    id: string;
+    requestBody?: MoveMediaRequestModel;
+};
+
+export type PutRecycleBinMediaByIdRestoreResponse = string;
+
+export type GetRecycleBinMediaChildrenData = {
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetRecycleBinMediaChildrenResponse = PagedMediaRecycleBinItemResponseModel;
+
+export type GetRecycleBinMediaRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetRecycleBinMediaRootResponse = PagedMediaRecycleBinItemResponseModel;
+
+export type GetTreeMediaAncestorsData = {
+    descendantId?: string;
+};
+
+export type GetTreeMediaAncestorsResponse = Array<(MediaTreeItemResponseModel)>;
+
+export type GetTreeMediaChildrenData = {
+    dataTypeId?: string;
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeMediaChildrenResponse = PagedMediaTreeItemResponseModel;
+
+export type GetTreeMediaRootData = {
+    dataTypeId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeMediaRootResponse = PagedMediaTreeItemResponseModel;
+
+export type GetItemMemberGroupData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemMemberGroupResponse = Array<(MemberGroupItemResponseModel)>;
+
+export type GetMemberGroupData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetMemberGroupResponse = PagedMemberGroupResponseModel;
+
+export type PostMemberGroupData = {
+    requestBody?: CreateMemberGroupRequestModel;
+};
+
+export type PostMemberGroupResponse = string;
+
+export type GetMemberGroupByIdData = {
+    id: string;
+};
+
+export type GetMemberGroupByIdResponse = MemberGroupResponseModel;
+
+export type DeleteMemberGroupByIdData = {
+    id: string;
+};
+
+export type DeleteMemberGroupByIdResponse = string;
+
+export type PutMemberGroupByIdData = {
+    id: string;
+    requestBody?: UpdateMemberGroupRequestModel;
+};
+
+export type PutMemberGroupByIdResponse = string;
+
+export type GetTreeMemberGroupRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeMemberGroupRootResponse = PagedNamedEntityTreeItemResponseModel;
+
+export type GetItemMemberTypeData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemMemberTypeResponse = Array<(MemberTypeItemResponseModel)>;
+
+export type GetItemMemberTypeSearchData = {
+    query?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemMemberTypeSearchResponse = PagedModelMemberTypeItemResponseModel;
+
+export type PostMemberTypeData = {
+    requestBody?: CreateMemberTypeRequestModel;
+};
+
+export type PostMemberTypeResponse = string;
+
+export type GetMemberTypeByIdData = {
+    id: string;
+};
+
+export type GetMemberTypeByIdResponse = MemberTypeResponseModel;
+
+export type DeleteMemberTypeByIdData = {
+    id: string;
+};
+
+export type DeleteMemberTypeByIdResponse = string;
+
+export type PutMemberTypeByIdData = {
+    id: string;
+    requestBody?: UpdateMemberTypeRequestModel;
+};
+
+export type PutMemberTypeByIdResponse = string;
+
+export type GetMemberTypeByIdCompositionReferencesData = {
+    id: string;
+};
+
+export type GetMemberTypeByIdCompositionReferencesResponse = Array<(MemberTypeCompositionResponseModel)>;
+
+export type PostMemberTypeByIdCopyData = {
+    id: string;
+};
+
+export type PostMemberTypeByIdCopyResponse = string;
+
+export type PostMemberTypeAvailableCompositionsData = {
+    requestBody?: MemberTypeCompositionRequestModel;
+};
+
+export type PostMemberTypeAvailableCompositionsResponse = Array<(AvailableMemberTypeCompositionResponseModel)>;
+
+export type GetTreeMemberTypeRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeMemberTypeRootResponse = PagedMemberTypeTreeItemResponseModel;
+
+export type GetFilterMemberData = {
+    filter?: string;
+    isApproved?: boolean;
+    isLockedOut?: boolean;
+    memberGroupName?: string;
+    memberTypeId?: string;
+    orderBy?: string;
+    orderDirection?: DirectionModel;
+    skip?: number;
+    take?: number;
+};
+
+export type GetFilterMemberResponse = PagedMemberResponseModel;
+
+export type GetItemMemberData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemMemberResponse = Array<(MemberItemResponseModel)>;
+
+export type GetItemMemberSearchData = {
+    query?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemMemberSearchResponse = PagedModelMemberItemResponseModel;
+
+export type PostMemberData = {
+    requestBody?: CreateMemberRequestModel;
+};
+
+export type PostMemberResponse = string;
+
+export type GetMemberByIdData = {
+    id: string;
+};
+
+export type GetMemberByIdResponse = MemberResponseModel;
+
+export type DeleteMemberByIdData = {
+    id: string;
+};
+
+export type DeleteMemberByIdResponse = string;
+
+export type PutMemberByIdData = {
+    id: string;
+    requestBody?: UpdateMemberRequestModel;
+};
+
+export type PutMemberByIdResponse = string;
+
+export type PutMemberByIdValidateData = {
+    id: string;
+    requestBody?: UpdateMemberRequestModel;
+};
+
+export type PutMemberByIdValidateResponse = string;
+
+export type GetMemberConfigurationResponse = MemberConfigurationResponseModel;
+
+export type PostMemberValidateData = {
+    requestBody?: CreateMemberRequestModel;
+};
+
+export type PostMemberValidateResponse = string;
+
+export type PostModelsBuilderBuildResponse = string;
+
+export type GetModelsBuilderDashboardResponse = ModelsBuilderResponseModel;
+
+export type GetModelsBuilderStatusResponse = OutOfDateStatusResponseModel;
+
+export type GetObjectTypesData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetObjectTypesResponse = PagedObjectTypeResponseModel;
+
+export type GetOembedQueryData = {
+    maxHeight?: number;
+    maxWidth?: number;
+    url?: string;
+};
+
+export type GetOembedQueryResponse = OEmbedResponseModel;
+
+export type PostPackageByNameRunMigrationData = {
+    name: string;
+};
+
+export type PostPackageByNameRunMigrationResponse = string;
+
+export type GetPackageConfigurationResponse = PackageConfigurationResponseModel;
+
+export type GetPackageCreatedData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetPackageCreatedResponse = PagedPackageDefinitionResponseModel;
+
+export type PostPackageCreatedData = {
+    requestBody?: CreatePackageRequestModel;
+};
+
+export type PostPackageCreatedResponse = string;
+
+export type GetPackageCreatedByIdData = {
+    id: string;
+};
+
+export type GetPackageCreatedByIdResponse = PackageDefinitionResponseModel;
+
+export type DeletePackageCreatedByIdData = {
+    id: string;
+};
+
+export type DeletePackageCreatedByIdResponse = string;
+
+export type PutPackageCreatedByIdData = {
+    id: string;
+    requestBody?: UpdatePackageRequestModel;
+};
+
+export type PutPackageCreatedByIdResponse = string;
+
+export type GetPackageCreatedByIdDownloadData = {
+    id: string;
+};
+
+export type GetPackageCreatedByIdDownloadResponse = (Blob | File);
+
+export type GetPackageMigrationStatusData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetPackageMigrationStatusResponse = PagedPackageMigrationStatusResponseModel;
+
+export type GetItemPartialViewData = {
+    path?: Array<(string)>;
+};
+
+export type GetItemPartialViewResponse = Array<(PartialViewItemResponseModel)>;
+
+export type PostPartialViewData = {
+    requestBody?: CreatePartialViewRequestModel;
+};
+
+export type PostPartialViewResponse = string;
+
+export type GetPartialViewByPathData = {
+    path: string;
+};
+
+export type GetPartialViewByPathResponse = PartialViewResponseModel;
+
+export type DeletePartialViewByPathData = {
+    path: string;
+};
+
+export type DeletePartialViewByPathResponse = string;
+
+export type PutPartialViewByPathData = {
+    path: string;
+    requestBody?: UpdatePartialViewRequestModel;
+};
+
+export type PutPartialViewByPathResponse = string;
+
+export type PutPartialViewByPathRenameData = {
+    path: string;
+    requestBody?: RenamePartialViewRequestModel;
+};
+
+export type PutPartialViewByPathRenameResponse = string;
+
+export type PostPartialViewFolderData = {
+    requestBody?: CreatePartialViewFolderRequestModel;
+};
+
+export type PostPartialViewFolderResponse = string;
+
+export type GetPartialViewFolderByPathData = {
+    path: string;
+};
+
+export type GetPartialViewFolderByPathResponse = PartialViewFolderResponseModel;
+
+export type DeletePartialViewFolderByPathData = {
+    path: string;
+};
+
+export type DeletePartialViewFolderByPathResponse = string;
+
+export type GetPartialViewSnippetData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetPartialViewSnippetResponse = PagedPartialViewSnippetItemResponseModel;
+
+export type GetPartialViewSnippetByIdData = {
+    id: string;
+};
+
+export type GetPartialViewSnippetByIdResponse = PartialViewSnippetResponseModel;
+
+export type GetTreePartialViewAncestorsData = {
+    descendantPath?: string;
+};
+
+export type GetTreePartialViewAncestorsResponse = Array<(FileSystemTreeItemPresentationModel)>;
+
+export type GetTreePartialViewChildrenData = {
+    parentPath?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreePartialViewChildrenResponse = PagedFileSystemTreeItemPresentationModel;
+
+export type GetTreePartialViewRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreePartialViewRootResponse = PagedFileSystemTreeItemPresentationModel;
+
+export type DeletePreviewResponse = string;
+
+export type PostPreviewResponse = string;
+
+export type GetProfilingStatusResponse = ProfilingStatusResponseModel;
+
+export type PutProfilingStatusData = {
+    requestBody?: ProfilingStatusRequestModel;
+};
+
+export type PutProfilingStatusResponse = string;
+
+export type GetPropertyTypeIsUsedData = {
+    contentTypeId?: string;
+    propertyAlias?: string;
+};
+
+export type GetPropertyTypeIsUsedResponse = boolean;
+
+export type PostPublishedCacheCollectResponse = string;
+
+export type PostPublishedCacheRebuildResponse = string;
+
+export type PostPublishedCacheReloadResponse = string;
+
+export type GetPublishedCacheStatusResponse = string;
+
+export type GetRedirectManagementData = {
+    filter?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetRedirectManagementResponse = PagedRedirectUrlResponseModel;
+
+export type GetRedirectManagementByIdData = {
+    id: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetRedirectManagementByIdResponse = PagedRedirectUrlResponseModel;
+
+export type DeleteRedirectManagementByIdData = {
+    id: string;
+};
+
+export type DeleteRedirectManagementByIdResponse = string;
+
+export type GetRedirectManagementStatusResponse = RedirectUrlStatusResponseModel;
+
+export type PostRedirectManagementStatusData = {
+    status?: RedirectStatusModel;
+};
+
+export type PostRedirectManagementStatusResponse = string;
+
+export type GetItemRelationTypeData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemRelationTypeResponse = Array<(RelationTypeItemResponseModel)>;
+
+export type GetRelationTypeData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetRelationTypeResponse = PagedRelationTypeResponseModel;
+
+export type GetRelationTypeByIdData = {
+    id: string;
+};
+
+export type GetRelationTypeByIdResponse = RelationTypeResponseModel;
+
+export type GetItemScriptData = {
+    path?: Array<(string)>;
+};
+
+export type GetItemScriptResponse = Array<(ScriptItemResponseModel)>;
+
+export type PostScriptData = {
+    requestBody?: CreateScriptRequestModel;
+};
+
+export type PostScriptResponse = string;
+
+export type GetScriptByPathData = {
+    path: string;
+};
+
+export type GetScriptByPathResponse = ScriptResponseModel;
+
+export type DeleteScriptByPathData = {
+    path: string;
+};
+
+export type DeleteScriptByPathResponse = string;
+
+export type PutScriptByPathData = {
+    path: string;
+    requestBody?: UpdateScriptRequestModel;
+};
+
+export type PutScriptByPathResponse = string;
+
+export type PutScriptByPathRenameData = {
+    path: string;
+    requestBody?: RenameScriptRequestModel;
+};
+
+export type PutScriptByPathRenameResponse = string;
+
+export type PostScriptFolderData = {
+    requestBody?: CreateScriptFolderRequestModel;
+};
+
+export type PostScriptFolderResponse = string;
+
+export type GetScriptFolderByPathData = {
+    path: string;
+};
+
+export type GetScriptFolderByPathResponse = ScriptFolderResponseModel;
+
+export type DeleteScriptFolderByPathData = {
+    path: string;
+};
+
+export type DeleteScriptFolderByPathResponse = string;
+
+export type GetTreeScriptAncestorsData = {
+    descendantPath?: string;
+};
+
+export type GetTreeScriptAncestorsResponse = Array<(FileSystemTreeItemPresentationModel)>;
+
+export type GetTreeScriptChildrenData = {
+    parentPath?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeScriptChildrenResponse = PagedFileSystemTreeItemPresentationModel;
+
+export type GetTreeScriptRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeScriptRootResponse = PagedFileSystemTreeItemPresentationModel;
+
+export type GetSearcherData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetSearcherResponse = PagedSearcherResponseModel;
+
+export type GetSearcherBySearcherNameQueryData = {
+    searcherName: string;
+    skip?: number;
+    take?: number;
+    term?: string;
+};
+
+export type GetSearcherBySearcherNameQueryResponse = PagedSearchResultResponseModel;
+
+export type GetSecurityConfigurationResponse = SecurityConfigurationResponseModel;
+
+export type PostSecurityForgotPasswordData = {
+    requestBody?: ResetPasswordRequestModel;
+};
+
+export type PostSecurityForgotPasswordResponse = string;
+
+export type PostSecurityForgotPasswordResetData = {
+    requestBody?: ResetPasswordTokenRequestModel;
+};
+
+export type PostSecurityForgotPasswordResetResponse = string;
+
+export type PostSecurityForgotPasswordVerifyData = {
+    requestBody?: VerifyResetPasswordTokenRequestModel;
+};
+
+export type PostSecurityForgotPasswordVerifyResponse = VerifyResetPasswordResponseModel;
+
+export type GetSegmentData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetSegmentResponse = PagedSegmentResponseModel;
+
+export type GetServerConfigurationResponse = ServerConfigurationResponseModel;
+
+export type GetServerInformationResponse = ServerInformationResponseModel;
+
+export type GetServerStatusResponse = ServerStatusResponseModel;
+
+export type GetServerTroubleshootingResponse = ServerTroubleshootingResponseModel;
+
+export type GetItemStaticFileData = {
+    path?: Array<(string)>;
+};
+
+export type GetItemStaticFileResponse = Array<(StaticFileItemResponseModel)>;
+
+export type GetTreeStaticFileAncestorsData = {
+    descendantPath?: string;
+};
+
+export type GetTreeStaticFileAncestorsResponse = Array<(FileSystemTreeItemPresentationModel)>;
+
+export type GetTreeStaticFileChildrenData = {
+    parentPath?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeStaticFileChildrenResponse = PagedFileSystemTreeItemPresentationModel;
+
+export type GetTreeStaticFileRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeStaticFileRootResponse = PagedFileSystemTreeItemPresentationModel;
+
+export type GetItemStylesheetData = {
+    path?: Array<(string)>;
+};
+
+export type GetItemStylesheetResponse = Array<(StylesheetItemResponseModel)>;
+
+export type PostStylesheetData = {
+    requestBody?: CreateStylesheetRequestModel;
+};
+
+export type PostStylesheetResponse = string;
+
+export type GetStylesheetByPathData = {
+    path: string;
+};
+
+export type GetStylesheetByPathResponse = StylesheetResponseModel;
+
+export type DeleteStylesheetByPathData = {
+    path: string;
+};
+
+export type DeleteStylesheetByPathResponse = string;
+
+export type PutStylesheetByPathData = {
+    path: string;
+    requestBody?: UpdateStylesheetRequestModel;
+};
+
+export type PutStylesheetByPathResponse = string;
+
+export type PutStylesheetByPathRenameData = {
+    path: string;
+    requestBody?: RenameStylesheetRequestModel;
+};
+
+export type PutStylesheetByPathRenameResponse = string;
+
+export type PostStylesheetFolderData = {
+    requestBody?: CreateStylesheetFolderRequestModel;
+};
+
+export type PostStylesheetFolderResponse = string;
+
+export type GetStylesheetFolderByPathData = {
+    path: string;
+};
+
+export type GetStylesheetFolderByPathResponse = StylesheetFolderResponseModel;
+
+export type DeleteStylesheetFolderByPathData = {
+    path: string;
+};
+
+export type DeleteStylesheetFolderByPathResponse = string;
+
+export type GetTreeStylesheetAncestorsData = {
+    descendantPath?: string;
+};
+
+export type GetTreeStylesheetAncestorsResponse = Array<(FileSystemTreeItemPresentationModel)>;
+
+export type GetTreeStylesheetChildrenData = {
+    parentPath?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeStylesheetChildrenResponse = PagedFileSystemTreeItemPresentationModel;
+
+export type GetTreeStylesheetRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeStylesheetRootResponse = PagedFileSystemTreeItemPresentationModel;
+
+export type GetTagData = {
+    culture?: string;
+    query?: string;
+    skip?: number;
+    tagGroup?: string;
+    take?: number;
+};
+
+export type GetTagResponse = PagedTagResponseModel;
+
+export type GetTelemetryData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetTelemetryResponse = PagedTelemetryResponseModel;
+
+export type GetTelemetryLevelResponse = TelemetryResponseModel;
+
+export type PostTelemetryLevelData = {
+    requestBody?: TelemetryRequestModel;
+};
+
+export type PostTelemetryLevelResponse = string;
+
+export type GetItemTemplateData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemTemplateResponse = Array<(TemplateItemResponseModel)>;
+
+export type GetItemTemplateSearchData = {
+    query?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetItemTemplateSearchResponse = PagedModelTemplateItemResponseModel;
+
+export type PostTemplateData = {
+    requestBody?: CreateTemplateRequestModel;
+};
+
+export type PostTemplateResponse = string;
+
+export type GetTemplateByIdData = {
+    id: string;
+};
+
+export type GetTemplateByIdResponse = TemplateResponseModel;
+
+export type DeleteTemplateByIdData = {
+    id: string;
+};
+
+export type DeleteTemplateByIdResponse = string;
+
+export type PutTemplateByIdData = {
+    id: string;
+    requestBody?: UpdateTemplateRequestModel;
+};
+
+export type PutTemplateByIdResponse = string;
+
+export type GetTemplateConfigurationResponse = TemplateConfigurationResponseModel;
+
+export type PostTemplateQueryExecuteData = {
+    requestBody?: TemplateQueryExecuteModel;
+};
+
+export type PostTemplateQueryExecuteResponse = TemplateQueryResultResponseModel;
+
+export type GetTemplateQuerySettingsResponse = TemplateQuerySettingsResponseModel;
+
+export type GetTreeTemplateAncestorsData = {
+    descendantId?: string;
+};
+
+export type GetTreeTemplateAncestorsResponse = Array<(NamedEntityTreeItemResponseModel)>;
+
+export type GetTreeTemplateChildrenData = {
+    parentId?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeTemplateChildrenResponse = PagedNamedEntityTreeItemResponseModel;
+
+export type GetTreeTemplateRootData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetTreeTemplateRootResponse = PagedNamedEntityTreeItemResponseModel;
+
+export type PostTemporaryFileData = {
+    formData?: {
+        Id: string;
+        File: (Blob | File);
+    };
+};
+
+export type PostTemporaryFileResponse = string;
+
+export type GetTemporaryFileByIdData = {
+    id: string;
+};
+
+export type GetTemporaryFileByIdResponse = TemporaryFileResponseModel;
+
+export type DeleteTemporaryFileByIdData = {
+    id: string;
+};
+
+export type DeleteTemporaryFileByIdResponse = string;
+
+export type GetTemporaryFileConfigurationResponse = TemporaryFileConfigurationResponseModel;
+
+export type PostUpgradeAuthorizeResponse = string;
+
+export type GetUpgradeSettingsResponse = UpgradeSettingsResponseModel;
+
+export type PostUserDataData = {
+    requestBody?: CreateUserDataRequestModel;
+};
+
+export type PostUserDataResponse = string;
+
+export type GetUserDataData = {
+    groups?: Array<(string)>;
+    identifiers?: Array<(string)>;
+    skip?: number;
+    take?: number;
+};
+
+export type GetUserDataResponse = PagedUserDataResponseModel;
+
+export type PutUserDataData = {
+    requestBody?: UpdateUserDataRequestModel;
+};
+
+export type PutUserDataResponse = string;
+
+export type GetUserDataByIdData = {
+    id: string;
+};
+
+export type GetUserDataByIdResponse = UserDataModel;
+
+export type GetFilterUserGroupData = {
+    filter?: string;
+    skip?: number;
+    take?: number;
+};
+
+export type GetFilterUserGroupResponse = PagedUserGroupResponseModel;
+
+export type GetItemUserGroupData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemUserGroupResponse = Array<(UserGroupItemResponseModel)>;
+
+export type DeleteUserGroupData = {
+    requestBody?: DeleteUserGroupsRequestModel;
+};
+
+export type DeleteUserGroupResponse = string;
+
+export type PostUserGroupData = {
+    requestBody?: CreateUserGroupRequestModel;
+};
+
+export type PostUserGroupResponse = string;
+
+export type GetUserGroupData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetUserGroupResponse = PagedUserGroupResponseModel;
+
+export type GetUserGroupByIdData = {
+    id: string;
+};
+
+export type GetUserGroupByIdResponse = UserGroupResponseModel;
+
+export type DeleteUserGroupByIdData = {
+    id: string;
+};
+
+export type DeleteUserGroupByIdResponse = string;
+
+export type PutUserGroupByIdData = {
+    id: string;
+    requestBody?: UpdateUserGroupRequestModel;
+};
+
+export type PutUserGroupByIdResponse = string;
+
+export type DeleteUserGroupByIdUsersData = {
+    id: string;
+    requestBody?: Array<(ReferenceByIdModel)>;
+};
+
+export type DeleteUserGroupByIdUsersResponse = string;
+
+export type PostUserGroupByIdUsersData = {
+    id: string;
+    requestBody?: Array<(ReferenceByIdModel)>;
+};
+
+export type PostUserGroupByIdUsersResponse = string;
+
+export type GetFilterUserData = {
+    filter?: string;
+    orderBy?: UserOrderModel;
+    orderDirection?: DirectionModel;
+    skip?: number;
+    take?: number;
+    userGroupIds?: Array<(string)>;
+    userStates?: Array<UserStateModel>;
+};
+
+export type GetFilterUserResponse = PagedUserResponseModel;
+
+export type GetItemUserData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemUserResponse = Array<(UserItemResponseModel)>;
+
+export type PostUserData = {
+    requestBody?: CreateUserRequestModel;
+};
+
+export type PostUserResponse = string;
+
+export type DeleteUserData = {
+    requestBody?: DeleteUsersRequestModel;
+};
+
+export type DeleteUserResponse = string;
+
+export type GetUserData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetUserResponse = PagedUserResponseModel;
+
+export type GetUserByIdData = {
+    id: string;
+};
+
+export type GetUserByIdResponse = UserResponseModel;
+
+export type DeleteUserByIdData = {
+    id: string;
+};
+
+export type DeleteUserByIdResponse = string;
+
+export type PutUserByIdData = {
+    id: string;
+    requestBody?: UpdateUserRequestModel;
+};
+
+export type PutUserByIdResponse = string;
+
+export type GetUserById2FaData = {
+    id: string;
+};
+
+export type GetUserById2FaResponse = Array<(UserTwoFactorProviderModel)>;
+
+export type DeleteUserById2FaByProviderNameData = {
+    id: string;
+    providerName: string;
+};
+
+export type DeleteUserById2FaByProviderNameResponse = string;
+
+export type PostUserByIdChangePasswordData = {
+    id: string;
+    requestBody?: ChangePasswordUserRequestModel;
+};
+
+export type PostUserByIdChangePasswordResponse = string;
+
+export type PostUserByIdResetPasswordData = {
+    id: string;
+};
+
+export type PostUserByIdResetPasswordResponse = ResetPasswordUserResponseModel;
+
+export type DeleteUserAvatarByIdData = {
+    id: string;
+};
+
+export type DeleteUserAvatarByIdResponse = string;
+
+export type PostUserAvatarByIdData = {
+    id: string;
+    requestBody?: SetAvatarRequestModel;
+};
+
+export type PostUserAvatarByIdResponse = string;
+
+export type GetUserConfigurationResponse = UserConfigurationResponseModel;
+
+export type GetUserCurrentResponse = CurrentUserResponseModel;
+
+export type GetUserCurrent2FaResponse = Array<(UserTwoFactorProviderModel)>;
+
+export type DeleteUserCurrent2FaByProviderNameData = {
+    code?: string;
+    providerName: string;
+};
+
+export type DeleteUserCurrent2FaByProviderNameResponse = string;
+
+export type PostUserCurrent2FaByProviderNameData = {
+    providerName: string;
+    requestBody?: EnableTwoFactorRequestModel;
+};
+
+export type PostUserCurrent2FaByProviderNameResponse = NoopSetupTwoFactorModel;
+
+export type GetUserCurrent2FaByProviderNameData = {
+    providerName: string;
+};
+
+export type GetUserCurrent2FaByProviderNameResponse = NoopSetupTwoFactorModel;
+
+export type PostUserCurrentAvatarData = {
+    requestBody?: SetAvatarRequestModel;
+};
+
+export type PostUserCurrentAvatarResponse = string;
+
+export type PostUserCurrentChangePasswordData = {
+    requestBody?: ChangePasswordCurrentUserRequestModel;
+};
+
+export type PostUserCurrentChangePasswordResponse = string;
+
+export type GetUserCurrentConfigurationResponse = CurrenUserConfigurationResponseModel;
+
+export type GetUserCurrentLoginProvidersResponse = Array<(UserExternalLoginProviderModel)>;
+
+export type GetUserCurrentPermissionsData = {
+    id?: Array<(string)>;
+};
+
+export type GetUserCurrentPermissionsResponse = UserPermissionsResponseModel;
+
+export type GetUserCurrentPermissionsDocumentData = {
+    id?: Array<(string)>;
+};
+
+export type GetUserCurrentPermissionsDocumentResponse = Array<(UserPermissionsResponseModel)>;
+
+export type GetUserCurrentPermissionsMediaData = {
+    id?: Array<(string)>;
+};
+
+export type GetUserCurrentPermissionsMediaResponse = UserPermissionsResponseModel;
+
+export type PostUserDisableData = {
+    requestBody?: DisableUserRequestModel;
+};
+
+export type PostUserDisableResponse = string;
+
+export type PostUserEnableData = {
+    requestBody?: EnableUserRequestModel;
+};
+
+export type PostUserEnableResponse = string;
+
+export type PostUserInviteData = {
+    requestBody?: InviteUserRequestModel;
+};
+
+export type PostUserInviteResponse = string;
+
+export type PostUserInviteCreatePasswordData = {
+    requestBody?: CreateInitialPasswordUserRequestModel;
+};
+
+export type PostUserInviteCreatePasswordResponse = string;
+
+export type PostUserInviteResendData = {
+    requestBody?: ResendInviteUserRequestModel;
+};
+
+export type PostUserInviteResendResponse = string;
+
+export type PostUserInviteVerifyData = {
+    requestBody?: VerifyInviteUserRequestModel;
+};
+
+export type PostUserInviteVerifyResponse = VerifyInviteUserResponseModel;
+
+export type PostUserSetUserGroupsData = {
+    requestBody?: UpdateUserGroupsOnUserRequestModel;
+};
+
+export type PostUserSetUserGroupsResponse = string;
+
+export type PostUserUnlockData = {
+    requestBody?: UnlockUsersRequestModel;
+};
+
+export type PostUserUnlockResponse = string;
+
+export type GetItemWebhookData = {
+    id?: Array<(string)>;
+};
+
+export type GetItemWebhookResponse = Array<(WebhookItemResponseModel)>;
+
+export type GetWebhookData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetWebhookResponse = PagedWebhookResponseModel;
+
+export type PostWebhookData = {
+    requestBody?: CreateWebhookRequestModel;
+};
+
+export type PostWebhookResponse = string;
+
+export type GetWebhookByIdData = {
+    id: string;
+};
+
+export type GetWebhookByIdResponse = WebhookResponseModel;
+
+export type DeleteWebhookByIdData = {
+    id: string;
+};
+
+export type DeleteWebhookByIdResponse = string;
+
+export type PutWebhookByIdData = {
+    id: string;
+    requestBody?: UpdateWebhookRequestModel;
+};
+
+export type PutWebhookByIdResponse = string;
+
+export type GetWebhookEventsData = {
+    skip?: number;
+    take?: number;
+};
+
+export type GetWebhookEventsResponse = PagedWebhookEventModel;
+
 export type $OpenApiTs = {
     '/umbraco/management/api/v1/contentment/configuration-editor/models': {
         get: {
-            req: {
-                type?: string;
-            };
+            req: GetContentmentConfigurationEditorModelsData;
             res: {
                 /**
                  * OK
@@ -3007,9 +5744,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/contentment/data-list/editor': {
         post: {
-            req: {
-                requestBody?: DataListConfigurationRequestModel;
-            };
+            req: PostContentmentDataListEditorData;
             res: {
                 /**
                  * OK
@@ -3032,10 +5767,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/culture': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetCultureData;
             res: {
                 /**
                  * OK
@@ -3050,9 +5782,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/data-type': {
         post: {
-            req: {
-                requestBody?: CreateDataTypeRequestModel;
-            };
+            req: PostDataTypeData;
             res: {
                 /**
                  * Created
@@ -3079,9 +5809,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/data-type/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDataTypeByIdData;
             res: {
                 /**
                  * OK
@@ -3102,9 +5830,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteDataTypeByIdData;
             res: {
                 /**
                  * OK
@@ -3129,10 +5855,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateDataTypeRequestModel;
-            };
+            req: PutDataTypeByIdData;
             res: {
                 /**
                  * OK
@@ -3159,10 +5882,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/data-type/{id}/copy': {
         post: {
-            req: {
-                id: string;
-                requestBody?: CopyDataTypeRequestModel;
-            };
+            req: PostDataTypeByIdCopyData;
             res: {
                 /**
                  * Created
@@ -3185,9 +5905,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/data-type/{id}/is-used': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDataTypeByIdIsUsedData;
             res: {
                 /**
                  * OK
@@ -3210,10 +5928,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/data-type/{id}/move': {
         put: {
-            req: {
-                id: string;
-                requestBody?: MoveDataTypeRequestModel;
-            };
+            req: PutDataTypeByIdMoveData;
             res: {
                 /**
                  * OK
@@ -3236,9 +5951,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/data-type/{id}/references': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDataTypeByIdReferencesData;
             res: {
                 /**
                  * OK
@@ -3279,9 +5992,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/data-type/folder': {
         post: {
-            req: {
-                requestBody?: CreateFolderRequestModel;
-            };
+            req: PostDataTypeFolderData;
             res: {
                 /**
                  * Created
@@ -3308,9 +6019,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/data-type/folder/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDataTypeFolderByIdData;
             res: {
                 /**
                  * OK
@@ -3331,9 +6040,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteDataTypeFolderByIdData;
             res: {
                 /**
                  * OK
@@ -3358,10 +6065,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateFolderResponseModel;
-            };
+            req: PutDataTypeFolderByIdData;
             res: {
                 /**
                  * OK
@@ -3388,13 +6092,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/filter/data-type': {
         get: {
-            req: {
-                editorAlias?: string;
-                editorUiAlias?: string;
-                name?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetFilterDataTypeData;
             res: {
                 /**
                  * OK
@@ -3413,9 +6111,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/data-type': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemDataTypeData;
             res: {
                 /**
                  * OK
@@ -3430,11 +6126,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/data-type/search': {
         get: {
-            req: {
-                query?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemDataTypeSearchData;
             res: {
                 /**
                  * OK
@@ -3449,9 +6141,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/data-type/ancestors': {
         get: {
-            req: {
-                descendantId?: string;
-            };
+            req: GetTreeDataTypeAncestorsData;
             res: {
                 /**
                  * OK
@@ -3470,12 +6160,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/data-type/children': {
         get: {
-            req: {
-                foldersOnly?: boolean;
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDataTypeChildrenData;
             res: {
                 /**
                  * OK
@@ -3494,11 +6179,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/data-type/root': {
         get: {
-            req: {
-                foldersOnly?: boolean;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDataTypeRootData;
             res: {
                 /**
                  * OK
@@ -3517,11 +6198,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/dictionary': {
         get: {
-            req: {
-                filter?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetDictionaryData;
             res: {
                 /**
                  * OK
@@ -3538,9 +6215,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                requestBody?: CreateDictionaryItemRequestModel;
-            };
+            req: PostDictionaryData;
             res: {
                 /**
                  * Created
@@ -3571,9 +6246,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/dictionary/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDictionaryByIdData;
             res: {
                 /**
                  * OK
@@ -3594,9 +6267,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteDictionaryByIdData;
             res: {
                 /**
                  * OK
@@ -3621,10 +6292,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateDictionaryItemRequestModel;
-            };
+            req: PutDictionaryByIdData;
             res: {
                 /**
                  * OK
@@ -3651,10 +6319,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/dictionary/{id}/export': {
         get: {
-            req: {
-                id: string;
-                includeChildren?: boolean;
-            };
+            req: GetDictionaryByIdExportData;
             res: {
                 /**
                  * OK
@@ -3677,10 +6342,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/dictionary/{id}/move': {
         put: {
-            req: {
-                id: string;
-                requestBody?: MoveDictionaryRequestModel;
-            };
+            req: PutDictionaryByIdMoveData;
             res: {
                 /**
                  * OK
@@ -3707,9 +6369,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/dictionary/import': {
         post: {
-            req: {
-                requestBody?: ImportDictionaryRequestModel;
-            };
+            req: PostDictionaryImportData;
             res: {
                 /**
                  * Created
@@ -3736,9 +6396,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/dictionary': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemDictionaryData;
             res: {
                 /**
                  * OK
@@ -3753,9 +6411,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/dictionary/ancestors': {
         get: {
-            req: {
-                descendantId?: string;
-            };
+            req: GetTreeDictionaryAncestorsData;
             res: {
                 /**
                  * OK
@@ -3774,11 +6430,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/dictionary/children': {
         get: {
-            req: {
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDictionaryChildrenData;
             res: {
                 /**
                  * OK
@@ -3797,10 +6449,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/dictionary/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDictionaryRootData;
             res: {
                 /**
                  * OK
@@ -3819,9 +6468,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-blueprint': {
         post: {
-            req: {
-                requestBody?: CreateDocumentBlueprintRequestModel;
-            };
+            req: PostDocumentBlueprintData;
             res: {
                 /**
                  * Created
@@ -3848,9 +6495,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-blueprint/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentBlueprintByIdData;
             res: {
                 /**
                  * OK
@@ -3871,9 +6516,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteDocumentBlueprintByIdData;
             res: {
                 /**
                  * OK
@@ -3898,10 +6541,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateDocumentBlueprintRequestModel;
-            };
+            req: PutDocumentBlueprintByIdData;
             res: {
                 /**
                  * OK
@@ -3928,10 +6568,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-blueprint/{id}/move': {
         put: {
-            req: {
-                id: string;
-                requestBody?: MoveDocumentBlueprintRequestModel;
-            };
+            req: PutDocumentBlueprintByIdMoveData;
             res: {
                 /**
                  * OK
@@ -3954,9 +6591,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-blueprint/folder': {
         post: {
-            req: {
-                requestBody?: CreateFolderRequestModel;
-            };
+            req: PostDocumentBlueprintFolderData;
             res: {
                 /**
                  * Created
@@ -3983,9 +6618,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-blueprint/folder/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentBlueprintFolderByIdData;
             res: {
                 /**
                  * OK
@@ -4006,9 +6639,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteDocumentBlueprintFolderByIdData;
             res: {
                 /**
                  * OK
@@ -4033,10 +6664,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateFolderResponseModel;
-            };
+            req: PutDocumentBlueprintFolderByIdData;
             res: {
                 /**
                  * OK
@@ -4063,9 +6691,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-blueprint/from-document': {
         post: {
-            req: {
-                requestBody?: CreateDocumentBlueprintFromDocumentRequestModel;
-            };
+            req: PostDocumentBlueprintFromDocumentData;
             res: {
                 /**
                  * Created
@@ -4088,9 +6714,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/document-blueprint': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemDocumentBlueprintData;
             res: {
                 /**
                  * OK
@@ -4105,9 +6729,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/document-blueprint/ancestors': {
         get: {
-            req: {
-                descendantId?: string;
-            };
+            req: GetTreeDocumentBlueprintAncestorsData;
             res: {
                 /**
                  * OK
@@ -4126,12 +6748,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/document-blueprint/children': {
         get: {
-            req: {
-                foldersOnly?: boolean;
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDocumentBlueprintChildrenData;
             res: {
                 /**
                  * OK
@@ -4150,11 +6767,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/document-blueprint/root': {
         get: {
-            req: {
-                foldersOnly?: boolean;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDocumentBlueprintRootData;
             res: {
                 /**
                  * OK
@@ -4173,9 +6786,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type': {
         post: {
-            req: {
-                requestBody?: CreateDocumentTypeRequestModel;
-            };
+            req: PostDocumentTypeData;
             res: {
                 /**
                  * Created
@@ -4202,9 +6813,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentTypeByIdData;
             res: {
                 /**
                  * OK
@@ -4225,9 +6834,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteDocumentTypeByIdData;
             res: {
                 /**
                  * OK
@@ -4248,10 +6855,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateDocumentTypeRequestModel;
-            };
+            req: PutDocumentTypeByIdData;
             res: {
                 /**
                  * OK
@@ -4278,11 +6882,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/{id}/allowed-children': {
         get: {
-            req: {
-                id: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetDocumentTypeByIdAllowedChildrenData;
             res: {
                 /**
                  * OK
@@ -4305,11 +6905,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/{id}/blueprint': {
         get: {
-            req: {
-                id: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetDocumentTypeByIdBlueprintData;
             res: {
                 /**
                  * OK
@@ -4332,9 +6928,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/{id}/composition-references': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentTypeByIdCompositionReferencesData;
             res: {
                 /**
                  * OK
@@ -4361,10 +6955,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/{id}/copy': {
         post: {
-            req: {
-                id: string;
-                requestBody?: CopyDocumentTypeRequestModel;
-            };
+            req: PostDocumentTypeByIdCopyData;
             res: {
                 /**
                  * Created
@@ -4391,9 +6982,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/{id}/export': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentTypeByIdExportData;
             res: {
                 /**
                  * OK
@@ -4416,10 +7005,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/{id}/import': {
         put: {
-            req: {
-                id: string;
-                requestBody?: ImportDocumentTypeRequestModel;
-            };
+            req: PutDocumentTypeByIdImportData;
             res: {
                 /**
                  * OK
@@ -4446,10 +7032,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/{id}/move': {
         put: {
-            req: {
-                id: string;
-                requestBody?: MoveDocumentTypeRequestModel;
-            };
+            req: PutDocumentTypeByIdMoveData;
             res: {
                 /**
                  * OK
@@ -4476,10 +7059,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/allowed-at-root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetDocumentTypeAllowedAtRootData;
             res: {
                 /**
                  * OK
@@ -4498,9 +7078,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/available-compositions': {
         post: {
-            req: {
-                requestBody?: DocumentTypeCompositionRequestModel;
-            };
+            req: PostDocumentTypeAvailableCompositionsData;
             res: {
                 /**
                  * OK
@@ -4537,9 +7115,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/folder': {
         post: {
-            req: {
-                requestBody?: CreateFolderRequestModel;
-            };
+            req: PostDocumentTypeFolderData;
             res: {
                 /**
                  * Created
@@ -4566,9 +7142,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/folder/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentTypeFolderByIdData;
             res: {
                 /**
                  * OK
@@ -4589,9 +7163,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteDocumentTypeFolderByIdData;
             res: {
                 /**
                  * OK
@@ -4616,10 +7188,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateFolderResponseModel;
-            };
+            req: PutDocumentTypeFolderByIdData;
             res: {
                 /**
                  * OK
@@ -4646,9 +7215,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-type/import': {
         post: {
-            req: {
-                requestBody?: ImportDocumentTypeRequestModel;
-            };
+            req: PostDocumentTypeImportData;
             res: {
                 /**
                  * Created
@@ -4675,9 +7242,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/document-type': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemDocumentTypeData;
             res: {
                 /**
                  * OK
@@ -4692,11 +7257,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/document-type/search': {
         get: {
-            req: {
-                query?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemDocumentTypeSearchData;
             res: {
                 /**
                  * OK
@@ -4711,9 +7272,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/document-type/ancestors': {
         get: {
-            req: {
-                descendantId?: string;
-            };
+            req: GetTreeDocumentTypeAncestorsData;
             res: {
                 /**
                  * OK
@@ -4732,12 +7291,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/document-type/children': {
         get: {
-            req: {
-                foldersOnly?: boolean;
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDocumentTypeChildrenData;
             res: {
                 /**
                  * OK
@@ -4756,11 +7310,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/document-type/root': {
         get: {
-            req: {
-                foldersOnly?: boolean;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDocumentTypeRootData;
             res: {
                 /**
                  * OK
@@ -4779,12 +7329,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-version': {
         get: {
-            req: {
-                culture?: string;
-                documentId: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetDocumentVersionData;
             res: {
                 /**
                  * OK
@@ -4811,9 +7356,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-version/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentVersionByIdData;
             res: {
                 /**
                  * OK
@@ -4840,10 +7383,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-version/{id}/prevent-cleanup': {
         put: {
-            req: {
-                id: string;
-                preventCleanup?: boolean;
-            };
+            req: PutDocumentVersionByIdPreventCleanupData;
             res: {
                 /**
                  * OK
@@ -4870,10 +7410,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document-version/{id}/rollback': {
         post: {
-            req: {
-                culture?: string;
-                id: string;
-            };
+            req: PostDocumentVersionByIdRollbackData;
             res: {
                 /**
                  * OK
@@ -4900,16 +7437,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/collection/document/{id}': {
         get: {
-            req: {
-                dataTypeId?: string;
-                filter?: string;
-                id: string;
-                orderBy?: string;
-                orderCulture?: string;
-                orderDirection?: DirectionModel;
-                skip?: number;
-                take?: number;
-            };
+            req: GetCollectionDocumentByIdData;
             res: {
                 /**
                  * OK
@@ -4936,9 +7464,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document': {
         post: {
-            req: {
-                requestBody?: CreateDocumentRequestModel;
-            };
+            req: PostDocumentData;
             res: {
                 /**
                  * Created
@@ -4965,9 +7491,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentByIdData;
             res: {
                 /**
                  * OK
@@ -4988,9 +7512,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteDocumentByIdData;
             res: {
                 /**
                  * OK
@@ -5015,10 +7537,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateDocumentRequestModel;
-            };
+            req: PutDocumentByIdData;
             res: {
                 /**
                  * OK
@@ -5045,13 +7564,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/audit-log': {
         get: {
-            req: {
-                id: string;
-                orderDirection?: DirectionModel;
-                sinceDate?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetDocumentByIdAuditLogData;
             res: {
                 /**
                  * OK
@@ -5070,10 +7583,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/copy': {
         post: {
-            req: {
-                id: string;
-                requestBody?: CopyDocumentRequestModel;
-            };
+            req: PostDocumentByIdCopyData;
             res: {
                 /**
                  * Created
@@ -5096,9 +7606,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/domains': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentByIdDomainsData;
             res: {
                 /**
                  * OK
@@ -5119,10 +7627,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateDomainsRequestModel;
-            };
+            req: PutDocumentByIdDomainsData;
             res: {
                 /**
                  * OK
@@ -5153,10 +7658,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/move': {
         put: {
-            req: {
-                id: string;
-                requestBody?: MoveDocumentRequestModel;
-            };
+            req: PutDocumentByIdMoveData;
             res: {
                 /**
                  * OK
@@ -5179,9 +7681,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/move-to-recycle-bin': {
         put: {
-            req: {
-                id: string;
-            };
+            req: PutDocumentByIdMoveToRecycleBinData;
             res: {
                 /**
                  * OK
@@ -5208,9 +7708,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/notifications': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentByIdNotificationsData;
             res: {
                 /**
                  * OK
@@ -5231,10 +7729,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateDocumentNotificationsRequestModel;
-            };
+            req: PutDocumentByIdNotificationsData;
             res: {
                 /**
                  * OK
@@ -5257,10 +7752,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/public-access': {
         post: {
-            req: {
-                id: string;
-                requestBody?: PublicAccessRequestModel;
-            };
+            req: PostDocumentByIdPublicAccessData;
             res: {
                 /**
                  * Created
@@ -5281,9 +7773,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteDocumentByIdPublicAccessData;
             res: {
                 /**
                  * OK
@@ -5304,9 +7794,7 @@ export type $OpenApiTs = {
             };
         };
         get: {
-            req: {
-                id: string;
-            };
+            req: GetDocumentByIdPublicAccessData;
             res: {
                 /**
                  * OK
@@ -5327,10 +7815,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: PublicAccessRequestModel;
-            };
+            req: PutDocumentByIdPublicAccessData;
             res: {
                 /**
                  * OK
@@ -5353,10 +7838,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/publish': {
         put: {
-            req: {
-                id: string;
-                requestBody?: PublishDocumentRequestModel;
-            };
+            req: PutDocumentByIdPublishData;
             res: {
                 /**
                  * OK
@@ -5383,10 +7865,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/publish-with-descendants': {
         put: {
-            req: {
-                id: string;
-                requestBody?: PublishDocumentWithDescendantsRequestModel;
-            };
+            req: PutDocumentByIdPublishWithDescendantsData;
             res: {
                 /**
                  * OK
@@ -5413,11 +7892,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/referenced-by': {
         get: {
-            req: {
-                id: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetDocumentByIdReferencedByData;
             res: {
                 /**
                  * OK
@@ -5436,11 +7911,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/referenced-descendants': {
         get: {
-            req: {
-                id: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetDocumentByIdReferencedDescendantsData;
             res: {
                 /**
                  * OK
@@ -5459,10 +7930,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/unpublish': {
         put: {
-            req: {
-                id: string;
-                requestBody?: UnpublishDocumentRequestModel;
-            };
+            req: PutDocumentByIdUnpublishData;
             res: {
                 /**
                  * OK
@@ -5489,10 +7957,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/{id}/validate': {
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateDocumentRequestModel;
-            };
+            req: PutDocumentByIdValidateData;
             res: {
                 /**
                  * OK
@@ -5519,11 +7984,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/are-referenced': {
         get: {
-            req: {
-                id?: Array<(string)>;
-                skip?: number;
-                take?: number;
-            };
+            req: GetDocumentAreReferencedData;
             res: {
                 /**
                  * OK
@@ -5560,9 +8021,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/sort': {
         put: {
-            req: {
-                requestBody?: SortingRequestModel;
-            };
+            req: PutDocumentSortData;
             res: {
                 /**
                  * OK
@@ -5589,9 +8048,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/urls': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetDocumentUrlsData;
             res: {
                 /**
                  * OK
@@ -5610,9 +8067,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/document/validate': {
         post: {
-            req: {
-                requestBody?: CreateDocumentRequestModel;
-            };
+            req: PostDocumentValidateData;
             res: {
                 /**
                  * OK
@@ -5639,9 +8094,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/document': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemDocumentData;
             res: {
                 /**
                  * OK
@@ -5656,11 +8109,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/document/search': {
         get: {
-            req: {
-                query?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemDocumentSearchData;
             res: {
                 /**
                  * OK
@@ -5697,9 +8146,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/document/{id}': {
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteRecycleBinDocumentByIdData;
             res: {
                 /**
                  * OK
@@ -5726,9 +8173,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/document/{id}/original-parent': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetRecycleBinDocumentByIdOriginalParentData;
             res: {
                 /**
                  * OK
@@ -5755,10 +8200,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/document/{id}/restore': {
         put: {
-            req: {
-                id: string;
-                requestBody?: MoveMediaRequestModel;
-            };
+            req: PutRecycleBinDocumentByIdRestoreData;
             res: {
                 /**
                  * OK
@@ -5785,11 +8227,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/document/children': {
         get: {
-            req: {
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetRecycleBinDocumentChildrenData;
             res: {
                 /**
                  * OK
@@ -5808,10 +8246,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/document/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetRecycleBinDocumentRootData;
             res: {
                 /**
                  * OK
@@ -5830,9 +8265,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/document/ancestors': {
         get: {
-            req: {
-                descendantId?: string;
-            };
+            req: GetTreeDocumentAncestorsData;
             res: {
                 /**
                  * OK
@@ -5851,12 +8284,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/document/children': {
         get: {
-            req: {
-                dataTypeId?: string;
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDocumentChildrenData;
             res: {
                 /**
                  * OK
@@ -5875,11 +8303,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/document/root': {
         get: {
-            req: {
-                dataTypeId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeDocumentRootData;
             res: {
                 /**
                  * OK
@@ -5898,9 +8322,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/dynamic-root/query': {
         post: {
-            req: {
-                requestBody?: DynamicRootRequestModel;
-            };
+            req: PostDynamicRootQueryData;
             res: {
                 /**
                  * OK
@@ -5937,9 +8359,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/ClearUmbracoCache': {
         post: {
-            req: {
-                cache?: string;
-            };
+            req: PostUmbracoManagementApiV1GodModeClearUmbracoCacheData;
             res: {
                 /**
                  * OK
@@ -5958,9 +8378,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/CopyDataType': {
         post: {
-            req: {
-                id?: number;
-            };
+            req: PostUmbracoManagementApiV1GodModeCopyDataTypeData;
             res: {
                 /**
                  * OK
@@ -5979,9 +8397,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/DeleteTag': {
         post: {
-            req: {
-                id?: number;
-            };
+            req: PostUmbracoManagementApiV1GodModeDeleteTagData;
             res: {
                 /**
                  * OK
@@ -6144,19 +8560,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/GetContentPaged': {
         get: {
-            req: {
-                alias?: string;
-                creatorId?: number;
-                id?: string;
-                languageId?: number;
-                level?: number;
-                name?: string;
-                orderBy?: string;
-                page?: number;
-                pageSize?: number;
-                trashed?: boolean;
-                updaterId?: number;
-            };
+            req: GetUmbracoManagementApiV1GodModeGetContentPagedData;
             res: {
                 /**
                  * OK
@@ -6211,10 +8615,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/GetContentUsageData': {
         get: {
-            req: {
-                id?: number;
-                orderBy?: string;
-            };
+            req: GetUmbracoManagementApiV1GodModeGetContentUsageDataData;
             res: {
                 /**
                  * OK
@@ -6287,9 +8688,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/GetInterfacesFrom': {
         get: {
-            req: {
-                assembly?: string;
-            };
+            req: GetUmbracoManagementApiV1GodModeGetInterfacesFromData;
             res: {
                 /**
                  * OK
@@ -6326,15 +8725,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/GetMedia': {
         get: {
-            req: {
-                id?: number;
-                mediaTypeId?: number;
-                name?: string;
-                orderBy?: string;
-                orderByDir?: string;
-                page?: number;
-                pageSize?: number;
-            };
+            req: GetUmbracoManagementApiV1GodModeGetMediaData;
             res: {
                 /**
                  * OK
@@ -6389,13 +8780,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/GetMembersPaged': {
         get: {
-            req: {
-                groupId?: number;
-                orderBy?: string;
-                page?: number;
-                pageSize?: number;
-                search?: string;
-            };
+            req: GetUmbracoManagementApiV1GodModeGetMembersPagedData;
             res: {
                 /**
                  * OK
@@ -6432,9 +8817,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/GetNuCacheItem': {
         get: {
-            req: {
-                id?: number;
-            };
+            req: GetUmbracoManagementApiV1GodModeGetNuCacheItemData;
             res: {
                 /**
                  * OK
@@ -6705,9 +9088,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/GetTypesAssignableFrom': {
         get: {
-            req: {
-                baseType?: string;
-            };
+            req: GetUmbracoManagementApiV1GodModeGetTypesAssignableFromData;
             res: {
                 /**
                  * OK
@@ -6726,9 +9107,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/GetTypesFrom': {
         get: {
-            req: {
-                assembly?: string;
-            };
+            req: GetUmbracoManagementApiV1GodModeGetTypesFromData;
             res: {
                 /**
                  * OK
@@ -6783,9 +9162,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/god-mode/GetUrlsToPing': {
         get: {
-            req: {
-                culture?: string;
-            };
+            req: GetUmbracoManagementApiV1GodModeGetUrlsToPingData;
             res: {
                 /**
                  * OK
@@ -6858,10 +9235,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/health-check-group': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetHealthCheckGroupData;
             res: {
                 /**
                  * OK
@@ -6880,9 +9254,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/health-check-group/{name}': {
         get: {
-            req: {
-                name: string;
-            };
+            req: GetHealthCheckGroupByNameData;
             res: {
                 /**
                  * OK
@@ -6905,9 +9277,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/health-check-group/{name}/check': {
         post: {
-            req: {
-                name: string;
-            };
+            req: PostHealthCheckGroupByNameCheckData;
             res: {
                 /**
                  * OK
@@ -6930,9 +9300,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/health-check/execute-action': {
         post: {
-            req: {
-                requestBody?: HealthCheckActionRequestModel;
-            };
+            req: PostHealthCheckExecuteActionData;
             res: {
                 /**
                  * OK
@@ -6955,13 +9323,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/help': {
         get: {
-            req: {
-                baseUrl?: string;
-                section?: string;
-                skip?: number;
-                take?: number;
-                tree?: string;
-            };
+            req: GetHelpData;
             res: {
                 /**
                  * OK
@@ -6980,12 +9342,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/imaging/resize/urls': {
         get: {
-            req: {
-                height?: number;
-                id?: Array<(string)>;
-                mode?: ImageCropModeModel;
-                width?: number;
-            };
+            req: GetImagingResizeUrlsData;
             res: {
                 /**
                  * OK
@@ -7004,9 +9361,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/import/analyze': {
         get: {
-            req: {
-                temporaryFileId?: string;
-            };
+            req: GetImportAnalyzeData;
             res: {
                 /**
                  * OK
@@ -7029,10 +9384,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/indexer': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetIndexerData;
             res: {
                 /**
                  * OK
@@ -7047,9 +9399,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/indexer/{indexName}': {
         get: {
-            req: {
-                indexName: string;
-            };
+            req: GetIndexerByIndexNameData;
             res: {
                 /**
                  * OK
@@ -7068,9 +9418,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/indexer/{indexName}/rebuild': {
         post: {
-            req: {
-                indexName: string;
-            };
+            req: PostIndexerByIndexNameRebuildData;
             res: {
                 /**
                  * OK
@@ -7111,9 +9459,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/install/setup': {
         post: {
-            req: {
-                requestBody?: InstallRequestModel;
-            };
+            req: PostInstallSetupData;
             res: {
                 /**
                  * OK
@@ -7128,9 +9474,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/install/validate-database': {
         post: {
-            req: {
-                requestBody?: DatabaseInstallRequestModel;
-            };
+            req: PostInstallValidateDatabaseData;
             res: {
                 /**
                  * OK
@@ -7145,9 +9489,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/language': {
         get: {
-            req: {
-                isoCode?: Array<(string)>;
-            };
+            req: GetItemLanguageData;
             res: {
                 /**
                  * OK
@@ -7176,10 +9518,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/language': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetLanguageData;
             res: {
                 /**
                  * OK
@@ -7192,9 +9531,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                requestBody?: CreateLanguageRequestModel;
-            };
+            req: PostLanguageData;
             res: {
                 /**
                  * Created
@@ -7221,9 +9558,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/language/{isoCode}': {
         get: {
-            req: {
-                isoCode: string;
-            };
+            req: GetLanguageByIsoCodeData;
             res: {
                 /**
                  * OK
@@ -7240,9 +9575,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                isoCode: string;
-            };
+            req: DeleteLanguageByIsoCodeData;
             res: {
                 /**
                  * OK
@@ -7267,10 +9600,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                isoCode: string;
-                requestBody?: UpdateLanguageRequestModel;
-            };
+            req: PutLanguageByIsoCodeData;
             res: {
                 /**
                  * OK
@@ -7297,10 +9627,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/log-viewer/level': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetLogViewerLevelData;
             res: {
                 /**
                  * OK
@@ -7319,10 +9646,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/log-viewer/level-count': {
         get: {
-            req: {
-                endDate?: string;
-                startDate?: string;
-            };
+            req: GetLogViewerLevelCountData;
             res: {
                 /**
                  * OK
@@ -7345,15 +9669,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/log-viewer/log': {
         get: {
-            req: {
-                endDate?: string;
-                filterExpression?: string;
-                logLevel?: Array<LogLevelModel>;
-                orderDirection?: DirectionModel;
-                skip?: number;
-                startDate?: string;
-                take?: number;
-            };
+            req: GetLogViewerLogData;
             res: {
                 /**
                  * OK
@@ -7372,12 +9688,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/log-viewer/message-template': {
         get: {
-            req: {
-                endDate?: string;
-                skip?: number;
-                startDate?: string;
-                take?: number;
-            };
+            req: GetLogViewerMessageTemplateData;
             res: {
                 /**
                  * OK
@@ -7400,10 +9711,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/log-viewer/saved-search': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetLogViewerSavedSearchData;
             res: {
                 /**
                  * OK
@@ -7420,9 +9728,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                requestBody?: SavedLogSearchRequestModel;
-            };
+            req: PostLogViewerSavedSearchData;
             res: {
                 /**
                  * Created
@@ -7445,9 +9751,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/log-viewer/saved-search/{name}': {
         get: {
-            req: {
-                name: string;
-            };
+            req: GetLogViewerSavedSearchByNameData;
             res: {
                 /**
                  * OK
@@ -7468,9 +9772,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                name: string;
-            };
+            req: DeleteLogViewerSavedSearchByNameData;
             res: {
                 /**
                  * OK
@@ -7493,10 +9795,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/log-viewer/validate-logs-size': {
         get: {
-            req: {
-                endDate?: string;
-                startDate?: string;
-            };
+            req: GetLogViewerValidateLogsSizeData;
             res: {
                 /**
                  * OK
@@ -7565,9 +9864,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/media-type': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemMediaTypeData;
             res: {
                 /**
                  * OK
@@ -7582,11 +9879,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/media-type/allowed': {
         get: {
-            req: {
-                fileExtension?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemMediaTypeAllowedData;
             res: {
                 /**
                  * OK
@@ -7601,10 +9894,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/media-type/folders': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemMediaTypeFoldersData;
             res: {
                 /**
                  * OK
@@ -7619,11 +9909,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/media-type/search': {
         get: {
-            req: {
-                query?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemMediaTypeSearchData;
             res: {
                 /**
                  * OK
@@ -7638,9 +9924,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type': {
         post: {
-            req: {
-                requestBody?: CreateMediaTypeRequestModel;
-            };
+            req: PostMediaTypeData;
             res: {
                 /**
                  * Created
@@ -7667,9 +9951,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetMediaTypeByIdData;
             res: {
                 /**
                  * OK
@@ -7690,9 +9972,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteMediaTypeByIdData;
             res: {
                 /**
                  * OK
@@ -7713,10 +9993,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateMediaTypeRequestModel;
-            };
+            req: PutMediaTypeByIdData;
             res: {
                 /**
                  * OK
@@ -7743,11 +10020,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/{id}/allowed-children': {
         get: {
-            req: {
-                id: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetMediaTypeByIdAllowedChildrenData;
             res: {
                 /**
                  * OK
@@ -7770,9 +10043,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/{id}/composition-references': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetMediaTypeByIdCompositionReferencesData;
             res: {
                 /**
                  * OK
@@ -7799,10 +10070,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/{id}/copy': {
         post: {
-            req: {
-                id: string;
-                requestBody?: CopyMediaTypeRequestModel;
-            };
+            req: PostMediaTypeByIdCopyData;
             res: {
                 /**
                  * Created
@@ -7829,9 +10097,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/{id}/export': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetMediaTypeByIdExportData;
             res: {
                 /**
                  * OK
@@ -7854,10 +10120,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/{id}/import': {
         put: {
-            req: {
-                id: string;
-                requestBody?: ImportMediaTypeRequestModel;
-            };
+            req: PutMediaTypeByIdImportData;
             res: {
                 /**
                  * OK
@@ -7884,10 +10147,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/{id}/move': {
         put: {
-            req: {
-                id: string;
-                requestBody?: MoveMediaTypeRequestModel;
-            };
+            req: PutMediaTypeByIdMoveData;
             res: {
                 /**
                  * OK
@@ -7914,10 +10174,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/allowed-at-root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetMediaTypeAllowedAtRootData;
             res: {
                 /**
                  * OK
@@ -7936,9 +10193,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/available-compositions': {
         post: {
-            req: {
-                requestBody?: MediaTypeCompositionRequestModel;
-            };
+            req: PostMediaTypeAvailableCompositionsData;
             res: {
                 /**
                  * OK
@@ -7957,9 +10212,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/folder': {
         post: {
-            req: {
-                requestBody?: CreateFolderRequestModel;
-            };
+            req: PostMediaTypeFolderData;
             res: {
                 /**
                  * Created
@@ -7986,9 +10239,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/folder/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetMediaTypeFolderByIdData;
             res: {
                 /**
                  * OK
@@ -8009,9 +10260,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteMediaTypeFolderByIdData;
             res: {
                 /**
                  * OK
@@ -8036,10 +10285,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateFolderResponseModel;
-            };
+            req: PutMediaTypeFolderByIdData;
             res: {
                 /**
                  * OK
@@ -8066,9 +10312,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media-type/import': {
         post: {
-            req: {
-                requestBody?: ImportMediaTypeRequestModel;
-            };
+            req: PostMediaTypeImportData;
             res: {
                 /**
                  * Created
@@ -8095,9 +10339,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/media-type/ancestors': {
         get: {
-            req: {
-                descendantId?: string;
-            };
+            req: GetTreeMediaTypeAncestorsData;
             res: {
                 /**
                  * OK
@@ -8116,12 +10358,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/media-type/children': {
         get: {
-            req: {
-                foldersOnly?: boolean;
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeMediaTypeChildrenData;
             res: {
                 /**
                  * OK
@@ -8140,11 +10377,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/media-type/root': {
         get: {
-            req: {
-                foldersOnly?: boolean;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeMediaTypeRootData;
             res: {
                 /**
                  * OK
@@ -8163,15 +10396,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/collection/media': {
         get: {
-            req: {
-                dataTypeId?: string;
-                filter?: string;
-                id?: string;
-                orderBy?: string;
-                orderDirection?: DirectionModel;
-                skip?: number;
-                take?: number;
-            };
+            req: GetCollectionMediaData;
             res: {
                 /**
                  * OK
@@ -8198,9 +10423,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/media': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemMediaData;
             res: {
                 /**
                  * OK
@@ -8215,11 +10438,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/media/search': {
         get: {
-            req: {
-                query?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemMediaSearchData;
             res: {
                 /**
                  * OK
@@ -8234,9 +10453,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media': {
         post: {
-            req: {
-                requestBody?: CreateMediaRequestModel;
-            };
+            req: PostMediaData;
             res: {
                 /**
                  * Created
@@ -8263,9 +10480,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetMediaByIdData;
             res: {
                 /**
                  * OK
@@ -8286,9 +10501,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteMediaByIdData;
             res: {
                 /**
                  * OK
@@ -8313,10 +10526,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateMediaRequestModel;
-            };
+            req: PutMediaByIdData;
             res: {
                 /**
                  * OK
@@ -8343,13 +10553,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/{id}/audit-log': {
         get: {
-            req: {
-                id: string;
-                orderDirection?: DirectionModel;
-                sinceDate?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetMediaByIdAuditLogData;
             res: {
                 /**
                  * OK
@@ -8368,10 +10572,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/{id}/move': {
         put: {
-            req: {
-                id: string;
-                requestBody?: MoveMediaRequestModel;
-            };
+            req: PutMediaByIdMoveData;
             res: {
                 /**
                  * OK
@@ -8394,9 +10595,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/{id}/move-to-recycle-bin': {
         put: {
-            req: {
-                id: string;
-            };
+            req: PutMediaByIdMoveToRecycleBinData;
             res: {
                 /**
                  * OK
@@ -8423,11 +10622,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/{id}/referenced-by': {
         get: {
-            req: {
-                id: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetMediaByIdReferencedByData;
             res: {
                 /**
                  * OK
@@ -8446,11 +10641,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/{id}/referenced-descendants': {
         get: {
-            req: {
-                id: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetMediaByIdReferencedDescendantsData;
             res: {
                 /**
                  * OK
@@ -8469,10 +10660,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/{id}/validate': {
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateMediaRequestModel;
-            };
+            req: PutMediaByIdValidateData;
             res: {
                 /**
                  * OK
@@ -8499,11 +10687,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/are-referenced': {
         get: {
-            req: {
-                id?: Array<(string)>;
-                skip?: number;
-                take?: number;
-            };
+            req: GetMediaAreReferencedData;
             res: {
                 /**
                  * OK
@@ -8540,9 +10724,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/sort': {
         put: {
-            req: {
-                requestBody?: SortingRequestModel;
-            };
+            req: PutMediaSortData;
             res: {
                 /**
                  * OK
@@ -8569,9 +10751,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/urls': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetMediaUrlsData;
             res: {
                 /**
                  * OK
@@ -8590,9 +10770,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/media/validate': {
         post: {
-            req: {
-                requestBody?: CreateMediaRequestModel;
-            };
+            req: PostMediaValidateData;
             res: {
                 /**
                  * OK
@@ -8641,9 +10819,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/media/{id}': {
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteRecycleBinMediaByIdData;
             res: {
                 /**
                  * OK
@@ -8670,9 +10846,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/media/{id}/original-parent': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetRecycleBinMediaByIdOriginalParentData;
             res: {
                 /**
                  * OK
@@ -8699,10 +10873,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/media/{id}/restore': {
         put: {
-            req: {
-                id: string;
-                requestBody?: MoveMediaRequestModel;
-            };
+            req: PutRecycleBinMediaByIdRestoreData;
             res: {
                 /**
                  * OK
@@ -8729,11 +10900,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/media/children': {
         get: {
-            req: {
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetRecycleBinMediaChildrenData;
             res: {
                 /**
                  * OK
@@ -8752,10 +10919,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/recycle-bin/media/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetRecycleBinMediaRootData;
             res: {
                 /**
                  * OK
@@ -8774,9 +10938,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/media/ancestors': {
         get: {
-            req: {
-                descendantId?: string;
-            };
+            req: GetTreeMediaAncestorsData;
             res: {
                 /**
                  * OK
@@ -8795,12 +10957,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/media/children': {
         get: {
-            req: {
-                dataTypeId?: string;
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeMediaChildrenData;
             res: {
                 /**
                  * OK
@@ -8819,11 +10976,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/media/root': {
         get: {
-            req: {
-                dataTypeId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeMediaRootData;
             res: {
                 /**
                  * OK
@@ -8842,9 +10995,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/member-group': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemMemberGroupData;
             res: {
                 /**
                  * OK
@@ -8859,10 +11010,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member-group': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetMemberGroupData;
             res: {
                 /**
                  * OK
@@ -8879,9 +11027,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                requestBody?: CreateMemberGroupRequestModel;
-            };
+            req: PostMemberGroupData;
             res: {
                 /**
                  * Created
@@ -8904,9 +11050,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member-group/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetMemberGroupByIdData;
             res: {
                 /**
                  * OK
@@ -8927,9 +11071,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteMemberGroupByIdData;
             res: {
                 /**
                  * OK
@@ -8954,10 +11096,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateMemberGroupRequestModel;
-            };
+            req: PutMemberGroupByIdData;
             res: {
                 /**
                  * OK
@@ -8984,10 +11123,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/member-group/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeMemberGroupRootData;
             res: {
                 /**
                  * OK
@@ -9006,9 +11142,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/member-type': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemMemberTypeData;
             res: {
                 /**
                  * OK
@@ -9023,11 +11157,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/member-type/search': {
         get: {
-            req: {
-                query?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemMemberTypeSearchData;
             res: {
                 /**
                  * OK
@@ -9042,9 +11172,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member-type': {
         post: {
-            req: {
-                requestBody?: CreateMemberTypeRequestModel;
-            };
+            req: PostMemberTypeData;
             res: {
                 /**
                  * Created
@@ -9071,9 +11199,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member-type/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetMemberTypeByIdData;
             res: {
                 /**
                  * OK
@@ -9094,9 +11220,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteMemberTypeByIdData;
             res: {
                 /**
                  * OK
@@ -9117,10 +11241,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateMemberTypeRequestModel;
-            };
+            req: PutMemberTypeByIdData;
             res: {
                 /**
                  * OK
@@ -9147,9 +11268,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member-type/{id}/composition-references': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetMemberTypeByIdCompositionReferencesData;
             res: {
                 /**
                  * OK
@@ -9176,9 +11295,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member-type/{id}/copy': {
         post: {
-            req: {
-                id: string;
-            };
+            req: PostMemberTypeByIdCopyData;
             res: {
                 /**
                  * Created
@@ -9205,9 +11322,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member-type/available-compositions': {
         post: {
-            req: {
-                requestBody?: MemberTypeCompositionRequestModel;
-            };
+            req: PostMemberTypeAvailableCompositionsData;
             res: {
                 /**
                  * OK
@@ -9226,10 +11341,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/member-type/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeMemberTypeRootData;
             res: {
                 /**
                  * OK
@@ -9248,17 +11360,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/filter/member': {
         get: {
-            req: {
-                filter?: string;
-                isApproved?: boolean;
-                isLockedOut?: boolean;
-                memberGroupName?: string;
-                memberTypeId?: string;
-                orderBy?: string;
-                orderDirection?: DirectionModel;
-                skip?: number;
-                take?: number;
-            };
+            req: GetFilterMemberData;
             res: {
                 /**
                  * OK
@@ -9281,9 +11383,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/member': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemMemberData;
             res: {
                 /**
                  * OK
@@ -9298,11 +11398,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/member/search': {
         get: {
-            req: {
-                query?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemMemberSearchData;
             res: {
                 /**
                  * OK
@@ -9317,9 +11413,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member': {
         post: {
-            req: {
-                requestBody?: CreateMemberRequestModel;
-            };
+            req: PostMemberData;
             res: {
                 /**
                  * Created
@@ -9346,9 +11440,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetMemberByIdData;
             res: {
                 /**
                  * OK
@@ -9369,9 +11461,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteMemberByIdData;
             res: {
                 /**
                  * OK
@@ -9396,10 +11486,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateMemberRequestModel;
-            };
+            req: PutMemberByIdData;
             res: {
                 /**
                  * OK
@@ -9426,10 +11513,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member/{id}/validate': {
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateMemberRequestModel;
-            };
+            req: PutMemberByIdValidateData;
             res: {
                 /**
                  * OK
@@ -9474,9 +11558,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/member/validate': {
         post: {
-            req: {
-                requestBody?: CreateMemberRequestModel;
-            };
+            req: PostMemberValidateData;
             res: {
                 /**
                  * OK
@@ -9561,10 +11643,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/object-types': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetObjectTypesData;
             res: {
                 /**
                  * OK
@@ -9579,11 +11658,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/oembed/query': {
         get: {
-            req: {
-                maxHeight?: number;
-                maxWidth?: number;
-                url?: string;
-            };
+            req: GetOembedQueryData;
             res: {
                 /**
                  * OK
@@ -9602,9 +11677,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/package/{name}/run-migration': {
         post: {
-            req: {
-                name: string;
-            };
+            req: PostPackageByNameRunMigrationData;
             res: {
                 /**
                  * OK
@@ -9649,10 +11722,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/package/created': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetPackageCreatedData;
             res: {
                 /**
                  * OK
@@ -9669,9 +11739,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                requestBody?: CreatePackageRequestModel;
-            };
+            req: PostPackageCreatedData;
             res: {
                 /**
                  * Created
@@ -9698,9 +11766,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/package/created/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetPackageCreatedByIdData;
             res: {
                 /**
                  * OK
@@ -9721,9 +11787,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeletePackageCreatedByIdData;
             res: {
                 /**
                  * OK
@@ -9744,10 +11808,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdatePackageRequestModel;
-            };
+            req: PutPackageCreatedByIdData;
             res: {
                 /**
                  * OK
@@ -9770,9 +11831,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/package/created/{id}/download': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetPackageCreatedByIdDownloadData;
             res: {
                 /**
                  * OK
@@ -9795,10 +11854,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/package/migration-status': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetPackageMigrationStatusData;
             res: {
                 /**
                  * OK
@@ -9817,9 +11873,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/partial-view': {
         get: {
-            req: {
-                path?: Array<(string)>;
-            };
+            req: GetItemPartialViewData;
             res: {
                 /**
                  * OK
@@ -9834,9 +11888,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/partial-view': {
         post: {
-            req: {
-                requestBody?: CreatePartialViewRequestModel;
-            };
+            req: PostPartialViewData;
             res: {
                 /**
                  * Created
@@ -9863,9 +11915,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/partial-view/{path}': {
         get: {
-            req: {
-                path: string;
-            };
+            req: GetPartialViewByPathData;
             res: {
                 /**
                  * OK
@@ -9886,9 +11936,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                path: string;
-            };
+            req: DeletePartialViewByPathData;
             res: {
                 /**
                  * OK
@@ -9913,10 +11961,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                path: string;
-                requestBody?: UpdatePartialViewRequestModel;
-            };
+            req: PutPartialViewByPathData;
             res: {
                 /**
                  * OK
@@ -9943,10 +11988,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/partial-view/{path}/rename': {
         put: {
-            req: {
-                path: string;
-                requestBody?: RenamePartialViewRequestModel;
-            };
+            req: PutPartialViewByPathRenameData;
             res: {
                 /**
                  * Created
@@ -9973,9 +12015,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/partial-view/folder': {
         post: {
-            req: {
-                requestBody?: CreatePartialViewFolderRequestModel;
-            };
+            req: PostPartialViewFolderData;
             res: {
                 /**
                  * Created
@@ -10002,9 +12042,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/partial-view/folder/{path}': {
         get: {
-            req: {
-                path: string;
-            };
+            req: GetPartialViewFolderByPathData;
             res: {
                 /**
                  * OK
@@ -10025,9 +12063,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                path: string;
-            };
+            req: DeletePartialViewFolderByPathData;
             res: {
                 /**
                  * OK
@@ -10054,10 +12090,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/partial-view/snippet': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetPartialViewSnippetData;
             res: {
                 /**
                  * OK
@@ -10076,9 +12109,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/partial-view/snippet/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetPartialViewSnippetByIdData;
             res: {
                 /**
                  * OK
@@ -10101,9 +12132,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/partial-view/ancestors': {
         get: {
-            req: {
-                descendantPath?: string;
-            };
+            req: GetTreePartialViewAncestorsData;
             res: {
                 /**
                  * OK
@@ -10122,11 +12151,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/partial-view/children': {
         get: {
-            req: {
-                parentPath?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreePartialViewChildrenData;
             res: {
                 /**
                  * OK
@@ -10145,10 +12170,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/partial-view/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreePartialViewRootData;
             res: {
                 /**
                  * OK
@@ -10205,9 +12227,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                requestBody?: ProfilingStatusRequestModel;
-            };
+            req: PutProfilingStatusData;
             res: {
                 /**
                  * OK
@@ -10226,10 +12246,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/property-type/is-used': {
         get: {
-            req: {
-                contentTypeId?: string;
-                propertyAlias?: string;
-            };
+            req: GetPropertyTypeIsUsedData;
             res: {
                 /**
                  * OK
@@ -10308,11 +12325,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/redirect-management': {
         get: {
-            req: {
-                filter?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetRedirectManagementData;
             res: {
                 /**
                  * OK
@@ -10335,11 +12348,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/redirect-management/{id}': {
         get: {
-            req: {
-                id: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetRedirectManagementByIdData;
             res: {
                 /**
                  * OK
@@ -10356,9 +12365,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteRedirectManagementByIdData;
             res: {
                 /**
                  * OK
@@ -10393,9 +12400,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                status?: RedirectStatusModel;
-            };
+            req: PostRedirectManagementStatusData;
             res: {
                 /**
                  * OK
@@ -10414,9 +12419,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/relation-type': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemRelationTypeData;
             res: {
                 /**
                  * OK
@@ -10431,10 +12434,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/relation-type': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetRelationTypeData;
             res: {
                 /**
                  * OK
@@ -10453,9 +12453,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/relation-type/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetRelationTypeByIdData;
             res: {
                 /**
                  * OK
@@ -10478,11 +12476,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/relation/type/{id}': {
         get: {
-            req: {
-                id: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetRelationTypeByIdData;
             res: {
                 /**
                  * OK
@@ -10505,9 +12499,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/script': {
         get: {
-            req: {
-                path?: Array<(string)>;
-            };
+            req: GetItemScriptData;
             res: {
                 /**
                  * OK
@@ -10522,9 +12514,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/script': {
         post: {
-            req: {
-                requestBody?: CreateScriptRequestModel;
-            };
+            req: PostScriptData;
             res: {
                 /**
                  * Created
@@ -10551,9 +12541,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/script/{path}': {
         get: {
-            req: {
-                path: string;
-            };
+            req: GetScriptByPathData;
             res: {
                 /**
                  * OK
@@ -10574,9 +12562,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                path: string;
-            };
+            req: DeleteScriptByPathData;
             res: {
                 /**
                  * OK
@@ -10601,10 +12587,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                path: string;
-                requestBody?: UpdateScriptRequestModel;
-            };
+            req: PutScriptByPathData;
             res: {
                 /**
                  * OK
@@ -10631,10 +12614,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/script/{path}/rename': {
         put: {
-            req: {
-                path: string;
-                requestBody?: RenameScriptRequestModel;
-            };
+            req: PutScriptByPathRenameData;
             res: {
                 /**
                  * Created
@@ -10661,9 +12641,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/script/folder': {
         post: {
-            req: {
-                requestBody?: CreateScriptFolderRequestModel;
-            };
+            req: PostScriptFolderData;
             res: {
                 /**
                  * Created
@@ -10690,9 +12668,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/script/folder/{path}': {
         get: {
-            req: {
-                path: string;
-            };
+            req: GetScriptFolderByPathData;
             res: {
                 /**
                  * OK
@@ -10713,9 +12689,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                path: string;
-            };
+            req: DeleteScriptFolderByPathData;
             res: {
                 /**
                  * OK
@@ -10742,9 +12716,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/script/ancestors': {
         get: {
-            req: {
-                descendantPath?: string;
-            };
+            req: GetTreeScriptAncestorsData;
             res: {
                 /**
                  * OK
@@ -10763,11 +12735,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/script/children': {
         get: {
-            req: {
-                parentPath?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeScriptChildrenData;
             res: {
                 /**
                  * OK
@@ -10786,10 +12754,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/script/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeScriptRootData;
             res: {
                 /**
                  * OK
@@ -10808,10 +12773,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/searcher': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetSearcherData;
             res: {
                 /**
                  * OK
@@ -10826,12 +12788,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/searcher/{searcherName}/query': {
         get: {
-            req: {
-                searcherName: string;
-                skip?: number;
-                take?: number;
-                term?: string;
-            };
+            req: GetSearcherBySearcherNameQueryData;
             res: {
                 /**
                  * OK
@@ -10868,9 +12825,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/security/forgot-password': {
         post: {
-            req: {
-                requestBody?: ResetPasswordRequestModel;
-            };
+            req: PostSecurityForgotPasswordData;
             res: {
                 /**
                  * OK
@@ -10893,9 +12848,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/security/forgot-password/reset': {
         post: {
-            req: {
-                requestBody?: ResetPasswordTokenRequestModel;
-            };
+            req: PostSecurityForgotPasswordResetData;
             res: {
                 /**
                  * No Content
@@ -10922,9 +12875,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/security/forgot-password/verify': {
         post: {
-            req: {
-                requestBody?: VerifyResetPasswordTokenRequestModel;
-            };
+            req: PostSecurityForgotPasswordVerifyData;
             res: {
                 /**
                  * OK
@@ -10943,10 +12894,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/segment': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetSegmentData;
             res: {
                 /**
                  * OK
@@ -11025,9 +12973,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/static-file': {
         get: {
-            req: {
-                path?: Array<(string)>;
-            };
+            req: GetItemStaticFileData;
             res: {
                 /**
                  * OK
@@ -11042,9 +12988,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/static-file/ancestors': {
         get: {
-            req: {
-                descendantPath?: string;
-            };
+            req: GetTreeStaticFileAncestorsData;
             res: {
                 /**
                  * OK
@@ -11059,11 +13003,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/static-file/children': {
         get: {
-            req: {
-                parentPath?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeStaticFileChildrenData;
             res: {
                 /**
                  * OK
@@ -11078,10 +13018,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/static-file/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeStaticFileRootData;
             res: {
                 /**
                  * OK
@@ -11096,9 +13033,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/stylesheet': {
         get: {
-            req: {
-                path?: Array<(string)>;
-            };
+            req: GetItemStylesheetData;
             res: {
                 /**
                  * OK
@@ -11113,9 +13048,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/stylesheet': {
         post: {
-            req: {
-                requestBody?: CreateStylesheetRequestModel;
-            };
+            req: PostStylesheetData;
             res: {
                 /**
                  * Created
@@ -11142,9 +13075,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/stylesheet/{path}': {
         get: {
-            req: {
-                path: string;
-            };
+            req: GetStylesheetByPathData;
             res: {
                 /**
                  * OK
@@ -11165,9 +13096,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                path: string;
-            };
+            req: DeleteStylesheetByPathData;
             res: {
                 /**
                  * OK
@@ -11192,10 +13121,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                path: string;
-                requestBody?: UpdateStylesheetRequestModel;
-            };
+            req: PutStylesheetByPathData;
             res: {
                 /**
                  * OK
@@ -11222,10 +13148,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/stylesheet/{path}/rename': {
         put: {
-            req: {
-                path: string;
-                requestBody?: RenameStylesheetRequestModel;
-            };
+            req: PutStylesheetByPathRenameData;
             res: {
                 /**
                  * Created
@@ -11252,9 +13175,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/stylesheet/folder': {
         post: {
-            req: {
-                requestBody?: CreateStylesheetFolderRequestModel;
-            };
+            req: PostStylesheetFolderData;
             res: {
                 /**
                  * Created
@@ -11281,9 +13202,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/stylesheet/folder/{path}': {
         get: {
-            req: {
-                path: string;
-            };
+            req: GetStylesheetFolderByPathData;
             res: {
                 /**
                  * OK
@@ -11304,9 +13223,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                path: string;
-            };
+            req: DeleteStylesheetFolderByPathData;
             res: {
                 /**
                  * OK
@@ -11333,9 +13250,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/stylesheet/ancestors': {
         get: {
-            req: {
-                descendantPath?: string;
-            };
+            req: GetTreeStylesheetAncestorsData;
             res: {
                 /**
                  * OK
@@ -11354,11 +13269,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/stylesheet/children': {
         get: {
-            req: {
-                parentPath?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeStylesheetChildrenData;
             res: {
                 /**
                  * OK
@@ -11377,10 +13288,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/stylesheet/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeStylesheetRootData;
             res: {
                 /**
                  * OK
@@ -11399,13 +13307,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tag': {
         get: {
-            req: {
-                culture?: string;
-                query?: string;
-                skip?: number;
-                tagGroup?: string;
-                take?: number;
-            };
+            req: GetTagData;
             res: {
                 /**
                  * OK
@@ -11420,10 +13322,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/telemetry': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetTelemetryData;
             res: {
                 /**
                  * OK
@@ -11458,9 +13357,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                requestBody?: TelemetryRequestModel;
-            };
+            req: PostTelemetryLevelData;
             res: {
                 /**
                  * OK
@@ -11483,9 +13380,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/template': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemTemplateData;
             res: {
                 /**
                  * OK
@@ -11500,11 +13395,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/template/search': {
         get: {
-            req: {
-                query?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetItemTemplateSearchData;
             res: {
                 /**
                  * OK
@@ -11519,9 +13410,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/template': {
         post: {
-            req: {
-                requestBody?: CreateTemplateRequestModel;
-            };
+            req: PostTemplateData;
             res: {
                 /**
                  * Created
@@ -11548,9 +13437,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/template/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetTemplateByIdData;
             res: {
                 /**
                  * OK
@@ -11571,9 +13458,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteTemplateByIdData;
             res: {
                 /**
                  * OK
@@ -11598,10 +13483,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateTemplateRequestModel;
-            };
+            req: PutTemplateByIdData;
             res: {
                 /**
                  * OK
@@ -11646,9 +13528,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/template/query/execute': {
         post: {
-            req: {
-                requestBody?: TemplateQueryExecuteModel;
-            };
+            req: PostTemplateQueryExecuteData;
             res: {
                 /**
                  * OK
@@ -11685,9 +13565,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/template/ancestors': {
         get: {
-            req: {
-                descendantId?: string;
-            };
+            req: GetTreeTemplateAncestorsData;
             res: {
                 /**
                  * OK
@@ -11706,11 +13584,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/template/children': {
         get: {
-            req: {
-                parentId?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeTemplateChildrenData;
             res: {
                 /**
                  * OK
@@ -11729,10 +13603,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/tree/template/root': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetTreeTemplateRootData;
             res: {
                 /**
                  * OK
@@ -11751,12 +13622,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/temporary-file': {
         post: {
-            req: {
-                formData?: {
-                    Id: string;
-                    File: (Blob | File);
-                };
-            };
+            req: PostTemporaryFileData;
             res: {
                 /**
                  * Created
@@ -11775,9 +13641,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/temporary-file/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetTemporaryFileByIdData;
             res: {
                 /**
                  * OK
@@ -11798,9 +13662,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteTemporaryFileByIdData;
             res: {
                 /**
                  * OK
@@ -11885,9 +13747,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user-data': {
         post: {
-            req: {
-                requestBody?: CreateUserDataRequestModel;
-            };
+            req: PostUserDataData;
             res: {
                 /**
                  * Created
@@ -11908,12 +13768,7 @@ export type $OpenApiTs = {
             };
         };
         get: {
-            req: {
-                groups?: Array<(string)>;
-                identifiers?: Array<(string)>;
-                skip?: number;
-                take?: number;
-            };
+            req: GetUserDataData;
             res: {
                 /**
                  * OK
@@ -11926,9 +13781,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                requestBody?: UpdateUserDataRequestModel;
-            };
+            req: PutUserDataData;
             res: {
                 /**
                  * OK
@@ -11951,9 +13804,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user-data/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetUserDataByIdData;
             res: {
                 /**
                  * OK
@@ -11972,11 +13823,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/filter/user-group': {
         get: {
-            req: {
-                filter?: string;
-                skip?: number;
-                take?: number;
-            };
+            req: GetFilterUserGroupData;
             res: {
                 /**
                  * OK
@@ -12003,9 +13850,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/user-group': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemUserGroupData;
             res: {
                 /**
                  * OK
@@ -12020,9 +13865,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user-group': {
         delete: {
-            req: {
-                requestBody?: DeleteUserGroupsRequestModel;
-            };
+            req: DeleteUserGroupData;
             res: {
                 /**
                  * OK
@@ -12043,9 +13886,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                requestBody?: CreateUserGroupRequestModel;
-            };
+            req: PostUserGroupData;
             res: {
                 /**
                  * Created
@@ -12066,10 +13907,7 @@ export type $OpenApiTs = {
             };
         };
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetUserGroupData;
             res: {
                 /**
                  * OK
@@ -12088,9 +13926,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user-group/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetUserGroupByIdData;
             res: {
                 /**
                  * OK
@@ -12111,9 +13947,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteUserGroupByIdData;
             res: {
                 /**
                  * OK
@@ -12134,10 +13968,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateUserGroupRequestModel;
-            };
+            req: PutUserGroupByIdData;
             res: {
                 /**
                  * OK
@@ -12160,10 +13991,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user-group/{id}/users': {
         delete: {
-            req: {
-                id: string;
-                requestBody?: Array<(ReferenceByIdModel)>;
-            };
+            req: DeleteUserGroupByIdUsersData;
             res: {
                 /**
                  * OK
@@ -12184,10 +14012,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                id: string;
-                requestBody?: Array<(ReferenceByIdModel)>;
-            };
+            req: PostUserGroupByIdUsersData;
             res: {
                 /**
                  * OK
@@ -12210,15 +14035,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/filter/user': {
         get: {
-            req: {
-                filter?: string;
-                orderBy?: UserOrderModel;
-                orderDirection?: DirectionModel;
-                skip?: number;
-                take?: number;
-                userGroupIds?: Array<(string)>;
-                userStates?: Array<UserStateModel>;
-            };
+            req: GetFilterUserData;
             res: {
                 /**
                  * OK
@@ -12245,9 +14062,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/user': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemUserData;
             res: {
                 /**
                  * OK
@@ -12262,9 +14077,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user': {
         post: {
-            req: {
-                requestBody?: CreateUserRequestModel;
-            };
+            req: PostUserData;
             res: {
                 /**
                  * Created
@@ -12289,9 +14102,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                requestBody?: DeleteUsersRequestModel;
-            };
+            req: DeleteUserData;
             res: {
                 /**
                  * OK
@@ -12312,10 +14123,7 @@ export type $OpenApiTs = {
             };
         };
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetUserData;
             res: {
                 /**
                  * OK
@@ -12338,9 +14146,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetUserByIdData;
             res: {
                 /**
                  * OK
@@ -12361,9 +14167,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteUserByIdData;
             res: {
                 /**
                  * OK
@@ -12388,10 +14192,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateUserRequestModel;
-            };
+            req: PutUserByIdData;
             res: {
                 /**
                  * OK
@@ -12418,9 +14219,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/{id}/2fa': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetUserById2FaData;
             res: {
                 /**
                  * OK
@@ -12443,10 +14242,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/{id}/2fa/{providerName}': {
         delete: {
-            req: {
-                id: string;
-                providerName: string;
-            };
+            req: DeleteUserById2FaByProviderNameData;
             res: {
                 /**
                  * OK
@@ -12473,10 +14269,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/{id}/change-password': {
         post: {
-            req: {
-                id: string;
-                requestBody?: ChangePasswordUserRequestModel;
-            };
+            req: PostUserByIdChangePasswordData;
             res: {
                 /**
                  * OK
@@ -12503,9 +14296,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/{id}/reset-password': {
         post: {
-            req: {
-                id: string;
-            };
+            req: PostUserByIdResetPasswordData;
             res: {
                 /**
                  * OK
@@ -12532,9 +14323,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/avatar/{id}': {
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteUserAvatarByIdData;
             res: {
                 /**
                  * OK
@@ -12559,10 +14348,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                id: string;
-                requestBody?: SetAvatarRequestModel;
-            };
+            req: PostUserAvatarByIdData;
             res: {
                 /**
                  * OK
@@ -12635,10 +14421,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/current/2fa/{providerName}': {
         delete: {
-            req: {
-                code?: string;
-                providerName: string;
-            };
+            req: DeleteUserCurrent2FaByProviderNameData;
             res: {
                 /**
                  * OK
@@ -12659,10 +14442,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                providerName: string;
-                requestBody?: EnableTwoFactorRequestModel;
-            };
+            req: PostUserCurrent2FaByProviderNameData;
             res: {
                 /**
                  * OK
@@ -12683,9 +14463,7 @@ export type $OpenApiTs = {
             };
         };
         get: {
-            req: {
-                providerName: string;
-            };
+            req: GetUserCurrent2FaByProviderNameData;
             res: {
                 /**
                  * OK
@@ -12708,9 +14486,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/current/avatar': {
         post: {
-            req: {
-                requestBody?: SetAvatarRequestModel;
-            };
+            req: PostUserCurrentAvatarData;
             res: {
                 /**
                  * OK
@@ -12729,9 +14505,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/current/change-password': {
         post: {
-            req: {
-                requestBody?: ChangePasswordCurrentUserRequestModel;
-            };
+            req: PostUserCurrentChangePasswordData;
             res: {
                 /**
                  * OK
@@ -12782,9 +14556,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/current/permissions': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetUserCurrentPermissionsData;
             res: {
                 /**
                  * OK
@@ -12803,9 +14575,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/current/permissions/document': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetUserCurrentPermissionsDocumentData;
             res: {
                 /**
                  * OK
@@ -12824,9 +14594,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/current/permissions/media': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetUserCurrentPermissionsMediaData;
             res: {
                 /**
                  * OK
@@ -12845,9 +14613,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/disable': {
         post: {
-            req: {
-                requestBody?: DisableUserRequestModel;
-            };
+            req: PostUserDisableData;
             res: {
                 /**
                  * OK
@@ -12874,9 +14640,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/enable': {
         post: {
-            req: {
-                requestBody?: EnableUserRequestModel;
-            };
+            req: PostUserEnableData;
             res: {
                 /**
                  * OK
@@ -12903,9 +14667,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/invite': {
         post: {
-            req: {
-                requestBody?: InviteUserRequestModel;
-            };
+            req: PostUserInviteData;
             res: {
                 /**
                  * Created
@@ -12932,9 +14694,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/invite/create-password': {
         post: {
-            req: {
-                requestBody?: CreateInitialPasswordUserRequestModel;
-            };
+            req: PostUserInviteCreatePasswordData;
             res: {
                 /**
                  * OK
@@ -12957,9 +14717,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/invite/resend': {
         post: {
-            req: {
-                requestBody?: ResendInviteUserRequestModel;
-            };
+            req: PostUserInviteResendData;
             res: {
                 /**
                  * OK
@@ -12986,9 +14744,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/invite/verify': {
         post: {
-            req: {
-                requestBody?: VerifyInviteUserRequestModel;
-            };
+            req: PostUserInviteVerifyData;
             res: {
                 /**
                  * OK
@@ -13011,9 +14767,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/set-user-groups': {
         post: {
-            req: {
-                requestBody?: UpdateUserGroupsOnUserRequestModel;
-            };
+            req: PostUserSetUserGroupsData;
             res: {
                 /**
                  * OK
@@ -13032,9 +14786,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/user/unlock': {
         post: {
-            req: {
-                requestBody?: UnlockUsersRequestModel;
-            };
+            req: PostUserUnlockData;
             res: {
                 /**
                  * OK
@@ -13057,9 +14809,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/item/webhook': {
         get: {
-            req: {
-                id?: Array<(string)>;
-            };
+            req: GetItemWebhookData;
             res: {
                 /**
                  * OK
@@ -13074,10 +14824,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/webhook': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetWebhookData;
             res: {
                 /**
                  * OK
@@ -13090,9 +14837,7 @@ export type $OpenApiTs = {
             };
         };
         post: {
-            req: {
-                requestBody?: CreateWebhookRequestModel;
-            };
+            req: PostWebhookData;
             res: {
                 /**
                  * Created
@@ -13119,9 +14864,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/webhook/{id}': {
         get: {
-            req: {
-                id: string;
-            };
+            req: GetWebhookByIdData;
             res: {
                 /**
                  * OK
@@ -13138,9 +14881,7 @@ export type $OpenApiTs = {
             };
         };
         delete: {
-            req: {
-                id: string;
-            };
+            req: DeleteWebhookByIdData;
             res: {
                 /**
                  * OK
@@ -13165,10 +14906,7 @@ export type $OpenApiTs = {
             };
         };
         put: {
-            req: {
-                id: string;
-                requestBody?: UpdateWebhookRequestModel;
-            };
+            req: PutWebhookByIdData;
             res: {
                 /**
                  * OK
@@ -13195,10 +14933,7 @@ export type $OpenApiTs = {
     };
     '/umbraco/management/api/v1/webhook/events': {
         get: {
-            req: {
-                skip?: number;
-                take?: number;
-            };
+            req: GetWebhookEventsData;
             res: {
                 /**
                  * OK

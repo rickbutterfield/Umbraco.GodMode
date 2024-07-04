@@ -1,13 +1,49 @@
 ﻿import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
-import { LitElement, css, customElement, html, ifDefined, property, repeat, state } from "@umbraco-cms/backoffice/external/lit";
-import { DirectionModel, DirectionModelEnum, GodModeService, TypeMap } from "../api";
+import { LitElement, css, customElement, html, ifDefined, property, state } from "@umbraco-cms/backoffice/external/lit";
+import { DirectionModel, GodModeService, TypeMap } from "../api";
 import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
 import { UmbDataSourceResponse } from "@umbraco-cms/backoffice/repository";
 import { UUIInputEvent, UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
-import { sortTypeMapData } from "../helpers/sort";
+import { sortData } from "../helpers/sort";
+import type { UmbTableColumn, UmbTableConfig, UmbTableElement, UmbTableItem, UmbTableOrderedEvent } from '@umbraco-cms/backoffice/components';
 
 @customElement('godmode-reflection-browser')
 export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement) {
+    
+    @state()
+    private _tableConfig: UmbTableConfig = {
+        allowSelection: false,
+        hideIcon: true
+    }
+
+    @state()
+    private _tableColumns: Array<UmbTableColumn> = [
+        {
+            name: 'Name',
+            alias: 'name',
+            allowSorting: true
+        },
+        {
+            name: 'Module',
+            alias: 'module',
+            allowSorting: true
+        },
+        {
+            name: 'Base Type',
+            alias: 'baseType',
+            allowSorting: true
+        },
+        {
+            name: 'Umbraco?',
+            alias: 'isUmbraco',
+            allowSorting: true,
+            
+        }
+    ];
+
+    @state()
+    private _tableItems: Array<UmbTableItem> = [];
+
     @property({ type: String })
     type?: string;
 
@@ -15,10 +51,10 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
     name?: string;
 
     @state()
-    data?: TypeMap[] = undefined;
+    data: TypeMap[] = [];
 
     @state()
-    filteredData?: TypeMap[] = undefined;
+    filteredData: TypeMap[] = [];
 
     @state()
     searchName: string = '';
@@ -41,15 +77,6 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
     @state()
     selectedUmbraco: string = '';
 
-    @state()
-    sortingDesc: boolean = false;
-
-    @state()
-    orderDirection: DirectionModel = DirectionModelEnum.ASCENDING;
-
-    @state()
-    orderBy: string = 'name';
-
     constructor() {
         super();
     }
@@ -59,16 +86,13 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
         this.#init();
     }
 
-    private _sortingHandler(column: keyof TypeMap) {
-      this.sortingDesc = this.orderBy === column ? !this.sortingDesc : false;
-      this.orderBy = column;
-
-      this.orderDirection = this.sortingDesc ? DirectionModelEnum.DESCENDING : DirectionModelEnum.ASCENDING;
-
-      if (this.data) {
-        this.data = sortTypeMapData<TypeMap>(this.data, column, this.orderDirection);
-        this.filteredData = structuredClone(this.data);
-      }
+    #sortingHandler(event: UmbTableOrderedEvent) {
+        const table = event.target as UmbTableElement;
+        const orderingColumn = table.orderingColumn as keyof TypeMap;
+        const orderingDesc = table.orderingDesc;
+        
+        this.filteredData = sortData(structuredClone(this.data), orderingColumn, orderingDesc ? DirectionModel.DESCENDING : DirectionModel.ASCENDING);
+        this._tableItems = this.#mapData(this.filteredData);
     }
 
     async #init() {
@@ -128,8 +152,9 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
             if (response) {
                 if (response.data) {
                     this.data = response.data;
-                    this.filteredData = sortTypeMapData(structuredClone(this.data), 'name', this.orderDirection);
-                    
+                    this.filteredData = structuredClone(this.data);
+                    this._tableItems = this.#mapData(this.filteredData);
+
                     let namespaces = [...new Set(this.data.map(x => x.namespace))];
                     this.namespaces = namespaces.map(x => { return { name: x, value: x } });
                     this.namespaces.unshift({ name: 'Any', value: '', selected: true });
@@ -140,6 +165,32 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
                 }
             }
         }
+    }
+
+    #mapData(data: TypeMap[]): UmbTableItem[] {
+        return data.map((data) => {
+            return {
+                id: data.name,
+                data: [
+                    {
+                        columnAlias: 'name',
+                        value: data.name
+                    },
+                    {
+                        columnAlias: 'module',
+                        value: data.module
+                    },
+                    {
+                        columnAlias: 'baseType',
+                        value: data.baseType
+                    },
+                    {
+                        columnAlias: 'isUmbraco',
+                        value: data.isUmbraco
+                    }
+                ]
+            }
+        });
     }
 
     #setSearchName(event: UUIInputEvent) {
@@ -184,6 +235,11 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
         if (this.selectedUmbraco !== '') {
             this.filteredData = this.filteredData?.filter(x => x.isUmbraco === (this.selectedUmbraco === 'Yes' ? true : false));
         }
+
+        if (this.filteredData) {
+            this._tableItems = this.#mapData(this.filteredData);
+        }
+        else this._tableItems = [];
     }
 
     override render() {
@@ -227,89 +283,12 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
                     </div>
                 </uui-box>
 
-                <uui-box style="--uui-box-default-padding: 0;">
-                    <uui-table>
-                        <uui-table-column></uui-table-column>
-                        <uui-table-column></uui-table-column>
-                        <uui-table-column></uui-table-column>
-                        <uui-table-column></uui-table-column>
-
-                        <uui-table-head>
-                            <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                              <button
-                                label="Name"
-                                style="font-weight: 700;"
-                                @click=${() => this._sortingHandler('name')}>
-                                Name
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === 'name'}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                            </uui-table-head-cell>
-                            <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                              <button
-                                label="Module"
-                                style="font-weight: 700;"
-                                @click=${() => this._sortingHandler('module')}>
-                                Module
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === 'module'}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                            </uui-table-head-cell>
-                            <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                              <button
-                                label="Base Type"
-                                style="font-weight: 700;"
-                                @click=${() => this._sortingHandler('baseType')}>
-                                Base Type
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === 'baseType'}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                            </uui-table-head-cell>
-                            <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                              <button
-                                label="Umbraco?"
-                                style="font-weight: 700;"
-                                @click=${() => this._sortingHandler('isUmbraco')}>
-                                Umbraco?
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === 'isUmbraco'}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                            </uui-table-head-cell>
-                        </uui-table-head>
-
-                        ${repeat(
-                            this.filteredData!,
-                            (data) => data.name,
-                            (data) =>
-                                html`
-                                    <uui-table-row>
-                                        <uui-table-cell>
-                                            <strong>${data.name}</strong>
-                                        </uui-table-cell>
-                                        <uui-table-cell>
-                                            <code>${data.module}</code>
-                                        </uui-table-cell>
-                                        <uui-table-cell>
-                                            ${data.baseType}
-                                        </uui-table-cell>
-                                        <uui-table-cell>
-                                            <div class="inline-flex">
-                                                ${data.isUmbraco ? html`<uui-icon name="icon-checkbox"></uui-icon> Yes` : html`<uui-icon name="icon-checkbox-empty"></uui-icon> No`}
-                                            </div>
-                                        </uui-table-cell>
-                                    </uui-table-row>
-                                `
-                            )}
-                    </uui-table>
-                </uui-box>
+                ${this._tableItems.length !== 0 ? 
+                    html`
+                        <uui-box style="--uui-box-default-padding: 0;">
+                            <umb-table .config=${this._tableConfig} .columns=${this._tableColumns} .items=${this._tableItems} @ordered=${this.#sortingHandler} />
+                        </uui-box>
+                    ` : html`` }
             </umb-body-layout>
         `;
     }
@@ -339,21 +318,6 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
                 uui-icon {
                     margin-right: 6px;
                 }
-            }
-
-            uui-table-head-cell button {
-                padding: var(--uui-size-4) var(--uui-size-5);
-                background-color: transparent;
-                color: inherit;
-                border: none;
-                cursor: pointer;
-                font-family: var(--uui-font-family);
-                font-weight: inherit;
-                font-size: inherit;
-                display: inline-flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
             }
         `
     ]

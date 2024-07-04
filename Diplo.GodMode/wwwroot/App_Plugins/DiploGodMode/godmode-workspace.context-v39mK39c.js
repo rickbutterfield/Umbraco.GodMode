@@ -1,5 +1,5 @@
 import { UmbDefaultWorkspaceContext as p, UmbWorkspaceRouteManager as i } from "@umbraco-cms/backoffice/workspace";
-import { a as n } from "./index-DIYzpCy4.js";
+import { a as n } from "./index-C2dn3IU5.js";
 class c extends p {
   constructor(t) {
     super(t), this.routes = new i(this), this.routes.setRoutes([
@@ -37,19 +37,19 @@ class c extends p {
       },
       {
         path: "edit/tagBrowser",
-        component: () => import("./godmode-tag-browser.element-PXkqwflu.js")
+        component: () => import("./godmode-tag-browser.element-CJK2AfHd.js")
       },
       {
         path: "edit/serviceBrowser",
-        component: () => import("./godmode-services-browser.element-O69yT87c.js")
+        component: () => import("./godmode-services-browser.element-DsGlppC5.js")
       },
       {
         path: "edit/diagnosticBrowser",
-        component: () => import("./godmode-diagnostic-browser.element-Bmp7WSmc.js")
+        component: () => import("./godmode-diagnostic-browser.element-B--XD2vz.js")
       },
       {
         path: "edit/utilityBrowser",
-        component: () => import("./godmode-utility-browser.element-Bqw6dBfD.js")
+        component: () => import("./godmode-utility-browser.element-DK3aDtes.js")
       },
       {
         path: "edit/reflectionBrowser/:unique",
@@ -61,7 +61,7 @@ class c extends p {
       },
       {
         path: "edit/typeBrowser",
-        component: () => import("./godmode-interface-browser.element-CifEo0rm.js")
+        component: () => import("./godmode-interface-browser.element-Don4b7T6.js")
       }
     ]);
   }
@@ -70,4 +70,4 @@ export {
   c as GodModeWorkspaceContext,
   c as api
 };
-//# sourceMappingURL=godmode-workspace.context-CETJZUKK.js.map
+//# sourceMappingURL=godmode-workspace.context-v39mK39c.js.map

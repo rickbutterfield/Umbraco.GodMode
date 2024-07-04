@@ -1,17 +1,14 @@
-import { UMB_AUTH_CONTEXT as ee } from "@umbraco-cms/backoffice/auth";
-import { UmbElementMixin as I } from "@umbraco-cms/backoffice/element-api";
-import { LitElement as P, html as v, ifDefined as $, css as O, property as x, customElement as B, repeat as te, state as m } from "@umbraco-cms/backoffice/external/lit";
-import { tryExecuteAndNotify as p } from "@umbraco-cms/backoffice/resources";
-class R {
+import { UMB_AUTH_CONTEXT as oe } from "@umbraco-cms/backoffice/auth";
+import { UmbElementMixin as B } from "@umbraco-cms/backoffice/element-api";
+import { LitElement as j, html as C, ifDefined as H, css as F, property as W, customElement as L, state as l } from "@umbraco-cms/backoffice/external/lit";
+import { tryExecuteAndNotify as g } from "@umbraco-cms/backoffice/resources";
+class x {
   constructor() {
     this._fns = [];
   }
   eject(e) {
     const r = this._fns.indexOf(e);
-    r !== -1 && (this._fns = [
-      ...this._fns.slice(0, r),
-      ...this._fns.slice(r + 1)
-    ]);
+    r !== -1 && (this._fns = [...this._fns.slice(0, r), ...this._fns.slice(r + 1)]);
   }
   use(e) {
     this._fns = [...this._fns, e];
@@ -28,30 +25,30 @@ const s = {
   VERSION: "Latest",
   WITH_CREDENTIALS: !1,
   interceptors: {
-    request: new R(),
-    response: new R()
+    request: new x(),
+    response: new x()
   }
-}, re = "Umb.Repository.GodMode.Tree", ae = "Umb.Store.GodMode.Tree", $e = "Umb.Tree.GodMode";
-var oe = Object.defineProperty, se = Object.getOwnPropertyDescriptor, j = (t, e, r, a) => {
-  for (var o = a > 1 ? void 0 : a ? se(e, r) : e, i = t.length - 1, c; i >= 0; i--)
+}, se = "Umb.Repository.GodMode.Tree", ne = "Umb.Store.GodMode.Tree", je = "Umb.Tree.GodMode";
+var ie = Object.defineProperty, ce = Object.getOwnPropertyDescriptor, z = (t, e, r, a) => {
+  for (var o = a > 1 ? void 0 : a ? ce(e, r) : e, i = t.length - 1, c; i >= 0; i--)
     (c = t[i]) && (o = (a ? c(e, r, o) : c(o)) || o);
-  return a && o && oe(e, r, o), o;
+  return a && o && ie(e, r, o), o;
 };
-let C = class extends I(P) {
+let U = class extends B(j) {
   constructor() {
     super();
   }
   render() {
-    return v`
+    return C`
             <div class="header">
                 <uui-icon name="icon-sience"></uui-icon>
-                <h3>God Mode ${$(this.name)}</h3>
+                <h3>God Mode ${H(this.name)}</h3>
             </div>
         `;
   }
 };
-C.styles = [
-  O`
+U.styles = [
+  F`
             .header {
                 display: flex;
                 flex-direction: row;
@@ -65,19 +62,18 @@ C.styles = [
             }
         `
 ];
-j([
-  x({ type: String, attribute: !0 })
-], C.prototype, "name", 2);
-C = j([
-  B("godmode-header")
-], C);
-var G = /* @__PURE__ */ ((t) => (t.ASCENDING = "Ascending", t.DESCENDING = "Descending", t))(G || {});
-class N extends Error {
+z([
+  W({ type: String, attribute: !0 })
+], U.prototype, "name", 2);
+U = z([
+  L("godmode-header")
+], U);
+class $ extends Error {
   constructor(e, r, a) {
     super(a), this.name = "ApiError", this.url = r.url, this.status = r.status, this.statusText = r.statusText, this.body = r.body, this.request = e;
   }
 }
-class ne extends Error {
+class de extends Error {
   constructor(e) {
     super(e), this.name = "CancelError";
   }
@@ -85,7 +81,7 @@ class ne extends Error {
     return !0;
   }
 }
-class ie {
+class ue {
   constructor(e) {
     this._isResolved = !1, this._isRejected = !1, this._isCancelled = !1, this.cancelHandlers = [], this.promise = new Promise((r, a) => {
       this._resolve = r, this._reject = a;
@@ -127,65 +123,69 @@ class ie {
           console.warn("Cancellation threw an error", e);
           return;
         }
-      this.cancelHandlers.length = 0, this._reject && this._reject(new ne("Request aborted"));
+      this.cancelHandlers.length = 0, this._reject && this._reject(new de("Request aborted"));
     }
   }
   get isCancelled() {
     return this._isCancelled;
   }
 }
-const M = (t) => typeof t == "string", U = (t) => M(t) && t !== "", k = (t) => t instanceof Blob, H = (t) => t instanceof FormData, ce = (t) => {
+const v = (t) => typeof t == "string", _ = (t) => v(t) && t !== "", k = (t) => t instanceof Blob, J = (t) => t instanceof FormData, me = (t) => {
   try {
     return btoa(t);
   } catch {
     return Buffer.from(t).toString("base64");
   }
-}, de = (t) => {
+}, he = (t) => {
   const e = [], r = (o, i) => {
     e.push(`${encodeURIComponent(o)}=${encodeURIComponent(String(i))}`);
   }, a = (o, i) => {
-    i != null && (Array.isArray(i) ? i.forEach((c) => a(o, c)) : typeof i == "object" ? Object.entries(i).forEach(([c, d]) => a(`${o}[${c}]`, d)) : r(o, i));
+    i != null && (i instanceof Date ? r(o, i.toISOString()) : Array.isArray(i) ? i.forEach((c) => a(o, c)) : typeof i == "object" ? Object.entries(i).forEach(([c, d]) => a(`${o}[${c}]`, d)) : r(o, i));
   };
   return Object.entries(t).forEach(([o, i]) => a(o, i)), e.length ? `?${e.join("&")}` : "";
-}, ue = (t, e) => {
+}, le = (t, e) => {
   const r = t.ENCODE_PATH || encodeURI, a = e.url.replace("{api-version}", t.VERSION).replace(/{(.*?)}/g, (i, c) => {
     var d;
     return (d = e.path) != null && d.hasOwnProperty(c) ? r(String(e.path[c])) : i;
   }), o = t.BASE + a;
-  return e.query ? o + de(e.query) : o;
-}, he = (t) => {
+  return e.query ? o + he(e.query) : o;
+}, pe = (t) => {
   if (t.formData) {
     const e = new FormData(), r = (a, o) => {
-      M(o) || k(o) ? e.append(a, o) : e.append(a, JSON.stringify(o));
+      v(o) || k(o) ? e.append(a, o) : e.append(a, JSON.stringify(o));
     };
     return Object.entries(t.formData).filter(([, a]) => a != null).forEach(([a, o]) => {
       Array.isArray(o) ? o.forEach((i) => r(a, i)) : r(a, o);
     }), e;
   }
-}, E = async (t, e) => typeof e == "function" ? e(t) : e, me = async (t, e) => {
+}, E = async (t, e) => typeof e == "function" ? e(t) : e, ge = async (t, e) => {
   const [r, a, o, i] = await Promise.all([
+    // @ts-ignore
     E(e, t.TOKEN),
+    // @ts-ignore
     E(e, t.USERNAME),
+    // @ts-ignore
     E(e, t.PASSWORD),
+    // @ts-ignore
     E(e, t.HEADERS)
   ]), c = Object.entries({
     Accept: "application/json",
     ...i,
     ...e.headers
-  }).filter(([, d]) => d != null).reduce((d, [T, l]) => ({
+  }).filter(([, d]) => d != null).reduce((d, [T, p]) => ({
     ...d,
-    [T]: String(l)
+    [T]: String(p)
   }), {});
-  if (U(r) && (c.Authorization = `Bearer ${r}`), U(a) && U(o)) {
-    const d = ce(`${a}:${o}`);
+  if (_(r) && (c.Authorization = `Bearer ${r}`), _(a) && _(o)) {
+    const d = me(`${a}:${o}`);
     c.Authorization = `Basic ${d}`;
   }
-  return e.body !== void 0 && (e.mediaType ? c["Content-Type"] = e.mediaType : k(e.body) ? c["Content-Type"] = e.body.type || "application/octet-stream" : M(e.body) ? c["Content-Type"] = "text/plain" : H(e.body) || (c["Content-Type"] = "application/json")), new Headers(c);
-}, le = (t) => {
+  return e.body !== void 0 && (e.mediaType ? c["Content-Type"] = e.mediaType : k(e.body) ? c["Content-Type"] = e.body.type || "application/octet-stream" : v(e.body) ? c["Content-Type"] = "text/plain" : J(e.body) || (c["Content-Type"] = "application/json")), new Headers(c);
+}, be = (t) => {
   var e, r;
   if (t.body !== void 0)
-    return (e = t.mediaType) != null && e.includes("application/json") || (r = t.mediaType) != null && r.includes("+json") ? JSON.stringify(t.body) : M(t.body) || k(t.body) || H(t.body) ? t.body : JSON.stringify(t.body);
-}, pe = async (t, e, r, a, o, i, c) => {
+    return (e = t.mediaType) != null && e.includes("application/json") || (r = t.mediaType) != null && r.includes("+json") ? JSON.stringify(t.body) : v(t.body) || k(t.body) || J(t.body) ? t.body : JSON.stringify(t.body);
+}, Te = async (t, e, r, a, o, i, c) => {
   const d = new AbortController();
   let T = {
     headers: i,
@@ -194,16 +194,16 @@ const M = (t) => typeof t == "string", U = (t) => M(t) && t !== "", k = (t) => t
     signal: d.signal
   };
   t.WITH_CREDENTIALS && (T.credentials = t.CREDENTIALS);
-  for (const l of t.interceptors.request._fns)
-    T = await l(T);
+  for (const p of t.interceptors.request._fns)
+    T = await p(T);
   return c(() => d.abort()), await fetch(r, T);
-}, ge = (t, e) => {
+}, Ge = (t, e) => {
   if (e) {
     const r = t.headers.get(e);
-    if (M(r))
+    if (v(r))
       return r;
   }
-}, be = async (t) => {
+}, fe = async (t) => {
   if (t.status !== 204)
     try {
       const e = t.headers.get("Content-Type");
@@ -221,7 +221,7 @@ const M = (t) => typeof t == "string", U = (t) => M(t) && t !== "", k = (t) => t
     } catch (e) {
       console.error(e);
     }
-}, Te = (t, e) => {
+}, ye = (t, e) => {
   const a = {
     400: "Bad Request",
     401: "Unauthorized",
@@ -266,7 +266,7 @@ const M = (t) => typeof t == "string", U = (t) => M(t) && t !== "", k = (t) => t
     ...t.errors
   }[e.status];
   if (a)
-    throw new N(t, e, a);
+    throw new $(t, e, a);
   if (!e.ok) {
     const o = e.status ?? "unknown", i = e.statusText ?? "unknown", c = (() => {
       try {
@@ -275,33 +275,36 @@ const M = (t) => typeof t == "string", U = (t) => M(t) && t !== "", k = (t) => t
         return;
       }
     })();
-    throw new N(
+    throw new $(
       t,
       e,
       `Generic Error: status: ${o}; status text: ${i}; body: ${c}`
     );
   }
-}, n = (t, e) => new ie(async (r, a, o) => {
+}, n = (t, e) => new ue(async (r, a, o) => {
   try {
-    const i = ue(t, e), c = he(e), d = le(e), T = await me(t, e);
+    const i = le(t, e), c = pe(e), d = be(e), T = await ge(t, e);
     if (!o.isCancelled) {
-      let l = await pe(t, e, i, d, c, T, o);
-      for (const Z of t.interceptors.response._fns)
-        l = await Z(l);
-      const Q = await be(l), X = ge(l, e.responseHeader), V = {
+      let p = await Te(t, e, i, d, c, T, o);
+      for (const ae of t.interceptors.response._fns)
+        p = await ae(p);
+      const N = await fe(p), re = Ge(p, e.responseHeader);
+      let P = N;
+      e.responseTransformer && p.ok && (P = await e.responseTransformer(N));
+      const O = {
         url: i,
-        ok: l.ok,
-        status: l.status,
-        statusText: l.statusText,
-        body: X ?? Q
+        ok: p.ok,
+        status: p.status,
+        statusText: p.statusText,
+        body: re ?? P
       };
-      Te(e, V), r(V.body);
+      ye(e, O), r(O.body);
     }
   } catch (i) {
     a(i);
   }
 });
-class g {
+class b {
   /**
    * @param data The data for the request.
    * @param data.cache
@@ -1077,36 +1080,58 @@ class g {
     });
   }
 }
-const F = (t, e, r) => e && r ? t.sort((a, o) => {
+var y = /* @__PURE__ */ ((t) => (t.ASCENDING = "Ascending", t.DESCENDING = "Descending", t))(y || {});
+const ve = (t, e, r) => e && r ? t.sort((a, o) => {
   const i = a[e], c = o[e];
-  return i < c ? r === G.ASCENDING ? -1 : 1 : i > c ? r === G.ASCENDING ? 1 : -1 : 0;
+  return i < c ? r === y.ASCENDING ? -1 : 1 : i > c ? r === y.ASCENDING ? 1 : -1 : 0;
 }) : t;
-var ye = Object.defineProperty, Ge = Object.getOwnPropertyDescriptor, h = (t, e, r, a) => {
-  for (var o = a > 1 ? void 0 : a ? Ge(e, r) : e, i = t.length - 1, c; i >= 0; i--)
+var Me = Object.defineProperty, Ae = Object.getOwnPropertyDescriptor, m = (t, e, r, a) => {
+  for (var o = a > 1 ? void 0 : a ? Ae(e, r) : e, i = t.length - 1, c; i >= 0; i--)
     (c = t[i]) && (o = (a ? c(e, r, o) : c(o)) || o);
-  return a && o && ye(e, r, o), o;
-}, fe = (t, e, r) => {
+  return a && o && Me(e, r, o), o;
+}, Ee = (t, e, r) => {
   if (!e.has(t))
     throw TypeError("Cannot " + r);
-}, y = (t, e, r) => {
+}, G = (t, e, r) => {
   if (e.has(t))
     throw TypeError("Cannot add the same private member more than once");
   e instanceof WeakSet ? e.add(t) : e.set(t, r);
-}, b = (t, e, r) => (fe(t, e, "access private method"), r), w, W, S, L, _, z, D, J, q, Y, f, A;
-let u = class extends I(P) {
+}, h = (t, e, r) => (Ee(t, e, "access private method"), r), w, K, q, Y, M, S, V, Q, D, X, R, Z, I, ee, f, A;
+let u = class extends B(j) {
   constructor() {
-    super(), y(this, w), y(this, S), y(this, _), y(this, D), y(this, q), y(this, f), this.data = void 0, this.filteredData = void 0, this.searchName = "", this.namespaces = [], this.selectedNamespace = "", this.inherits = [], this.selectedInherits = "", this.umbraco = [{ name: "Any", value: "", selected: !0 }, { name: "Yes", value: "yes" }, { name: "No", value: "no" }], this.selectedUmbraco = "", this.sortingDesc = !1, this.orderDirection = G.ASCENDING, this.orderBy = "name";
+    super(), G(this, w), G(this, q), G(this, M), G(this, V), G(this, D), G(this, R), G(this, I), G(this, f), this._tableConfig = {
+      allowSelection: !1,
+      hideIcon: !0
+    }, this._tableColumns = [
+      {
+        name: "Name",
+        alias: "name",
+        allowSorting: !0
+      },
+      {
+        name: "Module",
+        alias: "module",
+        allowSorting: !0
+      },
+      {
+        name: "Base Type",
+        alias: "baseType",
+        allowSorting: !0
+      },
+      {
+        name: "Umbraco?",
+        alias: "isUmbraco",
+        allowSorting: !0
+      }
+    ], this._tableItems = [], this.data = [], this.filteredData = [], this.searchName = "", this.namespaces = [], this.selectedNamespace = "", this.inherits = [], this.selectedInherits = "", this.umbraco = [{ name: "Any", value: "", selected: !0 }, { name: "Yes", value: "yes" }, { name: "No", value: "no" }], this.selectedUmbraco = "";
   }
   async connectedCallback() {
-    super.connectedCallback(), b(this, w, W).call(this);
-  }
-  _sortingHandler(t) {
-    this.sortingDesc = this.orderBy === t ? !this.sortingDesc : !1, this.orderBy = t, this.orderDirection = this.sortingDesc ? G.DESCENDING : G.ASCENDING, this.data && (this.data = F(this.data, t, this.orderDirection), this.filteredData = structuredClone(this.data));
+    super.connectedCallback(), h(this, q, Y).call(this);
   }
   render() {
-    return v`
+    return C`
             <umb-body-layout>
-                <godmode-header name=${$(this.name)} slot="header"></godmode-header>
+                <godmode-header name=${H(this.name)} slot="header"></godmode-header>
                 <uui-box>
                     <div class="grid">
                         <div>
@@ -1114,7 +1139,7 @@ let u = class extends I(P) {
                             <uui-input
                                 placeholder="Search names"
                                 .value=${this.searchName}
-                                @input=${b(this, S, L)}>
+                                @input=${h(this, V, Q)}>
                             </uui-input>
                         </div>
                         <div>
@@ -1122,7 +1147,7 @@ let u = class extends I(P) {
                             <uui-select
                                 .options=${this.namespaces}
                                 .value=${this.selectedNamespace}
-                                @change=${b(this, _, z)}>
+                                @change=${h(this, D, X)}>
                             </uui-select>
                         </div>
                         <div>
@@ -1130,7 +1155,7 @@ let u = class extends I(P) {
                             <uui-select
                                 .options=${this.inherits}
                                 .value=${this.selectedInherits}
-                                @change=${b(this, D, J)}>
+                                @change=${h(this, R, Z)}>
                             </uui-select>
                         </div>
                         <div>
@@ -1138,104 +1163,32 @@ let u = class extends I(P) {
                             <uui-select
                                 .options=${this.umbraco}
                                 .value=${this.selectedUmbraco}
-                                @change=${b(this, q, Y)}>
+                                @change=${h(this, I, ee)}>
                             </uui-select>
                         </div>
                     </div>
                 </uui-box>
 
-                <uui-box style="--uui-box-default-padding: 0;">
-                    <uui-table>
-                        <uui-table-column></uui-table-column>
-                        <uui-table-column></uui-table-column>
-                        <uui-table-column></uui-table-column>
-                        <uui-table-column></uui-table-column>
-
-                        <uui-table-head>
-                            <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                              <button
-                                label="Name"
-                                style="font-weight: 700;"
-                                @click=${() => this._sortingHandler("name")}>
-                                Name
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === "name"}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                            </uui-table-head-cell>
-                            <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                              <button
-                                label="Module"
-                                style="font-weight: 700;"
-                                @click=${() => this._sortingHandler("module")}>
-                                Module
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === "module"}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                            </uui-table-head-cell>
-                            <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                              <button
-                                label="Base Type"
-                                style="font-weight: 700;"
-                                @click=${() => this._sortingHandler("baseType")}>
-                                Base Type
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === "baseType"}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                            </uui-table-head-cell>
-                            <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                              <button
-                                label="Umbraco?"
-                                style="font-weight: 700;"
-                                @click=${() => this._sortingHandler("isUmbraco")}>
-                                Umbraco?
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === "isUmbraco"}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                            </uui-table-head-cell>
-                        </uui-table-head>
-
-                        ${te(
-      this.filteredData,
-      (t) => t.name,
-      (t) => v`
-                                    <uui-table-row>
-                                        <uui-table-cell>
-                                            <strong>${t.name}</strong>
-                                        </uui-table-cell>
-                                        <uui-table-cell>
-                                            <code>${t.module}</code>
-                                        </uui-table-cell>
-                                        <uui-table-cell>
-                                            ${t.baseType}
-                                        </uui-table-cell>
-                                        <uui-table-cell>
-                                            <div class="inline-flex">
-                                                ${t.isUmbraco ? v`<uui-icon name="icon-checkbox"></uui-icon> Yes` : v`<uui-icon name="icon-checkbox-empty"></uui-icon> No`}
-                                            </div>
-                                        </uui-table-cell>
-                                    </uui-table-row>
-                                `
-    )}
-                    </uui-table>
-                </uui-box>
+                ${this._tableItems.length !== 0 ? C`
+                        <uui-box style="--uui-box-default-padding: 0;">
+                            <umb-table .config=${this._tableConfig} .columns=${this._tableColumns} .items=${this._tableItems} @ordered=${h(this, w, K)} />
+                        </uui-box>
+                    ` : C``}
             </umb-body-layout>
         `;
   }
 };
 w = /* @__PURE__ */ new WeakSet();
-W = async function() {
+K = function(t) {
+  const e = t.target, r = e.orderingColumn, a = e.orderingDesc;
+  this.filteredData = ve(structuredClone(this.data), r, a ? y.DESCENDING : y.ASCENDING), this._tableItems = h(this, M, S).call(this, this.filteredData);
+};
+q = /* @__PURE__ */ new WeakSet();
+Y = async function() {
   if (this.type) {
     let t = {};
-    if (this.type === "surface" && (this.name = "Surface Controller Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetSurfaceControllers())), this.type === "api" && (this.name = "API Controller Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetApiControllers())), this.type === "render" && (this.name = "RenderMvc Controller Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetRenderMvcControllers())), this.type === "models" && (this.name = "Published Content Model Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetPublishedContentModels())), this.type === "composers" && (this.name = "Composer Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetComposers())), this.type === "converters" && (this.name = "Property Value Converter Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetRenderMvcControllers())), this.type === "components" && (this.name = "View Component Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetViewComponents())), this.type === "taghelpers" && (this.name = "Tag Helpers Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetTagHelpers())), this.type === "finders" && (this.name = "Content Finders Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetContentFinders())), this.type === "urlproviders" && (this.name = "URL Providers Browser", t = await p(this, g.getUmbracoManagementApiV1GodModeGetUrlProviders())), t && t.data) {
-      this.data = t.data, this.filteredData = F(structuredClone(this.data), "name", this.orderDirection);
+    if (this.type === "surface" && (this.name = "Surface Controller Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetSurfaceControllers())), this.type === "api" && (this.name = "API Controller Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetApiControllers())), this.type === "render" && (this.name = "RenderMvc Controller Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetRenderMvcControllers())), this.type === "models" && (this.name = "Published Content Model Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetPublishedContentModels())), this.type === "composers" && (this.name = "Composer Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetComposers())), this.type === "converters" && (this.name = "Property Value Converter Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetRenderMvcControllers())), this.type === "components" && (this.name = "View Component Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetViewComponents())), this.type === "taghelpers" && (this.name = "Tag Helpers Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetTagHelpers())), this.type === "finders" && (this.name = "Content Finders Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetContentFinders())), this.type === "urlproviders" && (this.name = "URL Providers Browser", t = await g(this, b.getUmbracoManagementApiV1GodModeGetUrlProviders())), t && t.data) {
+      this.data = t.data, this.filteredData = structuredClone(this.data), this._tableItems = h(this, M, S).call(this, this.filteredData);
       let e = [...new Set(this.data.map((a) => a.namespace))];
       this.namespaces = e.map((a) => ({ name: a, value: a })), this.namespaces.unshift({ name: "Any", value: "", selected: !0 });
       let r = [...new Set(this.data.map((a) => a.baseType))];
@@ -1243,33 +1196,57 @@ W = async function() {
     }
   }
 };
-S = /* @__PURE__ */ new WeakSet();
-L = function(t) {
-  const e = t.target.value;
-  this.searchName = e, b(this, f, A).call(this);
+M = /* @__PURE__ */ new WeakSet();
+S = function(t) {
+  return t.map((e) => ({
+    id: e.name,
+    data: [
+      {
+        columnAlias: "name",
+        value: e.name
+      },
+      {
+        columnAlias: "module",
+        value: e.module
+      },
+      {
+        columnAlias: "baseType",
+        value: e.baseType
+      },
+      {
+        columnAlias: "isUmbraco",
+        value: e.isUmbraco
+      }
+    ]
+  }));
 };
-_ = /* @__PURE__ */ new WeakSet();
-z = function(t) {
+V = /* @__PURE__ */ new WeakSet();
+Q = function(t) {
   const e = t.target.value;
-  this.selectedNamespace = e, b(this, f, A).call(this);
+  this.searchName = e, h(this, f, A).call(this);
 };
 D = /* @__PURE__ */ new WeakSet();
-J = function(t) {
+X = function(t) {
   const e = t.target.value;
-  this.selectedInherits = e, b(this, f, A).call(this);
+  this.selectedNamespace = e, h(this, f, A).call(this);
 };
-q = /* @__PURE__ */ new WeakSet();
-Y = function(t) {
+R = /* @__PURE__ */ new WeakSet();
+Z = function(t) {
   const e = t.target.value;
-  this.selectedUmbraco = e, b(this, f, A).call(this);
+  this.selectedInherits = e, h(this, f, A).call(this);
+};
+I = /* @__PURE__ */ new WeakSet();
+ee = function(t) {
+  const e = t.target.value;
+  this.selectedUmbraco = e, h(this, f, A).call(this);
 };
 f = /* @__PURE__ */ new WeakSet();
 A = function() {
   var t, e, r, a;
-  this.filteredData = structuredClone(this.data), this.searchName !== "" && (this.filteredData = (t = this.filteredData) == null ? void 0 : t.filter((o) => o.name.toLowerCase().includes(this.searchName))), this.selectedNamespace !== "" && (this.filteredData = (e = this.filteredData) == null ? void 0 : e.filter((o) => o.namespace === this.selectedNamespace)), this.selectedInherits !== "" && (this.filteredData = (r = this.filteredData) == null ? void 0 : r.filter((o) => o.baseType === this.selectedInherits)), this.selectedUmbraco !== "" && (this.filteredData = (a = this.filteredData) == null ? void 0 : a.filter((o) => o.isUmbraco === (this.selectedUmbraco === "Yes")));
+  this.filteredData = structuredClone(this.data), this.searchName !== "" && (this.filteredData = (t = this.filteredData) == null ? void 0 : t.filter((o) => o.name.toLowerCase().includes(this.searchName))), this.selectedNamespace !== "" && (this.filteredData = (e = this.filteredData) == null ? void 0 : e.filter((o) => o.namespace === this.selectedNamespace)), this.selectedInherits !== "" && (this.filteredData = (r = this.filteredData) == null ? void 0 : r.filter((o) => o.baseType === this.selectedInherits)), this.selectedUmbraco !== "" && (this.filteredData = (a = this.filteredData) == null ? void 0 : a.filter((o) => o.isUmbraco === (this.selectedUmbraco === "Yes"))), this.filteredData ? this._tableItems = h(this, M, S).call(this, this.filteredData) : this._tableItems = [];
 };
 u.styles = [
-  O`
+  F`
             .grid {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -1294,86 +1271,71 @@ u.styles = [
                     margin-right: 6px;
                 }
             }
-
-            uui-table-head-cell button {
-                padding: var(--uui-size-4) var(--uui-size-5);
-                background-color: transparent;
-                color: inherit;
-                border: none;
-                cursor: pointer;
-                font-family: var(--uui-font-family);
-                font-weight: inherit;
-                font-size: inherit;
-                display: inline-flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-            }
         `
 ];
-h([
-  x({ type: String })
+m([
+  l()
+], u.prototype, "_tableConfig", 2);
+m([
+  l()
+], u.prototype, "_tableColumns", 2);
+m([
+  l()
+], u.prototype, "_tableItems", 2);
+m([
+  W({ type: String })
 ], u.prototype, "type", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "name", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "data", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "filteredData", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "searchName", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "namespaces", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "selectedNamespace", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "inherits", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "selectedInherits", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "umbraco", 2);
-h([
-  m()
+m([
+  l()
 ], u.prototype, "selectedUmbraco", 2);
-h([
-  m()
-], u.prototype, "sortingDesc", 2);
-h([
-  m()
-], u.prototype, "orderDirection", 2);
-h([
-  m()
-], u.prototype, "orderBy", 2);
-u = h([
-  B("godmode-reflection-browser")
+u = m([
+  L("godmode-reflection-browser")
 ], u);
-const Oe = u, ve = {
+const He = u, Ce = {
   type: "workspace",
   alias: "Umb.Workspace.GodModeRoot",
   name: "GodMode Root Workspace",
-  element: () => import("./godmode-root-workspace.element-DXDQDUkf.js"),
+  element: () => import("./godmode-root-workspace.element-BUP6s2rL.js"),
   meta: {
     entityType: "godmode-root"
   }
-}, Me = [ve], K = {
+}, Ue = [Ce], te = {
   type: "workspace",
   kind: "routable",
   alias: "Umb.Workspace.GodMode",
   name: "God Mode Workspace",
-  api: () => import("./godmode-workspace.context-CETJZUKK.js"),
+  api: () => import("./godmode-workspace.context-v39mK39c.js"),
   meta: {
     entityType: "godmode"
   }
-}, Ae = {
+}, Se = {
   type: "workspaceView",
   alias: "Umb.WorkspaceView.GodMode.View",
   name: "God Mode Workspace View",
@@ -1387,25 +1349,25 @@ const Oe = u, ve = {
   conditions: [
     {
       alias: "Umb.Condition.WorkspaceAlias",
-      match: K.alias
+      match: te.alias
     }
   ]
-}, Ee = [
-  K,
-  Ae
-], Ce = {
+}, _e = [
+  te,
+  Se
+], we = {
   type: "workspace",
   alias: "Umb.Workspace.GodModeFolder",
   name: "GodMode Folder Workspace",
-  element: () => import("./godmode-folder-workspace.element-BbNADPy5.js"),
+  element: () => import("./godmode-folder-workspace.element-WdXbKKNt.js"),
   meta: {
     entityType: "godmode-folder"
   }
-}, Ue = [Ce], we = [
-  ...Me,
-  ...Ee,
-  ...Ue
-], Se = [
+}, qe = [we], Ve = [
+  ...Ue,
+  ..._e,
+  ...qe
+], De = [
   {
     type: "menuItem",
     kind: "tree",
@@ -1420,17 +1382,17 @@ const Oe = u, ve = {
       menus: ["Umb.Menu.AdvancedSettings"]
     }
   }
-], _e = {
+], Re = {
   type: "repository",
-  alias: re,
+  alias: se,
   name: "God Mode Tree Repository",
   api: () => import("./godmode-tree.repository-COqMNRyt.js")
-}, De = {
+}, Ie = {
   type: "treeStore",
-  alias: ae,
+  alias: ne,
   name: "God Mode Tree Store",
   api: () => import("./godmode-tree.store-CYDCLcEv.js")
-}, qe = {
+}, ke = {
   type: "tree",
   kind: "default",
   alias: "Umb.Tree.GodMode",
@@ -1438,23 +1400,23 @@ const Oe = u, ve = {
   meta: {
     repositoryAlias: "Umb.Repository.GodMode.Tree"
   }
-}, ke = {
+}, Ne = {
   type: "treeItem",
   kind: "default",
   alias: "Umb.TreeItem.GodMode",
   name: "God Mode Tree Item",
   forEntityTypes: ["godmode-root", "godmode", "godmode-folder"]
-}, Ve = [
-  _e,
-  De,
-  qe,
-  ke
-], xe = (t, e) => {
+}, Pe = [
+  Re,
+  Ie,
+  ke,
+  Ne
+], Fe = (t, e) => {
   e.registerMany([
-    ...we,
-    ...Se,
-    ...Ve
-  ]), t.consumeContext(ee, async (r) => {
+    ...Ve,
+    ...De,
+    ...Pe
+  ]), t.consumeContext(oe, async (r) => {
     if (!r)
       return;
     const a = r.getOpenApiConfiguration();
@@ -1462,15 +1424,15 @@ const Oe = u, ve = {
   });
 };
 export {
-  G as D,
-  g as G,
-  Oe as a,
-  $e as b,
-  re as c,
-  ae as d,
-  C as e,
+  y as D,
+  b as G,
+  He as a,
+  je as b,
+  se as c,
+  ne as d,
+  U as e,
   u as f,
-  xe as o,
-  F as s
+  Fe as o,
+  ve as s
 };
-//# sourceMappingURL=index-DIYzpCy4.js.map
+//# sourceMappingURL=index-C2dn3IU5.js.map

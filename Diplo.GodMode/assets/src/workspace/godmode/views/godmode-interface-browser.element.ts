@@ -1,121 +1,172 @@
 import { customElement, html, css, state, repeat } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
-import { DirectionModel, DirectionModelEnum, GodModeService, NameValue, TypeMap } from "../../../api";
+import { DirectionModel, GodModeService, NameValue, TypeMap } from "../../../api";
 import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
 import { UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
-import { sortTypeMapData } from "../../../helpers/sort";
+import { sortData } from "../../../helpers/sort";
+import { UmbTableColumn, UmbTableConfig, UmbTableElement, UmbTableItem, UmbTableOrderedEvent } from "@umbraco-cms/backoffice/components";
 
 @customElement('godmode-interface-browser')
 export class GodModeInterfaceBrowserElement extends UmbLitElement {
-  @state()
-  assemblies: Array<NameValue> = [];
 
-  @state()
-  assemblyOptions: Array<Option> = [];
-
-  @state()
-  currentAssembly: NameValue | undefined = undefined;
-
-  @state()
-  currentAssemblyOption: string = '';
-
-  @state()
-  interfaces: Array<TypeMap> = [];
-
-  @state()
-  interfaceOptions: Array<Option> = [];
-
-  @state()
-  currentInterface: TypeMap | undefined = undefined;
-
-  @state()
-  currentInterfaceOption: string = '';
-
-  @state()
-  types: Array<TypeMap> = [];
-
-  @state()
-  sortingDesc: boolean = false;
-
-  @state()
-  orderDirection: DirectionModel = DirectionModelEnum.ASCENDING;
-
-  @state()
-  orderBy: string = 'name';
-
-  constructor() {
-    super();
-    this.#loadAssemblies();
-  }
-
-  private _sortingHandler(column: keyof TypeMap) {
-    this.sortingDesc = this.orderBy === column ? !this.sortingDesc : false;
-    this.orderBy = column;
-
-    this.orderDirection = this.sortingDesc ? DirectionModelEnum.DESCENDING : DirectionModelEnum.ASCENDING;
-
-    if (this.types) {
-      this.types = sortTypeMapData<TypeMap>(this.types, column, this.orderDirection);
+    @state()
+    private _tableConfig: UmbTableConfig = {
+        allowSelection: false,
+        hideIcon: true
     }
-  }
 
-  async #loadAssemblies() {
-    const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetAssemblies());
+    @state()
+    private _tableColumns: Array<UmbTableColumn> = [
+        {
+            name: 'Implemented By',
+            alias: 'name',
+            allowSorting: true
+        },
+        {
+            name: 'Namespace',
+            alias: 'namespace',
+            allowSorting: true
+        },
+        {
+            name: 'Module',
+            alias: 'module',
+            allowSorting: true
+        },
+        {
+            name: 'Base Type',
+            alias: 'baseType',
+            allowSorting: true
+        }
+    ];
 
-    if (data) {
-      this.assemblies = data;
+    @state()
+    private _tableItems: Array<UmbTableItem> = [];
 
-      this.assemblyOptions = this.assemblies.map((assembly) => ({ name: assembly.name, value: assembly.name }));
-      this.assemblyOptions.unshift({ name: 'Please select', value: '' })
+    @state()
+    assemblies: Array<NameValue> = [];
+
+    @state()
+    assemblyOptions: Array<Option> = [];
+
+    @state()
+    currentAssembly: NameValue | undefined = undefined;
+
+    @state()
+    currentAssemblyOption: string = '';
+
+    @state()
+    interfaces: Array<TypeMap> = [];
+
+    @state()
+    interfaceOptions: Array<Option> = [];
+
+    @state()
+    currentInterface: TypeMap | undefined = undefined;
+
+    @state()
+    currentInterfaceOption: string = '';
+
+    @state()
+    types: Array<TypeMap> = [];
+
+    constructor() {
+        super();
+        this.#loadAssemblies();
     }
-  }
 
-  async #getInterfaces(event: UUISelectEvent) {
-    this.currentAssemblyOption = event.target.value as string;
-    
-    if (this.currentAssemblyOption !== '') {
-      this.currentAssembly = this.assemblies.find(x => x.name === this.currentAssemblyOption);
+    #sortingHandler(event: UmbTableOrderedEvent) {
+        const table = event.target as UmbTableElement;
+        const orderingColumn = table.orderingColumn as keyof TypeMap;
+        const orderingDesc = table.orderingDesc;
 
-      const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetInterfacesFrom({ assembly: this.currentAssemblyOption }));
-
-      if (data) {
-        this.interfaces = data;
-
-        this.interfaceOptions = this.interfaces.map((int) => ({ name: int.name, value: int.name }));
-        this.interfaceOptions.unshift({ name: 'Please select', value: '' });
-      }
+        this.types = sortData(this.types, orderingColumn, orderingDesc ? DirectionModel.DESCENDING : DirectionModel.ASCENDING);
+        this._tableItems = this.#mapData(this.types);
     }
-    else {
-      this.currentAssembly = undefined;
-      this.currentInterface = undefined;
-      this.currentInterfaceOption = '';
-      this.interfaces = [];
-      this.interfaceOptions = [];
-    }
-  }
 
-  async #getTypes(event: UUISelectEvent) {
-    this.currentInterfaceOption = event.target.value as string;
-
-    if (this.currentInterfaceOption !== '') {
-      this.currentInterface = this.interfaces.find(x => x.name === this.currentInterfaceOption);
-
-      if (this.currentInterface) {
-        const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetTypesAssignableFrom({ baseType: this.currentInterface.loadableName }));
+    async #loadAssemblies() {
+        const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetAssemblies());
 
         if (data) {
-          this.types = data;
-        }
-      }
-    }
-    else {
-      this.currentInterface = undefined;
-      this.types = [];
-    }
-  }
+            this.assemblies = data;
 
-  render() {
-    return html`
+            this.assemblyOptions = this.assemblies.map((assembly) => ({ name: assembly.name, value: assembly.name }));
+            this.assemblyOptions.unshift({ name: 'Please select', value: '' })
+        }
+    }
+
+    async #getInterfaces(event: UUISelectEvent) {
+        this.currentAssemblyOption = event.target.value as string;
+
+        if (this.currentAssemblyOption !== '') {
+            this.currentAssembly = this.assemblies.find(x => x.name === this.currentAssemblyOption);
+
+            const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetInterfacesFrom({ assembly: this.currentAssemblyOption }));
+
+            if (data) {
+                this.interfaces = data;
+
+                this.interfaceOptions = this.interfaces.map((int) => ({ name: int.name, value: int.name }));
+                this.interfaceOptions.unshift({ name: 'Please select', value: '' });
+            }
+        }
+        else {
+            this.currentAssembly = undefined;
+            this.currentInterface = undefined;
+            this.currentInterfaceOption = '';
+            this.interfaces = [];
+            this.interfaceOptions = [];
+        }
+    }
+
+    async #getTypes(event: UUISelectEvent) {
+        this.currentInterfaceOption = event.target.value as string;
+
+        if (this.currentInterfaceOption !== '') {
+            this.currentInterface = this.interfaces.find(x => x.name === this.currentInterfaceOption);
+
+            if (this.currentInterface) {
+                const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetTypesAssignableFrom({ baseType: this.currentInterface.loadableName }));
+
+                if (data) {
+                    this.types = data;
+                    this._tableItems = this.#mapData(this.types);
+                }
+            }
+        }
+        else {
+            this.currentInterface = undefined;
+            this.types = [];
+        }
+    }
+
+    #mapData(data: TypeMap[]): UmbTableItem[] {
+        return data.map((data) => {
+            return {
+                id: data.name,
+                data: [
+                    {
+                        columnAlias: 'name',
+                        value: data.name
+                    },
+                    {
+                        columnAlias: 'namespace',
+                        value: data.namespace
+                    },
+                    {
+                        columnAlias: 'module',
+                        value: data.module
+                    },
+                    {
+                        columnAlias: 'baseType',
+                        value: data.baseType
+                    }
+                ]
+            }
+        });
+    }
+
+    render() {
+        return html`
       <umb-body-layout>
         <godmode-header name="Interface Browser" slot="header"></godmode-header>
 
@@ -142,99 +193,38 @@ export class GodModeInterfaceBrowserElement extends UmbLitElement {
                       </uui-select>
                   </div>
               ` : html``
-              }
+            }
           </div>
         </uui-box>
 
-        ${this.currentAssemblyOption === '' ? 
-          html`
+        ${this.currentAssemblyOption === '' ?
+                html`
             <uui-box>Please select an Assembly (above) and then the Interface you wish to browse. You will then see all types that implement the Interface.</uui-box>
           `
-          :
-          html`
+                :
+                html`
             <h5>${this.currentAssembly?.value}</h5>
 
             ${this.types.length !== 0 ?
-              html`
+                        html`
                 <uui-box style="--uui-box-default-padding: 0;">
-                  <uui-table>
-                      <uui-table-head>
-                          <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                            <button
-                            label="Implemented By"
-                            style="font-weight: 700; padding: var(--uui-size-4) var(--uui-size-5);"
-                            @click=${() => this._sortingHandler('name')}>
-                                Implemented By
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === 'name'}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                            </uui-table-head-cell>
-                          <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                            <button
-                                label="Namespace"
-                                style="font-weight: 700; padding: var(--uui-size-4) var(--uui-size-5);"
-                                @click=${() => this._sortingHandler('namespace')}>
-                                Namespace
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === 'namespace'}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                          </uui-table-head-cell>
-                          <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                            <button
-                                label="Module"
-                                style="font-weight: 700; padding: var(--uui-size-4) var(--uui-size-5);"
-                                @click=${() => this._sortingHandler('module')}>
-                                Module
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === 'module'}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                          </uui-table-head-cell>
-                          <uui-table-head-cell style="--uui-table-cell-padding: 0">
-                            <button
-                                label="Base Type"
-                                style="font-weight: 700; padding: var(--uui-size-4) var(--uui-size-5);"
-                                @click=${() => this._sortingHandler('baseType')}>
-                                Base Type
-                                <uui-symbol-sort
-                                  ?active=${this.orderBy === 'baseType'}
-                                  ?descending=${this.sortingDesc}>
-                                </uui-symbol-sort>
-                              </button>
-                          </uui-table-head-cell>
-                      </uui-table-head>
-
-                      ${repeat(
-                        this.types,
-                        (type) => type.name,
-                        (type) => html`
-                              <uui-table-row>
-                                  <uui-table-cell>${type.name}</uui-table-cell>
-                                  <uui-table-cell>${type.namespace}</uui-table-cell>
-                                  <uui-table-cell><code>${type.module}</code></uui-table-cell>
-                                  <uui-table-cell>${type.baseType}</uui-table-cell>
-                              </uui-table-row>
-                          `
-                      )}
-                  </uui-table>
+                  ${this._tableItems.length !== 0 ?
+                                html`
+                        <uui-box style="--uui-box-default-padding: 0;">
+                            <umb-table .config=${this._tableConfig} .columns=${this._tableColumns} .items=${this._tableItems} @ordered=${this.#sortingHandler} />
+                        </uui-box>
+                    ` : html``}
                 </uui-box>
-              `
-              :
-              html``
-            }
+              ` : html``
+                    }
           `
-        }
+            }
       </umb-body-layout>
     `
-  }
+    }
 
-  static styles = [
-    css`
+    static styles = [
+        css`
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -266,13 +256,13 @@ export class GodModeInterfaceBrowserElement extends UmbLitElement {
             width: 100%;
         }
     `
-  ]
+    ]
 }
 
 export default GodModeInterfaceBrowserElement;
 
 declare global {
-  interface HTMLElementTagNameMap {
-    'godmode-interface-browser': GodModeInterfaceBrowserElement;
-  }
+    interface HTMLElementTagNameMap {
+        'godmode-interface-browser': GodModeInterfaceBrowserElement;
+    }
 }
