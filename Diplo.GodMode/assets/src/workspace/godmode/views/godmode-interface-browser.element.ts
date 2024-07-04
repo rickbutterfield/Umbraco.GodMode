@@ -1,4 +1,4 @@
-import { customElement, html, css, state, repeat } from "@umbraco-cms/backoffice/external/lit";
+import { customElement, html, css, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 import { DirectionModel, GodModeService, NameValue, TypeMap } from "../../../api";
 import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";

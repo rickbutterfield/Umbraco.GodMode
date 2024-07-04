@@ -273,7 +273,7 @@ export class GodModeServicesBrowserElement extends UmbElementMixin(LitElement) {
                             <uui-label>Visibility:</uui-label>
                             <umb-input-toggle
                                 .checked=${this.visibility}
-                                showLabels="true"
+                                ?showLabels=${true}
                                 labelOn="Public"
                                 labelOff="Any"
                                 @change=${this.#setVisibility}>

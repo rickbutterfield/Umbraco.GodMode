@@ -1,8 +1,8 @@
 import { UmbElementMixin as M } from "@umbraco-cms/backoffice/element-api";
 import { LitElement as O, html as v, css as P, state as r, customElement as V } from "@umbraco-cms/backoffice/external/lit";
 import { tryExecuteAndNotify as B } from "@umbraco-cms/backoffice/resources";
-import { s as H, G as T } from "./index-C2dn3IU5.js";
-import { DirectionModel as C } from "@umbraco-cms/backoffice/external/backend-api";
+import { s as H, G as T } from "./index-PYLMTfOZ.js";
+import { DirectionModel as $ } from "@umbraco-cms/backoffice/external/backend-api";
 var U = Object.defineProperty, R = Object.getOwnPropertyDescriptor, n = (t, e, l, c) => {
   for (var i = c > 1 ? void 0 : c ? R(e, l) : e, d = t.length - 1, m; d >= 0; d--)
     (m = t[d]) && (i = (c ? m(e, l, i) : m(i)) || i);
@@ -14,7 +14,7 @@ var U = Object.defineProperty, R = Object.getOwnPropertyDescriptor, n = (t, e, l
   if (e.has(t))
     throw TypeError("Cannot add the same private member more than once");
   e instanceof WeakSet ? e.add(t) : e.set(t, l);
-}, s = (t, e, l) => (j(t, e, "access private method"), l), b, $, N, x, p, f, g, L, _, A, y, k, S, E, w, W, D, G, o, u;
+}, s = (t, e, l) => (j(t, e, "access private method"), l), b, C, N, x, p, f, g, L, _, A, y, k, S, E, w, W, D, G, o, u;
 let a = class extends M(O) {
   constructor() {
     super(), h(this, b), h(this, N), h(this, p), h(this, g), h(this, _), h(this, y), h(this, S), h(this, w), h(this, D), h(this, o), this._tableConfig = {
@@ -106,7 +106,7 @@ let a = class extends M(O) {
                             <uui-label>Visibility:</uui-label>
                             <umb-input-toggle
                                 .checked=${this.visibility}
-                                showLabels="true"
+                                ?showLabels=${!0}
                                 labelOn="Public"
                                 labelOff="Any"
                                 @change=${s(this, D, G)}>
@@ -117,7 +117,7 @@ let a = class extends M(O) {
 
                 ${this._tableItems.length !== 0 ? v`
                     <uui-box style="--uui-box-default-padding: 0;">
-                        <umb-table .config=${this._tableConfig} .columns=${this._tableColumns} .items=${this._tableItems} @ordered=${s(this, b, $)} />
+                        <umb-table .config=${this._tableConfig} .columns=${this._tableColumns} .items=${this._tableItems} @ordered=${s(this, b, C)} />
                     </uui-box>
                 ` : v``}
             </umb-body-layout>
@@ -125,9 +125,9 @@ let a = class extends M(O) {
   }
 };
 b = /* @__PURE__ */ new WeakSet();
-$ = function(t) {
+C = function(t) {
   const e = t.target, l = e.orderingColumn, c = e.orderingDesc;
-  this.filteredData = H(structuredClone(this.data), l, c ? C.DESCENDING : C.ASCENDING), this._tableItems = s(this, p, f).call(this, this.filteredData);
+  this.filteredData = H(structuredClone(this.data), l, c ? $.DESCENDING : $.ASCENDING), this._tableItems = s(this, p, f).call(this, this.filteredData);
 };
 N = /* @__PURE__ */ new WeakSet();
 x = async function() {
@@ -286,4 +286,4 @@ export {
   a as GodModeServicesBrowserElement,
   Q as default
 };
-//# sourceMappingURL=godmode-services-browser.element-DsGlppC5.js.map
+//# sourceMappingURL=godmode-services-browser.element-CKZfR4u8.js.map

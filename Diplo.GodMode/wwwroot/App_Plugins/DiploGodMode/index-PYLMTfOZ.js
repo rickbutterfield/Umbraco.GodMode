@@ -1322,7 +1322,7 @@ const He = u, Ce = {
   type: "workspace",
   alias: "Umb.Workspace.GodModeRoot",
   name: "GodMode Root Workspace",
-  element: () => import("./godmode-root-workspace.element-BUP6s2rL.js"),
+  element: () => import("./godmode-root-workspace.element-CFBru0Ex.js"),
   meta: {
     entityType: "godmode-root"
   }
@@ -1331,7 +1331,7 @@ const He = u, Ce = {
   kind: "routable",
   alias: "Umb.Workspace.GodMode",
   name: "God Mode Workspace",
-  api: () => import("./godmode-workspace.context-v39mK39c.js"),
+  api: () => import("./godmode-workspace.context-DDcdss3X.js"),
   meta: {
     entityType: "godmode"
   }
@@ -1359,7 +1359,7 @@ const He = u, Ce = {
   type: "workspace",
   alias: "Umb.Workspace.GodModeFolder",
   name: "GodMode Folder Workspace",
-  element: () => import("./godmode-folder-workspace.element-WdXbKKNt.js"),
+  element: () => import("./godmode-folder-workspace.element-BeG7peiT.js"),
   meta: {
     entityType: "godmode-folder"
   }
@@ -1435,4 +1435,4 @@ export {
   Fe as o,
   ve as s
 };
-//# sourceMappingURL=index-C2dn3IU5.js.map
+//# sourceMappingURL=index-PYLMTfOZ.js.map

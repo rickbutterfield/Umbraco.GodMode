@@ -1,7 +1,7 @@
 import { tryExecuteAndNotify as c } from "@umbraco-cms/backoffice/resources";
 import { html as C, css as T, state as l, customElement as M } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement as P } from "@umbraco-cms/backoffice/lit-element";
-import { G as p } from "./index-C2dn3IU5.js";
+import { G as p } from "./index-PYLMTfOZ.js";
 import { UMB_NOTIFICATION_CONTEXT as A } from "@umbraco-cms/backoffice/notification";
 import { UmbLanguageCollectionRepository as $ } from "@umbraco-cms/backoffice/language";
 var x = Object.defineProperty, E = Object.getOwnPropertyDescriptor, u = (e, t, i, a) => {
@@ -205,4 +205,4 @@ export {
   s as GodModeUtilityBrowserElement,
   q as default
 };
-//# sourceMappingURL=godmode-utility-browser.element-DK3aDtes.js.map
+//# sourceMappingURL=godmode-utility-browser.element-DI5IDqjW.js.map

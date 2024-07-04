@@ -1,6 +1,6 @@
 import { html as r, css as $, state as n, customElement as C } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement as S } from "@umbraco-cms/backoffice/lit-element";
-import { s as D, D as I, G as g } from "./index-C2dn3IU5.js";
+import { s as D, D as I, G as g } from "./index-PYLMTfOZ.js";
 import { tryExecuteAndNotify as v } from "@umbraco-cms/backoffice/resources";
 var G = Object.defineProperty, M = Object.getOwnPropertyDescriptor, a = (t, e, s, l) => {
   for (var o = l > 1 ? void 0 : l ? M(e, s) : e, p = t.length - 1, h; p >= 0; p--)
@@ -223,4 +223,4 @@ export {
   i as GodModeInterfaceBrowserElement,
   B as default
 };
-//# sourceMappingURL=godmode-interface-browser.element-Don4b7T6.js.map
+//# sourceMappingURL=godmode-interface-browser.element-B85Y6GMq.js.map

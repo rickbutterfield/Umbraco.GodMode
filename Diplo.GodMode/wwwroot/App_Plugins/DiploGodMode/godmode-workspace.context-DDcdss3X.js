@@ -1,5 +1,5 @@
 import { UmbDefaultWorkspaceContext as p, UmbWorkspaceRouteManager as i } from "@umbraco-cms/backoffice/workspace";
-import { a as n } from "./index-C2dn3IU5.js";
+import { a as n } from "./index-PYLMTfOZ.js";
 class c extends p {
   constructor(t) {
     super(t), this.routes = new i(this), this.routes.setRoutes([
@@ -9,11 +9,11 @@ class c extends p {
       },
       {
         path: "edit/templateBrowser",
-        component: () => import("./godmode-template-browser.element-wSUng6iN.js")
+        component: () => import("./godmode-template-browser.element-6VMGtxq1.js")
       },
       {
         path: "edit/partialBrowser",
-        component: () => import("./godmode-partial-browser.element-qbU1KxtH.js")
+        component: () => import("./godmode-partial-browser.element-DYtdHMMG.js")
       },
       {
         path: "edit/dataTypeBrowser",
@@ -41,15 +41,15 @@ class c extends p {
       },
       {
         path: "edit/serviceBrowser",
-        component: () => import("./godmode-services-browser.element-DsGlppC5.js")
+        component: () => import("./godmode-services-browser.element-CKZfR4u8.js")
       },
       {
         path: "edit/diagnosticBrowser",
-        component: () => import("./godmode-diagnostic-browser.element-B--XD2vz.js")
+        component: () => import("./godmode-diagnostic-browser.element-RNIMkQ-0.js")
       },
       {
         path: "edit/utilityBrowser",
-        component: () => import("./godmode-utility-browser.element-DK3aDtes.js")
+        component: () => import("./godmode-utility-browser.element-DI5IDqjW.js")
       },
       {
         path: "edit/reflectionBrowser/:unique",
@@ -61,7 +61,7 @@ class c extends p {
       },
       {
         path: "edit/typeBrowser",
-        component: () => import("./godmode-interface-browser.element-Don4b7T6.js")
+        component: () => import("./godmode-interface-browser.element-B85Y6GMq.js")
       }
     ]);
   }
@@ -70,4 +70,4 @@ export {
   c as GodModeWorkspaceContext,
   c as api
 };
-//# sourceMappingURL=godmode-workspace.context-v39mK39c.js.map
+//# sourceMappingURL=godmode-workspace.context-DDcdss3X.js.map
