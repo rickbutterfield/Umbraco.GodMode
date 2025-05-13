@@ -1,41 +1,34 @@
-﻿import { ManifestRepository, ManifestTree, ManifestTreeItem, ManifestTreeStore, ManifestTypes } from "@umbraco-cms/backoffice/extension-registry";
-import { GOD_MODE_TREE_STORE_ALIAS, GOD_MODE_TREE_REPOSITORY_ALIAS } from "../constants";
+﻿import { GOD_MODE_TREE_ALIAS, GOD_MODE_TREE_REPOSITORY_ALIAS, GOD_MODE_TREE_STORE_ALIAS } from "../constants";
+export { GodModeTreeDataSource } from './godmode-tree.data-source';
+export { GOD_MODE_TREE_STORE_CONTEXT } from './godmode-tree.store';
 
-const treeRepository: ManifestRepository = {
-	type: 'repository',
-	alias: GOD_MODE_TREE_REPOSITORY_ALIAS,
-	name: 'God Mode Tree Repository',
-	api: () => import('./godmode-tree.repository'),
-};
-
-const treeStore: ManifestTreeStore = {
-	type: 'treeStore',
-	alias: GOD_MODE_TREE_STORE_ALIAS,
-	name: 'God Mode Tree Store',
-	api: () => import('./godmode-tree.store'),
-};
-
-const tree: ManifestTree = {
-	type: 'tree',
-	kind: 'default',
-	alias: "Umb.Tree.GodMode",
-	name: 'God Mode Tree',
-	meta: {
-		repositoryAlias: "Umb.Repository.GodMode.Tree",
-	}
-};
-
-const treeItem: ManifestTreeItem = {
-	type: 'treeItem',
-	kind: 'default',
-	alias: 'Umb.TreeItem.GodMode',
-	name: 'God Mode Tree Item',
-	forEntityTypes: ['godmode-root', 'godmode', 'godmode-folder'],
-};
-
-export const manifests: Array<ManifestTypes> = [
-	treeRepository,
-	treeStore,
-	tree,
-	treeItem
+export const manifests: Array<UmbExtensionManifest> = [
+    {
+        type: 'repository',
+        alias: GOD_MODE_TREE_REPOSITORY_ALIAS,
+        name: 'God Mode Tree Repository',
+        api: () => import('./godmode-tree.repository'),
+    },
+    {
+        type: 'treeStore',
+        alias: GOD_MODE_TREE_STORE_ALIAS,
+        name: 'God Mode Tree Store',
+        api: () => import('./godmode-tree.store'),
+    },
+    {
+        type: 'tree',
+        kind: 'default',
+        alias: GOD_MODE_TREE_ALIAS,
+        name: 'God Mode Tree',
+        meta: {
+            repositoryAlias: "Umb.Repository.GodMode.Tree",
+        },
+    },
+	{
+        type: 'treeItem',
+        kind: 'default',
+        alias: 'Umb.TreeItem.GodMode',
+        name: 'God Mode Tree Item',
+        forEntityTypes: ['godmode-root', 'godmode', 'godmode-folder'],
+    }
 ];

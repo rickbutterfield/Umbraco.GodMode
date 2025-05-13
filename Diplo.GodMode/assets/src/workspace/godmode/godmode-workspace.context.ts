@@ -1,8 +1,15 @@
 ﻿import { UmbControllerHost } from "@umbraco-cms/backoffice/controller-api";
-import { UmbDefaultWorkspaceContext, UmbWorkspaceRouteManager } from "@umbraco-cms/backoffice/workspace";
+import { UmbWorkspaceContext, UmbWorkspaceRouteManager } from "@umbraco-cms/backoffice/workspace";
 import GodModeReflectionBrowserElement from "../../elements/godmode-reflection-browser.element";
+import { UmbControllerBase } from "@umbraco-cms/backoffice/class-api";
 
-export class GodModeWorkspaceContext extends UmbDefaultWorkspaceContext {
+export class GodModeWorkspaceContext extends UmbControllerBase implements UmbWorkspaceContext {
+    public readonly workspaceAlias: string = "Umb.Workspace.GodMode";
+
+    getEntityType(): string {
+        return "godmode";
+    }
+
   readonly routes = new UmbWorkspaceRouteManager(this);
 
   constructor(host: UmbControllerHost) {

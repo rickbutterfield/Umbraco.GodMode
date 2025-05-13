@@ -1,9 +1,9 @@
 ﻿import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { LitElement, css, customElement, html, state } from "@umbraco-cms/backoffice/external/lit";
 import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
-import { UUIBooleanInputEvent, UUIInputEvent, UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
+import { UUIInputEvent, UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
 import type { UmbTableColumn, UmbTableConfig, UmbTableElement, UmbTableItem, UmbTableOrderedEvent } from '@umbraco-cms/backoffice/components';
-import { GodModeService, PartialMap, RegisteredService, TemplateModel } from "../../../api";
+import { GodModeService, PartialMap, TemplateModel } from "../../../api";
 import { sortData } from "../../../helpers/sort";
 import { DirectionModel } from "@umbraco-cms/backoffice/external/backend-api";
 

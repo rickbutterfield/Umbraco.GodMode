@@ -6,7 +6,8 @@ import { GodModeTreeItemPresentationModel } from "../types";
 import { UmbPagedModel } from "@umbraco-cms/backoffice/repository";
 
 export class GodModeTreeDataSource extends UmbTreeServerDataSourceBase<GodModeTreeItemPresentationModel, GodModeTreeItemModel> {
-    constructor(host: UmbControllerHost) {
+	constructor(host: UmbControllerHost) {
+		debugger;
         super(host, {
             getRootItems,
             getChildrenOf,

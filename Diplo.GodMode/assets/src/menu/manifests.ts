@@ -1,6 +1,6 @@
-﻿import type { ManifestTypes } from '@umbraco-cms/backoffice/extension-registry';
+﻿import { ManifestMenuItem } from "@umbraco-cms/backoffice/menu";
 
-export const manifests: Array<ManifestTypes> = [
+export const manifests: Array<UmbExtensionManifest> = [
     {
         type: 'menuItem',
         kind: 'tree',
@@ -10,7 +10,7 @@ export const manifests: Array<ManifestTypes> = [
         meta: {
             label: 'God Mode',
             icon: 'icon-sience',
-            entityType: 'godmode',
+            entityType: 'godmode-root',
             treeAlias: 'Umb.Tree.GodMode',
             menus: ['Umb.Menu.AdvancedSettings'],
         }
