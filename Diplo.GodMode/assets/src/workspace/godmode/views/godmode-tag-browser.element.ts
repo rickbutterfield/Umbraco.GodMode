@@ -180,10 +180,10 @@ export class GodModeTagBrowserElement extends UmbElementMixin(LitElement) {
                                 <div class="tag-info">
                                     <h3>
                                         <uui-icon name="icon-tag"></uui-icon>
-                                        ${tagMapping.tag.text}
-                                        <span class="node-count">${tagMapping.tag.nodeCount}</span>
-                                        <span class="label">${tagMapping.tag.group}</span>
-                                        ${tagMapping.tag.culture ? html`<span class="label">${tagMapping.tag.culture}</span>` : ''}
+                                        ${tagMapping.tag?.text || ''}
+                                        <span class="node-count">${tagMapping.tag?.nodeCount || 0}</span>
+                                        <span class="label">${tagMapping.tag?.group || ''}</span>
+                                        ${tagMapping.tag?.culture ? html`<span class="label">${tagMapping.tag.culture}</span>` : ''}
                                     </h3>
                                 </div>
                                 <div>
@@ -191,8 +191,8 @@ export class GodModeTagBrowserElement extends UmbElementMixin(LitElement) {
                                         type="button" 
                                         look="primary" 
                                         color="danger"
-                                        label="Delete '${tagMapping.tag.text}'"
-                                        @click=${() => this.#deleteTag(tagMapping.tag.id, tagMapping.tag.text)}>
+                                        label="Delete '${tagMapping.tag?.text || ''}'"
+                                        @click=${() => this.#deleteTag(tagMapping.tag?.id || 0, tagMapping.tag?.text || '')}>
                                         Delete
                                     </uui-button>
                                 </div>
@@ -206,22 +206,22 @@ export class GodModeTagBrowserElement extends UmbElementMixin(LitElement) {
                                         (content) => html`
                                             <div class="content-row">
                                                 <div class="content-name">
-                                                    <strong>${content.name}</strong>
+                                                    <strong>${content?.name || ''}</strong>
                                                 </div>
                                                 <div class="content-alias">
-                                                    <uui-icon name="${content.icon}"></uui-icon>
-                                                    ${content.alias}
+                                                    <uui-icon name="${content?.icon || 'icon-document'}"></uui-icon>
+                                                    ${content?.alias || ''}
                                                 </div>
                                                 <div class="content-tags">
-                                                    ${repeat(
+                                                    ${content?.tags ? repeat(
                                                         content.tags,
                                                         (tag) => tag.id,
-                                                        (tag) => html`<span class="label">${tag.text}</span>`
-                                                    )}
+                                                        (tag) => html`<span class="label">${tag?.text || ''}</span>`
+                                                    ) : ''}
                                                 </div>
                                                 <div class="content-id">
-                                                    <div>${content.id}</div>
-                                                    <code>${content.udi}</code>
+                                                    <div>${content?.id || ''}</div>
+                                                    <code>${content?.udi || ''}</code>
                                                 </div>
                                             </div>
                                         `
@@ -241,16 +241,16 @@ export class GodModeTagBrowserElement extends UmbElementMixin(LitElement) {
                                 (tag) => tag.id,
                                 (tag) => html`
                                     <li>
-                                        <span class="label">${tag.text}</span>
-                                        <span class="label">${tag.group}</span>
-                                        ${tag.culture ? html`<span class="label">${tag.culture}</span>` : ''}
+                                        <span class="label">${tag?.text || ''}</span>
+                                        <span class="label">${tag?.group || ''}</span>
+                                        ${tag?.culture ? html`<span class="label">${tag.culture}</span>` : ''}
                                         <uui-button 
                                             type="button" 
                                             look="primary" 
                                             color="danger"
                                             compact
-                                            label="Delete '${tag.text}'"
-                                            @click=${() => this.#deleteTag(tag.id, tag.text)}>
+                                            label="Delete '${tag?.text || ''}'"
+                                            @click=${() => this.#deleteTag(tag?.id || 0, tag?.text || '')}>
                                             <uui-icon name="icon-delete"></uui-icon>
                                         </uui-button>
                                     </li>
