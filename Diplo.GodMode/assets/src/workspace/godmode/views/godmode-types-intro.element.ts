@@ -65,7 +65,7 @@ export class GodModeTypesIntroElement extends UmbLitElement {
         {
             name: "Interface Browser",
             url: "typeBrowser",
-            description: "Interogate C# Interfaces and derived types in your site"
+            description: "Interrogate C# Interfaces and derived types in your site"
         }
     ];
 
@@ -80,7 +80,7 @@ export class GodModeTypesIntroElement extends UmbLitElement {
                 
                 <uui-box>
                     <h1>
-                        <uui-icon name="icon-sience"></uui-icon> God Mode Types
+                        <uui-icon name="icon-science"></uui-icon> God Mode Types
                     </h1>
                     <p class="muted">Browse controllers and other Umbraco types. Dive into some interfaces.</p>
                 </uui-box>

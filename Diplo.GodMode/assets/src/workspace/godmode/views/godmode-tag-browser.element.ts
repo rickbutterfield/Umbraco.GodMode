@@ -82,19 +82,19 @@ export class GodModeTagBrowserElement extends UmbElementMixin(LitElement) {
     #filterTags() {
         this.filteredTags = this.tags.filter(tagMapping => {
             // Filter by tag name
-            if (this.searchTagName && !tagMapping.tag.text.toLowerCase().includes(this.searchTagName)) {
+            if (this.searchTagName && tagMapping.tag?.text && !tagMapping.tag.text.toLowerCase().includes(this.searchTagName)) {
                 return false;
             }
 
             // Filter by tag group
-            if (this.searchTagGroup && !tagMapping.tag.group.toLowerCase().includes(this.searchTagGroup)) {
+            if (this.searchTagGroup && tagMapping.tag?.group && !tagMapping.tag.group.toLowerCase().includes(this.searchTagGroup)) {
                 return false;
             }
 
             // Filter by content name
-            if (this.searchTagContent) {
+            if (this.searchTagContent && tagMapping.content) {
                 const hasMatchingContent = tagMapping.content.some(c => 
-                    c.name.toLowerCase().includes(this.searchTagContent)
+                    c?.name && c.name.toLowerCase().includes(this.searchTagContent)
                 );
                 if (!hasMatchingContent) {
                     return false;
