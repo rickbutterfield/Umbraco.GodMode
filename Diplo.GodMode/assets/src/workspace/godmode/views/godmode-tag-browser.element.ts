@@ -124,7 +124,7 @@ export class GodModeTagBrowserElement extends UmbElementMixin(LitElement) {
         if (!this.searchTagContent) {
             return content;
         }
-        return content.filter(c => c.name.toLowerCase().includes(this.searchTagContent));
+        return content.filter(c => c?.name && c.name.toLowerCase().includes(this.searchTagContent));
     }
 
     override render() {
