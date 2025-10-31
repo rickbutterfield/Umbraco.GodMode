@@ -75,6 +75,10 @@ export class GodModeWorkspaceContext extends UmbControllerBase implements UmbWor
       {
         path: 'edit/typeBrowser',
         component: () => import('./views/godmode-interface-browser.element')
+      },
+      {
+        path: 'edit/typesIntro',
+        component: () => import('./views/godmode-types-intro.element')
       }
     ])
   }
