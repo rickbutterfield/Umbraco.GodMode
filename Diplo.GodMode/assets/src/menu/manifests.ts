@@ -1,6 +1,4 @@
-﻿import { ManifestMenuItem } from "@umbraco-cms/backoffice/menu";
-
-export const manifests: Array<UmbExtensionManifest> = [
+﻿export const manifests: Array<UmbExtensionManifest> = [
     {
         type: 'menuItem',
         kind: 'tree',

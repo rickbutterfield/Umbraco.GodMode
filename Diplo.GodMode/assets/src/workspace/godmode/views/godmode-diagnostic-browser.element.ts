@@ -1,7 +1,7 @@
 ﻿import { css, customElement, html, repeat, state, when } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 import { Diagnostic, DiagnosticGroup, DiagnosticSection, GodModeService } from "../../../api";
-import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { UUIInputEvent, UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
 
 @customElement('godmode-diagnostic-browser')
@@ -32,7 +32,7 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
     }
 
     async #loadDiagnostics() {
-        const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetEnvironmentDiagnostics());
+        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetEnvironmentDiagnostics());
 
         if (data) {
             this.diagnostics = data;

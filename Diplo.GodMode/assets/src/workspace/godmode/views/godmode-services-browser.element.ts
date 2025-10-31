@@ -1,6 +1,6 @@
 ﻿import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { LitElement, css, customElement, html, state } from "@umbraco-cms/backoffice/external/lit";
-import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { UUIBooleanInputEvent, UUIInputEvent, UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
 import type { UmbTableColumn, UmbTableConfig, UmbTableElement, UmbTableItem, UmbTableOrderedEvent } from '@umbraco-cms/backoffice/components';
 import { GodModeService, RegisteredService } from "../../../api";
@@ -105,7 +105,7 @@ export class GodModeServicesBrowserElement extends UmbElementMixin(LitElement) {
     }
 
     async #init() {
-        const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetRegisteredServices());
+        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetRegisteredServices());
 
         if (data) {
             this.data = data;

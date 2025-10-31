@@ -2,7 +2,7 @@ import { html, customElement, css, state, repeat } from '@umbraco-cms/backoffice
 import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
 import { GodModePage } from '../../types';
 import { GodModeConfig, GodModeService } from '../../api';
-import { tryExecuteAndNotify } from '@umbraco-cms/backoffice/resources';
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
 
 @customElement('umb-godmode-folder-workspace')
 export class UmbGodModeFolderWorkspaceElement extends UmbLitElement {
@@ -74,7 +74,7 @@ export class UmbGodModeFolderWorkspaceElement extends UmbLitElement {
   }
 
   async #getConfig() {
-    const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetConfig());
+    const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetConfig());
     this.config = data;
 
     if (this.config) {

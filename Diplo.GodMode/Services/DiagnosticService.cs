@@ -126,7 +126,7 @@ namespace Diplo.GodMode.Services
 
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom("Index Creator Settings", indexSettings.Value, false));
 
-            sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<RuntimeMinificationSettings>("Minification Settings", factory));
+            //sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<RuntimeMinificationSettings>("Minification Settings", factory));
 
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<ImagingCacheSettings>("Imaging Cache Settings", factory));
 
@@ -161,7 +161,7 @@ namespace Diplo.GodMode.Services
             var healthCheckSettings = factory.GetRequiredService<IOptions<HealthChecksSettings>>();
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom("Health Check Settings", healthCheckSettings.Value.Notification, false));
 
-            sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<ContentDashboardSettings>("Content Dashboard Settings", factory));
+            //sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<ContentDashboardSettings>("Content Dashboard Settings", factory));
 
             sections.Add(DiagnosticSection.AddDiagnosticSectionFrom<ContentNotificationSettings>("Content Notification Settings", factory));
 

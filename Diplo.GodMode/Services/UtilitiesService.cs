@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using Diplo.GodMode.Helpers;
+﻿using Diplo.GodMode.Helpers;
 using Diplo.GodMode.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.Extensions;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PublishedCache;
+using Umbraco.Cms.Core.Services.Navigation;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 
@@ -31,8 +33,9 @@ namespace Diplo.GodMode.Services
         private readonly ILogger<UtilitiesService> logger;
         private readonly IUmbracoContextFactory umbracoContextFactory;
         private readonly IMemoryCache memoryCache;
+        private readonly IDocumentNavigationQueryService documentNavigationQueryService;
 
-        public UtilitiesService(IWebHostEnvironment env, IOptions<ImagingCacheSettings> imageCacheSettings, AppCaches caches, ILogger<UtilitiesService> logger, IUmbracoContextFactory umbracoContextFactory, IMemoryCache memoryCache)
+        public UtilitiesService(IWebHostEnvironment env, IOptions<ImagingCacheSettings> imageCacheSettings, AppCaches caches, ILogger<UtilitiesService> logger, IUmbracoContextFactory umbracoContextFactory, IMemoryCache memoryCache, IDocumentNavigationQueryService documentNavigationQueryService)
         {
             this.env = env;
             this.imageCacheSettings = imageCacheSettings;
@@ -40,6 +43,7 @@ namespace Diplo.GodMode.Services
             this.logger = logger;
             this.umbracoContextFactory = umbracoContextFactory;
             this.memoryCache = memoryCache;
+            this.documentNavigationQueryService = documentNavigationQueryService;
         }
 
         /// <summary>
@@ -138,7 +142,23 @@ namespace Diplo.GodMode.Services
         {
             using (var ctx = umbracoContextFactory.EnsureUmbracoContext())
             {
-                return ctx.UmbracoContext.Content.GetAtRoot(culture).SelectMany(x => x.DescendantsOrSelf(culture)).Where(p => p.TemplateId > 0).Select(p => p.Url(culture: culture, mode: UrlMode.Absolute));
+                List<string> urls = new();
+                if (this.documentNavigationQueryService.TryGetRootKeys(out var rootKeys))
+                {
+                    urls.AddRange(rootKeys.SelectMany(rootKey =>
+                    {
+                        var root = ctx.UmbracoContext.Content.GetById(rootKey);
+                        if (root == null)
+                        {
+                            return Enumerable.Empty<string>();
+                        }
+                        return root.DescendantsOrSelf(culture)
+                            .Where(p => p.TemplateId > 0)
+                            .Select(p => p.Url(culture: culture, mode: UrlMode.Absolute));
+                    }));
+                }
+
+                return urls;
             }
         }
 

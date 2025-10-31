@@ -1,22 +1,26 @@
 ﻿import { defineConfig } from '@hey-api/openapi-ts';
 
 export default defineConfig({
-  client: 'legacy/fetch',
-  debug: true,
-  input: 'http://localhost:26095/umbraco/swagger/management/swagger.json',
-  output: {
-    path: 'src/api',
-    format: 'prettier',
-    lint: 'eslint',
-  },
-  plugins: [
-    {
-      name: '@hey-api/typescript',
-      enums: 'typescript'
+    debug: true,
+    input: 'http://localhost:26095/umbraco/swagger/management/swagger.json',
+    output: {
+        path: 'src/api',
     },
-    {
-      name: '@hey-api/sdk',
-      asClass: true
-    }
-  ]
+    plugins: [
+        {
+            name: "@hey-api/client-fetch",
+            exportFromIndex: true,
+            throwOnError: true,
+        },
+        {
+            name: "@hey-api/typescript",
+            enums: true,
+        },
+        {
+            name: "@hey-api/sdk",
+            asClass: true,
+            classNameBuilder: (name) => `${name}Service`,
+            responseStyle: "fields",
+        },
+    ]
 });

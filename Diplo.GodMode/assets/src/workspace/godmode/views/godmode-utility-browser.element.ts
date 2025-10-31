@@ -1,4 +1,4 @@
-﻿import { tryExecuteAndNotify } from '@umbraco-cms/backoffice/resources';
+﻿import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { css, customElement, html, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 import { GodModeService } from '../../../api';
@@ -57,7 +57,7 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
     }
 
     async clearUmbracoCache(cacheName: string) {
-        const { data } = await tryExecuteAndNotify(this, GodModeService.postUmbracoManagementApiV1GodModeClearUmbracoCache({ cache: cacheName }));
+        const { data } = await tryExecute(this, GodModeService.postUmbracoManagementApiV1GodModeClearUmbracoCache({ query: { cache: cacheName } }));
 
         if (data) {
             if (data.message) {
@@ -76,7 +76,7 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
 
     async purgeMediaCache() {
         if (window.confirm("This will attempt to delete all the cached image crops on disk in the TEMP/MediaCache. IO operations can sometimes fail. Are you sure?")) {
-            const { data } = await tryExecuteAndNotify(this, GodModeService.postUmbracoManagementApiV1GodModePurgeMediaCache());
+            const { data } = await tryExecute(this, GodModeService.postUmbracoManagementApiV1GodModePurgeMediaCache());
 
             if (data) {
                 if (data.message) {
@@ -96,7 +96,7 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
 
     async restartAppPool() {
         if (window.confirm("This will take the site offline (and won't restart it). Are you really, really, really sure?")) {
-            const { data } = await tryExecuteAndNotify(this, GodModeService.postUmbracoManagementApiV1GodModeRestartAppPool());
+            const { data } = await tryExecute(this, GodModeService.postUmbracoManagementApiV1GodModeRestartAppPool());
 
             if (data) {
                 if (data.message) {
@@ -115,7 +115,7 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
     }
 
     async warmUpTemplates() {
-        const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetTemplateUrlsToPing());
+        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetTemplateUrlsToPing());
 
         if (data) {
             await this._pingUrls(data);
@@ -123,7 +123,7 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
     }
 
     async pingUrls() {
-        const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetUrlsToPing({ culture: this._selectedCulture }));
+        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetUrlsToPing({ query: { culture: this._selectedCulture } }));
 
         if (data) {
             await this._pingUrls(data);

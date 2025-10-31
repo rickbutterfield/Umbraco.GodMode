@@ -1,7 +1,7 @@
 import { customElement, html, css, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 import { DirectionModel, GodModeService, NameValue, TypeMap } from "../../../api";
-import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
 import { sortData } from "../../../helpers/sort";
 import { UmbTableColumn, UmbTableConfig, UmbTableElement, UmbTableItem, UmbTableOrderedEvent } from "@umbraco-cms/backoffice/components";
@@ -84,7 +84,7 @@ export class GodModeInterfaceBrowserElement extends UmbLitElement {
     }
 
     async #loadAssemblies() {
-        const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetAssemblies());
+        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetAssemblies());
 
         if (data) {
             this.assemblies = data;
@@ -100,7 +100,7 @@ export class GodModeInterfaceBrowserElement extends UmbLitElement {
         if (this.currentAssemblyOption !== '') {
             this.currentAssembly = this.assemblies.find(x => x.name === this.currentAssemblyOption);
 
-            const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetInterfacesFrom({ assembly: this.currentAssemblyOption }));
+            const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetInterfacesFrom({ query: { assembly: this.currentAssemblyOption } }));
 
             if (data) {
                 this.interfaces = data;
@@ -125,7 +125,7 @@ export class GodModeInterfaceBrowserElement extends UmbLitElement {
             this.currentInterface = this.interfaces.find(x => x.name === this.currentInterfaceOption);
 
             if (this.currentInterface) {
-                const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetTypesAssignableFrom({ baseType: this.currentInterface.loadableName }));
+                const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetTypesAssignableFrom({ query: { baseType: this.currentInterface.loadableName } }));
 
                 if (data) {
                     this.types = data;

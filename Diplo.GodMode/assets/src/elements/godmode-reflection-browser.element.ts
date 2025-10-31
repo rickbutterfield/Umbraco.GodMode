@@ -1,7 +1,7 @@
 ﻿import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { LitElement, css, customElement, html, ifDefined, property, state } from "@umbraco-cms/backoffice/external/lit";
 import { DirectionModel, GodModeService, TypeMap } from "../api";
-import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
+import { tryExecute } from "@umbraco-cms/backoffice/resources";
 import { UmbDataSourceResponse } from "@umbraco-cms/backoffice/repository";
 import { UUIInputEvent, UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
 import { sortData } from "../helpers/sort";
@@ -101,52 +101,52 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
 
             if (this.type === "surface") {
                 this.name = "Surface Controller Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetSurfaceControllers());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetSurfaceControllers());
             }
 
             if (this.type === "api") {
                 this.name = "API Controller Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetApiControllers());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetApiControllers());
             }
 
             if (this.type === "render") {
                 this.name = "RenderMvc Controller Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetRenderMvcControllers());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetRenderMvcControllers());
             }
 
             if (this.type === "models") {
                 this.name = "Published Content Model Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetPublishedContentModels());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetPublishedContentModels());
             }
 
             if (this.type === "composers") {
                 this.name = "Composer Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetComposers());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetComposers());
             }
 
             if (this.type === "converters") {
                 this.name = "Property Value Converter Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetRenderMvcControllers());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetRenderMvcControllers());
             }
 
             if (this.type === "components") {
                 this.name = "View Component Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetViewComponents());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetViewComponents());
             }
 
             if (this.type === "taghelpers") {
                 this.name = "Tag Helpers Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetTagHelpers());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetTagHelpers());
             }
 
             if (this.type === "finders") {
                 this.name = "Content Finders Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetContentFinders());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetContentFinders());
             }
 
             if (this.type === "urlproviders") {
                 this.name = "URL Providers Browser";
-                response = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetUrlProviders());
+                response = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetUrlProviders());
             }
 
             if (response) {

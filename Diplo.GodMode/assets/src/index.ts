@@ -1,6 +1,6 @@
 import { UmbEntryPointOnInit } from '@umbraco-cms/backoffice/extension-api';
 import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
-import { OpenAPI } from './api/core/OpenAPI.ts';
+import { client } from './api/client.gen';
 
 export { GOD_MODE_TREE_ALIAS, GOD_MODE_TREE_REPOSITORY_ALIAS, GOD_MODE_TREE_STORE_ALIAS } from './constants';
 export * from './elements/godmode-header.element';
@@ -18,13 +18,15 @@ export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
         ...treeManifests
     ]);
 
-    host.consumeContext(UMB_AUTH_CONTEXT, async (auth) => {
-        if (!auth) return;
+    host.consumeContext(UMB_AUTH_CONTEXT, async (authContext) => {
+        if (!authContext) return;
 
-        const umbOpenApi = auth.getOpenApiConfiguration();
-        OpenAPI.BASE = umbOpenApi.base;
-        OpenAPI.TOKEN = umbOpenApi.token;
-        OpenAPI.WITH_CREDENTIALS = umbOpenApi.withCredentials;
-        OpenAPI.CREDENTIALS = umbOpenApi.credentials;
+        const config = authContext.getOpenApiConfiguration();
+
+        client.setConfig({
+            baseUrl: config.base,
+            auth: async () => await authContext.getLatestToken(),
+            credentials: config.credentials,
+        });
     });
 };

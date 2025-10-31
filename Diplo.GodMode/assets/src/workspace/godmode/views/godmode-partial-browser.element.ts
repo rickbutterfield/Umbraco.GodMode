@@ -1,6 +1,6 @@
 ﻿import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { LitElement, css, customElement, html, state } from "@umbraco-cms/backoffice/external/lit";
-import { tryExecuteAndNotify } from "@umbraco-cms/backoffice/resources";
+import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { UUIInputEvent, UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
 import type { UmbTableColumn, UmbTableConfig, UmbTableElement, UmbTableItem, UmbTableOrderedEvent } from '@umbraco-cms/backoffice/components';
 import { GodModeService, PartialMap, TemplateModel } from "../../../api";
@@ -70,7 +70,7 @@ export class GodModePartialBrowserElement extends UmbElementMixin(LitElement) {
   }
 
   async #loadPartials() {
-    const { data } = await tryExecuteAndNotify(this, GodModeService.getUmbracoManagementApiV1GodModeGetTemplates());
+    const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetTemplates());
 
     if (data) {
       this.templates = data;
