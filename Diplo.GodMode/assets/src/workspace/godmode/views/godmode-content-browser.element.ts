@@ -1,11 +1,16 @@
 ﻿import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import { LitElement, css, customElement, html, state } from "@umbraco-cms/backoffice/external/lit";
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
-import { UUIInputEvent } from "@umbraco-cms/backoffice/external/uui";
+import { UUIInputEvent, UUISelectEvent } from "@umbraco-cms/backoffice/external/uui";
 import type { UmbTableColumn, UmbTableConfig, UmbTableElement, UmbTableItem, UmbTableOrderedEvent } from '@umbraco-cms/backoffice/components';
-import { GodModeService, ContentItem } from "../../../api";
+import { GodModeService, ContentItem, Lang } from "../../../api";
 import { sortData } from "../../../helpers/sort";
 import { DirectionModel } from "@umbraco-cms/backoffice/external/backend-api";
+
+interface Option {
+    name: string;
+    value: string;
+}
 
 @customElement('godmode-content-browser')
 export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
@@ -28,37 +33,49 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
             name: 'Alias',
             alias: 'alias',
             allowSorting: true,
-            width: '15%'
+            width: '12%'
         },
         {
-            name: 'Icon',
-            alias: 'icon',
-            allowSorting: false,
-            width: '8%'
-        },
-        {
-            name: 'Level',
-            alias: 'level',
+            name: 'Create Date',
+            alias: 'createDate',
             allowSorting: true,
-            width: '7%'
+            width: '12%'
         },
         {
             name: 'Creator',
             alias: 'creatorName',
             allowSorting: true,
-            width: '15%'
+            width: '10%'
         },
         {
-            name: 'Updated',
+            name: 'Update Date',
             alias: 'updateDate',
             allowSorting: true,
-            width: '15%'
+            width: '12%'
         },
         {
-            name: 'Trashed',
-            alias: 'trashed',
+            name: 'Updater',
+            alias: 'updaterName',
             allowSorting: true,
             width: '10%'
+        },
+        {
+            name: 'Culture',
+            alias: 'culture',
+            allowSorting: true,
+            width: '8%'
+        },
+        {
+            name: 'Recycled',
+            alias: 'trashed',
+            allowSorting: true,
+            width: '8%'
+        },
+        {
+            name: 'Id',
+            alias: 'id',
+            allowSorting: true,
+            width: '8%'
         }
     ];
 
@@ -69,10 +86,22 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
     data: ContentItem[] = [];
 
     @state()
-    filteredData: ContentItem[] = [];
+    searchId: string = '';
 
     @state()
     searchName: string = '';
+
+    @state()
+    selectedAlias: string = '';
+
+    @state()
+    selectedLanguageId: number | null = null;
+
+    @state()
+    searchLevel: number | null = null;
+
+    @state()
+    trashed: boolean | null = null;
 
     @state()
     currentPage: number = 1;
@@ -86,13 +115,34 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
     @state()
     isLoading: boolean = true;
 
+    @state()
+    contentTypeAliases: string[] = [];
+
+    @state()
+    languages: Lang[] = [];
+
     constructor() {
         super();
     }
 
     async connectedCallback() {
         super.connectedCallback();
-        this.#init();
+        await this.#loadFilterData();
+        this.#fetchContent();
+    }
+
+    async #loadFilterData() {
+        // Load content type aliases
+        const { data: aliases } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetContentTypeAliases());
+        if (aliases) {
+            this.contentTypeAliases = aliases;
+        }
+
+        // Load languages
+        const { data: langs } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetLanguages());
+        if (langs) {
+            this.languages = langs;
+        }
     }
 
     #sortingHandler(event: UmbTableOrderedEvent) {
@@ -100,23 +150,30 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
         const orderingColumn = table.orderingColumn as keyof ContentItem;
         const orderingDesc = table.orderingDesc;
 
-        this.filteredData = sortData(structuredClone(this.data), orderingColumn, orderingDesc ? DirectionModel.DESCENDING : DirectionModel.ASCENDING);
-        this._tableItems = this.#mapData(this.filteredData);
+        this.data = sortData(structuredClone(this.data), orderingColumn, orderingDesc ? DirectionModel.DESCENDING : DirectionModel.ASCENDING);
+        this._tableItems = this.#mapData(this.data);
     }
 
-    async #init() {
+    async #fetchContent() {
         this.isLoading = true;
-        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetContentPaged({
-            query: {
-                page: this.currentPage,
-                pageSize: 50
-            }
-        }));
+        
+        const query: any = {
+            page: this.currentPage,
+            pageSize: 50
+        };
+
+        if (this.searchId) query.id = this.searchId;
+        if (this.searchName) query.name = this.searchName;
+        if (this.selectedAlias) query.alias = this.selectedAlias;
+        if (this.selectedLanguageId !== null) query.languageId = this.selectedLanguageId;
+        if (this.searchLevel !== null) query.level = this.searchLevel;
+        if (this.trashed !== null) query.trashed = this.trashed;
+
+        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetContentPaged({ query }));
 
         if (data) {
             this.data = data.items || [];
-            this.filteredData = structuredClone(this.data);
-            this._tableItems = this.#mapData(this.filteredData);
+            this._tableItems = this.#mapData(this.data);
             this.currentPage = data.currentPage || 1;
             this.totalPages = data.totalPages || 1;
             this.totalItems = data.totalItems || 0;
@@ -135,15 +192,11 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
                     },
                     {
                         columnAlias: 'alias',
-                        value: item.alias || ''
+                        value: html`<span class="${item.icon || 'icon-document'}"></span> ${item.alias || ''}`
                     },
                     {
-                        columnAlias: 'icon',
-                        value: html`<uui-icon name="${item.icon || 'icon-document'}"></uui-icon>`
-                    },
-                    {
-                        columnAlias: 'level',
-                        value: item.level || 0
+                        columnAlias: 'createDate',
+                        value: item.createDate ? new Date(item.createDate).toLocaleString() : ''
                     },
                     {
                         columnAlias: 'creatorName',
@@ -154,29 +207,77 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
                         value: item.updateDate ? new Date(item.updateDate).toLocaleString() : ''
                     },
                     {
+                        columnAlias: 'updaterName',
+                        value: item.updaterName || ''
+                    },
+                    {
+                        columnAlias: 'culture',
+                        value: item.culture || ''
+                    },
+                    {
                         columnAlias: 'trashed',
-                        value: item.trashed ? html`<uui-icon name="icon-trash" style="color: red;"></uui-icon>` : ''
+                        value: item.trashed ? html`<uui-icon name="icon-check" style="color: red;"></uui-icon>` : ''
+                    },
+                    {
+                        columnAlias: 'id',
+                        value: html`<div><strong>${item.id || ''}</strong><br/><code style="font-size: 0.8em;">${item.udi || ''}</code></div>`
                     }
                 ]
             }
         });
     }
 
-    #setSearchName(event: UUIInputEvent) {
-        const value = event.target.value as string;
-        this.searchName = value.toLowerCase();
-        this.#filterValues();
+    #setSearchId(event: UUIInputEvent) {
+        this.searchId = (event.target.value as string).trim();
+        this.currentPage = 1;
+        this.#fetchContent();
     }
 
-    #filterValues() {
-        this.filteredData = this.data.filter(item => {
-            if (this.searchName && item.name) {
-                return item.name.toLowerCase().includes(this.searchName) || 
-                       item.alias?.toLowerCase().includes(this.searchName);
-            }
-            return true;
-        });
-        this._tableItems = this.#mapData(this.filteredData);
+    #setSearchName(event: UUIInputEvent) {
+        this.searchName = (event.target.value as string).trim();
+        this.currentPage = 1;
+        this.#fetchContent();
+    }
+
+    #setAlias(event: UUISelectEvent) {
+        this.selectedAlias = event.target.value as string;
+        this.currentPage = 1;
+        this.#fetchContent();
+    }
+
+    #setLanguage(event: UUISelectEvent) {
+        const value = event.target.value;
+        this.selectedLanguageId = value ? parseInt(value as string) : null;
+        this.currentPage = 1;
+        this.#fetchContent();
+    }
+
+    #setLevel(event: UUIInputEvent) {
+        const value = (event.target.value as string).trim();
+        this.searchLevel = value ? parseInt(value) : null;
+        this.currentPage = 1;
+        this.#fetchContent();
+    }
+
+    #setTrashed(event: UUISelectEvent) {
+        const value = event.target.value;
+        this.trashed = value === 'true' ? true : value === 'false' ? false : null;
+        this.currentPage = 1;
+        this.#fetchContent();
+    }
+
+    #nextPage() {
+        if (this.currentPage < this.totalPages) {
+            this.currentPage++;
+            this.#fetchContent();
+        }
+    }
+
+    #prevPage() {
+        if (this.currentPage > 1) {
+            this.currentPage--;
+            this.#fetchContent();
+        }
     }
 
     override render() {
@@ -184,13 +285,65 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
             <umb-body-layout>
                 <godmode-header name="Content Browser" slot="header"></godmode-header>
                 
-                <uui-box>
-                    <uui-label>Search:</uui-label>
-                    <uui-input
-                        placeholder="Filter by name or alias"
-                        .value=${this.searchName}
-                        @input=${this.#setSearchName}>
-                    </uui-input>
+                <uui-box headline="Search Filters">
+                    <div class="grid">
+                        <div>
+                            <uui-label>Node Id:</uui-label>
+                            <uui-input
+                                placeholder="Id or UDI"
+                                .value=${this.searchId}
+                                @input=${this.#setSearchId}>
+                            </uui-input>
+                        </div>
+
+                        <div>
+                            <uui-label>Name:</uui-label>
+                            <uui-input
+                                placeholder="Search node names"
+                                .value=${this.searchName}
+                                @input=${this.#setSearchName}>
+                            </uui-input>
+                        </div>
+
+                        <div>
+                            <uui-label>Content Alias:</uui-label>
+                            <uui-select @change=${this.#setAlias}>
+                                <uui-select-option value="">Any</uui-select-option>
+                                ${this.contentTypeAliases.map(alias => html`
+                                    <uui-select-option value="${alias}">${alias}</uui-select-option>
+                                `)}
+                            </uui-select>
+                        </div>
+
+                        <div>
+                            <uui-label>Language:</uui-label>
+                            <uui-select @change=${this.#setLanguage}>
+                                <uui-select-option value="">Any</uui-select-option>
+                                ${this.languages.map(lang => html`
+                                    <uui-select-option value="${lang.id}">${lang.name}</uui-select-option>
+                                `)}
+                            </uui-select>
+                        </div>
+
+                        <div>
+                            <uui-label>Tree Level:</uui-label>
+                            <uui-input
+                                type="number"
+                                placeholder="Level"
+                                .value=${this.searchLevel?.toString() || ''}
+                                @input=${this.#setLevel}>
+                            </uui-input>
+                        </div>
+
+                        <div>
+                            <uui-label>Recycled?</uui-label>
+                            <uui-select @change=${this.#setTrashed}>
+                                <uui-select-option value="">Any</uui-select-option>
+                                <uui-select-option value="true">Yes</uui-select-option>
+                                <uui-select-option value="false">No</uui-select-option>
+                            </uui-select>
+                        </div>
+                    </div>
                 </uui-box>
 
                 ${this.isLoading ? html`
@@ -199,7 +352,7 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
 
                 ${!this.isLoading && this.totalItems > 0 ? html`
                     <uui-box>
-                        <p>Showing page ${this.currentPage} of ${this.totalPages} (${this.totalItems} total items)</p>
+                        <p><strong>${this.data.length}</strong> / <strong>${this.totalItems}</strong> items</p>
                     </uui-box>
                 ` : html``}
 
@@ -208,14 +361,49 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
                         <umb-table .config=${this._tableConfig} .columns=${this._tableColumns} .items=${this._tableItems} @ordered=${this.#sortingHandler} />
                     </uui-box>
                 ` : html``}
+
+                ${!this.isLoading && this.totalPages > 1 ? html`
+                    <uui-box>
+                        <div class="pagination">
+                            <uui-button
+                                label="Previous"
+                                look="default"
+                                ?disabled=${this.currentPage === 1}
+                                @click=${this.#prevPage}>
+                                Previous
+                            </uui-button>
+                            <span>Page ${this.currentPage} of ${this.totalPages}</span>
+                            <uui-button
+                                label="Next"
+                                look="default"
+                                ?disabled=${this.currentPage === this.totalPages}
+                                @click=${this.#nextPage}>
+                                Next
+                            </uui-button>
+                        </div>
+                    </uui-box>
+                ` : html``}
             </umb-body-layout>
         `;
     }
 
     static styles = [
         css`
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
             uui-box {
                 margin-bottom: 20px;
+            }
+
+            .pagination {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
             }
         `
     ]
