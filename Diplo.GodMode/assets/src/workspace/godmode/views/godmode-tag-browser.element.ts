@@ -2,7 +2,7 @@
 import { LitElement, css, customElement, html, state, repeat } from "@umbraco-cms/backoffice/external/lit";
 import { tryExecute } from '@umbraco-cms/backoffice/resources';
 import { UUIInputEvent } from "@umbraco-cms/backoffice/external/uui";
-import { GodModeService, TagMapping, Tag } from "../../../api";
+import { GodModeService, TagMapping, Tag, ContentTags } from "../../../api";
 import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext } from '@umbraco-cms/backoffice/notification';
 
 @customElement('godmode-tag-browser')
@@ -203,7 +203,7 @@ export class GodModeTagBrowserElement extends UmbElementMixin(LitElement) {
                                     ${repeat(
                                         this.#renderFilteredContent(tagMapping.content),
                                         (content) => content.id,
-                                        (content) => html`
+                                        (content: ContentTags) => html`
                                             <div class="content-row">
                                                 <div class="content-name">
                                                     <strong>${content?.name || ''}</strong>

@@ -67,8 +67,8 @@ export class GodModeMemberBrowserElement extends UmbElementMixin(LitElement) {
 
     #sortingHandler(event: UmbTableOrderedEvent) {
         const table = event.target as UmbTableElement;
-        const orderingColumn = table.orderingColumn as string;
-        const orderingDesc = table.orderingDesc;
+        //const orderingColumn = table.orderingColumn as string;
+        //const orderingDesc = table.orderingDesc;
 
         // MemberModel doesn't appear to be an array, handling will be adjusted
     }
