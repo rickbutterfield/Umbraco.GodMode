@@ -27,8 +27,7 @@ namespace Diplo.GodMode.Composers
 
             builder.Services.AddSingleton<IOperationIdHandler, CustomOperationIdHandler>();
 
-            RegisteredServiceCollection registeredServiceCollection = new(builder.Services);
-            builder.Services.AddSingleton<RegisteredServiceCollection>(services => registeredServiceCollection);
+            builder.Services.AddSingleton(services => new RegisteredServiceCollection(builder.Services));
         }
     }
 }
