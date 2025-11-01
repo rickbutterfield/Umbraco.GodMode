@@ -1,5 +1,5 @@
 import "@umbraco-cms/backoffice/auth";
-import { c as _, d as O, e as a, f as s, g as R, o as d } from "./index-fy-rxTHq.js";
+import { b as _, c as O, d as a, e as s, f as R, o as d } from "./index-olPh7UBx.js";
 export {
   _ as GOD_MODE_TREE_ALIAS,
   O as GOD_MODE_TREE_REPOSITORY_ALIAS,

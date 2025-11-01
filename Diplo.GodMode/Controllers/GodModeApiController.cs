@@ -469,7 +469,7 @@ namespace Diplo.GodMode.Controllers
         [HttpGet("GetMemberGroups")]
         public IEnumerable<MemberGroupModel> GetMemberGroups()
         {
-            return this.dataBaseService.GetMemberGroups();
+            return this.dataBaseService.GetMemberGroups().DistinctBy(x => x.Id);
         }
 
         [HttpGet("GetNuCacheItem")]

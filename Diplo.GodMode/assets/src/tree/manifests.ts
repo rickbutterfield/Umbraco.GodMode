@@ -10,12 +10,6 @@ export const manifests: Array<UmbExtensionManifest> = [
         api: () => import('./godmode-tree.repository'),
     },
     {
-        type: 'treeStore',
-        alias: GOD_MODE_TREE_STORE_ALIAS,
-        name: 'God Mode Tree Store',
-        api: () => import('./godmode-tree.store'),
-    },
-    {
         type: 'tree',
         kind: 'default',
         alias: GOD_MODE_TREE_ALIAS,

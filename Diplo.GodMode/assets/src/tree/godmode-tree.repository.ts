@@ -2,7 +2,6 @@
 import { UmbApi } from "@umbraco-cms/backoffice/extension-api";
 import { UmbTreeRepositoryBase } from "@umbraco-cms/backoffice/tree";
 import { GodModeTreeItemModel, GodModeTreeRootModel } from "./types";
-import { GOD_MODE_TREE_STORE_CONTEXT } from "./godmode-tree.store";
 import { GodModeTreeDataSource } from "./godmode-tree.data-source";
 
 export class GodModeTreeRepository
@@ -10,7 +9,7 @@ export class GodModeTreeRepository
     implements UmbApi
 {
     constructor(host: UmbControllerHost) {
-        super(host, GodModeTreeDataSource, GOD_MODE_TREE_STORE_CONTEXT);
+        super(host, GodModeTreeDataSource);
     }
 
     async requestTreeRoot() {
@@ -20,7 +19,7 @@ export class GodModeTreeRepository
             name: "God Mode",
             icon: 'icon-sience',
             hasChildren: true,
-            isFolder: false
+            isFolder: true
         };
 
         return { data };
