@@ -6,6 +6,7 @@ import type { UmbTableColumn, UmbTableConfig, UmbTableElement, UmbTableItem, Umb
 import { GodModeService, ContentTypeMap } from "../../../api";
 import { sortData } from "../../../helpers/sort";
 import { DirectionModel } from "@umbraco-cms/backoffice/external/backend-api";
+import { GODMODE_WORKSPACE_CONTEXT } from "../godmode-workspace.context-token";
 
 interface TriStateOption {
     label: string;

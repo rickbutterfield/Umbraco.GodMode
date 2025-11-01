@@ -34,37 +34,31 @@ export class GodModeMediaBrowserElement extends UmbElementMixin(LitElement) {
             name: 'Name',
             alias: 'name',
             allowSorting: true,
-            width: '30%'
         },
         {
             name: 'Media',
             alias: 'alias',
             allowSorting: true,
-            width: '15%'
         },
         {
             name: 'Type',
             alias: 'type',
             allowSorting: false,
-            width: '15%'
         },
         {
             name: 'Size',
             alias: 'size',
             allowSorting: true,
-            width: '10%'
         },
         {
             name: 'Update Date',
             alias: 'updateDate',
             allowSorting: true,
-            width: '15%'
         },
         {
             name: 'Id',
             alias: 'id',
             allowSorting: true,
-            width: '15%'
         }
     ];
 
@@ -98,6 +92,9 @@ export class GodModeMediaBrowserElement extends UmbElementMixin(LitElement) {
     @state()
     mediaTypes: ItemBase[] = [];
 
+    @state()
+    mediaTypeOptions: Option[] = [];
+
     constructor() {
         super();
     }
@@ -113,6 +110,8 @@ export class GodModeMediaBrowserElement extends UmbElementMixin(LitElement) {
         const { data: types } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetMediaTypes());
         if (types) {
             this.mediaTypes = types;
+            this.mediaTypeOptions = this.mediaTypes.map(x => { return { name: x.name, value: x.id.toString() } });
+            this.mediaTypeOptions.unshift({ name: 'Any', value: '', selected: true });
         }
     }
 
@@ -261,11 +260,10 @@ export class GodModeMediaBrowserElement extends UmbElementMixin(LitElement) {
 
                         <div>
                             <uui-label>Media Type:</uui-label>
-                            <uui-select @change=${this.#setMediaType}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                ${this.mediaTypes.map(type => html`
-                                    <uui-select-option value="${type.id}">${type.alias}</uui-select-option>
-                                `)}
+                            <uui-select
+                                .options=${this.mediaTypeOptions}
+                                @change=${this.#setMediaType}
+                            >
                             </uui-select>
                         </div>
                     </div>
@@ -273,12 +271,6 @@ export class GodModeMediaBrowserElement extends UmbElementMixin(LitElement) {
 
                 ${this.isLoading ? html`
                     <uui-loader-bar></uui-loader-bar>
-                ` : html``}
-
-                ${!this.isLoading && this.totalItems > 0 ? html`
-                    <uui-box>
-                        <p><strong>${this.data.length}</strong> / <strong>${this.totalItems}</strong> items</p>
-                    </uui-box>
                 ` : html``}
 
                 ${!this.isLoading && this._tableItems.length > 0 ? html`
@@ -320,11 +312,17 @@ export class GodModeMediaBrowserElement extends UmbElementMixin(LitElement) {
 
     static styles = [
         css`
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
+             .grid {
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 20px;
+
+                  div {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: flex-start;
+                  }
+              }
 
             uui-box {
                 margin-bottom: 20px;

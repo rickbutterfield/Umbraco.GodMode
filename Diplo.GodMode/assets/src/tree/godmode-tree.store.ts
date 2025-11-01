@@ -4,10 +4,9 @@ import { UmbUniqueTreeStore } from "@umbraco-cms/backoffice/tree";
 
 export class GodModeTreeStore extends UmbUniqueTreeStore {
     constructor(host: UmbControllerHost) {
-        super(host, GOD_MODE_TREE_STORE_CONTEXT.toString());
+        super(host, GOD_MODE_TREE_STORE_CONTEXT.contextAlias);
     }
 }
 
-export default GodModeTreeStore;
-
-export const GOD_MODE_TREE_STORE_CONTEXT = new UmbContextToken<GodModeTreeStore>('GodModeTreeStore');
+export const GOD_MODE_TREE_STORE_CONTEXT =
+    new UmbContextToken<GodModeTreeStore>('GodModeTreeStore');

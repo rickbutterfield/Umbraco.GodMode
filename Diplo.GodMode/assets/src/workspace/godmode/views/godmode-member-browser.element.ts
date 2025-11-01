@@ -28,34 +28,34 @@ export class GodModeMemberBrowserElement extends UmbElementMixin(LitElement) {
     @state()
     private _tableColumns: Array<UmbTableColumn> = [
         {
-            name: 'UserName',
+            name: 'Username',
             alias: 'username',
             allowSorting: true,
-            width: '25%'
+            width: '20%'
         },
         {
             name: 'Name',
             alias: 'name',
             allowSorting: true,
-            width: '25%'
+            width: '20%'
         },
         {
             name: 'Email',
             alias: 'email',
             allowSorting: true,
-            width: '25%'
+            width: '20%'
         },
         {
             name: 'Create Date',
             alias: 'createDate',
             allowSorting: true,
-            width: '15%'
+            width: '20%'
         },
         {
             name: 'Id',
             alias: 'id',
             allowSorting: true,
-            width: '10%'
+            width: '20%'
         }
     ];
 
@@ -86,6 +86,9 @@ export class GodModeMemberBrowserElement extends UmbElementMixin(LitElement) {
     @state()
     memberGroups: MemberGroupModel[] = [];
 
+    @state()
+    memberGroupOptions: Option[] = [];
+
     constructor() {
         super();
     }
@@ -101,6 +104,8 @@ export class GodModeMemberBrowserElement extends UmbElementMixin(LitElement) {
         const { data: groups } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetMemberGroups());
         if (groups) {
             this.memberGroups = groups;
+            this.memberGroupOptions = this.memberGroups.map(x => { return { name: x.name, value: x.id.toString() } });
+            this.memberGroupOptions.unshift({ name: 'Any', value: '', selected: true });
         }
     }
 
@@ -115,7 +120,7 @@ export class GodModeMemberBrowserElement extends UmbElementMixin(LitElement) {
 
     async #fetchMembers() {
         this.isLoading = true;
-        
+
         const query: any = {
             page: this.currentPage,
             pageSize: 50
@@ -212,11 +217,10 @@ export class GodModeMemberBrowserElement extends UmbElementMixin(LitElement) {
                     <div class="grid">
                         <div>
                             <uui-label>Group:</uui-label>
-                            <uui-select @change=${this.#setGroup}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                ${this.memberGroups.map(group => html`
-                                    <uui-select-option value="${group.id}">${group.name}</uui-select-option>
-                                `)}
+                            <uui-select
+                                .options=${this.memberGroupOptions}
+                                @change=${this.#setGroup}
+                            >
                             </uui-select>
                         </div>
 
@@ -233,12 +237,6 @@ export class GodModeMemberBrowserElement extends UmbElementMixin(LitElement) {
 
                 ${this.isLoading ? html`
                     <uui-loader-bar></uui-loader-bar>
-                ` : html``}
-
-                ${!this.isLoading && this.totalItems > 0 ? html`
-                    <uui-box>
-                        <p><strong>${this.data.length}</strong> / <strong>${this.totalItems}</strong> members</p>
-                    </uui-box>
                 ` : html``}
 
                 ${!this.isLoading && this._tableItems.length > 0 ? html`
@@ -280,10 +278,16 @@ export class GodModeMemberBrowserElement extends UmbElementMixin(LitElement) {
 
     static styles = [
         css`
-            .grid {
+           .grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
             }
 
             uui-box {

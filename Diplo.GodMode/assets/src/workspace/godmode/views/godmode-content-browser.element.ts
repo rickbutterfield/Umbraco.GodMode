@@ -15,6 +15,7 @@ interface Option {
 @customElement('godmode-content-browser')
 export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
 
+
     @state()
     private _tableConfig: UmbTableConfig = {
         allowSelection: false,

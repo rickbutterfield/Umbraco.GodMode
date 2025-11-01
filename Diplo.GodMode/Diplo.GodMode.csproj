@@ -9,7 +9,7 @@
 		<Description>Diplo God Mode makes Umbraco developers invincible!</Description>
 		<PackageTags>umbraco plugin package developer-tool umbraco-marketplace</PackageTags>
 		<Version>$(VersionPrefix)</Version>
-		<VersionPrefix>17.0.0</VersionPrefix>
+		<VersionPrefix>17.0.0-rc1</VersionPrefix>
 		<Company>$(Authors)</Company>
 		<Copyright>Dan 'Diplo' Booth</Copyright>
 		<Authors>DanDiplo</Authors>

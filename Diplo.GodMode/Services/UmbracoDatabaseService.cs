@@ -303,7 +303,7 @@ namespace Diplo.GodMode.Services
         /// <returns>A list of groups</returns>
         public IEnumerable<MemberGroupModel> GetMemberGroups()
         {
-            var query = new Sql(string.Format("SELECT id as Id, text as Name FROM umbracoNode GN WHERE nodeObjectType = '{0}'", Constants.ObjectTypes.MemberGroup)).OrderBy("text");
+            var query = new Sql(string.Format("SELECT id as Id, text as Name FROM umbracoNode GN WHERE nodeObjectType = '{0}'", Constants.ObjectTypes.MemberGroup.ToString().ToUpper())).OrderBy("text");
 
             using (var scope = this.scopeProvider.CreateScope(autoComplete: true))
             {
