@@ -73,7 +73,7 @@ export class GodModeTemplateBrowserElement extends UmbElementMixin(LitElement) {
   }
 
   async #loadTemplates() {
-    const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetTemplates());
+    const { data } = await tryExecute(this, GodModeService.getTemplates());
 
     if (data) {
       this.templates = data;

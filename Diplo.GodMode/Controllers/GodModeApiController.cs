@@ -1,9 +1,12 @@
-﻿using Diplo.GodMode.Helpers;
+﻿using Asp.Versioning;
+using Diplo.GodMode.Helpers;
 using Diplo.GodMode.Models;
 using Diplo.GodMode.Services;
 using Diplo.GodMode.Services.Interfaces;
-using Microsoft.AspNetCore.Authorization;
-using Umbraco.Cms.Web.Common.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using NPoco;
 using System;
 using System.Collections.Generic;
@@ -18,13 +21,6 @@ using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Website.Controllers;
 using Umbraco.Extensions;
-using Asp.Versioning;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Razor.TagHelpers;
-using Umbraco.Cms.Api.Management.Routing;
-using Umbraco.Cms.Api.Management.Controllers;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Diplo.GodMode.Controllers
 {
@@ -32,10 +28,8 @@ namespace Diplo.GodMode.Controllers
     /// API Controller for returning JSON to the GodMode views in /App_Plugins/
     /// </summary>
     [ApiVersion("1.0")]
-    [VersionedApiBackOfficeRoute(GodModeConfig.ApiAlias)]
     [ApiExplorerSettings(GroupName = GodModeConfig.Name)]
-    [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
-    public class GodModeApiController : ManagementApiControllerBase
+    public class GodModeApiController : GodModeApiControllerBase
     {
         private readonly IUmbracoDataService dataService;
         private readonly IUmbracoDatabaseService dataBaseService;

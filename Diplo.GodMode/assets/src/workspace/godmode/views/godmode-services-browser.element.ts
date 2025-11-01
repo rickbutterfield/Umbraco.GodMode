@@ -105,7 +105,7 @@ export class GodModeServicesBrowserElement extends UmbElementMixin(LitElement) {
     }
 
     async #init() {
-        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetRegisteredServices());
+        const { data } = await tryExecute(this, GodModeService.getRegisteredServices());
 
         if (data) {
             this.data = data;

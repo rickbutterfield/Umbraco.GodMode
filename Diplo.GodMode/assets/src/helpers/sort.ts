@@ -1,4 +1,4 @@
-import { DirectionModel } from "../api";
+import { DirectionModel } from "@umbraco-cms/backoffice/external/backend-api";
 
 export const sortData = <T>(data: T[], sortBy: keyof T, sortDirection: DirectionModel) => {
 

@@ -70,7 +70,7 @@ export class GodModePartialBrowserElement extends UmbElementMixin(LitElement) {
   }
 
   async #loadPartials() {
-    const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetTemplates());
+    const { data } = await tryExecute(this, GodModeService.getTemplates());
 
     if (data) {
       this.templates = data;

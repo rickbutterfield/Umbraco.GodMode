@@ -2,7 +2,7 @@
 
 export default defineConfig({
     debug: true,
-    input: 'http://localhost:26095/umbraco/swagger/management/swagger.json',
+    input: 'http://localhost:26096/umbraco/swagger/god-mode/swagger.json',
     output: {
         path: 'src/api',
     },

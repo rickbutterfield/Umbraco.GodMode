@@ -28,5 +28,11 @@ export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
             auth: async () => await authContext.getLatestToken(),
             credentials: config.credentials,
         });
+
+        client.interceptors.request.use(async (request, _options) => {
+            const token = await config.token();
+            request.headers.set('Authorization', `Bearer ${token}`);
+            return request;
+        });
     });
 };

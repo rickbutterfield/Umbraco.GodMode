@@ -84,9 +84,9 @@ export class UmbGodModeRootWorkspaceElement extends UmbLitElement {
     }
 
     async #getConfig() {
-        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetConfig());
+        const { data } = await tryExecute(this, GodModeService.getConfig());
         this.config = data;
-        
+
         if (this.config) {
             this.pages = this.pages.filter((page) => {
                 const filtered = this.config?.featuresToHide?.includes(page.name) || this.config?.featuresToHide?.includes(page.url);

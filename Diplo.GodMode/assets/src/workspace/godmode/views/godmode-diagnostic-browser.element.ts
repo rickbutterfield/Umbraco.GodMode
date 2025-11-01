@@ -32,7 +32,7 @@ export class GodModeDiagnosticBrowserElement extends UmbLitElement {
     }
 
     async #loadDiagnostics() {
-        const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetEnvironmentDiagnostics());
+        const { data } = await tryExecute(this, GodModeService.getEnvironmentDiagnostics());
 
         if (data) {
             this.diagnostics = data;

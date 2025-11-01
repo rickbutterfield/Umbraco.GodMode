@@ -73,9 +73,9 @@ export class UmbGodModeFolderWorkspaceElement extends UmbLitElement {
     this.#getConfig();
   }
 
-  async #getConfig() {
-    const { data } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetConfig());
-    this.config = data;
+    async #getConfig() {
+        const { data } = await tryExecute(this, GodModeService.getConfig());
+        this.config = data;
 
     if (this.config) {
       this.pages = this.pages.filter((page) => {
