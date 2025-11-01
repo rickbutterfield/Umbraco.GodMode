@@ -7,15 +7,8 @@ import { GodModeService, ContentItem, Lang } from "../../../api";
 import { sortData } from "../../../helpers/sort";
 import { DirectionModel } from "@umbraco-cms/backoffice/external/backend-api";
 
-interface Option {
-    name: string;
-    value: string;
-}
-
 @customElement('godmode-content-browser')
 export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
-
-
     @state()
     private _tableConfig: UmbTableConfig = {
         allowSelection: false,
@@ -28,55 +21,51 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
             name: 'Name',
             alias: 'name',
             allowSorting: true,
-            width: '20%'
+
         },
         {
             name: 'Alias',
             alias: 'alias',
             allowSorting: true,
-            width: '12%'
+
         },
         {
             name: 'Create Date',
             alias: 'createDate',
             allowSorting: true,
-            width: '12%'
         },
         {
             name: 'Creator',
             alias: 'creatorName',
             allowSorting: true,
-            width: '10%'
+
         },
         {
             name: 'Update Date',
             alias: 'updateDate',
             allowSorting: true,
-            width: '12%'
+
         },
         {
             name: 'Updater',
             alias: 'updaterName',
             allowSorting: true,
-            width: '10%'
+
         },
         {
             name: 'Culture',
             alias: 'culture',
             allowSorting: true,
-            width: '8%'
         },
         {
             name: 'Recycled',
             alias: 'trashed',
             allowSorting: true,
-            width: '8%'
         },
         {
             name: 'Id',
             alias: 'id',
             allowSorting: true,
-            width: '8%'
         }
     ];
 
@@ -120,7 +109,19 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
     contentTypeAliases: string[] = [];
 
     @state()
+    contentTypeAliasOptions: Option[] = [];
+
+    @state()
     languages: Lang[] = [];
+
+    @state()
+    languageOptions: Option[] = [];
+
+    recycledOptions: Option[] = [
+        { name: 'Any', value: '', selected: true },
+        { name: 'Yes', value: 'true' },
+        { name: 'No', value: 'false' }
+    ]
 
     constructor() {
         super();
@@ -137,12 +138,16 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
         const { data: aliases } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetContentTypeAliases());
         if (aliases) {
             this.contentTypeAliases = aliases;
+            this.contentTypeAliasOptions = aliases.map(x => { return { name: x, value: x } })
+            this.contentTypeAliasOptions.unshift({ name: 'Any', value: '', selected: true });
         }
 
         // Load languages
         const { data: langs } = await tryExecute(this, GodModeService.getUmbracoManagementApiV1GodModeGetLanguages());
         if (langs) {
             this.languages = langs;
+            this.languageOptions = langs.map(x => { return { name: x.name, value: x.id.toString() } })
+            this.languageOptions.unshift({ name: 'Any', value: '', selected: true });
         }
     }
 
@@ -160,7 +165,7 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
         
         const query: any = {
             page: this.currentPage,
-            pageSize: 50
+            pageSize: 50,
         };
 
         if (this.searchId) query.id = this.searchId;
@@ -308,21 +313,17 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
 
                         <div>
                             <uui-label>Content Alias:</uui-label>
-                            <uui-select @change=${this.#setAlias}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                ${this.contentTypeAliases.map(alias => html`
-                                    <uui-select-option value="${alias}">${alias}</uui-select-option>
-                                `)}
+                            <uui-select
+                                .options=${this.contentTypeAliasOptions}
+                                @change=${this.#setAlias}>
                             </uui-select>
                         </div>
 
                         <div>
                             <uui-label>Language:</uui-label>
-                            <uui-select @change=${this.#setLanguage}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                ${this.languages.map(lang => html`
-                                    <uui-select-option value="${lang.id}">${lang.name}</uui-select-option>
-                                `)}
+                            <uui-select
+                                .options=${this.languageOptions}
+                                @change=${this.#setLanguage}>
                             </uui-select>
                         </div>
 
@@ -338,10 +339,9 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
 
                         <div>
                             <uui-label>Recycled?</uui-label>
-                            <uui-select @change=${this.#setTrashed}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                <uui-select-option value="true">Yes</uui-select-option>
-                                <uui-select-option value="false">No</uui-select-option>
+                            <uui-select
+                                .options=${this.recycledOptions}
+                                @change=${this.#setTrashed}>
                             </uui-select>
                         </div>
                     </div>
@@ -349,12 +349,6 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
 
                 ${this.isLoading ? html`
                     <uui-loader-bar></uui-loader-bar>
-                ` : html``}
-
-                ${!this.isLoading && this.totalItems > 0 ? html`
-                    <uui-box>
-                        <p><strong>${this.data.length}</strong> / <strong>${this.totalItems}</strong> items</p>
-                    </uui-box>
                 ` : html``}
 
                 ${!this.isLoading && this._tableItems.length > 0 ? html`
@@ -390,11 +384,17 @@ export class GodModeContentBrowserElement extends UmbElementMixin(LitElement) {
 
     static styles = [
         css`
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
+             .grid {
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 20px;
+
+                  div {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: flex-start;
+                  }
+              }
 
             uui-box {
                 margin-bottom: 20px;

@@ -8,16 +8,6 @@ import { sortData } from "../../../helpers/sort";
 import { DirectionModel } from "@umbraco-cms/backoffice/external/backend-api";
 import { GODMODE_WORKSPACE_CONTEXT } from "../godmode-workspace.context-token";
 
-interface TriStateOption {
-    label: string;
-    value: boolean | null;
-}
-
-interface Option {
-    name: string;
-    value: string;
-}
-
 @customElement('godmode-doctype-browser')
 export class GodModeDocTypeBrowserElement extends UmbElementMixin(LitElement) {
 
@@ -110,10 +100,31 @@ export class GodModeDocTypeBrowserElement extends UmbElementMixin(LitElement) {
     isLoading: boolean = true;
 
     @state()
-    triStateOptions: TriStateOption[] = [
-        { label: 'Any', value: null },
-        { label: 'Yes', value: true },
-        { label: 'No', value: false }
+    hasTemplateOptions: Option[] = [
+        { name: 'Any', value: '', selected: true },
+        { name: 'Yes', value: 'true' },
+        { name: 'No', value: 'false' }
+    ];
+
+    @state()
+    hasCompositionsOptions: Option[] = [
+        { name: 'Any', value: '', selected: true },
+        { name: 'Yes', value: 'true' },
+        { name: 'No', value: 'false' }
+    ];
+
+    @state()
+    isElementOptions: Option[] = [
+        { name: 'Any', value: '', selected: true },
+        { name: 'Yes', value: 'true' },
+        { name: 'No', value: 'false' }
+    ];
+
+    @state()
+    isListViewOptions: Option[] = [
+        { name: 'Any', value: '', selected: true },
+        { name: 'Yes', value: 'true' },
+        { name: 'No', value: 'false' }
     ];
 
     @state()
@@ -148,7 +159,7 @@ export class GodModeDocTypeBrowserElement extends UmbElementMixin(LitElement) {
             this.data = data;
             this.filteredData = structuredClone(this.data);
             this._tableItems = this.#mapData(this.filteredData);
-            
+
             // Extract unique compositions for filter
             const compositions = new Set<string>();
             data.forEach(item => {
@@ -159,6 +170,7 @@ export class GodModeDocTypeBrowserElement extends UmbElementMixin(LitElement) {
                 });
             });
             this.compositionOptions = Array.from(compositions).map(name => ({ name, value: name }));
+            this.compositionOptions.unshift({ name: 'Any', value: '', selected: true });
 
             // Extract unique property groups for filter
             const groups = new Set<string>();
@@ -170,6 +182,7 @@ export class GodModeDocTypeBrowserElement extends UmbElementMixin(LitElement) {
                 });
             });
             this.propertyGroupOptions = Array.from(groups).map(name => ({ name, value: name }));
+            this.propertyGroupOptions.unshift({ name: 'Any', value: '', selected: true });
         }
         this.isLoading = false;
     }
@@ -270,14 +283,14 @@ export class GodModeDocTypeBrowserElement extends UmbElementMixin(LitElement) {
         this.filteredData = this.data.filter(item => {
             // Filter by doc type name/alias
             if (this.searchDocType) {
-                const matches = item.name?.toLowerCase().includes(this.searchDocType) || 
-                               item.alias?.toLowerCase().includes(this.searchDocType);
+                const matches = item.name?.toLowerCase().includes(this.searchDocType) ||
+                    item.alias?.toLowerCase().includes(this.searchDocType);
                 if (!matches) return false;
             }
 
             // Filter by template
             if (this.searchTemplate) {
-                const hasMatchingTemplate = item.templates?.some(t => 
+                const hasMatchingTemplate = item.templates?.some(t =>
                     t.name?.toLowerCase().includes(this.searchTemplate)
                 );
                 if (!hasMatchingTemplate) return false;
@@ -286,7 +299,7 @@ export class GodModeDocTypeBrowserElement extends UmbElementMixin(LitElement) {
             // Filter by property
             if (this.searchProperty) {
                 const properties = this.includeInherited ? item.allProperties : item.properties;
-                const hasMatchingProperty = properties?.some(p => 
+                const hasMatchingProperty = properties?.some(p =>
                     p.name?.toLowerCase().includes(this.searchProperty) ||
                     p.alias?.toLowerCase().includes(this.searchProperty)
                 );
@@ -337,118 +350,110 @@ export class GodModeDocTypeBrowserElement extends UmbElementMixin(LitElement) {
     override render() {
         return html`
             <umb-body-layout>
-                <godmode-header name="Document Type Browser" slot="header"></godmode-header>
-                
-                <uui-box headline="Search Filters">
-                    <div class="grid">
-                        <div>
-                            <uui-label>Has Template?</uui-label>
-                            <uui-select @change=${this.#setHasTemplate}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                <uui-select-option value="true">Yes</uui-select-option>
-                                <uui-select-option value="false">No</uui-select-option>
-                            </uui-select>
-                        </div>
+            <godmode-header name="Document Type Browser" slot="header"></godmode-header>
+          
+    <uui-box headline="Search Filters">
+             <div class="grid">
+        <div>
+<uui-label>Has Template?</uui-label>
+   <uui-select
+     .options=${this.hasTemplateOptions}
+           @change=${this.#setHasTemplate}>
+      </uui-select>
+        </div>
 
-                        <div>
-                            <uui-label>Has Compositions?</uui-label>
-                            <uui-select @change=${this.#setHasCompositions}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                <uui-select-option value="true">Yes</uui-select-option>
-                                <uui-select-option value="false">No</uui-select-option>
-                            </uui-select>
-                        </div>
+           <div>
+   <uui-label>Has Compositions?</uui-label>
+   <uui-select
+        .options=${this.hasCompositionsOptions}
+   @change=${this.#setHasCompositions}>
+        </uui-select>
+  </div>
 
-                        <div>
-                            <uui-label>Composed With:</uui-label>
-                            <uui-select @change=${this.#setComposition}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                ${this.compositionOptions.map(opt => html`
-                                    <uui-select-option value="${opt.value}">${opt.name}</uui-select-option>
-                                `)}
-                            </uui-select>
-                        </div>
+         <div>
+<uui-label>Composed With:</uui-label>
+    <uui-select
+         .options=${this.compositionOptions}
+ @change=${this.#setComposition}>
+     </uui-select>
+  </div>
 
-                        <div>
-                            <uui-label>Element Type?</uui-label>
-                            <uui-select @change=${this.#setIsElement}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                <uui-select-option value="true">Yes</uui-select-option>
-                                <uui-select-option value="false">No</uui-select-option>
-                            </uui-select>
-                        </div>
+  <div>
+    <uui-label>Element Type?</uui-label>
+           <uui-select
+             .options=${this.isElementOptions}
+          @change=${this.#setIsElement}>
+       </uui-select>
+      </div>
 
-                        <div>
-                            <uui-label>Has Group:</uui-label>
-                            <uui-select @change=${this.#setPropertyGroup}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                ${this.propertyGroupOptions.map(opt => html`
-                                    <uui-select-option value="${opt.value}">${opt.name}</uui-select-option>
-                                `)}
-                            </uui-select>
-                        </div>
+          <div>
+        <uui-label>Has Group:</uui-label>
+     <uui-select
+            .options=${this.propertyGroupOptions}
+        @change=${this.#setPropertyGroup}>
+      </uui-select>
+       </div>
 
-                        <div>
-                            <uui-label>List View?</uui-label>
-                            <uui-select @change=${this.#setIsListView}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                <uui-select-option value="true">Yes</uui-select-option>
-                                <uui-select-option value="false">No</uui-select-option>
-                            </uui-select>
-                        </div>
+      <div>
+ <uui-label>List View?</uui-label>
+       <uui-select
+    .options=${this.isListViewOptions}
+          @change=${this.#setIsListView}>
+         </uui-select>
+      </div>
 
-                        <div>
-                            <uui-label>Search document types</uui-label>
-                            <uui-input
-                                placeholder="Filter document types"
-                                .value=${this.searchDocType}
-                                @input=${this.#setSearchDocType}>
-                            </uui-input>
-                        </div>
+   <div>
+    <uui-label>Search document types</uui-label>
+      <uui-input
+         placeholder="Filter document types"
+     .value=${this.searchDocType}
+           @input=${this.#setSearchDocType}>
+            </uui-input>
+            </div>
 
-                        <div>
-                            <uui-label>Search templates</uui-label>
-                            <uui-input
-                                placeholder="Filter templates"
-                                .value=${this.searchTemplate}
-                                @input=${this.#setSearchTemplate}>
-                            </uui-input>
-                        </div>
+   <div>
+       <uui-label>Search templates</uui-label>
+           <uui-input
+          placeholder="Filter templates"
+      .value=${this.searchTemplate}
+           @input=${this.#setSearchTemplate}>
+   </uui-input>
+        </div>
 
-                        <div>
-                            <uui-label>Search properties</uui-label>
-                            <div class="property-search">
-                                <uui-input
-                                    placeholder="Filter properties"
-                                    .value=${this.searchProperty}
-                                    @input=${this.#setSearchProperty}>
-                                </uui-input>
-                                <uui-checkbox
-                                    label="Include inherited"
-                                    ?checked=${this.includeInherited}
-                                    @change=${this.#toggleIncludeInherited}>
-                                    Include inherited
-                                </uui-checkbox>
-                            </div>
-                        </div>
-                    </div>
-                </uui-box>
+                <div>
+       <uui-label>Search properties</uui-label>
+      <div class="property-search">
+         <uui-input
+ placeholder="Filter properties"
+            .value=${this.searchProperty}
+    @input=${this.#setSearchProperty}>
+           </uui-input>
+             <uui-checkbox
+       label="Include inherited"
+           ?checked=${this.includeInherited}
+ @change=${this.#toggleIncludeInherited}>
+                Include inherited
+         </uui-checkbox>
+              </div>
+             </div>
+         </div>
+       </uui-box>
 
-                ${this.isLoading ? html`
-                    <uui-loader-bar></uui-loader-bar>
-                ` : html``}
+         ${this.isLoading ? html`
+<uui-loader-bar></uui-loader-bar>
+       ` : html``}
 
-                ${!this.isLoading && this._tableItems.length > 0 ? html`
-                    <uui-box style="--uui-box-default-padding: 0;">
-                        <umb-table .config=${this._tableConfig} .columns=${this._tableColumns} .items=${this._tableItems} @ordered=${this.#sortingHandler} />
-                    </uui-box>
-                ` : html``}
+        ${!this.isLoading && this._tableItems.length > 0 ? html`
+          <uui-box style="--uui-box-default-padding: 0;">
+      <umb-table .config=${this._tableConfig} .columns=${this._tableColumns} .items=${this._tableItems} @ordered=${this.#sortingHandler} />
+      </uui-box>
+      ` : html``}
 
-                ${!this.isLoading && this._tableItems.length === 0 && this.data.length > 0 ? html`
-                    <uui-box>
-                        <p>No document types match the current filters.</p>
-                    </uui-box>
-                ` : html``}
+    ${!this.isLoading && this._tableItems.length === 0 && this.data.length > 0 ? html`
+                <uui-box>
+       <p>No document types match the current filters.</p>
+            </uui-box>
+     ` : html``}
             </umb-body-layout>
         `;
     }
@@ -456,19 +461,25 @@ export class GodModeDocTypeBrowserElement extends UmbElementMixin(LitElement) {
     static styles = [
         css`
             .grid {
-                display: grid;
+       display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
+        gap: 20px;
+
+         div {
+    display: flex;
+        flex-direction: column;
+      align-items: flex-start;
+     }
+   }
 
             .property-search {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-            }
+     display: flex;
+          flex-direction: column;
+        gap: 8px;
+}
 
             uui-box {
-                margin-bottom: 20px;
+         margin-bottom: 20px;
             }
         `
     ]

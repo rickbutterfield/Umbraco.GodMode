@@ -7,11 +7,6 @@ import { GodModeService, DataTypeMap } from "../../../api";
 import { sortData } from "../../../helpers/sort";
 import { DirectionModel } from "@umbraco-cms/backoffice/external/backend-api";
 
-interface Option {
-    name: string;
-    value: string;
-}
-
 @customElement('godmode-datatype-browser')
 export class GodModeDataTypeBrowserElement extends UmbElementMixin(LitElement) {
 
@@ -27,31 +22,26 @@ export class GodModeDataTypeBrowserElement extends UmbElementMixin(LitElement) {
             name: 'Name',
             alias: 'name',
             allowSorting: true,
-            width: '25%'
         },
         {
             name: 'Alias',
             alias: 'alias',
             allowSorting: true,
-            width: '25%'
         },
         {
             name: 'DB Type',
             alias: 'dbType',
             allowSorting: true,
-            width: '15%'
         },
         {
             name: 'Used',
             alias: 'isUsed',
             allowSorting: true,
-            width: '10%'
         },
         {
             name: 'Updated',
             alias: 'updateDate',
             allowSorting: true,
-            width: '25%'
         }
     ];
 
@@ -78,6 +68,13 @@ export class GodModeDataTypeBrowserElement extends UmbElementMixin(LitElement) {
 
     @state()
     isUsed: boolean | null = null;
+
+    @state()
+    isUsedOptions: Option[] = [
+        { name: 'Any', value: '', selected: true },
+        { name: 'Yes', value: 'true' },
+        { name: 'No', value: 'false' }
+    ];
 
     @state()
     isLoading: boolean = true;
@@ -125,6 +122,7 @@ export class GodModeDataTypeBrowserElement extends UmbElementMixin(LitElement) {
                 }
             });
             this.dbTypeOptions = Array.from(dbTypes).map(type => ({ name: type, value: type }));
+            this.dbTypeOptions.unshift({ name: 'Any', value: '' });
         }
 
         // Load property editors
@@ -140,6 +138,7 @@ export class GodModeDataTypeBrowserElement extends UmbElementMixin(LitElement) {
                 }
             });
             this.editorOptions = Array.from(aliases).map(alias => ({ name: alias, value: alias }));
+            this.editorOptions.unshift({ name: 'Any', value: '' });
         }
 
         this.isLoading = false;
@@ -156,11 +155,11 @@ export class GodModeDataTypeBrowserElement extends UmbElementMixin(LitElement) {
                     },
                     {
                         columnAlias: 'alias',
-                        value: item.alias || ''
+                        value: item.alias
                     },
                     {
                         columnAlias: 'dbType',
-                        value: html`<code>${item.dbType || ''}</code>`
+                        value: html`<code>${item.dbType}</code>`
                     },
                     {
                         columnAlias: 'isUsed',
@@ -249,30 +248,19 @@ export class GodModeDataTypeBrowserElement extends UmbElementMixin(LitElement) {
 
                         <div>
                             <uui-label>Editor:</uui-label>
-                            <uui-select @change=${this.#setEditor}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                ${this.editorOptions.map(opt => html`
-                                    <uui-select-option value="${opt.value}">${opt.name}</uui-select-option>
-                                `)}
+                            <uui-select .options=${this.editorOptions} @change=${this.#setEditor}>
                             </uui-select>
                         </div>
 
                         <div>
                             <uui-label>DB Type:</uui-label>
-                            <uui-select @change=${this.#setDbType}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                ${this.dbTypeOptions.map(opt => html`
-                                    <uui-select-option value="${opt.value}">${opt.name}</uui-select-option>
-                                `)}
+                            <uui-select .options=${this.dbTypeOptions} @change=${this.#setDbType}>
                             </uui-select>
                         </div>
 
                         <div>
                             <uui-label>Is Used?</uui-label>
-                            <uui-select @change=${this.#setIsUsed}>
-                                <uui-select-option value="">Any</uui-select-option>
-                                <uui-select-option value="true">Yes</uui-select-option>
-                                <uui-select-option value="false">No</uui-select-option>
+                            <uui-select .options=${this.isUsedOptions} @change=${this.#setIsUsed}>
                             </uui-select>
                         </div>
                     </div>
@@ -283,9 +271,6 @@ export class GodModeDataTypeBrowserElement extends UmbElementMixin(LitElement) {
                 ` : html``}
 
                 ${!this.isLoading && this._tableItems.length > 0 ? html`
-                    <uui-box>
-                        <p><strong>${this.filteredData.length}</strong> / <strong>${this.data.length}</strong> data types</p>
-                    </uui-box>
                     <uui-box style="--uui-box-default-padding: 0;">
                         <umb-table .config=${this._tableConfig} .columns=${this._tableColumns} .items=${this._tableItems} @ordered=${this.#sortingHandler} />
                     </uui-box>
@@ -318,6 +303,12 @@ export class GodModeDataTypeBrowserElement extends UmbElementMixin(LitElement) {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
             }
 
             uui-box {

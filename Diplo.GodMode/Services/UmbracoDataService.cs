@@ -135,7 +135,7 @@ namespace Diplo.GodMode.Services
         public IEnumerable<DataTypeMap> GetDataTypes()
         {
             return this.dataTypeService.GetAll().
-                Select(x => new DataTypeMap { Id = x.Id, Udi = x.GetUdi().Guid, Name = x.Name }).
+                Select(x => new DataTypeMap { Id = x.Id, Udi = x.GetUdi().Guid, Name = x.Name, Alias = x.EditorAlias, DbType = x.DatabaseType.ToString() }).
                 OrderBy(x => x.Name);
         }
 
