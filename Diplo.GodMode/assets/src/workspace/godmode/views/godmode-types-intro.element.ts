@@ -90,7 +90,7 @@ export class GodModeTypesIntroElement extends UmbLitElement {
                         <uui-table-column></uui-table-column>
                         <uui-table-column></uui-table-column>
 
-                        <uui-table-head style="background-color: #eeeeee;">
+                        <uui-table-head>
                             <uui-table-head-cell>Action</uui-table-head-cell>
                             <uui-table-head-cell>Description</uui-table-head-cell>
                         </uui-table-head>
@@ -101,7 +101,9 @@ export class GodModeTypesIntroElement extends UmbLitElement {
                             (page) => html`
                                 <uui-table-row>
                                     <uui-table-cell>
-                                        <strong><a href="/umbraco/section/settings/workspace/godmode/edit/${page.url}">${page.name}</a></strong>
+                                        <uui-button href="/umbraco/section/settings/workspace/godmode/edit/${page.url}">
+                                            ${page.name}
+                                        </uui-button>
                                     </uui-table-cell>
                                     <uui-table-cell>
                                         ${page.description}

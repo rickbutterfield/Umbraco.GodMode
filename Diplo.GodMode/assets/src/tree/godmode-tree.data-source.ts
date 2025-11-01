@@ -215,7 +215,6 @@ export class GodModeTreeDataSource extends UmbTreeServerDataSourceBase<
 		this.config = data;
 
 		if (this.config) {
-			debugger;
 			pages = pages.filter((page) => {
 				const filtered = this.config?.featuresToHide?.includes(page.name) || this.config?.featuresToHide?.includes(page.path);
 				return !filtered;
@@ -225,7 +224,6 @@ export class GodModeTreeDataSource extends UmbTreeServerDataSourceBase<
 }
 
 const getRootItems = async (_args: UmbTreeRootItemsRequestArgs): Promise<UmbDataSourceResponse<UmbTargetPagedModel<GodModeTreeItemPresentationModel>>> => {
-	debugger;
 	return {
 		data: {
 			total: pages.length,
@@ -235,7 +233,6 @@ const getRootItems = async (_args: UmbTreeRootItemsRequestArgs): Promise<UmbData
 };
 
 const getChildrenOf = async (args: UmbTreeChildrenOfRequestArgs): Promise<UmbDataSourceResponse<UmbTargetPagedModel<GodModeTreeItemPresentationModel>>> => {
-	debugger;
 	if (args.parent.unique === null) {
 		return await getRootItems(args);
 	}
