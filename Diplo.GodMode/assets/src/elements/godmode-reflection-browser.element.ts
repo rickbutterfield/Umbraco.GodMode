@@ -178,7 +178,7 @@ export class GodModeReflectionBrowserElement extends UmbElementMixin(LitElement)
                     },
                     {
                         columnAlias: 'module',
-                        value: data.module
+                        value: html`<pre>${data.module}</pre>`
                     },
                     {
                         columnAlias: 'baseType',

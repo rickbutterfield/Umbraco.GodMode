@@ -154,7 +154,7 @@ export class GodModeInterfaceBrowserElement extends UmbLitElement {
                     },
                     {
                         columnAlias: 'module',
-                        value: data.module
+                        value: html`<pre>${data.module}</pre>`
                     },
                     {
                         columnAlias: 'baseType',

@@ -196,11 +196,11 @@ export class GodModeServicesBrowserElement extends UmbElementMixin(LitElement) {
         this.filteredData = structuredClone(this.data);
 
         if (this.searchName !== '') {
-            this.filteredData = this.filteredData?.filter(x => x.name.toLowerCase().includes(this.searchName));
+            this.filteredData = this.filteredData?.filter(x => x.name.toLowerCase().includes(this.searchName.toLowerCase()));
         }
 
         if (this.searchImplemented !== '') {
-            this.filteredData = this.filteredData?.filter(x => x.implementName?.toLowerCase().includes(this.searchImplemented));
+            this.filteredData = this.filteredData?.filter(x => x.implementName?.toLowerCase().includes(this.searchImplemented.toLowerCase()));
         }
 
         if (this.selectedLifetime !== '') {

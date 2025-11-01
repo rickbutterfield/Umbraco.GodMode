@@ -178,6 +178,7 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
             <umb-body-layout>
                 <godmode-header name="Utility Browser" slot="header"></godmode-header>
                 <uui-box headline="Caches">
+                    <span slot="header">Clear out the internal Umbraco in-memory caches</span>
                     <div class="grid">
                         <div>
                             <uui-button type="button" look="primary" color="warning" label="Clear Request Cache" @click=${() => this.clearUmbracoCache('Request')}>
@@ -218,6 +219,8 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
                 </uui-box>
 
                 <uui-box headline="TEMP Files">
+                    <span slot="header">Purge temporary / cached files</span>
+
                     <div class="grid">
                         <div>
                             <uui-button type="button" look="primary" color="warning" label="Purge Media Cache" @click=${() => this.purgeMediaCache()}>
@@ -228,6 +231,7 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
                 </uui-box>
 
                 <uui-box headline="Application">
+                    <span slot="header">Here be dragons</span>
                     <div class="grid">
                         <div>
                             <uui-button type="button" look="primary" color="danger" label="Stop Application" @click=${() => this.restartAppPool()}>
@@ -239,7 +243,7 @@ export class GodModeUtilityBrowserElement extends UmbLitElement {
                                 <uui-icon name="icon-server"></uui-icon> Warm-Up Templates
                             </uui-button>
                         </div>
-                        <div>
+                        <div style="display: flex; gap: 8px;">
                             <uui-button type="button" look="primary" color="default" label="Ping URLs" @click=${() => this.pingUrls()}>
                                 <uui-icon name="icon-server"></uui-icon> Ping URLs
                             </uui-button>
